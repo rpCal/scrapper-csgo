@@ -1,5 +1,31 @@
 const puppeteer = require('puppeteer');
 const uuidv4 = require('uuid/v4');
+const winston = require('winston');
+
+const moment = require("moment");
+
+const levels = { 
+  error: 0, 
+  warn: 1, 
+  info: 2, 
+  verbose: 3, 
+  debug: 4, 
+  silly: 5 
+}
+
+const _logger = winston.createLogger({
+  level: "info",
+  format: winston.format.json(),
+  transports: [
+    new winston.transports.Console({ format: winston.format.simple(), level: "verbose" }),
+    new winston.transports.File({ filename: 'error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'combined.log' })
+  ]
+});
+
+
+_logger.verbose('APP - start script');
+
 
 function randomInt (low, high) {
   return Math.floor(Math.random() * (high - low) + low);
@@ -11,21 +37,21 @@ function millisToMinutesAndSeconds(millis) {
   return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }
 
-async function runBrowser(session_uuid) {
+async function runBrowser(session_uuid, logger) {
   
-  console.log(session_uuid,' BROWSER - start ok')
+  logger.verbose(session_uuid + ' BROWSER - start ok')
 
   const browser = await puppeteer.launch();
-  console.log(session_uuid,' BROWSER - browser ok')
+  logger.verbose(session_uuid + ' BROWSER - browser ok')
   
   const page = await browser.newPage();
-  console.log(session_uuid,' BROWSER - page ok')
+  logger.verbose(session_uuid + ' BROWSER - page ok')
   
   await page.goto('https://csgofast.com/#history/double/all');
-  console.log(session_uuid,' BROWSER - site ok')
+  logger.verbose(session_uuid + ' BROWSER - site ok')
 
   const results = await page.evaluate(() => {
-    //console.log(session_uuid,' BROWSER - read history start')
+    // logger.verbose(session_uuid + ' BROWSER - read history start')
     var res = {};
     var history_item = {id:"", t:"", r:"", c:"", hash: "", salt:"", num: ""}; 
     var history_results = $('body .history-content .history-item').map((e, i) => { 
@@ -49,64 +75,91 @@ async function runBrowser(session_uuid) {
       return {};
     });
 
-    //console.log(session_uuid,' BROWSER - read history done')
+    // logger.verbose(session_uuid + ' BROWSER - read history done')
 
     return res;
   });
 
   var ids = Object.keys(results);
-  console.log(session_uuid,' BROWSER - read history ok - ', ids.length)
+  logger.verbose(session_uuid +' BROWSER - read history ok - ' + ids.length)
 
   var fs = require('fs')
   var filename = 'results.json'; 
+  logger.verbose(session_uuid +' FILE read start ')
   fs.readFile(filename, function (err, data) {
+      if(err){
+        logger.error(session_uuid +' FILE read error - '+ err)
+      }
+
+      logger.verbose(session_uuid +' FILE read ok')
+
       var json = JSON.parse(data);
      
+      let count = 0;
+      const moment = require("moment");
       for(var i = 0; i < ids.length; i++){
         if(!json[ids[i]]){
-          const moment = require("moment");
           results[ids[i]].t = moment(results[ids[i]].t, 'hh:mm A').format("YYYY-MM-DDTHH:mm:ss");
           json[ids[i]] = results[ids[i]];
+          count++;
         }
       }
 
+      logger.verbose(session_uuid +' FILE save start')
       fs.writeFile(filename, JSON.stringify(json), function(err){
-        if(err){console.log(session_uuid,'BROWSER - ', err)}
+        if(err){
+          logger.error(session_uuid +' FILE save error - '+ err)
+        }
+
+        logger.verbose(session_uuid +' FILE save ok');
+        logger.info(session_uuid +' new history successfully appended ' + count);
       })
   })
 
-  console.log(session_uuid,' BROWSER - read history  successfully appended');
+  logger.verbose(session_uuid +' BROWSER - read history  successfully appended');
 
   await browser.close();
 
-  console.log(session_uuid,' BROWSER - stop ok')
+  logger.verbose(session_uuid + ' BROWSER - stop ok')
 };
 
-async function doSomething(session_uuid) {
+async function doSomething(session_uuid, logger) {
   var t0 = new Date().getTime();
+  logger.verbose(session_uuid + " Execution start: " + moment(t0).format("YYYY-MM-DDTHH:mm:ss"));
   try {
-    var quote = await runBrowser(session_uuid);
+    var quote = await runBrowser(session_uuid, logger);
   } catch (error) {
-    console.log(session_uuid,' BROWSER --- ERROR in puppeteer', error);
+    logger.error(session_uuid + ' BROWSER --- ERROR in puppeteer: ' + error);
   } finally {
     var t1 = new Date().getTime();
     var time = (t1 - t0);
-    console.log(session_uuid, ' Execution time: ' +  millisToMinutesAndSeconds(time));
+    logger.verbose(session_uuid + " Execution end: " + moment(t1).format("YYYY-MM-DDTHH:mm:ss"));
+    logger.verbose(session_uuid + ' Execution time: ' +  millisToMinutesAndSeconds(time));
+
+    logger.info(session_uuid + " Execution: "  +
+      millisToMinutesAndSeconds(time)  + "s; " +
+      moment(t0).format("YYYY-MM-DDTHH:mm:ss") + " - start; " +
+      moment(t1).format("YYYY-MM-DDTHH:mm:ss") + " - end " 
+      );
   }
 }
 
 
-console.log('APP - start script');
-(async function loop() {
+
+doSomething(uuidv4().slice(0, 8), _logger);
+
+(function loop(logger) {
+  
   var session_uuid = uuidv4().slice(0, 8);
-  var time__sec_min = 60 * 1000;
-  // var time__sec_min = 1000;
+  // var time__sec_min = 60 * 1000;
+  var time__sec_min = 1000;
   var time__min =  6 * time__sec_min;
   var time__max = 14 * time__sec_min;
   var time_rand = randomInt (time__min, time__max);
-  console.log('----- NEXT TIME ', millisToMinutesAndSeconds(time_rand), ", sessionID: ", session_uuid);
+  logger.verbose('----- NEXT LOOP ' + millisToMinutesAndSeconds(time_rand)+ ", sessionID: " + session_uuid);
   setTimeout(function() {
-    doSomething(session_uuid)
-      .then(() => loop())
+    doSomething(session_uuid, logger)
+      .then(() => loop(logger))
   }, time_rand);
-}();
+})(_logger);
+
