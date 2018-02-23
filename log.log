@@ -1,0 +1,76 @@
+node index.js
+APP - start script
+----- NEXT TIME  13:35 , sessionID:  21408e5b
+21408e5b  BROWSER - start ok
+21408e5b  BROWSER - browser ok
+21408e5b  BROWSER - page ok
+21408e5b  BROWSER - site ok
+21408e5b  BROWSER - read history ok -  50
+21408e5b  BROWSER - read history  successfully appended
+21408e5b  BROWSER - stop ok
+21408e5b  Execution time: 0:11
+----- NEXT TIME  11:31 , sessionID:  4f1e893e
+4f1e893e  BROWSER - start ok
+4f1e893e  BROWSER - browser ok
+4f1e893e  BROWSER - page ok
+4f1e893e  BROWSER - site ok
+4f1e893e  BROWSER - read history ok -  50
+4f1e893e  BROWSER - read history  successfully appended
+4f1e893e  BROWSER - stop ok
+4f1e893e  Execution time: 0:06
+----- NEXT TIME  6:50 , sessionID:  cb9fac48
+cb9fac48  BROWSER - start ok
+cb9fac48  BROWSER - browser ok
+cb9fac48  BROWSER - page ok
+cb9fac48  BROWSER - site ok
+cb9fac48  BROWSER - read history ok -  50
+cb9fac48  BROWSER - read history  successfully appended
+cb9fac48  BROWSER - stop ok
+cb9fac48  Execution time: 0:06
+----- NEXT TIME  8:30 , sessionID:  b5f4149b
+b5f4149b  BROWSER - start ok
+b5f4149b  BROWSER - browser ok
+b5f4149b  BROWSER - page ok
+b5f4149b  BROWSER - site ok
+b5f4149b  BROWSER - read history ok -  50
+b5f4149b  BROWSER - read history  successfully appended
+b5f4149b  BROWSER - stop ok
+b5f4149b  Execution time: 0:06
+----- NEXT TIME  11:49 , sessionID:  36499e1a
+36499e1a  BROWSER - start ok
+36499e1a  BROWSER - browser ok
+36499e1a  BROWSER - page ok
+36499e1a  BROWSER - site ok
+36499e1a  BROWSER - read history ok -  50
+36499e1a  BROWSER - read history  successfully appended
+36499e1a  BROWSER - stop ok
+36499e1a  Execution time: 0:07
+----- NEXT TIME  7:52 , sessionID:  f540a43f
+f540a43f  BROWSER - start ok
+f540a43f  BROWSER - browser ok
+f540a43f  BROWSER - page ok
+f540a43f  BROWSER - site ok
+f540a43f  BROWSER - read history ok -  0
+f540a43f  BROWSER - read history  successfully appended
+f540a43f  BROWSER - stop ok
+f540a43f  Execution time: 0:04
+----- NEXT TIME  10:00 , sessionID:  6665b7bd
+6665b7bd  BROWSER - start ok
+6665b7bd  BROWSER - browser ok
+6665b7bd  BROWSER - page ok
+6665b7bd  BROWSER - site ok
+6665b7bd  BROWSER - read history ok -  50
+6665b7bd  BROWSER - read history  successfully appended
+6665b7bd  BROWSER - stop ok
+6665b7bd  Execution time: 0:07
+----- NEXT TIME  8:16 , sessionID:  236e33de
+236e33de  BROWSER - start ok
+236e33de  BROWSER - browser ok
+236e33de  BROWSER - page ok
+236e33de  BROWSER - site ok
+236e33de  BROWSER - read history ok -  50
+236e33de  BROWSER - read history  successfully appended
+236e33de  BROWSER - stop ok
+236e33de  Execution time: 0:06
+----- NEXT TIME  7:23 , sessionID:  736019fa
+
