@@ -51,7 +51,83 @@ function run(){
     draw_chartPie();
     draw_lineChart_histogram();
 
+    run_strategy_color("green");
+    run_strategy_color("black");
+    run_strategy_color("red");
+
+    for(var i = 0; i <= 14; i++){
+        run_strategy_number(i);
+    }
 };
+
+
+function run_strategy_number(number){
+    var czy_grac = true;
+    var czy_zakonczyc = false;
+    
+    
+    var item_first = results[keys[0]];
+    var pierwszy_kolor = item_first.c;
+
+    var kwota_poczatkowa = 1000;
+    var bet_poczatkowy = 1;
+    var bet_aktualny = 1;
+    var bilans = 0;
+
+    var rozegranych_gier = 0;
+    var max_rozegranych_gier = 100;
+
+    bilans = kwota_poczatkowa;
+
+    for(var i = 0; i < keys.length; i++){
+        var wynik_rundy = results[keys[i]];
+
+        if(czy_grac){
+            var czy_wygrana = wynik_rundy.n == number;
+            
+            bilans += (czy_wygrana ? 1 : -1) * bet_aktualny * 2;
+            rozegranych_gier++; 
+        }
+
+        if(rozegranych_gier >= max_rozegranych_gier){ czy_zakonczyc = true; }
+        if(czy_zakonczyc){ break; }
+    }
+    console.log('co wyszlo?  rg, kw, ba, b, N: ',  rozegranych_gier, kwota_poczatkowa, bet_aktualny, bilans, number)
+}
+
+
+function run_strategy_color(kolor){
+    var czy_grac = true;
+    var czy_zakonczyc = false;
+    
+    
+    var item_first = results[keys[0]];
+    var pierwszy_kolor = item_first.c;
+
+    var kwota_poczatkowa = 1000;
+    var bet_poczatkowy = 1;
+    var bet_aktualny = 1;
+    var bilans = 0;
+
+    var rozegranych_gier = 0;
+    var max_rozegranych_gier = 2000;
+
+    bilans = kwota_poczatkowa;
+
+    for(var i = 0; i < keys.length; i++){
+        var wynik_rundy = results[keys[i]];
+
+        if(czy_grac){
+            var czy_wygrana = wynik_rundy.c == kolor;
+            bilans += (czy_wygrana ? 1 : -1) * bet_aktualny * 2;
+            rozegranych_gier++; 
+        }
+
+        if(rozegranych_gier >= max_rozegranych_gier){ czy_zakonczyc = true; }
+        if(czy_zakonczyc){ break; }
+    }
+    console.log('co wyszlo?  rg, kw, ba, b, c: ',  rozegranych_gier, kwota_poczatkowa, bet_aktualny, bilans, kolor)
+}
 
 function draw_title(){
 
@@ -88,7 +164,7 @@ function draw_lineChart_histogram(){
 
 
     var series = [{
-        name: "Liczby",
+        name: "Wypadło razy: ",
         data: []
     }];
 
@@ -123,8 +199,7 @@ function draw_lineChart_histogram(){
             line: {
                 dataLabels: {
                     enabled: true
-                },
-                enableMouseTracking: false
+                }
             }
         },
         series: series
@@ -192,15 +267,15 @@ function draw_chartPie(){
             name: 'Wynik',
             colorByPoint: true,
             data: [{
-                name: 'green',
+                name: 'zielony',
                 y: count_green
             }, {
-                name: 'red',
+                name: 'czerwony',
                 y: count_red,
                 sliced: true,
                 selected: true
             }, {
-                name: 'black',
+                name: 'czarny',
                 y: count_black
             }]
         }]
