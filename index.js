@@ -151,8 +151,8 @@ doSomething(uuidv4().slice(0, 8), _logger);
 (function loop(logger) {
   
   var session_uuid = uuidv4().slice(0, 8);
-  // var time__sec_min = 60 * 1000;
-  var time__sec_min = 1000;
+  var time__sec_min = 60 * 1000;
+  //var time__sec_min = 1000;
   var time__min =  6 * time__sec_min;
   var time__max = 14 * time__sec_min;
   var time_rand = randomInt (time__min, time__max);
