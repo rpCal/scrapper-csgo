@@ -11,15 +11,203 @@
     <title>Hello, world!</title>
   </head>
   <body>
-      <div class="container ">
-
-            <h1>Hello, world!</h1>
+      <div class="container text-center">
+        <div id="root"></div>
       </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>    
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->    
+    
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    
+<script>
+
+var results = [];
+var keys = [];
+
+// start
+$(document).ready(function(){ 
+    getJsonData(function(){ 
+        run(); 
+    }); 
+});
+
+
+
+function run(){
+    
+    $('#root').html();
+
+    draw_title();
+    draw_chartPie();
+    draw_lineChart_histogram();
+
+};
+
+function draw_title(){
+
+    var item_first = results[keys[0]];
+    var item_last = results[keys[keys.length - 1]];
+    var title =  moment(item_first.t).format('YYYY-MM-DD HH:MM') + " - " + moment(item_last.t).format('YYYY-MM-DD HH:MM');
+    title += "<br/>(ID:" + item_first.id +'-' + item_last.id + ") ";
+    title += "<br> Suma wynikow: " + keys.length; 
+    $('#root').append($("<h1>").html(title))
+}
+
+function getJsonData(callback){
+    var minId = 1235890;
+    var maxId = 1237594;
+    return $.get('./results.json')
+    .done(function (data) {
+        results = _.filter(data, function(o) { 
+            var id = parseInt(o.id, 10); 
+            return id > minId && id < maxId; 
+        });
+
+        keys = Object.keys(results);
+
+        callback();
+    })
+}
+
+
+function draw_lineChart_histogram(){
+
+    var html__chart_black_vs_red = $('<div id="chart_histogram" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>');
+
+    $('#root').append(html__chart_black_vs_red);
+
+
+    var series = [{
+        name: "Liczby",
+        data: []
+    }];
+
+    groups = _.chain(results)
+        .groupBy(function(a){ return a.n })
+        .value()
+
+    _.each(groups, function(key, index){
+        series[0].data.push(key.length);
+    })
+    
+
+    Highcharts.chart('chart_histogram', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Jak często wystąpiły liczby?'
+        },
+        xAxis: {
+            categories: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+            title: {
+                text: 'Numer liczby'
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Liczba wystąpień'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: series
+    });
+}
+
+function draw_chartPie(){
+
+    
+    var html__chart_black_vs_red = $('<div id="chart_black_vs_red" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>');
+
+    $('#root').append(html__chart_black_vs_red);
+
+    
+
+    var item_first = results[keys[0]];
+    var item_last = results[keys[keys.length - 1]];
+
+    var count_green = 0;
+    var count_red = 0;
+    var count_black = 0;
+
+    for(var i = 0; i < keys.length; i++){
+        var row = results[keys[i]];
+        if(row.c == "green"){ count_green++; }
+        if(row.c == "red"){ count_red++; }
+        if(row.c == "black"){ count_black++; }
+        
+    }
+
+
+    Highcharts.chart('chart_black_vs_red', {
+        colors: ['green', 'red', 'black'],
+   
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Co wystąpiło najczęściej?' 
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: false,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} % - {point.y}',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Wynik',
+            colorByPoint: true,
+            data: [{
+                name: 'green',
+                y: count_green
+            }, {
+                name: 'red',
+                y: count_red,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'black',
+                y: count_black
+            }]
+        }]
+    });
+}
+
+</script>
+
   </body>
 </html>
