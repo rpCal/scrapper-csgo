@@ -28,7 +28,41 @@
     
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    
+    <style>
+    table{
+        display: block;
+        width: 50%;
+    }
+    table thead{
+        font-size: 10px;
+        letter-spacing: -1px;
+        font-weight: normal;
+    }
+    table tr{
+        border-bottom: 1px solid #bbb;
+    }
+    table tr:hover{
+        background: #eee;
+    }
+    table tr td{
+        border-left: 1px solid #bbb;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center;
+        font-size: 11px;
+    }
+    table .t_g{ color: green;}
+    table .t_e{ color: red;}
+    table .t_b{ color: black;}
+
+    table .green{ background: green; color: #fff; }
+    table .red{ background: red; color: #fff; }
+    table .black{ background: black; color: #fff; }
+
+    table .bg_g{ background: rgb(50, 150, 0); color: #fff; }
+    table .bg_r{ background: rgb(171, 0, 0); color: #fff; }
+    table .bg_b{ background: rgba(0,0,0,1)black; color: #fff; }
+    </style>
 <script>
 
 var results = [];
@@ -48,17 +82,312 @@ function run(){
     $('#root').html();
 
     draw_title();
-    draw_chartPie();
+    // draw_chartPie();
+    draw_chartColor();
     draw_lineChart_histogram();
 
-    run_strategy_color("green");
-    run_strategy_color("black");
-    run_strategy_color("red");
+    draw_strategy_form();
+    // draw_strategy();
 
-    for(var i = 0; i <= 14; i++){
-        run_strategy_number(i);
-    }
+    // run_strategy_color("green");
+    // run_strategy_color("black");
+    // run_strategy_color("red");
+
+    // for(var i = 0; i <= 14; i++){
+    //     run_strategy_number(i);
+    // }
 };
+
+
+function draw_strategy_form(){
+
+    var _form = $(`
+    <form>
+        <fieldset>
+            <label>Kwota poczatkowa (zł)</label>
+            <input name="kwota_poczatkowa" value="1000" />
+        </fieldset>
+
+        <fieldset>
+            <label>Runda startu</label>
+            <input name="index_min" value="100" />
+        </fieldset>
+
+        <fieldset>
+            <label>Runda konca</label>
+            <input name="index_max" value="200" />
+        </fieldset>
+
+        <fieldset>
+            <label>Max rozegranych rund</label>
+            <input name="max_rounds" value="200" />
+        </fieldset>
+
+        <fieldset>
+            <label>Kwota betu początkowego (zł)</label>
+            <input name="start_bet_price" value="1" />
+        </fieldset>
+
+        <fieldset>
+            <label>Zmian kwote betu po przegranej (mnożenie)</label>
+            <input name="change_bet_price" value="1" />
+        </fieldset>
+
+        <fieldset>
+            <label>Wygrywam gdy: </label>
+            <select name="succes_value">
+                <option value="color_red">Kolor: Czerwony</option>    
+                <option value="color_green">Kolor: Zielony</option>    
+                <option value="color_black">Kolor: Czarny</option>    
+                <option value="number_0">Liczba: 0</option>    
+                <option value="number_1">Liczba: 1</option>    
+                <option value="number_2">Liczba: 2</option>    
+                <option value="number_3">Liczba: 3</option>    
+                <option value="number_4">Liczba: 4</option>    
+                <option value="number_5">Liczba: 5</option>    
+                <option value="number_6">Liczba: 6</option>    
+                <option value="number_7">Liczba: 7</option>    
+                <option value="number_8">Liczba: 8</option>    
+                <option value="number_9">Liczba: 9</option>    
+                <option value="number_10">Liczba: 10</option>    
+                <option value="number_11">Liczba: 11</option>    
+                <option value="number_12">Liczba: 12</option>    
+                <option value="number_13">Liczba: 13</option>  
+                <option value="number_14">Liczba: 14</option>      
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <button type="submit">Zapisz i zagraj</button>
+        </fieldset>
+
+    </form>
+    `);
+
+
+    _form.on('submit', function(e){
+        e.preventDefault();
+
+        $('#form_result').html();
+        var form_values = $(this).serializeArray();
+        // console.log('form submit with data: ',  form_values)
+        draw_strategy(form_values);
+        
+        return false;
+    })
+
+    $('#root')
+        .append($('<h1>').text("Wybierz parametry strategi"))
+        .append(_form)
+        .append($('<div id="form_result"></div>'))
+
+}
+
+
+function draw_strategy(form_values){
+    
+
+    // GRANIE
+    //
+
+    var rundy = [];
+    var runda = {
+        indeks: 0,
+        id: "",
+        czas: "",
+        wynik_liczba: 0,
+        wynik_kolor: "",
+        atrubut_wygranej: "",
+        czy_grac: true,
+        czy_wygrana: true,    
+        bilans: 0,
+        zmiana_bilansu: 0,
+    };
+
+    
+    var flaga_czy_grac = false;
+    var flaga_czy_zakonczyc = false;
+
+    var mnoznik = 2;
+    var nazwa_attr_wygranej = "n";
+    var oczekiwana_wartosc_atrybutu_wygranej = 0;
+
+    var kwota_poczatkowa = 1000;
+    var bet_poczatkowy = 1;
+    var bet_aktualny = 1;
+    var bilans = 0;
+    var index_rundy = 0;
+
+    var rozegranych_gier = 0;
+    var index_min = 100;
+    var index_max = 200;
+    var max_rozegranych_gier = 100;
+
+    index_min = parseInt(_.find(form_values, { name: "index_min" })['value'], 10);
+    index_max = parseInt(_.find(form_values, { name: "index_max" })['value'], 10);
+    kwota_poczatkowa = parseInt(_.find(form_values, { name: "kwota_poczatkowa" })['value'], 10);
+    max_rozegranych_gier = parseInt(_.find(form_values, { name: "max_rounds" })['value'], 10);
+    mnoznik = parseInt(_.find(form_values, { name: "change_bet_price" })['value'], 10);
+    bet_poczatkowy = parseInt(_.find(form_values, { name: "change_bet_price" })['value'], 10);
+    succes_value = _.find(form_values, { name: "succes_value" })['value'];
+
+    if(succes_value.indexOf("color_") != -1){
+        nazwa_attr_wygranej = "c";
+        oczekiwana_wartosc_atrybutu_wygranej = succes_value.split("_")[1];
+    }
+
+    if(succes_value.indexOf("number_") != -1){
+        nazwa_attr_wygranej = "n";
+        oczekiwana_wartosc_atrybutu_wygranej = parseInt(succes_value.split("_")[1]);
+    }
+
+
+    bilans = kwota_poczatkowa;
+
+    // return ;
+
+
+    for(var i = 0; i < keys.length; i++){
+        
+        if(i >= index_min && i <= index_max){
+            flaga_czy_grac = true;
+        }
+
+        if(flaga_czy_zakonczyc){ 
+            flaga_czy_grac = false; 
+        }
+
+        var wynik_rundy = results[keys[i]];
+        var atrubut_wygranej = wynik_rundy[nazwa_attr_wygranej];
+        var czy_wygrana = null;
+        var kwota_finalna = 0;
+
+        if(flaga_czy_grac){   
+            var czy_wygrana = atrubut_wygranej == oczekiwana_wartosc_atrybutu_wygranej;
+            var kwota_wygranej = bet_aktualny * mnoznik;
+            kwota_finalna = (czy_wygrana ? 1 : -1) * kwota_wygranej;
+            bilans += kwota_finalna;
+            rozegranych_gier++; 
+
+            if(!czy_wygrana){
+                bet_aktualny = bet_aktualny * mnoznik;
+            }
+        }
+
+        rundy.push(_.merge({}, runda, { 
+            index: index_rundy,
+            id: wynik_rundy.id,
+            czas: wynik_rundy.t,
+            wynik_liczba: wynik_rundy.n,
+            wynik_kolor: wynik_rundy.c,
+            
+            wynik_oczekiwany: oczekiwana_wartosc_atrybutu_wygranej,
+            atrubut_wygranej: atrubut_wygranej,
+            czy_grac: flaga_czy_grac,
+            czy_wygrana: czy_wygrana,
+            bet_aktualny: bet_aktualny,
+
+            bilans: bilans,
+            zmiana_bilansu: kwota_finalna
+        }))
+
+
+        index_rundy ++;
+
+        if(rozegranych_gier >= max_rozegranych_gier){ 
+            flaga_czy_zakonczyc = true; 
+        }
+    }
+
+    // Wyswietlanie
+    //
+
+    var _tbody = $('<tbody>');
+
+    for(var i = 0; i < rundy.length; i++){
+        var runda = rundy[i];
+        _tbody.append(`
+            <tr style="">
+                <td>${runda.index}</td>
+                <td>${runda.id}</td>
+                <td>${moment(runda.czas).format('HH:mm:ss')}</td>
+                <td class="${runda.wynik_kolor}">${runda.wynik_liczba}</td>
+                
+                <td class="${runda.czy_grac>0?'bg_g':'bg_r'}">
+                    ${(runda.czy_grac)?'tak':'nie'}
+                </td>
+                <td>${runda.wynik_oczekiwany}</td>
+                <td class="${runda.zmiana_bilansu>0?'bg_g':'bg_r'}">
+                    ${(runda.zmiana_bilansu) > 0 ? "+" + runda.zmiana_bilansu : runda.zmiana_bilansu}
+                </td>
+                <td>${runda.bilans}</td>
+                <td>${runda.bet_aktualny}</td>
+                
+            </tr>
+        `);
+    }
+    var _thead = $(`
+    <thead>
+        <tr>
+            <th>lp.</th>
+            <th>Id</th>
+            <th>Czas</th>
+            <th>Wypadło</th>
+            <th>Czy grac?</th>
+            <th>Chce mieć</th>
+            <th>Wynik</th>
+            <th>Stan</th>
+            <th>Bet</th>
+        </tr>
+    </thead>
+    `);
+    
+
+
+    var _chart_bilans = $('<div id="chart_bilans" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>');
+
+
+    var _table = $('<table>').append(_thead).append(_tbody);
+    var _html = $("<div>")
+    .append($('<h1>').text("Wynik strategia. Kwota poczatkowa " + kwota_poczatkowa))
+    
+    .append(_chart_bilans)
+    .append(_table);
+
+    $('#form_result').append(_html);
+
+    var rundy_bilans = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        rundy_bilans.push(rundy[i].bilans);
+    }
+
+
+    Highcharts.chart('chart_bilans', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Strategia - bilans'
+        },
+        yAxis: {
+            title: {
+                text: 'Bilans pieniądza'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Kwota',
+            data: rundy_bilans
+        }]
+    });
+}
 
 
 function run_strategy_number(number){
@@ -82,7 +411,7 @@ function run_strategy_number(number){
     for(var i = 0; i < keys.length; i++){
         var wynik_rundy = results[keys[i]];
 
-        if(czy_grac){
+        if(czy_grac){   
             var czy_wygrana = wynik_rundy.n == number;
             
             bilans += (czy_wygrana ? 1 : -1) * bet_aktualny * 2;
@@ -203,6 +532,56 @@ function draw_lineChart_histogram(){
             }
         },
         series: series
+    });
+}
+
+function draw_chartColor(){
+
+    
+    var html__chart_black_vs_red = $('<div id="chart_colors" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>');
+
+    $('#root').append(html__chart_black_vs_red);
+
+    
+
+    var item_first = results[keys[0]];
+    var item_last = results[keys[keys.length - 1]];
+
+    var count_green = 0;
+    var count_red = 0;
+    var count_black = 0;
+
+    for(var i = 0; i < keys.length; i++){
+        var row = results[keys[i]];
+        if(row.c == "green"){ count_green++; }
+        if(row.c == "red"){ count_red++; }
+        if(row.c == "black"){ count_black++; }
+        
+    }
+
+    Highcharts.chart('chart_colors', {
+        colors: ['green', 'red', 'black'],
+        chart: { type: 'bar' },
+        title: { text: 'Co wystąpiło najczęściej?' },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series: [
+            {
+                name: 'Zielony',
+                data: [count_green]
+            },
+            {
+                name: 'Czerwony',
+                data: [count_red]
+            },
+            {
+                name: 'Czarny',
+                data: [count_black]
+            },
+        ]
     });
 }
 
