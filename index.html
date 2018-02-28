@@ -105,7 +105,7 @@ function draw_strategy_form(){
     <form>
         <fieldset>
             <label>Kwota poczatkowa (zł)</label>
-            <input name="kwota_poczatkowa" value="1000" />
+            <input name="kwota_poczatkowa" value="1000.0" />
         </fieldset>
 
         <fieldset>
@@ -125,12 +125,12 @@ function draw_strategy_form(){
 
         <fieldset>
             <label>Kwota betu początkowego (zł)</label>
-            <input name="start_bet_price" value="1" />
+            <input name="start_bet_price" value="1.0" />
         </fieldset>
 
         <fieldset>
             <label>Zmian kwote betu po przegranej (mnożenie)</label>
-            <input name="change_bet_price" value="1" />
+            <input name="change_bet_price" value="2.0" />
         </fieldset>
 
         <fieldset>
@@ -212,9 +212,9 @@ function draw_strategy(form_values){
     var nazwa_attr_wygranej = "n";
     var oczekiwana_wartosc_atrybutu_wygranej = 0;
 
-    var kwota_poczatkowa = 1000;
-    var bet_poczatkowy = 1;
-    var bet_aktualny = 1;
+    var kwota_poczatkowa = 1000.0;
+    var bet_poczatkowy = 1.0;
+    var bet_aktualny = 1.0;
     var bilans = 0;
     var index_rundy = 0;
 
@@ -225,10 +225,10 @@ function draw_strategy(form_values){
 
     index_min = parseInt(_.find(form_values, { name: "index_min" })['value'], 10);
     index_max = parseInt(_.find(form_values, { name: "index_max" })['value'], 10);
-    kwota_poczatkowa = parseInt(_.find(form_values, { name: "kwota_poczatkowa" })['value'], 10);
     max_rozegranych_gier = parseInt(_.find(form_values, { name: "max_rounds" })['value'], 10);
-    mnoznik = parseInt(_.find(form_values, { name: "change_bet_price" })['value'], 10);
-    bet_poczatkowy = parseInt(_.find(form_values, { name: "change_bet_price" })['value'], 10);
+    kwota_poczatkowa = parseFloat(_.find(form_values, { name: "kwota_poczatkowa" })['value']);
+    mnoznik = parseFloat(_.find(form_values, { name: "change_bet_price" })['value']);
+    bet_poczatkowy = parseFloat(_.find(form_values, { name: "start_bet_price" })['value']);
     succes_value = _.find(form_values, { name: "succes_value" })['value'];
 
     if(succes_value.indexOf("color_") != -1){
@@ -241,11 +241,10 @@ function draw_strategy(form_values){
         oczekiwana_wartosc_atrybutu_wygranej = parseInt(succes_value.split("_")[1]);
     }
 
+    console.log('co jest?', mnoznik, kwota_poczatkowa, bet_poczatkowy)
+
 
     bilans = kwota_poczatkowa;
-
-    // return ;
-
 
     for(var i = 0; i < keys.length; i++){
         
@@ -262,14 +261,23 @@ function draw_strategy(form_values){
         var czy_wygrana = null;
         var kwota_finalna = 0;
 
-        if(flaga_czy_grac){   
+        if(flaga_czy_grac){
+
             var czy_wygrana = atrubut_wygranej == oczekiwana_wartosc_atrybutu_wygranej;
+
+            // if(czy_wygrana && wynik_rundy['c'] == "green"){
+            //     mnoznik = 14;
+            // }
+
             var kwota_wygranej = bet_aktualny * mnoznik;
+
             kwota_finalna = (czy_wygrana ? 1 : -1) * kwota_wygranej;
             bilans += kwota_finalna;
             rozegranych_gier++; 
 
-            if(!czy_wygrana){
+            if(czy_wygrana){
+                bet_aktualny = bet_poczatkowy;  
+            } else {
                 bet_aktualny = bet_aktualny * mnoznik;
             }
         }
@@ -286,6 +294,7 @@ function draw_strategy(form_values){
             czy_grac: flaga_czy_grac,
             czy_wygrana: czy_wygrana,
             bet_aktualny: bet_aktualny,
+            mnoznik: mnoznik,
 
             bilans: bilans,
             zmiana_bilansu: kwota_finalna
@@ -318,10 +327,12 @@ function draw_strategy(form_values){
                 </td>
                 <td>${runda.wynik_oczekiwany}</td>
                 <td class="${runda.zmiana_bilansu>0?'bg_g':'bg_r'}">
-                    ${(runda.zmiana_bilansu) > 0 ? "+" + runda.zmiana_bilansu : runda.zmiana_bilansu}
+                    ${(runda.zmiana_bilansu) > 0 ? "+" + runda.zmiana_bilansu.toFixed(2) : runda.zmiana_bilansu.toFixed(2)}
                 </td>
-                <td>${runda.bilans}</td>
-                <td>${runda.bet_aktualny}</td>
+                <td>${runda.bilans.toFixed(2)}</td>
+                <td>${runda.bet_aktualny.toFixed(2)}</td>
+                <td>${runda.mnoznik.toFixed(2)}</td>
+                
                 
             </tr>
         `);
@@ -338,6 +349,7 @@ function draw_strategy(form_values){
             <th>Wynik</th>
             <th>Stan</th>
             <th>Bet</th>
+            <th>Mnożnik wygranej</th>
         </tr>
     </thead>
     `);
