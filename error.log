@@ -26,3 +26,5 @@
 {"message":"0831244f BROWSER --- ERROR in puppeteer: Error: Navigation Timeout Exceeded: 30000ms exceeded","level":"error"}
 {"message":"69708764 BROWSER --- ERROR in puppeteer: Error: Navigation Timeout Exceeded: 30000ms exceeded","level":"error"}
 {"message":"d3ec7d9c BROWSER --- ERROR in puppeteer: Error: Navigation Timeout Exceeded: 30000ms exceeded","level":"error"}
+{"message":"b2916274 BROWSER --- ERROR in puppeteer: Error: Evaluation failed: ReferenceError: $ is not defined\n    at <anonymous>:5:27","level":"error"}
+{"message":"a0f0f9fd BROWSER --- ERROR in puppeteer: Error: Evaluation failed: ReferenceError: $ is not defined\n    at <anonymous>:5:27","level":"error"}
