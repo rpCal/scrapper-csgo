@@ -318,6 +318,11 @@ function draw_strategy(form_values){
                 tmp_mnoznik = 14;
             }
 
+            if(bet_aktualny > bilans  ){
+                bet_aktualny = bilans;
+                tmp_bet_aktualny = bet_aktualny;
+            }
+
             var kwota_wygranej = 0;
             if(czy_wygrana){
                 kwota_wygranej = bet_aktualny * tmp_mnoznik;
@@ -325,11 +330,13 @@ function draw_strategy(form_values){
                 kwota_wygranej = bet_aktualny;
             }
 
-            // var kwota_wygranej = bet_aktualny * tmp_mnoznik;
-
             kwota_finalna = (czy_wygrana ? 1 : -1) * kwota_wygranej;
             bilans += kwota_finalna;
             rozegranych_gier++; 
+
+            if(bilans <= 0 ){
+                bilans = 0;
+            }
 
             if(czy_wygrana){
                 bet_aktualny = bet_poczatkowy;  
@@ -441,7 +448,7 @@ function draw_strategy(form_values){
 
     var _table = $('<table>').append(_thead).append(_tbody);
     var _html = $("<div>")
-    .append($('<h1>').text("Wynik strategii -"))
+    .append($('<h1>').text("Wynik strategii"))
     .append($('<h4>').text("Kwota poczatkowa: " + kwota_poczatkowa.toFixed(2)))
     .append($('<h4>').text("Kwota zakonczenia: " + kwota_zakonczenia.toFixed(2)))
     .append($('<h4>').text("Zysk: " + zysk.toFixed(2)))
