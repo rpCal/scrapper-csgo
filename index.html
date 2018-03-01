@@ -161,7 +161,7 @@ function draw_strategy_form(){
     <form>
         <fieldset>
             <label>Kwota poczatkowa (zł)</label>
-            <input name="kwota_poczatkowa" value="1000.0" />
+            <input name="kwota_poczatkowa" value="10000.0" />
         </fieldset>
 
         <fieldset>
@@ -169,25 +169,24 @@ function draw_strategy_form(){
             <input name="index_min" value="0" />
         </fieldset>
 
-
         <fieldset>
             <label>Runda konca</label>
-            <input name="index_max" value="4833" />
+            <input name="index_max" value="5337" />
         </fieldset>
 
         <fieldset>
             <label>Max rozegranych rund</label>
-            <input name="max_rounds" value="4833" />
+            <input name="max_rounds" value="5337" />
         </fieldset>
 
         <fieldset>
             <label>Kwota betu początkowego (zł)</label>
-            <input name="start_bet_price" value="1.0" />
+            <input name="start_bet_price" value="10.0" />
         </fieldset>
 
         <fieldset>
             <label>Zmian kwote betu po przegranej (mnożenie)</label>
-            <input name="change_bet_price" value="2.0" />
+            <input name="change_bet_price" value="1.5" />
         </fieldset>
 
         <fieldset>
@@ -238,6 +237,13 @@ function draw_strategy_form(){
         .append(_form)
         .append($('<div id="form_result"></div>'))
 
+}
+
+
+function roundUp(num, precision) {
+  if(!precision) { precision = 1;}
+  precision = Math.pow(10, precision)
+  return Math.ceil(num * precision) / precision
 }
 
 
@@ -332,7 +338,6 @@ function oblicz_rundy(form_values){
 
     for(var i = 0; i < keys.length; i++){
         
-        // miesci sie w zakresie?
         flaga_czy_grac = i >= index_min && i <= index_max;
 
         if(flaga_czy_zakonczyc){ 
@@ -405,39 +410,36 @@ function oblicz_rundy(form_values){
             var czy_wygrana = atrubut_wygranej == oczekiwana_wartosc_atrybutu_wygranej;
             var tmp_mnoznik = mnoznik;
 
-            if(czy_wygrana && wynik_rundy['c'] == "green"){
-                tmp_mnoznik = 14;
-            }
-
-            if(bet_aktualny > bilans  ){
+            if(bet_aktualny > bilans){
                 bet_aktualny = bilans;
                 tmp_bet_aktualny = bet_aktualny;
             }
 
             var kwota_wygranej = 0;
-            if(czy_wygrana){
-                kwota_wygranej = bet_aktualny * tmp_mnoznik;
-            }else{
-                kwota_wygranej = bet_aktualny;
-            }
-
-            kwota_finalna = (czy_wygrana ? 1 : -1) * kwota_wygranej;
-            bilans += kwota_finalna;
-            rozegranych_gier++; 
-
-            if(bilans <= 0 ){
-                bilans = 0;
-            }
 
             if(czy_wygrana){
-                bet_aktualny = bet_poczatkowy;  
+                if(wynik_rundy['c'] == "green"){
+                    tmp_mnoznik = 14;
+                }
+
+                tmp_bet_aktualny = parseInt(roundUp(bet_aktualny * tmp_mnoznik), 10);
+                kwota_wygranej = tmp_bet_aktualny;
+                bet_aktualny = bet_poczatkowy;
                 seria_przegranej = 0;
                 seria_wygranej++;
-            } else {
+            }else{
+                tmp_bet_aktualny = parseInt(roundUp(bet_aktualny), 10);
+                kwota_wygranej = -1 * tmp_bet_aktualny;
+                bet_aktualny = 1 * parseInt(roundUp(bet_aktualny * mnoznik), 10);
                 seria_wygranej = 0;
                 seria_przegranej++;
-                bet_aktualny = bet_aktualny * mnoznik;
             }
+
+            kwota_finalna = kwota_wygranej;
+            bilans += kwota_finalna;
+            
+            if(bilans <= 0 ){ bilans = 0; }
+            rozegranych_gier++; 
         }else{
             seria_wygranej = 0;
             seria_przegranej = 0;
@@ -454,6 +456,7 @@ function oblicz_rundy(form_values){
             atrubut_wygranej: atrubut_wygranej,
             czy_grac: flaga_czy_grac,
             czy_wygrana: czy_wygrana,
+
             bet_aktualny: tmp_bet_aktualny,
             mnoznik: mnoznik,
 
