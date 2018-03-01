@@ -11,7 +11,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-      <div class="container text-center">
+      <div class="container-fluid text-center">
         <div id="root"></div>
       </div>
 
@@ -326,6 +326,10 @@ function oblicz_rundy(form_values){
     var seria_koloru_red = 0;
     var seria_koloru_green = 0;
 
+    var seria_brak_koloru_black = 0;
+    var seria_brak_koloru_red = 0;
+    var seria_brak_koloru_green = 0;
+
     for(var i = 0; i < keys.length; i++){
         
         // miesci sie w zakresie?
@@ -345,16 +349,16 @@ function oblicz_rundy(form_values){
             ostatni_kolor = wynik_rundy['c'];
         }
 
-
-
         if(wynik_rundy['c'] == 'black'){
             if(ostatni_kolor == 'black'){
                 seria_koloru_black ++;
             }else{
                 seria_koloru_black = 1;
             }
+            seria_brak_koloru_black = 0;
         }else{
             seria_koloru_black = 0;
+            seria_brak_koloru_black++;
         }
 
         if(wynik_rundy['c'] == 'green'){
@@ -363,8 +367,10 @@ function oblicz_rundy(form_values){
             }else{
                 seria_koloru_green = 1;
             }
+            seria_brak_koloru_green = 0;
         }else{
             seria_koloru_green = 0;
+            seria_brak_koloru_green++;
         }
 
         if(wynik_rundy['c'] == 'red'){
@@ -373,8 +379,10 @@ function oblicz_rundy(form_values){
             }else{
                 seria_koloru_red = 1;
             }
+            seria_brak_koloru_red = 0;
         }else{
             seria_koloru_red = 0;
+            seria_brak_koloru_red++;
         }
 
 
@@ -457,7 +465,12 @@ function oblicz_rundy(form_values){
 
             seria_koloru_black: seria_koloru_black,
             seria_koloru_red: seria_koloru_red,
-            seria_koloru_green: seria_koloru_green
+            seria_koloru_green: seria_koloru_green,
+
+            seria_brak_koloru_black: seria_brak_koloru_black,
+            seria_brak_koloru_red: seria_brak_koloru_red,
+            seria_brak_koloru_green: seria_brak_koloru_green
+            
         }))
 
 
@@ -493,6 +506,12 @@ function draw_strategy(form_values, show_table){
     var max_seria_przegranych = 0;
     var max_seria_wygranych = 0;
 
+    var max_seria_brak_green = 0;
+    var max_seria_brak_red = 0;
+    var max_seria_brak_black = 0;
+    
+    
+
     var max_bet = 0;
     var max_zmiana_bilansu = 0;
 
@@ -505,9 +524,13 @@ function draw_strategy(form_values, show_table){
 
     for(var i = 0; i < rundy.length; i++){
         var runda = rundy[i];
-        bg_seria_koloru_black = shadeBlendConvert( runda.seria_koloru_black / 50 + 0.3, "#000000" )
+        bg_seria_koloru_black = shadeBlendConvert( runda.seria_koloru_black / 50 + 0.6, "#000000" )
         bg_seria_koloru_red = shadeBlendConvert(runda.seria_koloru_red / 50 + 0.3, "#ff0000")
         bg_seria_koloru_green = shadeBlendConvert(runda.seria_koloru_green / 50 + 0.3, "#00ff00")
+
+        bg_seria_brak_koloru_black = shadeBlendConvert( runda.seria_brak_koloru_black / 50 + 0.6, "#000000" )
+        bg_seria_brak_koloru_red = shadeBlendConvert(runda.seria_brak_koloru_red / 50 + 0.3, "#ff0000")
+        bg_seria_brak_koloru_green = shadeBlendConvert(runda.seria_brak_koloru_green / 50 + 0.3, "#00ff00")
 
         bg_seria_koloru = shadeBlendConvert(runda.seria_koloru / 50 + 0.3, "#1b75bc");
         bg_seria_przegranej = shadeBlendConvert(runda.seria_przegranej / 50 + 0.3, "#3f4651");
@@ -520,6 +543,10 @@ function draw_strategy(form_values, show_table){
         if(runda.seria_koloru_green > max_seria_green){ max_seria_green = runda.seria_koloru_green; } 
         if(runda.bet_aktualny > max_bet){ max_bet = runda.bet_aktualny; } 
         if(runda.zmiana_bilansu > max_zmiana_bilansu){ max_zmiana_bilansu = runda.zmiana_bilansu; } 
+
+        if(runda.seria_brak_koloru_black > max_seria_brak_black){ max_seria_brak_black = runda.seria_brak_koloru_black; } 
+        if(runda.seria_brak_koloru_red > max_seria_brak_red){ max_seria_brak_red = runda.seria_brak_koloru_red; } 
+        if(runda.seria_brak_koloru_green > max_seria_brak_green){ max_seria_brak_green = runda.seria_brak_koloru_green; } 
 
         _tbody.append(`
             <tr style="">
@@ -540,13 +567,19 @@ function draw_strategy(form_values, show_table){
                     ${(runda.zmiana_bilansu) > 0 ? "+" + runda.zmiana_bilansu.toFixed(2) : runda.zmiana_bilansu.toFixed(2)}
                 </td>
                 <td>${runda.bilans.toFixed(2)}</td>
+                <td>---</td>
                 <td style="background: ${bg_seria_koloru}; color: #fff;">${runda.seria_koloru}</td>
                 <td style="background: ${bg_seria_przegranej}; color: #000;">${runda.seria_przegranej}</td>
                 <td style="background: ${bg_seria_wygranej}; color: #000;">${runda.seria_wygranej}</td>
-
-                <td style="background: ${bg_seria_koloru_black}; color: #fff;">${runda.seria_koloru_black}</td>
-                <td style="background: ${bg_seria_koloru_red}; color: #fff;">${runda.seria_koloru_red}</td>
+                <td>---</td>
+                <td style="background: ${bg_seria_koloru_black}; color: #000;">${runda.seria_koloru_black}</td>
+                <td style="background: ${bg_seria_koloru_red}; color: #000;">${runda.seria_koloru_red}</td>
                 <td style="background: ${bg_seria_koloru_green}; color: #000;">${runda.seria_koloru_green}</td>
+                <td>---</td>
+                <td style="background: ${bg_seria_brak_koloru_black}; color: #000;">${runda.seria_brak_koloru_black}</td>
+                <td style="background: ${bg_seria_brak_koloru_red}; color: #000;">${runda.seria_brak_koloru_red}</td>
+                <td style="background: ${bg_seria_brak_koloru_green}; color: #000;">${runda.seria_brak_koloru_green}</td>
+                
             </tr>
         `);
     }
@@ -562,12 +595,18 @@ function draw_strategy(form_values, show_table){
             <th>Obstawiam</th>
             <th>Wynik</th>
             <th>Bilans</th>
+            <th>-</th>
             <th>Seria koloru</th>
             <th>Seria przegranej</th>
             <th>Seria wygranej</th>
+            <th>-</th>
             <th>Seria black</th>
             <th>Seria red</th>
             <th>Seria green</th>
+            <th>-</th>
+            <th>Seria brak black</th>
+            <th>Seria brak red</th>
+            <th>Seria brak green</th>
         </tr>
     </thead>
     `);
@@ -581,22 +620,30 @@ function draw_strategy(form_values, show_table){
         <h5> Max seria koloru CZARNY: ${max_seria_black}</h4>
         <h5> Max seria przegranych: ${max_seria_przegranych}</h4>
         <h5> Max seria wygranych: ${max_seria_wygranych}</h4>
-        
+
+        <h5> Max seria brak koloru CZERWONY: ${max_seria_brak_red}</h4>
+        <h5> Max seria brak koloru ZIELONY: ${max_seria_brak_green}</h4>
+        <h5> Max seria brak koloru CZARNY: ${max_seria_brak_black}</h4>
     </div>
     `);
     
     
 
 
-    var _chart_bilans = $('<div id="chart_bilans" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>');
-    var _chart_seria_koloru = $('<div id="chart_seria_koloru" style="height: 400px; width: 300px; display: inline-block;"></div>');
-    var _chart_seria_przegranej = $('<div id="chart_seria_przegranej" style="height: 400px; width: 300px; display: inline-block;"></div>');
-    var _chart_seria_wygranej = $('<div id="chart_seria_wygranej" style="height: 400px; width: 300px; display: inline-block;"></div>');
+    var _chart_bilans = $('<div id="chart_bilans" style="height: 400px; width: 500px; margin: 0 auto"></div>');
+    var _chart_seria_koloru = $('<div id="chart_seria_koloru" style="height: 400px; width: 450px; display: inline-block;"></div>');
+    var _chart_seria_przegranej = $('<div id="chart_seria_przegranej" style="height: 400px; width: 450px; display: inline-block;"></div>');
+    var _chart_seria_wygranej = $('<div id="chart_seria_wygranej" style="height: 400px; width: 450px; display: inline-block;"></div>');
 
-    var _chart_seria_color_green = $('<div id="chart_seria_color_green" style="height: 400px; width: 300px; display: inline-block;"></div>');
-    var _chart_seria_color_black = $('<div id="chart_seria_color_black" style="height: 400px; width: 300px; display: inline-block;"></div>');
-    var _chart_seria_color_red = $('<div id="chart_seria_color_red" style="height: 400px; width: 300px; display: inline-block;"></div>');
+    var _chart_seria_color_green = $('<div id="chart_seria_color_green" style="height: 400px; width: 30%; display: inline-block;"></div>');
+    var _chart_seria_color_black = $('<div id="chart_seria_color_black" style="height: 400px; width: 30%; display: inline-block;"></div>');
+    var _chart_seria_color_red = $('<div id="chart_seria_color_red" style="height: 400px; width: 30%; display: inline-block;"></div>');
 
+    var _chart_seria_brak_color_green = $('<div id="chart_seria_brak_color_green" style="height: 400px; width: 30%; display: inline-block;"></div>');
+    var _chart_seria_brak_color_black = $('<div id="chart_seria_brak_color_black" style="height: 400px; width: 30%; display: inline-block;"></div>');
+    var _chart_seria_brak_color_red = $('<div id="chart_seria_brak_color_red" style="height: 400px; width: 30%; display: inline-block;"></div>');
+
+    var _charts = $('<div>').css({"width": "100%", "minWidth": "100%"})
 
     var _table = $('<table>').append(_thead).append(_tbody);
     var _html = $("<div>")
@@ -608,18 +655,24 @@ function draw_strategy(form_values, show_table){
     .append($('<br>'))
     .append($('<br>'))
     .append(_text_stats)
-    
-    .append(_chart_bilans)
-    .append($('<br>'))
-    .append($('<br>'))
-    // .append(_chart_seria_koloru)
-    .append(_chart_seria_przegranej)
-    .append(_chart_seria_wygranej)
-    .append($('<br>'))
-    .append($('<br>'))
-    .append(_chart_seria_color_green)
-    .append(_chart_seria_color_black)
-    .append(_chart_seria_color_red)
+    .append(
+        _charts
+            .append(_chart_bilans)
+            .append($('<br>'))
+            .append($('<br>'))
+            // .append(_chart_seria_koloru)
+            .append(_chart_seria_przegranej)
+            .append(_chart_seria_wygranej)
+            .append($('<br>'))
+            .append($('<br>'))
+            .append(_chart_seria_color_green)
+            .append(_chart_seria_color_black)
+            .append(_chart_seria_color_red)
+            .append($('<br>'))
+            .append(_chart_seria_brak_color_green)
+            .append(_chart_seria_brak_color_black)
+            .append(_chart_seria_brak_color_red)
+    )
     
 
 
@@ -875,6 +928,124 @@ function draw_strategy(form_values, show_table){
             data: suma
         }]
     });
+
+
+
+
+
+
+
+
+    //
+    // Seria seria_brak_koloru_green
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_brak_koloru_green);
+    }
+
+    Highcharts.chart('chart_seria_brak_color_green', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik serii brak koloru - green'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik serii koloru'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
+
+
+    //
+    // Seria seria_brak_koloru_red
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_brak_koloru_red);
+    }
+
+    Highcharts.chart('chart_seria_brak_color_red', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik serii brak koloru - red'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik serii koloru'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
+
+    //
+    // Seria seria_brak_koloru_black
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_brak_koloru_black);
+    }
+
+    Highcharts.chart('chart_seria_brak_color_black', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik serii brak koloru - black'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik serii koloru'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
+
+
+
+
+
+
+
+    
 }
 
 
