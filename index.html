@@ -496,6 +496,8 @@ function draw_strategy(form_values, show_table){
     var max_bet = 0;
     var max_zmiana_bilansu = 0;
 
+    // ILE RAZY nie padlo.
+
     // Wyswietlanie
     //
 
@@ -507,9 +509,9 @@ function draw_strategy(form_values, show_table){
         bg_seria_koloru_red = shadeBlendConvert(runda.seria_koloru_red / 50 + 0.3, "#ff0000")
         bg_seria_koloru_green = shadeBlendConvert(runda.seria_koloru_green / 50 + 0.3, "#00ff00")
 
-        bg_seria_koloru =shadeBlendConvert(runda.seria_koloru / 50 + 0.3, "#1b75bc");
-        bg_seria_przegranej =shadeBlendConvert(runda.seria_przegranej / 50 + 0.3, "#3f4651");
-        bg_seria_wygranej =shadeBlendConvert(runda.seria_wygranej / 50 + 0.3, "#3f4651");
+        bg_seria_koloru = shadeBlendConvert(runda.seria_koloru / 50 + 0.3, "#1b75bc");
+        bg_seria_przegranej = shadeBlendConvert(runda.seria_przegranej / 50 + 0.3, "#3f4651");
+        bg_seria_wygranej = shadeBlendConvert(runda.seria_wygranej / 50 + 0.3, "#3f4651");
         
         if(runda.seria_przegranej > max_seria_przegranych){ max_seria_przegranych = runda.seria_przegranej; } 
         if(runda.seria_wygranej > max_seria_wygranych){ max_seria_wygranych = runda.seria_wygranej; } 
@@ -539,8 +541,8 @@ function draw_strategy(form_values, show_table){
                 </td>
                 <td>${runda.bilans.toFixed(2)}</td>
                 <td style="background: ${bg_seria_koloru}; color: #fff;">${runda.seria_koloru}</td>
-                <td style="background: ${bg_seria_przegranej}; color: #fff;">${runda.seria_przegranej}</td>
-                <td style="background: ${bg_seria_wygranej}; color: #fff;">${runda.seria_wygranej}</td>
+                <td style="background: ${bg_seria_przegranej}; color: #000;">${runda.seria_przegranej}</td>
+                <td style="background: ${bg_seria_wygranej}; color: #000;">${runda.seria_wygranej}</td>
 
                 <td style="background: ${bg_seria_koloru_black}; color: #fff;">${runda.seria_koloru_black}</td>
                 <td style="background: ${bg_seria_koloru_red}; color: #fff;">${runda.seria_koloru_red}</td>
