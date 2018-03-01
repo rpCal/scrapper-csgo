@@ -28,6 +28,20 @@
     
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    
+    <div class="container text-center" style="font-size: 10px; color: #bbb;">
+        <br><br><br><br><br><br>
+        <h6>Więcej info na <a href="https://csgofast.com/#faq/double/1" style="color: #bbb;">https://csgofast.com/#faq/double/1</a></h6>
+        <blockquote>
+            Double Game – is a mode of a game, where gamers bet on black, red or green slots. <br> <br>
+            In this mode Fast Coins are placed into as bets. The winner slot is determined at the end of the round. <br> <br>
+            If the winner is black or red slot, the gamer wins the placed bet multiplied by 2. <br> <br>
+            The green slot returns the placed bet multiplied by 14. <br> <br>
+            The bet sum of every slot can be different <br>
+        </blockquote>
+        <br><br><br><br><br><br>
+    </div>
     <style>
     table{
         display: block;
@@ -110,17 +124,17 @@ function draw_strategy_form(){
 
         <fieldset>
             <label>Runda startu</label>
-            <input name="index_min" value="100" />
+            <input name="index_min" value="1" />
         </fieldset>
 
         <fieldset>
             <label>Runda konca</label>
-            <input name="index_max" value="200" />
+            <input name="index_max" value="1700" />
         </fieldset>
 
         <fieldset>
             <label>Max rozegranych rund</label>
-            <input name="max_rounds" value="200" />
+            <input name="max_rounds" value="1700" />
         </fieldset>
 
         <fieldset>
@@ -168,7 +182,7 @@ function draw_strategy_form(){
     _form.on('submit', function(e){
         e.preventDefault();
 
-        $('#form_result').html();
+        $('#form_result').html("");
         var form_values = $(this).serializeArray();
         // console.log('form submit with data: ',  form_values)
         draw_strategy(form_values);
@@ -241,10 +255,12 @@ function draw_strategy(form_values){
         oczekiwana_wartosc_atrybutu_wygranej = parseInt(succes_value.split("_")[1]);
     }
 
-    console.log('co jest?', mnoznik, kwota_poczatkowa, bet_poczatkowy)
+    bet_aktualny = bet_poczatkowy;
 
 
     bilans = kwota_poczatkowa;
+
+    // var seria_koloru
 
     for(var i = 0; i < keys.length; i++){
         
@@ -260,16 +276,27 @@ function draw_strategy(form_values){
         var atrubut_wygranej = wynik_rundy[nazwa_attr_wygranej];
         var czy_wygrana = null;
         var kwota_finalna = 0;
+        var tmp_bet_aktualny = 0;
 
         if(flaga_czy_grac){
 
+            tmp_bet_aktualny = bet_aktualny;
+
             var czy_wygrana = atrubut_wygranej == oczekiwana_wartosc_atrybutu_wygranej;
+            var tmp_mnoznik = mnoznik;
 
-            // if(czy_wygrana && wynik_rundy['c'] == "green"){
-            //     mnoznik = 14;
-            // }
+            if(czy_wygrana && wynik_rundy['c'] == "green"){
+                tmp_mnoznik = 14;
+            }
 
-            var kwota_wygranej = bet_aktualny * mnoznik;
+            var kwota_wygranej = 0;
+            if(czy_wygrana){
+                kwota_wygranej = bet_aktualny * tmp_mnoznik;
+            }else{
+                kwota_wygranej = bet_aktualny;
+            }
+
+            // var kwota_wygranej = bet_aktualny * tmp_mnoznik;
 
             kwota_finalna = (czy_wygrana ? 1 : -1) * kwota_wygranej;
             bilans += kwota_finalna;
@@ -293,7 +320,7 @@ function draw_strategy(form_values){
             atrubut_wygranej: atrubut_wygranej,
             czy_grac: flaga_czy_grac,
             czy_wygrana: czy_wygrana,
-            bet_aktualny: bet_aktualny,
+            bet_aktualny: tmp_bet_aktualny,
             mnoznik: mnoznik,
 
             bilans: bilans,
@@ -325,15 +352,15 @@ function draw_strategy(form_values){
                 <td class="${runda.czy_grac>0?'bg_g':'bg_r'}">
                     ${(runda.czy_grac)?'tak':'nie'}
                 </td>
-                <td>${runda.wynik_oczekiwany}</td>
-                <td class="${runda.zmiana_bilansu>0?'bg_g':'bg_r'}">
+                <td>${
+                    nazwa_attr_wygranej == 'c' ? 
+                        (runda.wynik_oczekiwany == 'red')? "czerwony": (runda.wynik_oczekiwany == 'green')?"zielony":"czarny"
+                    : runda.wynik_oczekiwany}</td>
+                <td>${runda.bet_aktualny.toFixed(2)}</td>
+                <td class="${(runda.zmiana_bilansu>0)?'bg_g': (runda.zmiana_bilansu == 0? '': 'bg_r')}">
                     ${(runda.zmiana_bilansu) > 0 ? "+" + runda.zmiana_bilansu.toFixed(2) : runda.zmiana_bilansu.toFixed(2)}
                 </td>
                 <td>${runda.bilans.toFixed(2)}</td>
-                <td>${runda.bet_aktualny.toFixed(2)}</td>
-                <td>${runda.mnoznik.toFixed(2)}</td>
-                
-                
             </tr>
         `);
     }
@@ -346,10 +373,9 @@ function draw_strategy(form_values){
             <th>Wypadło</th>
             <th>Czy grac?</th>
             <th>Chce mieć</th>
+            <th>Obstawiam</th>
             <th>Wynik</th>
-            <th>Stan</th>
-            <th>Bet</th>
-            <th>Mnożnik wygranej</th>
+            <th>Bilans</th>
         </tr>
     </thead>
     `);
