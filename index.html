@@ -227,6 +227,7 @@ function draw_strategy(form_values){
     var oczekiwana_wartosc_atrybutu_wygranej = 0;
 
     var kwota_poczatkowa = 1000.0;
+    var kwota_zakonczenia = 0;
     var bet_poczatkowy = 1.0;
     var bet_aktualny = 1.0;
     var bilans = 0;
@@ -260,7 +261,24 @@ function draw_strategy(form_values){
 
     bilans = kwota_poczatkowa;
 
-    // var seria_koloru
+    
+    // var oczekiwany_kolor = "green";
+    // if(nazwa_attr_wygranej == "c"){
+    //     oczekiwany_kolor = oczekiwana_wartosc_atrybutu_wygranej;
+    // }else if (nazwa_attr_wygranej == "n"){
+    //     if(oczekiwana_wartosc_atrybutu_wygranej == 0){
+    //         oczekiwany_kolor = "green";
+    //     }else if(oczekiwana_wartosc_atrybutu_wygranej <= 7){
+    //         oczekiwany_kolor = "red";
+    //     }else{
+    //         oczekiwany_kolor = "black";
+    //     }
+    // }
+
+    var seria_koloru = 0;
+    var ostatni_kolor = null;    
+    var seria_przegranej = 0;
+    var seria_wygranej = 0;
 
     for(var i = 0; i < keys.length; i++){
         
@@ -277,6 +295,17 @@ function draw_strategy(form_values){
         var czy_wygrana = null;
         var kwota_finalna = 0;
         var tmp_bet_aktualny = 0;
+
+        if(ostatni_kolor == null){
+            ostatni_kolor = wynik_rundy['c'];
+        }
+
+        if(wynik_rundy['c'] == ostatni_kolor){
+            seria_koloru++;
+        }else{
+            ostatni_kolor = wynik_rundy['c']; 
+            seria_koloru = 1;
+        }
 
         if(flaga_czy_grac){
 
@@ -304,9 +333,16 @@ function draw_strategy(form_values){
 
             if(czy_wygrana){
                 bet_aktualny = bet_poczatkowy;  
+                seria_przegranej = 0;
+                seria_wygranej++;
             } else {
+                seria_wygranej = 0;
+                seria_przegranej++;
                 bet_aktualny = bet_aktualny * mnoznik;
             }
+        }else{
+            seria_wygranej = 0;
+            seria_przegranej = 0;
         }
 
         rundy.push(_.merge({}, runda, { 
@@ -324,6 +360,12 @@ function draw_strategy(form_values){
             mnoznik: mnoznik,
 
             bilans: bilans,
+            seria_koloru: seria_koloru,
+            seria_koloru_bg: shadeColor("#0099ff", seria_koloru * 8 ),
+            seria_przegranej: seria_przegranej, 
+            seria_przegranej_bg: shadeColor("#0099ff", seria_przegranej * 2 ) , 
+            seria_wygranej: seria_wygranej, 
+            seria_wygranej_bg: shadeColor("#0099ff", seria_wygranej * 2 ) , 
             zmiana_bilansu: kwota_finalna
         }))
 
@@ -334,6 +376,8 @@ function draw_strategy(form_values){
             flaga_czy_zakonczyc = true; 
         }
     }
+
+    kwota_zakonczenia = rundy[rundy.length - 1].bilans;
 
     // Wyswietlanie
     //
@@ -361,6 +405,9 @@ function draw_strategy(form_values){
                     ${(runda.zmiana_bilansu) > 0 ? "+" + runda.zmiana_bilansu.toFixed(2) : runda.zmiana_bilansu.toFixed(2)}
                 </td>
                 <td>${runda.bilans.toFixed(2)}</td>
+                <td style="background: ${runda.seria_koloru_bg}; color: #fff;">${runda.seria_koloru}</td>
+                <td style="background: ${runda.seria_przegranej_bg}; color: #fff;">${runda.seria_przegranej}</td>
+                <td style="background: ${runda.seria_wygranej_bg}; color: #fff;">${runda.seria_wygranej}</td>
             </tr>
         `);
     }
@@ -376,30 +423,45 @@ function draw_strategy(form_values){
             <th>Obstawiam</th>
             <th>Wynik</th>
             <th>Bilans</th>
+            <th>Seria koloru</th>
+            <th>Seria przegranej</th>
+            <th>Seria wygranej</th>
         </tr>
     </thead>
     `);
+
+    zysk = kwota_zakonczenia - kwota_poczatkowa;
     
 
 
     var _chart_bilans = $('<div id="chart_bilans" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>');
-
+    var _chart_seria_koloru = $('<div id="chart_seria_koloru" style="height: 400px; width: 300px; display: inline-block;"></div>');
+    var _chart_seria_przegranej = $('<div id="chart_seria_przegranej" style="height: 400px; width: 300px; display: inline-block;"></div>');
+    var _chart_seria_wygranej = $('<div id="chart_seria_wygranej" style="height: 400px; width: 300px; display: inline-block;"></div>');
 
     var _table = $('<table>').append(_thead).append(_tbody);
     var _html = $("<div>")
-    .append($('<h1>').text("Wynik strategia. Kwota poczatkowa " + kwota_poczatkowa))
+    .append($('<h1>').text("Wynik strategii -"))
+    .append($('<h4>').text("Kwota poczatkowa: " + kwota_poczatkowa.toFixed(2)))
+    .append($('<h4>').text("Kwota zakonczenia: " + kwota_zakonczenia.toFixed(2)))
+    .append($('<h4>').text("Zysk: " + zysk.toFixed(2)))
     
     .append(_chart_bilans)
+    .append(_chart_seria_koloru)
+    .append(_chart_seria_przegranej)
+    .append(_chart_seria_wygranej)
     .append(_table);
 
     $('#form_result').append(_html);
 
+
+    //
+    // Bilans
     var rundy_bilans = [];
 
     for(var i = 0; i < rundy.length; i++){
         rundy_bilans.push(rundy[i].bilans);
     }
-
 
     Highcharts.chart('chart_bilans', {
         chart: {
@@ -425,6 +487,112 @@ function draw_strategy(form_values){
             data: rundy_bilans
         }]
     });
+
+
+
+    //
+    // Seria koloru
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_koloru);
+    }
+
+    Highcharts.chart('chart_seria_koloru', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik wystąpien koloru'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik wystąpien koloru'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
+
+
+    //
+    // Seria seria_przegranej
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_przegranej);
+    }
+
+    Highcharts.chart('chart_seria_przegranej', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik przegranych rund'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik przegranych rund'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
+
+
+    //
+    // Seria seria_wygranej
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_wygranej);
+    }
+
+    Highcharts.chart('chart_seria_wygranej', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik wygranych rund'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik wygranych rund'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
 }
 
 
@@ -697,6 +865,28 @@ function draw_chartPie(){
             }]
         }]
     });
+}
+
+
+function shadeColor(color, percent) {
+
+    var R = parseInt(color.substring(1,3),16);
+    var G = parseInt(color.substring(3,5),16);
+    var B = parseInt(color.substring(5,7),16);
+
+    R = parseInt(R * (100 + percent) / 100);
+    G = parseInt(G * (100 + percent) / 100);
+    B = parseInt(B * (100 + percent) / 100);
+
+    R = (R<255)?R:255;  
+    G = (G<255)?G:255;  
+    B = (B<255)?B:255;  
+
+    var RR = ((R.toString(16).length==1)?"0"+R.toString(16):R.toString(16));
+    var GG = ((G.toString(16).length==1)?"0"+G.toString(16):G.toString(16));
+    var BB = ((B.toString(16).length==1)?"0"+B.toString(16):B.toString(16));
+
+    return "#"+RR+GG+BB;
 }
 
 </script>
