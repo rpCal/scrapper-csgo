@@ -113,6 +113,31 @@ function run(){
 };
 
 
+function getJsonData(callback){
+
+    //2018-02-23T11:29:00
+    // var minId = 1235890;
+    // var maxId = 1237594;
+
+    // 2018-02-26T13:58
+    var minId = 1241201;
+    var maxId = 1246082;
+
+    return $.get('./results.json')
+    .done(function (data) {
+        results = _.filter(data, function(o) { 
+            var id = parseInt(o.id, 10); 
+            return id > minId && id < maxId; 
+        });
+
+        keys = Object.keys(results);
+
+        callback();
+    })
+}
+
+
+
 function draw_strategy_form(){
 
     var _form = $(`
@@ -679,22 +704,6 @@ function draw_title(){
     title += "<br/>(ID:" + item_first.id +'-' + item_last.id + ") ";
     title += "<br> Suma wynikow: " + keys.length; 
     $('#root').append($("<h1>").html(title))
-}
-
-function getJsonData(callback){
-    var minId = 1235890;
-    var maxId = 1237594;
-    return $.get('./results.json')
-    .done(function (data) {
-        results = _.filter(data, function(o) { 
-            var id = parseInt(o.id, 10); 
-            return id > minId && id < maxId; 
-        });
-
-        keys = Object.keys(results);
-
-        callback();
-    })
 }
 
 
