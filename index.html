@@ -506,19 +506,21 @@ function oblicz_rundy(form_values){
                     default_mnoznik_wygranej = 14;
                 }
                 tmp_bet_aktualny = bet_aktualny;
-                kwota_wygranej = parseInt(bet_aktualny * default_mnoznik_wygranej, 10) - bet_aktualny;
+                kwota_wygranej = parseInt(bet_aktualny * default_mnoznik_wygranej, 10);
+                kwota_finalna = kwota_wygranej - bet_aktualny;
                 bet_aktualny = bet_poczatkowy;
                 seria_przegranej = 0;
                 seria_wygranej++;
             }else{
                 tmp_bet_aktualny = parseInt(bet_aktualny, 10);
                 kwota_wygranej = -1 * tmp_bet_aktualny;
+                kwota_finalna = kwota_wygranej;
                 bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik, 10);
                 seria_wygranej = 0;
                 seria_przegranej++;
             }
 
-            kwota_finalna = kwota_wygranej;
+            
             bilans += kwota_finalna;
             
             if(bilans <= 0 ){ bilans = 0; }
