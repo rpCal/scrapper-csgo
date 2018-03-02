@@ -492,7 +492,6 @@ function oblicz_rundy(form_values){
             tmp_bet_aktualny = bet_aktualny;
 
             var czy_wygrana = atrubut_wygranej == oczekiwana_wartosc_atrybutu_wygranej;
-            var tmp_mnoznik = mnoznik;
 
             if(bet_aktualny > bilans){
                 bet_aktualny = bilans;
@@ -502,19 +501,19 @@ function oblicz_rundy(form_values){
             var kwota_wygranej = 0;
 
             if(czy_wygrana){
+                var default_mnoznik_wygranej = 2;
                 if(wynik_rundy['c'] == "green"){
-                    tmp_mnoznik = 14;
+                    default_mnoznik_wygranej = 14;
                 }
-
-                tmp_bet_aktualny = parseInt(roundUp(bet_aktualny * tmp_mnoznik), 10);
-                kwota_wygranej = tmp_bet_aktualny;
+                tmp_bet_aktualny = bet_aktualny;
+                kwota_wygranej = parseInt(bet_aktualny * default_mnoznik_wygranej, 10);
                 bet_aktualny = bet_poczatkowy;
                 seria_przegranej = 0;
                 seria_wygranej++;
             }else{
-                tmp_bet_aktualny = parseInt(roundUp(bet_aktualny), 10);
+                tmp_bet_aktualny = parseInt(bet_aktualny, 10);
                 kwota_wygranej = -1 * tmp_bet_aktualny;
-                bet_aktualny = 1 * parseInt(roundUp(bet_aktualny * mnoznik), 10);
+                bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik, 10);
                 seria_wygranej = 0;
                 seria_przegranej++;
             }
