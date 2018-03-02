@@ -506,7 +506,7 @@ function oblicz_rundy(form_values){
                     default_mnoznik_wygranej = 14;
                 }
                 tmp_bet_aktualny = bet_aktualny;
-                kwota_wygranej = parseInt(bet_aktualny * default_mnoznik_wygranej, 10);
+                kwota_wygranej = parseInt(bet_aktualny * default_mnoznik_wygranej, 10) - bet_aktualny;
                 bet_aktualny = bet_poczatkowy;
                 seria_przegranej = 0;
                 seria_wygranej++;
