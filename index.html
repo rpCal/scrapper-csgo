@@ -12,7 +12,7 @@
   </head>
   <body>
       <div class="container-fluid text-center">
-        <div id="root"></div>
+        <div id="root_group"></div>
       </div>
 
     <!-- Optional JavaScript -->
@@ -79,8 +79,13 @@
     </style>
 <script>
 
+var data_response = [];    
+
 var results = [];
 var keys = [];
+
+var _minId = null;
+var _maxId = null;
 
 // start
 $(document).ready(function(){ 
@@ -93,35 +98,56 @@ $(document).ready(function(){
 
 function run(){
     
-    $('#root').html("");
+    $('#root_group').html("");
 
-    draw_title();
-    draw_chartColor();
-    draw_lineChart_histogram();
-    // test_different_params();
-    draw_strategy_form();
+    var index = pick_index_min_max();
+
+    draw_filter_data_form(index.minId, index.maxId);
 };
+
+function pick_index_min_max(minId, maxId){
+
+    // 2018-02-23T11:29:00 | 1235890 - 1237594
+    // 2018-02-26T13:58 | 1241201 - 1247357
+    var default_min = 1241201;
+    var default_max = 1247357;
+
+    if(!minId){ minId = default_min; }    
+    if(isNaN(minId)){ minId = default_min}
+    if(minId < default_min){ minId = default_min; }
+    if(!data_response[minId]){ minId = default_min; }
+
+    if(!maxId){ 
+        // set new default_max from result
+        if(default_max == 1247357){
+            keys = Object.keys(data_response);
+            default_max = data_response[keys[keys.length - 1]].id;
+        }
+        
+        maxId = default_max; 
+    }
+    if(isNaN(maxId)){ maxId = default_max; }
+    if(!data_response[maxId]){ maxId = default_max; }
+
+    _minId = minId + "";
+    _maxId = maxId + "";
+
+    return { minId: minId, maxId: maxId };
+}
+
+function filter_update_results(minId, maxId){
+    results = _.filter(data_response, function(o) { 
+        var id = parseInt(o.id, 10); 
+        return id > minId && id < maxId; 
+    });
+    keys = Object.keys(results);
+}
 
 
 function getJsonData(callback){
-
-    //2018-02-23T11:29:00
-    // var minId = 1235890;
-    // var maxId = 1237594;
-
-    // 2018-02-26T13:58
-    var minId = 1241201;
-    var maxId = 1247357;
-
     return $.get('./results.json')
     .done(function (data) {
-        results = _.filter(data, function(o) { 
-            var id = parseInt(o.id, 10); 
-            return id > minId && id < maxId; 
-        });
-
-        keys = Object.keys(results);
-
+        data_response = data;
         callback();
     })
 }
@@ -151,6 +177,64 @@ function test_different_params(){
         tmp[5].value = 2.0 ;
         console.log(tmp[4].value.toFixed(2) , oblicz_rundy(tmp).zysk.toFixed(2));
     }
+}
+
+
+function draw_filter_data_form(index_min, index_max){
+
+    var _form = $(`
+    <form>
+
+        <fieldset>
+            <label>ID początku</label>
+            <input name="index_min" value="${index_min}" />
+        </fieldset>
+
+        <fieldset>
+            <label>ID końca</label>
+            <input name="index_max" value="${index_max}" />
+        </fieldset>
+
+        <fieldset>
+            <small>* Gry są mniej więcej co minute...</small><br>
+            <small>* Zakres 24h to 1700 wpisów</small><br>
+            <small>* Zakres start ID: ${index_min} == ${data_response[index_min].t}</small><br>
+            <small>* Zakres end ID: ${index_max} == ${data_response[index_max].t}</small><br>
+            <button type="submit">Filtruj zakres</button>
+        </fieldset>
+
+    </form>
+    `);
+
+
+    _form.on('submit', function(e){
+        e.preventDefault();
+
+        $('#root').html("");
+        var form_values = $(this).serializeArray();
+        // console.log('form submit with data: ',  form_values)
+
+        var index_min = parseInt(_.find(form_values, { name: "index_min" })['value'], 10);
+        var index_max = parseInt(_.find(form_values, { name: "index_max" })['value'], 10);
+        var index = pick_index_min_max(index_min, index_max);
+
+        filter_update_results(index.minId, index.maxId);
+        draw_title();
+        draw_chartColor();
+        draw_lineChart_histogram();
+        
+        draw_strategy_form();
+        
+        return false;
+    })
+
+    $('#root_group')
+        .append($('<h1>').text("Wybierz zakres danych"))
+        .append(_form)
+        .append($('<div id="root"></div>'))
+
+    _form.trigger('submit');
+
 }
 
 
@@ -1057,7 +1141,7 @@ function run_strategy_number(number){
     var czy_zakonczyc = false;
     
     
-    var item_first = results[keys[0]];
+    var item_first = results[0];
     var pierwszy_kolor = item_first.c;
 
     var kwota_poczatkowa = 1000;
@@ -1092,7 +1176,7 @@ function run_strategy_color(kolor){
     var czy_zakonczyc = false;
     
     
-    var item_first = results[keys[0]];
+    var item_first = results[0];
     var pierwszy_kolor = item_first.c;
 
     var kwota_poczatkowa = 1000;
@@ -1122,11 +1206,15 @@ function run_strategy_color(kolor){
 
 function draw_title(){
 
-    var item_first = results[keys[0]];
-    var item_last = results[keys[keys.length - 1]];
-    var title =  moment(item_first.t).format('YYYY-MM-DD HH:MM') + " - " + moment(item_last.t).format('YYYY-MM-DD HH:MM');
-    title += "<br/>(ID:" + item_first.id +'-' + item_last.id + ") ";
-    title += "<br> Suma wynikow: " + keys.length; 
+    var item_first = results[0];
+    var item_last = results[keys.length - 1];
+    var time_start = moment(item_first.t).format('YYYY-MM-DD HH:MM');
+    var time_end = moment(item_last.t).format('YYYY-MM-DD HH:MM')
+    var title = `
+        ${time_start} - ${time_end} <br> 
+        ID: ${_minId} - ${_maxId} <br> 
+        Liczba rund: ${keys.length}
+    `;
     $('#root').append($("<h1>").html(title))
 }
 
@@ -1190,8 +1278,8 @@ function draw_chartColor(){
 
     
 
-    var item_first = results[keys[0]];
-    var item_last = results[keys[keys.length - 1]];
+    var item_first = results[0];
+    var item_last = results[keys.length - 1];
 
     var count_green = 0;
     var count_red = 0;
@@ -1240,8 +1328,8 @@ function draw_chartPie(){
 
     
 
-    var item_first = results[keys[0]];
-    var item_last = results[keys[keys.length - 1]];
+    var item_first = results[0];
+    var item_last = results[keys.length - 1];
 
     var count_green = 0;
     var count_red = 0;
