@@ -336,11 +336,11 @@ function oblicz_rundy(form_values){
     // GRANIE
     //
 
-    var rundy = [];
+    var _rundy = [];
     var runda = {
         indeks: 0,
         id: "",
-        czas: "",
+        t: "",
         wynik_liczba: 0,
         wynik_kolor: "",
         atrubut_wygranej: "",
@@ -529,10 +529,10 @@ function oblicz_rundy(form_values){
             seria_przegranej = 0;
         }
 
-        rundy.push(_.merge({}, runda, { 
+        _rundy.push(_.merge({}, runda, { 
             index: index_rundy,
             id: wynik_rundy.id,
-            czas: wynik_rundy.t,
+            t: wynik_rundy.t,
             wynik_liczba: wynik_rundy.n,
             wynik_kolor: wynik_rundy.c,
             
@@ -570,10 +570,10 @@ function oblicz_rundy(form_values){
         }
     }
 
-    var kwota_zakonczenia = rundy[rundy.length - 1].bilans;
+    var kwota_zakonczenia = _rundy[_rundy.length - 1].bilans;
     var zysk = kwota_zakonczenia - kwota_poczatkowa;
 
-    return {rundy: rundy, zysk:zysk, kwota_poczatkowa: kwota_poczatkowa, kwota_zakonczenia:kwota_zakonczenia, nazwa_attr_wygranej: nazwa_attr_wygranej };
+    return {rundy: _rundy, zysk:zysk, kwota_poczatkowa: kwota_poczatkowa, kwota_zakonczenia:kwota_zakonczenia, nazwa_attr_wygranej: nazwa_attr_wygranej };
 }
 
 
@@ -639,7 +639,7 @@ function draw_strategy(form_values, show_table){
             <tr style="">
                 <td>${runda.index}</td>
                 <td>${runda.id}</td>
-                <td>${moment(runda.czas).format('HH:mm:ss')}</td>
+                <td>${moment(runda.t).format('HH:mm:ss')}</td>
                 <td class="${runda.wynik_kolor}">${runda.wynik_liczba}</td>
                 
                 <td class="${runda.czy_grac>0?'bg_g':'bg_r'}">
@@ -717,7 +717,10 @@ function draw_strategy(form_values, show_table){
     
 
 
-    var _chart_bilans = $('<div id="chart_bilans" style="height: 400px; width: 500px; margin: 0 auto"></div>');
+    var _chart_bilans = $('<div id="chart_bilans" style="height: 400px; width: 100%; display: inline-block;"></div>');
+    // var _chart_bilans_czas = $('<div id="chart_bilans_czas" style="height: 400px; width: 100%; display: inline-block;"></div>');
+    // var _chart_bilans_godziny = $('<div id="chart_bilans_godziny" style="height: 400px; width: 100%; display: inline-block;"></div>');
+
     var _chart_seria_koloru = $('<div id="chart_seria_koloru" style="height: 400px; width: 450px; display: inline-block;"></div>');
     var _chart_seria_przegranej = $('<div id="chart_seria_przegranej" style="height: 400px; width: 450px; display: inline-block;"></div>');
     var _chart_seria_wygranej = $('<div id="chart_seria_wygranej" style="height: 400px; width: 450px; display: inline-block;"></div>');
@@ -745,6 +748,8 @@ function draw_strategy(form_values, show_table){
     .append(
         _charts
             .append(_chart_bilans)
+            // .append(_chart_bilans_czas)
+            // .append(_chart_bilans_godziny)
             .append($('<br>'))
             .append($('<br>'))
             // .append(_chart_seria_koloru)
@@ -802,6 +807,96 @@ function draw_strategy(form_values, show_table){
             data: rundy_bilans
         }]
     });
+
+    // 13:24:00
+
+    // var tmp_categories = {};
+    // var chart_bilans_godziny_series = [];
+    // var data_start = moment(rundy[0].t);
+    // var dzien_rozpoczecia = data_start.dayOfYear();
+    // var dzien_zakonczenia = moment(rundy[keys.length - 1].t).dayOfYear();
+    // var index_series = dzien_zakonczenia - dzien_rozpoczecia;
+    // if(index_series <= 0){ index_series = 1; }
+
+    // var day_categories = [];
+    // for(var hh = 0; hh < 24; hh++){
+    //     for(var mm = 0; mm < 60; mm++){
+    //         day_categories.push(`${(hh < 10)?"0"+hh:hh}:${(mm < 10)?"0"+mm:mm}:00`);
+    //     }
+    // }
+    // console.log(day_categories);
+
+    // for(var j = 0; j <= index_series; j++){
+    //     chart_bilans_godziny_series.push({
+    //         name: "Czas: " + data_start.add(j, 'd').format("YYY-MM-DD"),
+    //         _items: {},
+    //         data: []
+    //     })
+    // }
+
+    // for(var i = 0; i < rundy.length; i++){
+
+    //     var category_name = rundy[i].t.split("T")[1];
+    //     if(!tmp_categories[category_name]){ 
+    //         tmp_categories[category_name] = []; 
+    //     }
+
+    //     tmp_categories[category_name].push(rundy[i].bilans);
+
+    //     var item = rundy[i].bilans;
+    //     if(chart_bilans_godziny_series.length > 1){
+    //         var dzien_index = moment(rundy[i].t).dayOfYear();
+    //         var index = dzien_index - dzien_rozpoczecia;
+    //         chart_bilans_godziny_series[index].data.push(item);
+    //     }else{
+    //         chart_bilans_godziny_series[0].data.push(item)
+    //     }
+    // }
+    // console.log(tmp_categories);
+
+    // Highcharts.chart('chart_bilans_godziny', {
+    //     colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
+    //   '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+    //     chart: {
+    //         zoomType: 'x'
+    //     },
+    //     title: {
+    //         text: 'Bilans - czas w dniu'
+    //     },
+    //     xAxis: {
+    //         categories: Object.keys(tmp_categories),
+    //         tickmarkPlacement: 'on'
+    //     },
+    //     yAxis: {
+    //         title: {
+    //             text: 'Bilans (zł)'
+    //         }
+    //     },
+    //     tooltip: {
+    //         crosshairs: true,
+    //         shared: true
+    //     },
+
+    //     plotOptions: {
+    //         spline: {
+    //             marker: {
+    //                 radius: 4,
+    //                 lineColor: '#666666',
+    //                 lineWidth: 1
+    //             }
+    //         }
+    //     },
+    //     legend: {
+    //         enabled: false,
+    //         layout: 'vertical',
+    //         align: 'right',
+    //         verticalAlign: 'middle'
+    //     },
+
+    //     series: chart_bilans_godziny_series
+    // });
+
+
 
 
 
