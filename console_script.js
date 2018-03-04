@@ -4,6 +4,14 @@ var last_round_hash = document.getElementById('roundHash').innerHTML;
 var last_rand_num = document.getElementById('randNum').innerHTML;
 var t0 = performance.now();
 
+var bilans_part1 = parseInt(document.querySelector('.coins-component.middle-block').innerHTML);
+var bilans_part2 = parseInt(document.querySelector('.coins-component.middle-block .part').innerHTML);
+var bilans_start = parseInt("" + bilans_part1 + bilans_part2);
+
+bilans = bilans_start;
+
+console.log("START --- ", "BILANS:", bilans, ",RUND: ", max_round,",MNOZ:", mnoznik, ",BET:",bet_price)
+
 function run(){
  var curr_rand_num = document.getElementById('randNum').innerHTML;
  if(curr_rand_num != last_rand_num){ 
@@ -13,8 +21,8 @@ function run(){
       var round_elem = document.querySelector('.bonus-game-state.back.bonus-game-end'); 
       var win_color = null;
       if(round_elem.classList.contains('red')){ win_color = "red"; }
-      if(round_elem.classList.contains('green')){ win_color = "green"; }
       if(round_elem.classList.contains('black')){ win_color = "black"; }
+      if(round_elem.classList.contains('zero')){ win_color = "green"; }
       var is_win = win_color == "red";
 
       if(is_win){
@@ -26,7 +34,8 @@ function run(){
       }
 
       bilans = bilans + kwota_wygranej; 
-      console.log("Wynik rundy. Kolor: ", win_color, ", wygrana: ", kwota_wygranej,", bilans: ", bilans, ", bet: ", curr_bet)
+      console.log("Wynik rundy-KOL: ", win_color, ", KW: ", kwota_wygranej,
+      ", BIL: ", bilans, ", BET: ", curr_bet, ", ZYSK: ", bilans_start - bilans)
   }
  }
 
@@ -35,8 +44,8 @@ function run(){
   last_round_hash = curr_round_hash;
   var t1 = performance.now(); var time = (t1 - t0); t0 = performance.now();
   var game_id = document.querySelector('.bonus-game-info .value').innerHTML;
-  console.log("Nowa runda -- ID: ", game_id, ", index:", round_count, ", Z:", (max_round - round_count),
-    ",hash: ", curr_round_hash.slice(0, 10),",czas:", parseInt(time / 1000) + "s");
+  console.log("Nowa runda -- ID: ", game_id, ", LP:", round_count, ", MAX:", (max_round - round_count),
+    ",T:", parseInt(time / 1000) + "s - ", new Date());
   
   round_count++; 
   czy_grac = round_count >= 1 && round_count <= max_round;
