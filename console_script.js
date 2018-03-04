@@ -35,7 +35,7 @@ function run(){
 
       bilans = bilans + kwota_wygranej; 
       console.log("Wynik rundy-KOL: ", win_color, ", KW: ", kwota_wygranej,
-      ", BIL: ", bilans, ", BET: ", curr_bet, ", ZYSK: ", bilans_start - bilans)
+      ", BIL: ", bilans, ", BET: ", curr_bet, ", ZYSK: ", bilans - bilans_start)
   }
  }
 
@@ -63,7 +63,7 @@ function run(){
         el.selectionEnd = cp;
 
         document.querySelector('.bonus-game-calc-place-bet').click();
-      console.log("Obstawiam za kwote: ", curr_bet, ", bilans : ", bilans)
+      console.log("Obstawiam za kwote: ", curr_bet, ", bilans : ", bilans, ", ZYSK: ", bilans - bilans_start)
   }
  }else{ console.log('czekam...'); }
 }
