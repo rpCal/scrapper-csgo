@@ -1,4 +1,4 @@
-var bilans = 1000, round_count = 0, bet_price = 10, curr_bet = bet_price, mnoznik = 1.7, czy_grac = false, czy_obstawione = false;
+var bilans = 7794, round_count = 0, bet_price = 10, curr_bet = bet_price, mnoznik = 1.7, czy_grac = false, czy_obstawione = false;
 
 var last_round_hash = document.getElementById('roundHash').innerHTML;
 var last_rand_num = document.getElementById('randNum').innerHTML;
@@ -18,15 +18,15 @@ function run(){
       var is_win = win_color == "red";
 
       if(is_win){
-        var kwota_wygranej = curr_bet * 2;
+        var kwota_wygranej = parseInt(curr_bet * 2);
 		curr_bet = bet_price;
       }else{
         var kwota_wygranej = 0;
-        curr_bet = curr_bet * mnoznik;
+        curr_bet = parseInt(curr_bet * mnoznik);
       }
 
       bilans = bilans + kwota_wygranej; 
-      console.log("Wynik rundy. Wygrana: ", kwota_wygranej,", bilans: ", bilans, curr_bet)
+      console.log("Wynik rundy. Kolor: ", win_color, ", wygrana: ", kwota_wygranej,", bilans: ", bilans, ", bet: ", curr_bet)
   }
  }
 
@@ -34,13 +34,25 @@ function run(){
  if(curr_round_hash != last_round_hash){
   last_round_hash = curr_round_hash;
   var t1 = performance.now(); var time = (t1 - t0); t0 = performance.now();
-  console.log("Nowa runda -- ", round_count, curr_round_hash.slice(0, 10), parseInt(time / 1000) + "s");
+  var game_id = document.querySelector('.bonus-game-info .value').innerHTML;
+  console.log("Nowa runda -- ", game_id, round_count, curr_round_hash.slice(0, 10), parseInt(time / 1000) + "s");
   
   round_count++; 
   czy_grac = round_count >= 1 && round_count <= 10;
 
   if(czy_grac){
-      czy_obstawione = true; bilans = bilans - curr_bet;
+      czy_obstawione = true; 
+      bilans = bilans - curr_bet;
+
+        document.querySelector('.button.clear').click();
+        var el = document.querySelector('.bonus-game-bet-input');
+        var cp = el.selectionStart;
+        el.value = curr_bet;
+        el.dispatchEvent(new Event('change'));
+        el.selectionStart = cp;
+        el.selectionEnd = cp;
+
+        // document.querySelector('.bonus-game-calc-place-bet').click();
       console.log("Obstawiam za kwote: ", curr_bet, ", bilans : ", bilans)
   }
  }else{ console.log('czekam...'); }
