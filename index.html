@@ -29,6 +29,10 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
     
     <div class="container text-center" style="font-size: 10px; color: #bbb;">
         <br><br><br><br><br><br>
@@ -323,10 +327,18 @@ function draw_strategy_form(){
     _form.on('submit', function(e){
         e.preventDefault();
 
-        $('#form_result').html("");
         var form_values = $(this).serializeArray();
         // console.log('form submit with data: ',  form_values)
-        draw_strategy(form_values, true);
+
+        $('#loading-text').html("Przeliczam...")
+        setTimeout(function(){
+            var t0 = performance.now();
+            $('#form_result').html("");
+            draw_strategy(form_values, true, function(){
+                var t1 = performance.now();
+                $('#loading-text').html("Zakończono przeliczanie. Czas liczenia: " + ( (t1 - t0) / 1000 ).toFixed(2) +"s");
+            });
+        }, 200);
         
         return false;
     })
@@ -334,6 +346,7 @@ function draw_strategy_form(){
     $('#root')
         .append($('<h1>').text("Wybierz parametry strategi"))
         .append(_form)
+        .append($('<h2>').attr("id", "loading-text").css("color", "#20b2aa"))
         .append($('<div id="form_result"></div>'))
 
 }
@@ -528,15 +541,13 @@ function oblicz_rundy(form_values){
                 if(wynik_rundy['c'] == "green"){
                     default_mnoznik_wygranej = 14;
                 }
-                tmp_bet_aktualny = bet_aktualny;
+                tmp_bet_aktualny = parseInt(bet_aktualny, 10);
                 kwota_wygranej = parseInt(bet_aktualny * default_mnoznik_wygranej, 10);
                 kwota_finalna = kwota_wygranej ;
                 bilans += kwota_finalna - bet_aktualny;
                 // bet_aktualny = bet_poczatkowy;
                 seria_przegranej = 0;
                 seria_wygranej++;
-
-                // console.log(seria_wygranej >= seria_win_number);
 
                 if(seria_wygranej >= seria_win_number){
                     bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik_wygranej, 10);
@@ -615,7 +626,7 @@ function oblicz_rundy(form_values){
 }
 
 
-function draw_strategy(form_values, show_table){
+function draw_strategy(form_values, show_table, callback){
     
     var _wynik = oblicz_rundy(form_values);
     var rundy = _wynik.rundy;
@@ -645,96 +656,96 @@ function draw_strategy(form_values, show_table){
     // Wyswietlanie
     //
 
-    var _tbody = $('<tbody>');
+    // var _tbody = $('<tbody>');
 
-    for(var i = 0; i < rundy.length; i++){
-        var runda = rundy[i];
-        bg_seria_koloru_black = shadeBlendConvert( runda.seria_koloru_black / 50 + 0.6, "#000000" )
-        bg_seria_koloru_red = shadeBlendConvert(runda.seria_koloru_red / 50 + 0.3, "#ff0000")
-        bg_seria_koloru_green = shadeBlendConvert(runda.seria_koloru_green / 50 + 0.3, "#00ff00")
+    // for(var i = 0; i < rundy.length; i++){
+    //     var runda = rundy[i];
+    //     bg_seria_koloru_black = shadeBlendConvert( runda.seria_koloru_black / 50 + 0.6, "#000000" )
+    //     bg_seria_koloru_red = shadeBlendConvert(runda.seria_koloru_red / 50 + 0.3, "#ff0000")
+    //     bg_seria_koloru_green = shadeBlendConvert(runda.seria_koloru_green / 50 + 0.3, "#00ff00")
 
-        bg_seria_brak_koloru_black = shadeBlendConvert( runda.seria_brak_koloru_black / 50 + 0.6, "#000000" )
-        bg_seria_brak_koloru_red = shadeBlendConvert(runda.seria_brak_koloru_red / 50 + 0.3, "#ff0000")
-        bg_seria_brak_koloru_green = shadeBlendConvert(runda.seria_brak_koloru_green / 50 + 0.3, "#00ff00")
+    //     bg_seria_brak_koloru_black = shadeBlendConvert( runda.seria_brak_koloru_black / 50 + 0.6, "#000000" )
+    //     bg_seria_brak_koloru_red = shadeBlendConvert(runda.seria_brak_koloru_red / 50 + 0.3, "#ff0000")
+    //     bg_seria_brak_koloru_green = shadeBlendConvert(runda.seria_brak_koloru_green / 50 + 0.3, "#00ff00")
 
-        bg_seria_koloru = shadeBlendConvert(runda.seria_koloru / 50 + 0.3, "#1b75bc");
-        bg_seria_przegranej = shadeBlendConvert(runda.seria_przegranej / 50 + 0.3, "#3f4651");
-        bg_seria_wygranej = shadeBlendConvert(runda.seria_wygranej / 50 + 0.3, "#3f4651");
+    //     bg_seria_koloru = shadeBlendConvert(runda.seria_koloru / 50 + 0.3, "#1b75bc");
+    //     bg_seria_przegranej = shadeBlendConvert(runda.seria_przegranej / 50 + 0.3, "#3f4651");
+    //     bg_seria_wygranej = shadeBlendConvert(runda.seria_wygranej / 50 + 0.3, "#3f4651");
         
-        if(runda.seria_przegranej > max_seria_przegranych){ max_seria_przegranych = runda.seria_przegranej; } 
-        if(runda.seria_wygranej > max_seria_wygranych){ max_seria_wygranych = runda.seria_wygranej; } 
-        if(runda.seria_koloru_black > max_seria_black){ max_seria_black = runda.seria_koloru_black; } 
-        if(runda.seria_koloru_red > max_seria_red){ max_seria_red = runda.seria_koloru_red; } 
-        if(runda.seria_koloru_green > max_seria_green){ max_seria_green = runda.seria_koloru_green; } 
-        if(runda.bet_aktualny > max_bet){ max_bet = runda.bet_aktualny; } 
-        if(runda.zmiana_bilansu > max_zmiana_bilansu){ max_zmiana_bilansu = runda.zmiana_bilansu; } 
+    //     if(runda.seria_przegranej > max_seria_przegranych){ max_seria_przegranych = runda.seria_przegranej; } 
+    //     if(runda.seria_wygranej > max_seria_wygranych){ max_seria_wygranych = runda.seria_wygranej; } 
+    //     if(runda.seria_koloru_black > max_seria_black){ max_seria_black = runda.seria_koloru_black; } 
+    //     if(runda.seria_koloru_red > max_seria_red){ max_seria_red = runda.seria_koloru_red; } 
+    //     if(runda.seria_koloru_green > max_seria_green){ max_seria_green = runda.seria_koloru_green; } 
+    //     if(runda.bet_aktualny > max_bet){ max_bet = runda.bet_aktualny; } 
+    //     if(runda.zmiana_bilansu > max_zmiana_bilansu){ max_zmiana_bilansu = runda.zmiana_bilansu; } 
 
-        if(runda.seria_brak_koloru_black > max_seria_brak_black){ max_seria_brak_black = runda.seria_brak_koloru_black; } 
-        if(runda.seria_brak_koloru_red > max_seria_brak_red){ max_seria_brak_red = runda.seria_brak_koloru_red; } 
-        if(runda.seria_brak_koloru_green > max_seria_brak_green){ max_seria_brak_green = runda.seria_brak_koloru_green; } 
+    //     if(runda.seria_brak_koloru_black > max_seria_brak_black){ max_seria_brak_black = runda.seria_brak_koloru_black; } 
+    //     if(runda.seria_brak_koloru_red > max_seria_brak_red){ max_seria_brak_red = runda.seria_brak_koloru_red; } 
+    //     if(runda.seria_brak_koloru_green > max_seria_brak_green){ max_seria_brak_green = runda.seria_brak_koloru_green; } 
 
-        _tbody.append(`
-            <tr style="">
-                <td>${runda.index}</td>
-                <td>${runda.id}</td>
-                <td>${moment(runda.t).format('HH:mm:ss')}</td>
-                <td class="${runda.wynik_kolor}">${runda.wynik_liczba}</td>
+    //     _tbody.append(`
+    //         <tr style="">
+    //             <td>${runda.index}</td>
+    //             <td>${runda.id}</td>
+    //             <td>${moment(runda.t).format('HH:mm:ss')}</td>
+    //             <td class="${runda.wynik_kolor}">${runda.wynik_liczba}</td>
                 
-                <td class="${runda.czy_grac>0?'bg_g':'bg_r'}">
-                    ${(runda.czy_grac)?'tak':'nie'}
-                </td>
-                <td>${
-                    nazwa_attr_wygranej == 'c' ? 
-                        (runda.wynik_oczekiwany == 'red')? "czerwony": (runda.wynik_oczekiwany == 'green')?"zielony":"czarny"
-                    : runda.wynik_oczekiwany}</td>
-                <td>${runda.bet_aktualny.toFixed(2)}</td>
-                <td class="${(runda.zmiana_bilansu>0)?'bg_g': (runda.zmiana_bilansu == 0? '': 'bg_r')}">
-                    ${(runda.zmiana_bilansu) > 0 ? "+" + runda.zmiana_bilansu.toFixed(2) : runda.zmiana_bilansu.toFixed(2)}
-                </td>
-                <td>${runda.bilans.toFixed(2)}</td>
-                <td>---</td>
-                <td style="background: ${bg_seria_koloru}; color: #fff;">${runda.seria_koloru}</td>
-                <td style="background: ${bg_seria_przegranej}; color: #000;">${runda.seria_przegranej}</td>
-                <td style="background: ${bg_seria_wygranej}; color: #000;">${runda.seria_wygranej}</td>
-                <td>---</td>
-                <td style="background: ${bg_seria_koloru_black}; color: #000;">${runda.seria_koloru_black}</td>
-                <td style="background: ${bg_seria_koloru_red}; color: #000;">${runda.seria_koloru_red}</td>
-                <td style="background: ${bg_seria_koloru_green}; color: #000;">${runda.seria_koloru_green}</td>
-                <td>---</td>
-                <td style="background: ${bg_seria_brak_koloru_black}; color: #000;">${runda.seria_brak_koloru_black}</td>
-                <td style="background: ${bg_seria_brak_koloru_red}; color: #000;">${runda.seria_brak_koloru_red}</td>
-                <td style="background: ${bg_seria_brak_koloru_green}; color: #000;">${runda.seria_brak_koloru_green}</td>
+    //             <td class="${runda.czy_grac>0?'bg_g':'bg_r'}">
+    //                 ${(runda.czy_grac)?'tak':'nie'}
+    //             </td>
+    //             <td>${
+    //                 nazwa_attr_wygranej == 'c' ? 
+    //                     (runda.wynik_oczekiwany == 'red')? "czerwony": (runda.wynik_oczekiwany == 'green')?"zielony":"czarny"
+    //                 : runda.wynik_oczekiwany}</td>
+    //             <td>${runda.bet_aktualny.toFixed(2)}</td>
+    //             <td class="${(runda.zmiana_bilansu>0)?'bg_g': (runda.zmiana_bilansu == 0? '': 'bg_r')}">
+    //                 ${(runda.zmiana_bilansu) > 0 ? "+" + runda.zmiana_bilansu.toFixed(2) : runda.zmiana_bilansu.toFixed(2)}
+    //             </td>
+    //             <td>${runda.bilans.toFixed(2)}</td>
+    //             <td>---</td>
+    //             <td style="background: ${bg_seria_koloru}; color: #fff;">${runda.seria_koloru}</td>
+    //             <td style="background: ${bg_seria_przegranej}; color: #000;">${runda.seria_przegranej}</td>
+    //             <td style="background: ${bg_seria_wygranej}; color: #000;">${runda.seria_wygranej}</td>
+    //             <td>---</td>
+    //             <td style="background: ${bg_seria_koloru_black}; color: #000;">${runda.seria_koloru_black}</td>
+    //             <td style="background: ${bg_seria_koloru_red}; color: #000;">${runda.seria_koloru_red}</td>
+    //             <td style="background: ${bg_seria_koloru_green}; color: #000;">${runda.seria_koloru_green}</td>
+    //             <td>---</td>
+    //             <td style="background: ${bg_seria_brak_koloru_black}; color: #000;">${runda.seria_brak_koloru_black}</td>
+    //             <td style="background: ${bg_seria_brak_koloru_red}; color: #000;">${runda.seria_brak_koloru_red}</td>
+    //             <td style="background: ${bg_seria_brak_koloru_green}; color: #000;">${runda.seria_brak_koloru_green}</td>
                 
-            </tr>
-        `);
-    }
-    var _thead = $(`
-    <thead>
-        <tr>
-            <th>lp.</th>
-            <th>Id</th>
-            <th>Czas</th>
-            <th>Wypadło</th>
-            <th>Czy grac?</th>
-            <th>Chce mieć</th>
-            <th>Obstawiam</th>
-            <th>Wynik</th>
-            <th>Bilans</th>
-            <th>-</th>
-            <th>Seria koloru</th>
-            <th>Seria przegranej</th>
-            <th>Seria wygranej</th>
-            <th>-</th>
-            <th>Seria black</th>
-            <th>Seria red</th>
-            <th>Seria green</th>
-            <th>-</th>
-            <th>Seria brak black</th>
-            <th>Seria brak red</th>
-            <th>Seria brak green</th>
-        </tr>
-    </thead>
-    `);
+    //         </tr>
+    //     `);
+    // }
+    // var _thead = $(`
+    // <thead>
+    //     <tr>
+    //         <th>lp.</th>
+    //         <th>Id</th>
+    //         <th>Czas</th>
+    //         <th>Wypadło</th>
+    //         <th>Czy grac?</th>
+    //         <th>Chce mieć</th>
+    //         <th>Obstawiam</th>
+    //         <th>Wynik</th>
+    //         <th>Bilans</th>
+    //         <th>-</th>
+    //         <th>Seria koloru</th>
+    //         <th>Seria przegranej</th>
+    //         <th>Seria wygranej</th>
+    //         <th>-</th>
+    //         <th>Seria black</th>
+    //         <th>Seria red</th>
+    //         <th>Seria green</th>
+    //         <th>-</th>
+    //         <th>Seria brak black</th>
+    //         <th>Seria brak red</th>
+    //         <th>Seria brak green</th>
+    //     </tr>
+    // </thead>
+    // `);
 
     var _text_stats = $(`
     <div>
@@ -773,7 +784,8 @@ function draw_strategy(form_values, show_table){
 
     var _charts = $('<div>').css({"width": "100%", "minWidth": "100%"})
 
-    var _table = $('<table>').append(_thead).append(_tbody);
+    // var _table = $('<table>').append(_thead).append(_tbody);
+    var _table ="";
     var _html = $("<div>")
     .append($('<h1>').text("Wynik strategii"))
     .append($('<h4>').text("Kwota poczatkowa: " + kwota_poczatkowa.toFixed(2)))
@@ -1260,12 +1272,9 @@ function draw_strategy(form_values, show_table){
 
 
 
-
-
-
-
-
-    
+    if(!_.isUndefined(callback) && _.isFunction(callback)){
+        callback();
+    }    
 }
 
 

@@ -2237,3 +2237,7 @@
 {"message":"1cec6b93 new history successfully appended 41","level":"info"}
 {"message":"35c7b30b Execution: 0:03s; 2018-03-04T19:38:51 - start; 2018-03-04T19:38:55 - end ","level":"info"}
 {"message":"35c7b30b new history successfully appended 10","level":"info"}
+{"message":"48b63e38 Execution: 0:03s; 2018-03-04T19:49:26 - start; 2018-03-04T19:49:29 - end ","level":"info"}
+{"message":"48b63e38 new history successfully appended 13","level":"info"}
+{"message":"8cb9e0a9 BROWSER --- ERROR in puppeteer: Error: Evaluation failed: ReferenceError: $ is not defined\n    at <anonymous>:5:27","level":"error"}
+{"message":"8cb9e0a9 Execution: 0:03s; 2018-03-04T19:56:03 - start; 2018-03-04T19:56:05 - end ","level":"info"}
