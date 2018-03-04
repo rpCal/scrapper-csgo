@@ -331,9 +331,15 @@ function draw_strategy_form(){
     `);
 
 
+    var loading = false;
+
     _form.on('submit', function(e){
         e.preventDefault();
 
+        if(loading){
+            return;
+        }
+        loading = true;
         var form_values = $(this).serializeArray();
         // console.log('form submit with data: ',  form_values)
 
@@ -344,6 +350,7 @@ function draw_strategy_form(){
             draw_strategy(form_values, true, function(){
                 var t1 = performance.now();
                 $('#loading-text').html("Zakończono przeliczanie. Czas liczenia: " + ( (t1 - t0) / 1000 ).toFixed(2) +"s");
+                loading = false;
             });
         }, 200);
         
@@ -669,17 +676,17 @@ function draw_strategy(form_values, show_table, callback){
 
     for(var i = 0; i < rundy.length; i++){
         var runda = rundy[i];
-        bg_seria_koloru_black = shadeBlendConvert( runda.seria_koloru_black / 50 + 0.6, "#000000" )
-        bg_seria_koloru_red = shadeBlendConvert(runda.seria_koloru_red / 50 + 0.3, "#ff0000")
-        bg_seria_koloru_green = shadeBlendConvert(runda.seria_koloru_green / 50 + 0.3, "#00ff00")
+        // bg_seria_koloru_black = shadeBlendConvert( runda.seria_koloru_black / 50 + 0.6, "#000000" )
+        // bg_seria_koloru_red = shadeBlendConvert(runda.seria_koloru_red / 50 + 0.3, "#ff0000")
+        // bg_seria_koloru_green = shadeBlendConvert(runda.seria_koloru_green / 50 + 0.3, "#00ff00")
 
-        bg_seria_brak_koloru_black = shadeBlendConvert( runda.seria_brak_koloru_black / 50 + 0.6, "#000000" )
-        bg_seria_brak_koloru_red = shadeBlendConvert(runda.seria_brak_koloru_red / 50 + 0.3, "#ff0000")
-        bg_seria_brak_koloru_green = shadeBlendConvert(runda.seria_brak_koloru_green / 50 + 0.3, "#00ff00")
+        // bg_seria_brak_koloru_black = shadeBlendConvert( runda.seria_brak_koloru_black / 50 + 0.6, "#000000" )
+        // bg_seria_brak_koloru_red = shadeBlendConvert(runda.seria_brak_koloru_red / 50 + 0.3, "#ff0000")
+        // bg_seria_brak_koloru_green = shadeBlendConvert(runda.seria_brak_koloru_green / 50 + 0.3, "#00ff00")
 
-        bg_seria_koloru = shadeBlendConvert(runda.seria_koloru / 50 + 0.3, "#1b75bc");
-        bg_seria_przegranej = shadeBlendConvert(runda.seria_przegranej / 50 + 0.3, "#3f4651");
-        bg_seria_wygranej = shadeBlendConvert(runda.seria_wygranej / 50 + 0.3, "#3f4651");
+        // bg_seria_koloru = shadeBlendConvert(runda.seria_koloru / 50 + 0.3, "#1b75bc");
+        // bg_seria_przegranej = shadeBlendConvert(runda.seria_przegranej / 50 + 0.3, "#3f4651");
+        // bg_seria_wygranej = shadeBlendConvert(runda.seria_wygranej / 50 + 0.3, "#3f4651");
         
         if(runda.seria_przegranej > max_seria_przegranych){ max_seria_przegranych = runda.seria_przegranej; } 
         if(runda.seria_wygranej > max_seria_wygranych){ max_seria_wygranych = runda.seria_wygranej; } 
@@ -706,7 +713,7 @@ function draw_strategy(form_values, show_table, callback){
             wynik_nazwa,
             (runda.zmiana_bilansu) > 0 ? "+" + runda.zmiana_bilansu.toFixed(2) : runda.zmiana_bilansu.toFixed(2),
             runda.bilans.toFixed(2),
-            "-----",
+            runda.bilans - kwota_poczatkowa.toFixed(2),
             runda.seria_koloru,
             runda.seria_przegranej,
             runda.seria_wygranej,
@@ -803,6 +810,7 @@ function draw_strategy(form_values, show_table, callback){
 
 
     var _chart_bilans = $('<div id="chart_bilans" style="height: 400px; width: 100%; display: inline-block;"></div>');
+    var _chart_bilans_zysk = $('<div id="chart_bilans_zysk" style="height: 400px; width: 100%; display: inline-block;"></div>');
     // var _chart_bilans_czas = $('<div id="chart_bilans_czas" style="height: 400px; width: 100%; display: inline-block;"></div>');
     // var _chart_bilans_godziny = $('<div id="chart_bilans_godziny" style="height: 400px; width: 100%; display: inline-block;"></div>');
 
@@ -836,6 +844,7 @@ function draw_strategy(form_values, show_table, callback){
     .append(
         _charts
             .append(_chart_bilans)
+            .append(_chart_bilans_zysk)
             // .append(_chart_bilans_czas)
             // .append(_chart_bilans_godziny)
             .append($('<br>'))
@@ -869,45 +878,83 @@ function draw_strategy(form_values, show_table, callback){
         var table = $('#table_results').DataTable( {
             data: tbody_data,
             columns: [
-                { title: "lp.", "width": "25px"  },
-                { title: "Id" },
-                { title: "Czas" },
-                { title: "Wypadło", "width": "25px"  },
-                { title: "Czy grac?", "width": "35px"  },
-                { title: "Obstawiam" },
-                { title: "Wynik" },
-                { title: "Bilans" },
-                { title: "-", "width": "25px"  },
-                { title: "Seria koloru", "width": "25px"  },
-                { title: "Seria przegranej", "width": "25px"  },
-                { title: "Seria wygranej", "width": "25px"  },
-                { title: "-", "width": "25px"  },
-                { title: "Seria black", "width": "25px"  },
-                { title: "Seria red", "width": "25px"  },
-                { title: "Seria green", "width": "25px"  },
-                { title: "-", "width": "25px" },
-                { title: "Seria brak black", "width": "25px"  },
-                { title: "Seria brak red", "width": "25px"  },
-                { title: "Seria brak green", "width": "25px"  }
+                { title: "lp.", "width": "25px"  }, //0
+                { title: "Id" }, //1
+                { title: "Czas" }, //2
+                { title: "Wypadło", "width": "25px"  },  //3
+                { title: "Czy grac?", "width": "35px"  },  //4
+                { title: "Obstawiam" },  //5
+                { title: "Wynik" },  //6
+                { title: "Bilans" },  //7
+                { title: "Zysk", "width": "35px"  }, //8
+                { title: "Seria koloru", "width": "25px"  },  //9
+                { title: "Seria przegranej", "width": "25px"  }, //10
+                { title: "Seria wygranej", "width": "25px"  }, //11
+                { title: "-", "width": "25px"  }, //12
+                { title: "Seria black", "width": "25px"  }, //13
+                { title: "Seria red", "width": "25px"  }, //14
+                { title: "Seria green", "width": "25px"  }, //15
+                { title: "-", "width": "25px" }, //16
+                { title: "Seria brak black", "width": "25px"  }, //17
+                { title: "Seria brak red", "width": "25px"  }, //18
+                { title: "Seria brak green", "width": "25px"  } //19
             ],
-            // "rowCallback": function( row, data, index ) {
-            //     if ( data[4] == "A" ) {
-            //     $('td:eq(4)', row).html( '<b>A</b>' );
-            //     }
-            // }
+            "rowCallback": function( row, data, index ) {
+
+                bg_seria_koloru = shadeBlendConvert(data[9] / 50 + 0.3, "#1b75bc");
+                bg_seria_przegranej = shadeBlendConvert(data[10] / 50 + 0.3, "#3f4651");
+                bg_seria_wygranej = shadeBlendConvert(data[11] / 50 + 0.3, "#3f4651");
+
+                bg_seria_koloru_black = shadeBlendConvert( data[13] / 50 + 0.6, "#000000" )
+                bg_seria_koloru_red = shadeBlendConvert(data[14] / 50 + 0.3, "#ff0000")
+                bg_seria_koloru_green = shadeBlendConvert(data[15] / 50 + 0.3, "#00ff00")
+
+                bg_seria_brak_koloru_black = shadeBlendConvert( data[17] / 50 + 0.6, "#000000" )
+                bg_seria_brak_koloru_red = shadeBlendConvert(data[18] / 50 + 0.3, "#ff0000")
+                bg_seria_brak_koloru_green = shadeBlendConvert(data[19] / 50 + 0.3, "#00ff00");
+
+
+                $(row).find('td:eq(9)').css({'background': bg_seria_koloru, "color": "#fff"});
+                $(row).find('td:eq(10)').css({'background': bg_seria_przegranej, "color": "#000"});
+                $(row).find('td:eq(11)').css({'background': bg_seria_wygranej, "color": "#000"});
+
+                $(row).find('td:eq(13)').css({'background': bg_seria_koloru_black, "color": "#000"});
+                $(row).find('td:eq(14)').css({'background': bg_seria_koloru_red, "color": "#000"});
+                $(row).find('td:eq(15)').css({'background': bg_seria_koloru_green, "color": "#000"});
+
+                $(row).find('td:eq(17)').css({'background': bg_seria_brak_koloru_black, "color": "#000"});
+                $(row).find('td:eq(18)').css({'background': bg_seria_brak_koloru_red, "color": "#000"});
+                $(row).find('td:eq(19)').css({'background': bg_seria_brak_koloru_green, "color": "#000"});
+
+
+                // console.log('??', data[3], data);
+
+                // 6 - wynik
+                //
+                $(row).find('td:eq(6)').css({'background': (data[6] > 0)?"green":"red", "color": "#fff"});
+
+                $(row).find('td:eq(8)').css({'background': (data[8] > 0)?"green":"red", "color": "#fff"});
+
+                // 3 - Wypadło  
+                var bg_color = "red";
+                if(data[3] == 0){ bg_color = "green"}
+                if(data[3] >= 1 && data[3] <= 7){ bg_color = "red"}
+                if(data[3] >= 8 && data[3] <= 14){ bg_color = "black"}
+                $(row).find('td:eq(3)').css({'background': bg_color, "color": "#fff"});
+            },
             "pageLength": 500
             // scrollY:        '50vh',
             // scrollCollapse: true,
             // paging:         false
         });
-        $('#form_result tbody')
-            .on( 'mouseenter', 'td', function () {
-                var colIdx = table.cell(this).index().column;
-                $( table.cells().nodes() ).removeClass( 'highlight' );
-                $( table.column( colIdx ).nodes() ).addClass( 'highlight' );
-            });
+        // $('#form_result tbody')
+        //     .on( 'mouseenter', 'td', function () {
+        //         var colIdx = table.cell(this).index().column;
+        //         $( table.cells().nodes() ).removeClass( 'highlight' );
+        //         $( table.column( colIdx ).nodes() ).addClass( 'highlight' );
+        //     });
 
-        $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+        // $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
 
     //
     // Bilans
@@ -941,6 +988,43 @@ function draw_strategy(form_values, show_table, callback){
             data: rundy_bilans
         }]
     });
+
+
+
+    // Bilans - zysk
+    var rundy_chart_bilans_zysk = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        rundy_chart_bilans_zysk.push(rundy[i].bilans - kwota_poczatkowa);
+    }
+
+    Highcharts.chart('chart_bilans_zysk', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Strategia - zysk'
+        },
+        yAxis: {
+            title: {
+                text: 'Zysk'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Kwota',
+            data: rundy_chart_bilans_zysk
+        }]
+    });
+
+
+    
 
     // 13:24:00
 
