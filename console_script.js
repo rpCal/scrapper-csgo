@@ -10,7 +10,7 @@ var bilans_start = parseInt("" + bilans_part1 + bilans_part2);
 
 bilans = bilans_start;
 
-console.log("START --- ", "BILANS:", bilans, ",RUND: ", max_round,",MNOZ:", mnoznik, ",BET:",bet_price)
+console.log(`START --- bilans: ${bilans}, rund: ${max_round}, mnoz: ${mnoznik}, bet: ${bet_price}`);
 
 function run(){
  var curr_rand_num = document.getElementById('randNum').innerHTML;
@@ -34,8 +34,7 @@ function run(){
       }
 
       bilans = bilans + kwota_wygranej; 
-      console.log("Wynik rundy-KOL: ", win_color, ", KW: ", kwota_wygranej,
-      ", BIL: ", bilans, ", BET: ", curr_bet, ", ZYSK: ", bilans - bilans_start)
+      console.log(`Wynik rundy - kolor:${win_color}, wygr:${kwota_wygranej}, bilans:${bilans}, bet:${curr_bet}, zysk:${bilans - bilans_start}`);
   }
  }
 
@@ -44,8 +43,7 @@ function run(){
   last_round_hash = curr_round_hash;
   var t1 = performance.now(); var time = (t1 - t0); t0 = performance.now();
   var game_id = document.querySelector('.bonus-game-info .value').innerHTML;
-  console.log("Nowa runda -- ID: ", game_id, ", LP:", round_count, ", MAX:", (max_round - round_count),
-    ",T:", parseInt(time / 1000) + "s - ", new Date());
+  console.log(`Nowa runda - ID: ${game_id}, lp:${round_count}, do konca: ${(max_round - round_count)}, T:${parseInt(time / 1000)} - ${new Date()}`)
   
   round_count++; 
   czy_grac = round_count >= 1 && round_count <= max_round;
@@ -63,7 +61,7 @@ function run(){
         el.selectionEnd = cp;
 
         document.querySelector('.bonus-game-calc-place-bet').click();
-      console.log("Obstawiam za kwote: ", curr_bet, ", bilans : ", bilans, ", ZYSK: ", bilans - bilans_start)
+        console.log(`Obstawiam. kwota: ${curr_bet}, bilans: ${bilans}, zysk: ${bilans - bilans_start}`)
   }
  }else{ console.log('czekam...'); }
 }

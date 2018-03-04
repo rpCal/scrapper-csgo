@@ -1,0 +1,10 @@
+
+mnoznik wygranej - 1x
+    Kwota poczatkowa: 3250.00
+    Kwota zakonczenia: 5743.00
+    Zysk: 2493.00
+
+mnoznik wygranej - 2x
+    Kwota poczatkowa: 3250.00
+    Kwota zakonczenia: 8245.00
+    Zysk: 4995.00

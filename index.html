@@ -270,7 +270,22 @@ function draw_strategy_form(){
 
         <fieldset>
             <label>Zmian kwote betu po przegranej (mnożenie)</label>
-            <input name="change_bet_price" value="1.7" />
+            <input name="change_bet_price_on_lose" value="1.7" />
+        </fieldset>
+
+        <fieldset>
+            <label>Od ilu serii przegranych zacząć mnożyć?</label>
+            <input name="seria_lose_number" value="1" />
+        </fieldset>
+
+        <fieldset>
+            <label>Zmian kwote betu po wygranej (mnożenie)</label>
+            <input name="change_bet_price_on_win" value="1.7" />
+        </fieldset>
+        
+        <fieldset>
+            <label>Od ilu serii wygranych zacząć mnożyć?</label>
+            <input name="seria_win_number" value="20" />
         </fieldset>
 
         <fieldset>
@@ -354,7 +369,8 @@ function oblicz_rundy(form_values){
     var flaga_czy_grac = false;
     var flaga_czy_zakonczyc = false;
 
-    var mnoznik = 2;
+    var mnoznik_przegranej = 2;
+    var mnoznik_wygranej = 2;
     var nazwa_attr_wygranej = "n";
     var oczekiwana_wartosc_atrybutu_wygranej = 0;
 
@@ -370,14 +386,21 @@ function oblicz_rundy(form_values){
     var index_max = 200;
     var max_rozegranych_gier = 100;
 
+    var seria_win_number = 100;
+    var seria_lose_number = 1;
+
     index_min = parseInt(_.find(form_values, { name: "index_min" })['value'], 10);
     index_max = parseInt(_.find(form_values, { name: "index_max" })['value'], 10);
     max_rozegranych_gier = parseInt(_.find(form_values, { name: "max_rounds" })['value'], 10);
     kwota_poczatkowa = parseFloat(_.find(form_values, { name: "kwota_poczatkowa" })['value']);
-    mnoznik = parseFloat(_.find(form_values, { name: "change_bet_price" })['value']);
+    mnoznik_przegranej = parseFloat(_.find(form_values, { name: "change_bet_price_on_lose" })['value']);
+    mnoznik_wygranej = parseFloat(_.find(form_values, { name: "change_bet_price_on_win" })['value']);
     bet_poczatkowy = parseFloat(_.find(form_values, { name: "start_bet_price" })['value']);
     succes_value = _.find(form_values, { name: "succes_value" })['value'];
-
+    seria_win_number = parseInt(_.find(form_values, { name: "seria_win_number" })['value'], 10);
+    seria_lose_number = parseInt(_.find(form_values, { name: "seria_lose_number" })['value'], 10);
+    
+    
     if(succes_value.indexOf("color_") != -1){
         nazwa_attr_wygranej = "c";
         oczekiwana_wartosc_atrybutu_wygranej = succes_value.split("_")[1];
@@ -509,19 +532,34 @@ function oblicz_rundy(form_values){
                 kwota_wygranej = parseInt(bet_aktualny * default_mnoznik_wygranej, 10);
                 kwota_finalna = kwota_wygranej ;
                 bilans += kwota_finalna - bet_aktualny;
-                bet_aktualny = bet_poczatkowy;
+                // bet_aktualny = bet_poczatkowy;
                 seria_przegranej = 0;
                 seria_wygranej++;
+
+                // console.log(seria_wygranej >= seria_win_number);
+
+                if(seria_wygranej >= seria_win_number){
+                    bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik_wygranej, 10);
+                }else{
+                    bet_aktualny = bet_poczatkowy;
+                }
             }else{
                 tmp_bet_aktualny = parseInt(bet_aktualny, 10);
                 kwota_wygranej = -1 * tmp_bet_aktualny;
                 kwota_finalna = kwota_wygranej;
                 bilans += kwota_finalna;
-                bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik, 10);
+                // bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik_przegranej, 10);
                 seria_wygranej = 0;
                 seria_przegranej++;
+
+                if(seria_przegranej >= seria_lose_number){
+                    bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik_przegranej, 10);
+                }else{
+                    bet_aktualny = bet_poczatkowy;
+                }
             }
             
+
             if(bilans <= 0 ){ bilans = 0; }
             rozegranych_gier++; 
         }else{
@@ -542,7 +580,7 @@ function oblicz_rundy(form_values){
             czy_wygrana: czy_wygrana,
 
             bet_aktualny: tmp_bet_aktualny,
-            mnoznik: mnoznik,
+            mnoznik: mnoznik_przegranej,
 
             bilans: bilans,
             seria_koloru: seria_koloru,
