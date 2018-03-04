@@ -1,4 +1,4 @@
-var bilans = 7794, round_count = 0, bet_price = 10, curr_bet = bet_price, mnoznik = 1.7, czy_grac = false, czy_obstawione = false;
+var bilans = 7757, round_count = 0, max_round = 1000, bet_price = 10, curr_bet = bet_price, mnoznik = 1.7, czy_grac = false, czy_obstawione = false;
 
 var last_round_hash = document.getElementById('roundHash').innerHTML;
 var last_rand_num = document.getElementById('randNum').innerHTML;
@@ -35,10 +35,11 @@ function run(){
   last_round_hash = curr_round_hash;
   var t1 = performance.now(); var time = (t1 - t0); t0 = performance.now();
   var game_id = document.querySelector('.bonus-game-info .value').innerHTML;
-  console.log("Nowa runda -- ", game_id, round_count, curr_round_hash.slice(0, 10), parseInt(time / 1000) + "s");
+  console.log("Nowa runda -- ID: ", game_id, ", index:", round_count, ", Z:", (max_round - round_count),
+    ",hash: ", curr_round_hash.slice(0, 10),",czas:", parseInt(time / 1000) + "s");
   
   round_count++; 
-  czy_grac = round_count >= 1 && round_count <= 10;
+  czy_grac = round_count >= 1 && round_count <= max_round;
 
   if(czy_grac){
       czy_obstawione = true; 
@@ -52,9 +53,11 @@ function run(){
         el.selectionStart = cp;
         el.selectionEnd = cp;
 
-        // document.querySelector('.bonus-game-calc-place-bet').click();
+        document.querySelector('.bonus-game-calc-place-bet').click();
       console.log("Obstawiam za kwote: ", curr_bet, ", bilans : ", bilans)
   }
  }else{ console.log('czekam...'); }
 }
-var tm; clearInterval(tm); tm = setInterval(run, 1000);
+var tm; 
+clearInterval(tm); 
+tm = setInterval(run, 1000);
