@@ -8,3 +8,7 @@ mnoznik wygranej - 2x
     Kwota poczatkowa: 3250.00
     Kwota zakonczenia: 8245.00
     Zysk: 4995.00
+
+
+
+//ID :1251961
