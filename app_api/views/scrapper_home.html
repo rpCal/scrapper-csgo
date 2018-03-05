@@ -1,0 +1,1760 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+      <div class="container-fluid text-center">
+        <div id="root_group"></div>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>    
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->    
+    
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+
+<script>
+    $.get('http://node-express-env.k83hs63mss.us-west-2.elasticbeanstalk.com/users').then(function(data){
+        cosole.log('read', data)
+    })
+</script>
+
+    
+    <div class="container text-center" style="font-size: 10px; color: #bbb;">
+        <br><br><br><br><br><br>
+        <h6>Więcej info na <a href="https://csgofast.com/#faq/double/1" style="color: #bbb;">https://csgofast.com/#faq/double/1</a></h6>
+        <blockquote>
+            Double Game – is a mode of a game, where gamers bet on black, red or green slots. <br> <br>
+            In this mode Fast Coins are placed into as bets. The winner slot is determined at the end of the round. <br> <br>
+            If the winner is black or red slot, the gamer wins the placed bet multiplied by 2. <br> <br>
+            The green slot returns the placed bet multiplied by 14. <br> <br>
+            The bet sum of every slot can be different <br>
+        </blockquote>
+        <br><br><br><br><br><br>
+    </div>
+    <style>
+    table{
+        display: block;
+        width: 50%;
+    }
+    table thead{
+        font-size: 10px;
+        letter-spacing: -1px;
+        font-weight: normal;
+    }
+    table tr{
+        border-bottom: 1px solid #bbb;
+    }
+    table tr:hover{
+        background: #eee;
+    }
+    table tr td{
+        border-left: 1px solid #bbb;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center;
+        font-size: 11px;
+    }
+    table .t_g{ color: green;}
+    table .t_e{ color: red;}
+    table .t_b{ color: black;}
+
+    table .green{ background: green; color: #fff; }
+    table .red{ background: red; color: #fff; }
+    table .black{ background: black; color: #fff; }
+
+    table .bg_g{ background: rgb(50, 150, 0); color: #fff; }
+    table .bg_r{ background: rgb(171, 0, 0); color: #fff; }
+    table .bg_b{ background: rgba(0,0,0,1)black; color: #fff; }
+
+    table.dataTable tbody th, table.dataTable tbody td{
+        padding: 2px !important;
+    }
+    table.dataTable thead th, table.dataTable thead td{
+        padding: 2px !important;
+    }
+    </style>
+<script>
+
+var data_response = [];    
+
+var results = [];
+var keys = [];
+
+var _minId = null;
+var _maxId = null;
+
+// start
+$(document).ready(function(){ 
+    getJsonData(function(){ 
+        run(); 
+    }); 
+});
+
+
+
+function run(){
+    
+    $('#root_group').html("");
+
+    var index = pick_index_min_max();
+
+    draw_filter_data_form(index.minId, index.maxId);
+};
+
+function pick_index_min_max(minId, maxId){
+
+    // 2018-02-23T11:29:00 | 1235890 - 1237594
+    // 2018-02-26T13:58 | 1241201 - 1247357
+    var default_min = 1241201;
+    var default_max = 1247357;
+
+    if(!minId){ minId = default_min; }    
+    if(isNaN(minId)){ minId = default_min}
+    if(minId < default_min){ minId = default_min; }
+    if(!data_response[minId]){ minId = default_min; }
+
+    if(!maxId){ 
+        // set new default_max from result
+        if(default_max == 1247357){
+            keys = Object.keys(data_response);
+            default_max = data_response[keys[keys.length - 1]].id;
+        }
+        
+        maxId = default_max; 
+    }
+    if(isNaN(maxId)){ maxId = default_max; }
+    if(!data_response[maxId]){ maxId = default_max; }
+
+    _minId = minId + "";
+    _maxId = maxId + "";
+
+    return { minId: minId, maxId: maxId };
+}
+
+function filter_update_results(minId, maxId){
+    results = _.filter(data_response, function(o) { 
+        var id = parseInt(o.id, 10); 
+        return id > minId && id < maxId; 
+    });
+    keys = Object.keys(results);
+}
+
+
+function getJsonData(callback){
+    return $.get('https://rpcal.github.io/scrapper-csgo/results.json')
+    .done(function (data) {
+        data_response = data;
+        callback();
+    })
+}
+
+function test_different_params(){
+    var params = [
+        {name: "index_min", value: 0},
+        {name: "index_max", value: 4833},
+        {name: "max_rounds", value: 4833},
+        {name: "kwota_poczatkowa", value: 2000.0},
+        {name: "start_bet_price", value: 0},
+        {name: "change_bet_price", value: 0},
+        {name: "succes_value", value: "color_black"},
+    ];
+    console.log("------------ zmiana change_bet_price");
+    for(var i = 0; i < 20; i++){
+        var tmp = Object.assign([], params);
+        tmp[4].value = 0.1;
+        tmp[5].value = 1.0 + (0.1 * i);
+        console.log(tmp[5].value.toFixed(2) , oblicz_rundy(tmp).zysk.toFixed(2));
+    }
+
+    console.log("------------ zmiana start_bet_price");
+    for(var i = 0; i < 20; i++){
+        var tmp = Object.assign([], params);
+        tmp[4].value = 0.1 + (0.1 * i);
+        tmp[5].value = 2.0 ;
+        console.log(tmp[4].value.toFixed(2) , oblicz_rundy(tmp).zysk.toFixed(2));
+    }
+}
+
+
+function draw_filter_data_form(index_min, index_max){
+
+    var _form = $(`
+    <form>
+
+        <fieldset>
+            <label>ID początku</label>
+            <input name="index_min" value="${index_min}" />
+        </fieldset>
+
+        <fieldset>
+            <label>ID końca</label>
+            <input name="index_max" value="${index_max}" />
+        </fieldset>
+
+        <fieldset>
+            <small>* Gry są mniej więcej co minute...</small><br>
+            <small>* Zakres 24h to 1700 wpisów</small><br>
+            <small>* Zakres start ID: ${index_min} == ${data_response[index_min].t}</small><br>
+            <small>* Zakres end ID: ${index_max} == ${data_response[index_max].t}</small><br>
+            <button type="submit">Filtruj zakres</button>
+        </fieldset>
+
+    </form>
+    `);
+
+
+    _form.on('submit', function(e){
+        e.preventDefault();
+
+        $('#root').html("");
+        var form_values = $(this).serializeArray();
+        // console.log('form submit with data: ',  form_values)
+
+        var index_min = parseInt(_.find(form_values, { name: "index_min" })['value'], 10);
+        var index_max = parseInt(_.find(form_values, { name: "index_max" })['value'], 10);
+        var index = pick_index_min_max(index_min, index_max);
+
+        filter_update_results(index.minId, index.maxId);
+        draw_title();
+        draw_chartColor();
+        draw_lineChart_histogram();
+        
+        draw_strategy_form();
+        
+        return false;
+    })
+
+    $('#root_group')
+        .append($('<h1>').text("Wybierz zakres danych"))
+        .append(_form)
+        .append($('<div id="root"></div>'))
+
+    _form.trigger('submit');
+
+}
+
+
+
+function draw_strategy_form(){
+
+    var _form = $(`
+    <form>
+        <fieldset>
+            <label>Kwota poczatkowa (zł)</label>
+            <input name="kwota_poczatkowa" value="3250.0" />
+        </fieldset>
+
+        <fieldset>
+            <label>Runda startu</label>
+            <input name="index_min" value="0" />
+        </fieldset>
+
+        <fieldset>
+            <label>Runda konca</label>
+            <input name="index_max" value="${keys.length}" />
+        </fieldset>
+
+        <fieldset>
+            <label>Max rozegranych rund</label>
+            <input name="max_rounds" value="${keys.length}" />
+        </fieldset>
+
+        <fieldset>
+            <label>Kwota betu początkowego (zł)</label>
+            <input name="start_bet_price" value="10.0" />
+        </fieldset>
+
+        <fieldset>
+            <label>Zmian kwote betu po przegranej (mnożenie)</label>
+            <input name="change_bet_price_on_lose" value="1.7" />
+        </fieldset>
+
+        <fieldset>
+            <label>Od ilu serii przegranych zacząć mnożyć?</label>
+            <input name="seria_lose_number" value="1" />
+        </fieldset>
+
+        <fieldset>
+            <label>Zmian kwote betu po wygranej (mnożenie)</label>
+            <input name="change_bet_price_on_win" value="1.7" />
+        </fieldset>
+        
+        <fieldset>
+            <label>Od ilu serii wygranych zacząć mnożyć?</label>
+            <input name="seria_win_number" value="20" />
+        </fieldset>
+
+        <fieldset>
+            <label>Wygrywam gdy: </label>
+            <select name="succes_value">
+                <option value="color_red">Kolor: Czerwony</option>    
+                <option value="color_green">Kolor: Zielony</option>    
+                <option value="color_black">Kolor: Czarny</option>    
+                <option value="number_0">Liczba: 0</option>    
+                <option value="number_1">Liczba: 1</option>    
+                <option value="number_2">Liczba: 2</option>    
+                <option value="number_3">Liczba: 3</option>    
+                <option value="number_4">Liczba: 4</option>    
+                <option value="number_5">Liczba: 5</option>    
+                <option value="number_6">Liczba: 6</option>    
+                <option value="number_7">Liczba: 7</option>    
+                <option value="number_8">Liczba: 8</option>    
+                <option value="number_9">Liczba: 9</option>    
+                <option value="number_10">Liczba: 10</option>    
+                <option value="number_11">Liczba: 11</option>    
+                <option value="number_12">Liczba: 12</option>    
+                <option value="number_13">Liczba: 13</option>  
+                <option value="number_14">Liczba: 14</option>      
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <button type="submit">Zapisz i zagraj</button>
+        </fieldset>
+
+    </form>
+    `);
+
+
+    var loading = false;
+
+    _form.on('submit', function(e){
+        e.preventDefault();
+
+        if(loading){
+            return;
+        }
+        loading = true;
+        var form_values = $(this).serializeArray();
+        // console.log('form submit with data: ',  form_values)
+
+        $('#loading-text').html("Przeliczam...")
+        setTimeout(function(){
+            var t0 = performance.now();
+            $('#form_result').html("");
+            draw_strategy(form_values, true, function(){
+                var t1 = performance.now();
+                $('#loading-text').html("Zakończono przeliczanie. Czas liczenia: " + ( (t1 - t0) / 1000 ).toFixed(2) +"s");
+                loading = false;
+            });
+        }, 200);
+        
+        return false;
+    })
+
+    $('#root')
+        .append($('<h1>').text("Wybierz parametry strategi"))
+        .append(_form)
+        .append($('<h2>').attr("id", "loading-text").css("color", "#20b2aa"))
+        .append($('<div id="form_result"></div>'))
+
+}
+
+
+function roundUp(num, precision) {
+  if(!precision) { precision = 1;}
+  precision = Math.pow(10, precision)
+  return Math.ceil(num * precision) / precision
+}
+
+
+function oblicz_rundy(form_values){
+   
+    // GRANIE
+    //
+
+    var _rundy = [];
+    var runda = {
+        indeks: 0,
+        id: "",
+        t: "",
+        wynik_liczba: 0,
+        wynik_kolor: "",
+        atrubut_wygranej: "",
+        czy_grac: true,
+        czy_wygrana: true,    
+        bilans: 0,
+        zmiana_bilansu: 0,
+    };
+
+    
+    var flaga_czy_grac = false;
+    var flaga_czy_zakonczyc = false;
+
+    var mnoznik_przegranej = 2;
+    var mnoznik_wygranej = 2;
+    var nazwa_attr_wygranej = "n";
+    var oczekiwana_wartosc_atrybutu_wygranej = 0;
+
+    var kwota_poczatkowa = 1000.0;
+    var kwota_zakonczenia = 0;
+    var bet_poczatkowy = 1.0;
+    var bet_aktualny = 1.0;
+    var bilans = 0;
+    var index_rundy = 0;
+
+    var rozegranych_gier = 0;
+    var index_min = 100;
+    var index_max = 200;
+    var max_rozegranych_gier = 100;
+
+    var seria_win_number = 100;
+    var seria_lose_number = 1;
+
+    index_min = parseInt(_.find(form_values, { name: "index_min" })['value'], 10);
+    index_max = parseInt(_.find(form_values, { name: "index_max" })['value'], 10);
+    max_rozegranych_gier = parseInt(_.find(form_values, { name: "max_rounds" })['value'], 10);
+    kwota_poczatkowa = parseFloat(_.find(form_values, { name: "kwota_poczatkowa" })['value']);
+    mnoznik_przegranej = parseFloat(_.find(form_values, { name: "change_bet_price_on_lose" })['value']);
+    mnoznik_wygranej = parseFloat(_.find(form_values, { name: "change_bet_price_on_win" })['value']);
+    bet_poczatkowy = parseFloat(_.find(form_values, { name: "start_bet_price" })['value']);
+    succes_value = _.find(form_values, { name: "succes_value" })['value'];
+    seria_win_number = parseInt(_.find(form_values, { name: "seria_win_number" })['value'], 10);
+    seria_lose_number = parseInt(_.find(form_values, { name: "seria_lose_number" })['value'], 10);
+    
+    
+    if(succes_value.indexOf("color_") != -1){
+        nazwa_attr_wygranej = "c";
+        oczekiwana_wartosc_atrybutu_wygranej = succes_value.split("_")[1];
+    }
+
+    if(succes_value.indexOf("number_") != -1){
+        nazwa_attr_wygranej = "n";
+        oczekiwana_wartosc_atrybutu_wygranej = parseInt(succes_value.split("_")[1]);
+    }
+
+    console.log('FORM: ', form_values);
+
+    bet_aktualny = bet_poczatkowy;
+    bilans = kwota_poczatkowa;
+
+    
+    // var oczekiwany_kolor = "green";
+    // if(nazwa_attr_wygranej == "c"){
+    //     oczekiwany_kolor = oczekiwana_wartosc_atrybutu_wygranej;
+    // }else if (nazwa_attr_wygranej == "n"){
+    //     if(oczekiwana_wartosc_atrybutu_wygranej == 0){
+    //         oczekiwany_kolor = "green";
+    //     }else if(oczekiwana_wartosc_atrybutu_wygranej <= 7){
+    //         oczekiwany_kolor = "red";
+    //     }else{
+    //         oczekiwany_kolor = "black";
+    //     }
+    // }
+
+    var seria_koloru = 0;
+    var ostatni_kolor = null;    
+    var seria_przegranej = 0;
+    var seria_wygranej = 0;
+
+    var seria_koloru_black = 0;
+    var seria_koloru_red = 0;
+    var seria_koloru_green = 0;
+
+    var seria_brak_koloru_black = 0;
+    var seria_brak_koloru_red = 0;
+    var seria_brak_koloru_green = 0;
+
+    for(var i = 0; i < keys.length; i++){
+        
+        flaga_czy_grac = i >= index_min && i <= index_max;
+
+        if(flaga_czy_zakonczyc){ 
+            flaga_czy_grac = false; 
+        }
+
+        var wynik_rundy = results[keys[i]];
+        var atrubut_wygranej = wynik_rundy[nazwa_attr_wygranej];
+        var czy_wygrana = null;
+        var kwota_finalna = 0;
+        var tmp_bet_aktualny = 0;
+
+        if(ostatni_kolor == null){
+            ostatni_kolor = wynik_rundy['c'];
+        }
+
+        if(wynik_rundy['c'] == 'black'){
+            if(ostatni_kolor == 'black'){
+                seria_koloru_black ++;
+            }else{
+                seria_koloru_black = 1;
+            }
+            seria_brak_koloru_black = 0;
+        }else{
+            seria_koloru_black = 0;
+            seria_brak_koloru_black++;
+        }
+
+        if(wynik_rundy['c'] == 'green'){
+            if(ostatni_kolor == 'green'){
+                seria_koloru_green ++;
+            }else{
+                seria_koloru_green = 1;
+            }
+            seria_brak_koloru_green = 0;
+        }else{
+            seria_koloru_green = 0;
+            seria_brak_koloru_green++;
+        }
+
+        if(wynik_rundy['c'] == 'red'){
+            if(ostatni_kolor == 'red'){
+                seria_koloru_red ++
+            }else{
+                seria_koloru_red = 1;
+            }
+            seria_brak_koloru_red = 0;
+        }else{
+            seria_koloru_red = 0;
+            seria_brak_koloru_red++;
+        }
+
+
+
+
+        if(wynik_rundy['c'] == ostatni_kolor){
+            seria_koloru++;
+        }else{
+            ostatni_kolor = wynik_rundy['c']; 
+            seria_koloru = 1;
+        }
+
+
+
+
+        if(flaga_czy_grac){
+
+            tmp_bet_aktualny = bet_aktualny;
+
+            var czy_wygrana = atrubut_wygranej == oczekiwana_wartosc_atrybutu_wygranej;
+
+            if(bet_aktualny > bilans){
+                bet_aktualny = bilans;
+                tmp_bet_aktualny = bet_aktualny;
+            }
+
+            var kwota_wygranej = 0;
+
+            if(czy_wygrana){
+                var default_mnoznik_wygranej = 2;
+                if(wynik_rundy['c'] == "green"){
+                    default_mnoznik_wygranej = 14;
+                }
+                tmp_bet_aktualny = parseInt(bet_aktualny, 10);
+                kwota_wygranej = parseInt(bet_aktualny * default_mnoznik_wygranej, 10);
+                kwota_finalna = kwota_wygranej ;
+                bilans += kwota_finalna - bet_aktualny;
+                // bet_aktualny = bet_poczatkowy;
+                seria_przegranej = 0;
+                seria_wygranej++;
+
+                if(seria_wygranej >= seria_win_number){
+                    bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik_wygranej, 10);
+                }else{
+                    bet_aktualny = bet_poczatkowy;
+                }
+            }else{
+                tmp_bet_aktualny = parseInt(bet_aktualny, 10);
+                kwota_wygranej = -1 * tmp_bet_aktualny;
+                kwota_finalna = kwota_wygranej;
+                bilans += kwota_finalna;
+                // bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik_przegranej, 10);
+                seria_wygranej = 0;
+                seria_przegranej++;
+
+                if(seria_przegranej >= seria_lose_number){
+                    bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik_przegranej, 10);
+                }else{
+                    bet_aktualny = bet_poczatkowy;
+                }
+            }
+            
+
+            if(bilans <= 0 ){ bilans = 0; }
+            rozegranych_gier++; 
+        }else{
+            seria_wygranej = 0;
+            seria_przegranej = 0;
+        }
+
+        _rundy.push(_.merge({}, runda, { 
+            index: index_rundy,
+            id: wynik_rundy.id,
+            t: wynik_rundy.t,
+            wynik_liczba: wynik_rundy.n,
+            wynik_kolor: wynik_rundy.c,
+            
+            wynik_oczekiwany: oczekiwana_wartosc_atrybutu_wygranej,
+            atrubut_wygranej: atrubut_wygranej,
+            czy_grac: flaga_czy_grac,
+            czy_wygrana: czy_wygrana,
+
+            bet_aktualny: tmp_bet_aktualny,
+            mnoznik: mnoznik_przegranej,
+
+            bilans: bilans,
+            seria_koloru: seria_koloru,
+            seria_przegranej: seria_przegranej, 
+            seria_wygranej: seria_wygranej, 
+            zmiana_bilansu: kwota_finalna,
+
+            seria_koloru_black: seria_koloru_black,
+            seria_koloru_red: seria_koloru_red,
+            seria_koloru_green: seria_koloru_green,
+
+            seria_brak_koloru_black: seria_brak_koloru_black,
+            seria_brak_koloru_red: seria_brak_koloru_red,
+            seria_brak_koloru_green: seria_brak_koloru_green
+            
+        }))
+
+
+
+
+        index_rundy ++;
+
+        if(rozegranych_gier >= max_rozegranych_gier){ 
+            flaga_czy_zakonczyc = true; 
+        }
+    }
+
+    var kwota_zakonczenia = _rundy[_rundy.length - 1].bilans;
+    var zysk = kwota_zakonczenia - kwota_poczatkowa;
+
+    return {rundy: _rundy, zysk:zysk, kwota_poczatkowa: kwota_poczatkowa, kwota_zakonczenia:kwota_zakonczenia, nazwa_attr_wygranej: nazwa_attr_wygranej };
+}
+
+
+function draw_strategy(form_values, show_table, callback){
+    
+    var _wynik = oblicz_rundy(form_values);
+    var rundy = _wynik.rundy;
+    var kwota_zakonczenia = _wynik.kwota_zakonczenia;
+    var zysk = _wynik.zysk;
+    var nazwa_attr_wygranej = _wynik.nazwa_attr_wygranej;
+    var kwota_poczatkowa = _wynik.kwota_poczatkowa;
+
+
+    var max_seria_green = 0;
+    var max_seria_red = 0;
+    var max_seria_black = 0;
+    var max_seria_przegranych = 0;
+    var max_seria_wygranych = 0;
+
+    var max_seria_brak_green = 0;
+    var max_seria_brak_red = 0;
+    var max_seria_brak_black = 0;
+    
+    
+
+    var max_bet = 0;
+    var max_zmiana_bilansu = 0;
+
+    // ILE RAZY nie padlo.
+
+    // Wyswietlanie
+    //
+
+    var tbody_data = [];
+
+    // var _tbody = $('<tbody>');
+
+    for(var i = 0; i < rundy.length; i++){
+        var runda = rundy[i];
+        // bg_seria_koloru_black = shadeBlendConvert( runda.seria_koloru_black / 50 + 0.6, "#000000" )
+        // bg_seria_koloru_red = shadeBlendConvert(runda.seria_koloru_red / 50 + 0.3, "#ff0000")
+        // bg_seria_koloru_green = shadeBlendConvert(runda.seria_koloru_green / 50 + 0.3, "#00ff00")
+
+        // bg_seria_brak_koloru_black = shadeBlendConvert( runda.seria_brak_koloru_black / 50 + 0.6, "#000000" )
+        // bg_seria_brak_koloru_red = shadeBlendConvert(runda.seria_brak_koloru_red / 50 + 0.3, "#ff0000")
+        // bg_seria_brak_koloru_green = shadeBlendConvert(runda.seria_brak_koloru_green / 50 + 0.3, "#00ff00")
+
+        // bg_seria_koloru = shadeBlendConvert(runda.seria_koloru / 50 + 0.3, "#1b75bc");
+        // bg_seria_przegranej = shadeBlendConvert(runda.seria_przegranej / 50 + 0.3, "#3f4651");
+        // bg_seria_wygranej = shadeBlendConvert(runda.seria_wygranej / 50 + 0.3, "#3f4651");
+        
+        if(runda.seria_przegranej > max_seria_przegranych){ max_seria_przegranych = runda.seria_przegranej; } 
+        if(runda.seria_wygranej > max_seria_wygranych){ max_seria_wygranych = runda.seria_wygranej; } 
+        if(runda.seria_koloru_black > max_seria_black){ max_seria_black = runda.seria_koloru_black; } 
+        if(runda.seria_koloru_red > max_seria_red){ max_seria_red = runda.seria_koloru_red; } 
+        if(runda.seria_koloru_green > max_seria_green){ max_seria_green = runda.seria_koloru_green; } 
+        if(runda.bet_aktualny > max_bet){ max_bet = runda.bet_aktualny; } 
+        if(runda.zmiana_bilansu > max_zmiana_bilansu){ max_zmiana_bilansu = runda.zmiana_bilansu; } 
+
+        if(runda.seria_brak_koloru_black > max_seria_brak_black){ max_seria_brak_black = runda.seria_brak_koloru_black; } 
+        if(runda.seria_brak_koloru_red > max_seria_brak_red){ max_seria_brak_red = runda.seria_brak_koloru_red; } 
+        if(runda.seria_brak_koloru_green > max_seria_brak_green){ max_seria_brak_green = runda.seria_brak_koloru_green; } 
+
+        var wynik_nazwa = nazwa_attr_wygranej == 'c' ? 
+                (runda.wynik_oczekiwany == 'red')? "czerwony": (runda.wynik_oczekiwany == 'green')?"zielony":"czarny"
+            : runda.wynik_oczekiwany;
+
+        tbody_data.push([
+            runda.index,
+            runda.id,
+            moment(runda.t).format('MM-DD HH:mm:ss'),
+            runda.wynik_liczba,
+            (runda.czy_grac)?'tak':'nie',
+            wynik_nazwa,
+            (runda.zmiana_bilansu) > 0 ? "+" + runda.zmiana_bilansu.toFixed(2) : runda.zmiana_bilansu.toFixed(2),
+            runda.bilans.toFixed(2),
+            runda.bilans - kwota_poczatkowa.toFixed(2),
+            runda.seria_koloru,
+            runda.seria_przegranej,
+            runda.seria_wygranej,
+            "-----",
+            runda.seria_koloru_black,
+            runda.seria_koloru_red,
+            runda.seria_koloru_green,
+            "-----",
+            runda.seria_brak_koloru_black,
+            runda.seria_brak_koloru_red,
+            runda.seria_brak_koloru_green
+        ]);
+    //     _tbody.append(`
+    //         <tr style="">
+    //             <td>${runda.index}</td>
+    //             <td>${runda.id}</td>
+    //             <td>${moment(runda.t).format('HH:mm:ss')}</td>
+    //             <td class="${runda.wynik_kolor}">${runda.wynik_liczba}</td>
+                
+    //             <td class="${runda.czy_grac>0?'bg_g':'bg_r'}">
+    //                 ${(runda.czy_grac)?'tak':'nie'}
+    //             </td>
+    //             <td>${
+    //                 nazwa_attr_wygranej == 'c' ? 
+    //                     (runda.wynik_oczekiwany == 'red')? "czerwony": (runda.wynik_oczekiwany == 'green')?"zielony":"czarny"
+    //                 : runda.wynik_oczekiwany}</td>
+    //             <td>${runda.bet_aktualny.toFixed(2)}</td>
+    //             <td class="${(runda.zmiana_bilansu>0)?'bg_g': (runda.zmiana_bilansu == 0? '': 'bg_r')}">
+    //                 ${(runda.zmiana_bilansu) > 0 ? "+" + runda.zmiana_bilansu.toFixed(2) : runda.zmiana_bilansu.toFixed(2)}
+    //             </td>
+    //             <td>${runda.bilans.toFixed(2)}</td>
+    //             <td>---</td>
+    //             <td style="background: ${bg_seria_koloru}; color: #fff;">${runda.seria_koloru}</td>
+    //             <td style="background: ${bg_seria_przegranej}; color: #000;">${runda.seria_przegranej}</td>
+    //             <td style="background: ${bg_seria_wygranej}; color: #000;">${runda.seria_wygranej}</td>
+    //             <td>---</td>
+    //             <td style="background: ${bg_seria_koloru_black}; color: #000;">${runda.seria_koloru_black}</td>
+    //             <td style="background: ${bg_seria_koloru_red}; color: #000;">${runda.seria_koloru_red}</td>
+    //             <td style="background: ${bg_seria_koloru_green}; color: #000;">${runda.seria_koloru_green}</td>
+    //             <td>---</td>
+    //             <td style="background: ${bg_seria_brak_koloru_black}; color: #000;">${runda.seria_brak_koloru_black}</td>
+    //             <td style="background: ${bg_seria_brak_koloru_red}; color: #000;">${runda.seria_brak_koloru_red}</td>
+    //             <td style="background: ${bg_seria_brak_koloru_green}; color: #000;">${runda.seria_brak_koloru_green}</td>
+                
+    //         </tr>
+    //     `);
+    }
+
+    // var _thead = $(`
+    // <thead>
+    //     <tr>
+    //         <th>lp.</th>
+    //         <th>Id</th>
+    //         <th>Czas</th>
+    //         <th>Wypadło</th>
+    //         <th>Czy grac?</th>
+    //         <th>Chce mieć</th>
+    //         <th>Obstawiam</th>
+    //         <th>Wynik</th>
+    //         <th>Bilans</th>
+    //         <th>-</th>
+    //         <th>Seria koloru</th>
+    //         <th>Seria przegranej</th>
+    //         <th>Seria wygranej</th>
+    //         <th>-</th>
+    //         <th>Seria black</th>
+    //         <th>Seria red</th>
+    //         <th>Seria green</th>
+    //         <th>-</th>
+    //         <th>Seria brak black</th>
+    //         <th>Seria brak red</th>
+    //         <th>Seria brak green</th>
+    //     </tr>
+    // </thead>
+    // `);
+
+    var _text_stats = $(`
+    <div>
+        <h5> Max wygrana: ${max_zmiana_bilansu.toFixed(2)}</h4>
+        <h5> Max obstawienie: ${max_bet.toFixed(2)}</h4>
+        <h5> Max seria koloru CZERWONY: ${max_seria_red}</h4>
+        <h5> Max seria koloru ZIELONY: ${max_seria_green}</h4>
+        <h5> Max seria koloru CZARNY: ${max_seria_black}</h4>
+        <h5> Max seria przegranych: ${max_seria_przegranych}</h4>
+        <h5> Max seria wygranych: ${max_seria_wygranych}</h4>
+
+        <h5> Max seria brak koloru CZERWONY: ${max_seria_brak_red}</h4>
+        <h5> Max seria brak koloru ZIELONY: ${max_seria_brak_green}</h4>
+        <h5> Max seria brak koloru CZARNY: ${max_seria_brak_black}</h4>
+    </div>
+    `);
+    
+    
+
+
+    var _chart_bilans = $('<div id="chart_bilans" style="height: 400px; width: 100%; display: inline-block;"></div>');
+    var _chart_bilans_zysk = $('<div id="chart_bilans_zysk" style="height: 400px; width: 100%; display: inline-block;"></div>');
+    // var _chart_bilans_czas = $('<div id="chart_bilans_czas" style="height: 400px; width: 100%; display: inline-block;"></div>');
+    // var _chart_bilans_godziny = $('<div id="chart_bilans_godziny" style="height: 400px; width: 100%; display: inline-block;"></div>');
+
+    var _chart_seria_koloru = $('<div id="chart_seria_koloru" style="height: 400px; width: 450px; display: inline-block;"></div>');
+    var _chart_seria_przegranej = $('<div id="chart_seria_przegranej" style="height: 400px; width: 450px; display: inline-block;"></div>');
+    var _chart_seria_wygranej = $('<div id="chart_seria_wygranej" style="height: 400px; width: 450px; display: inline-block;"></div>');
+
+    var _chart_seria_color_green = $('<div id="chart_seria_color_green" style="height: 400px; width: 30%; display: inline-block;"></div>');
+    var _chart_seria_color_black = $('<div id="chart_seria_color_black" style="height: 400px; width: 30%; display: inline-block;"></div>');
+    var _chart_seria_color_red = $('<div id="chart_seria_color_red" style="height: 400px; width: 30%; display: inline-block;"></div>');
+
+    var _chart_seria_brak_color_green = $('<div id="chart_seria_brak_color_green" style="height: 400px; width: 30%; display: inline-block;"></div>');
+    var _chart_seria_brak_color_black = $('<div id="chart_seria_brak_color_black" style="height: 400px; width: 30%; display: inline-block;"></div>');
+    var _chart_seria_brak_color_red = $('<div id="chart_seria_brak_color_red" style="height: 400px; width: 30%; display: inline-block;"></div>');
+
+    var _charts = $('<div>').css({"width": "100%", "minWidth": "100%"})
+
+
+
+    // var _table = $('<table>').append(_thead).append(_tbody);
+    
+    var _html = $("<div>")
+    .append($('<h1>').text("Wynik strategii"))
+    .append($('<h4>').text("Kwota poczatkowa: " + kwota_poczatkowa.toFixed(2)))
+    .append($('<h4>').text("Kwota zakonczenia: " + kwota_zakonczenia.toFixed(2)))
+    .append($('<h4>').text("Zysk: " + zysk.toFixed(2)))
+
+    .append($('<br>'))
+    .append($('<br>'))
+    .append(_text_stats)
+    .append(
+        _charts
+            .append(_chart_bilans)
+            .append(_chart_bilans_zysk)
+            // .append(_chart_bilans_czas)
+            // .append(_chart_bilans_godziny)
+            .append($('<br>'))
+            .append($('<br>'))
+            // .append(_chart_seria_koloru)
+            .append(_chart_seria_przegranej)
+            .append(_chart_seria_wygranej)
+            .append($('<br>'))
+            .append($('<br>'))
+            .append(_chart_seria_color_green)
+            .append(_chart_seria_color_black)
+            .append(_chart_seria_color_red)
+            .append($('<br>'))
+            .append(_chart_seria_brak_color_green)
+            .append(_chart_seria_brak_color_black)
+            .append(_chart_seria_brak_color_red)
+    )
+    
+
+
+    if(show_table){
+        // _html.append(_table)
+
+        _html.append($('<table id="table_results" class="display" width="100%; max-width: 900px;"></table>'));
+    }
+
+    $('#form_result').append(_html);
+
+
+
+        var table = $('#table_results').DataTable( {
+            data: tbody_data,
+            columns: [
+                { title: "lp.", "width": "25px"  }, //0
+                { title: "Id" }, //1
+                { title: "Czas" }, //2
+                { title: "Wypadło", "width": "25px"  },  //3
+                { title: "Czy grac?", "width": "35px"  },  //4
+                { title: "Obstawiam" },  //5
+                { title: "Wynik" },  //6
+                { title: "Bilans" },  //7
+                { title: "Zysk", "width": "35px"  }, //8
+                { title: "Seria koloru", "width": "25px"  },  //9
+                { title: "Seria przegranej", "width": "25px"  }, //10
+                { title: "Seria wygranej", "width": "25px"  }, //11
+                { title: "-", "width": "25px"  }, //12
+                { title: "Seria black", "width": "25px"  }, //13
+                { title: "Seria red", "width": "25px"  }, //14
+                { title: "Seria green", "width": "25px"  }, //15
+                { title: "-", "width": "25px" }, //16
+                { title: "Seria brak black", "width": "25px"  }, //17
+                { title: "Seria brak red", "width": "25px"  }, //18
+                { title: "Seria brak green", "width": "25px"  } //19
+            ],
+            "rowCallback": function( row, data, index ) {
+
+                bg_seria_koloru = shadeBlendConvert(data[9] / 50 + 0.3, "#1b75bc");
+                bg_seria_przegranej = shadeBlendConvert(data[10] / 50 + 0.3, "#3f4651");
+                bg_seria_wygranej = shadeBlendConvert(data[11] / 50 + 0.3, "#3f4651");
+
+                bg_seria_koloru_black = shadeBlendConvert( data[13] / 50 + 0.6, "#000000" )
+                bg_seria_koloru_red = shadeBlendConvert(data[14] / 50 + 0.3, "#ff0000")
+                bg_seria_koloru_green = shadeBlendConvert(data[15] / 50 + 0.3, "#00ff00")
+
+                bg_seria_brak_koloru_black = shadeBlendConvert( data[17] / 50 + 0.6, "#000000" )
+                bg_seria_brak_koloru_red = shadeBlendConvert(data[18] / 50 + 0.3, "#ff0000")
+                bg_seria_brak_koloru_green = shadeBlendConvert(data[19] / 50 + 0.3, "#00ff00");
+
+
+                $(row).find('td:eq(9)').css({'background': bg_seria_koloru, "color": "#fff"});
+                $(row).find('td:eq(10)').css({'background': bg_seria_przegranej, "color": "#000"});
+                $(row).find('td:eq(11)').css({'background': bg_seria_wygranej, "color": "#000"});
+
+                $(row).find('td:eq(13)').css({'background': bg_seria_koloru_black, "color": "#000"});
+                $(row).find('td:eq(14)').css({'background': bg_seria_koloru_red, "color": "#000"});
+                $(row).find('td:eq(15)').css({'background': bg_seria_koloru_green, "color": "#000"});
+
+                $(row).find('td:eq(17)').css({'background': bg_seria_brak_koloru_black, "color": "#000"});
+                $(row).find('td:eq(18)').css({'background': bg_seria_brak_koloru_red, "color": "#000"});
+                $(row).find('td:eq(19)').css({'background': bg_seria_brak_koloru_green, "color": "#000"});
+
+
+                // console.log('??', data[3], data);
+
+                // 6 - wynik
+                //
+                $(row).find('td:eq(6)').css({'background': (data[6] > 0)?"green":"red", "color": "#fff"});
+
+                $(row).find('td:eq(8)').css({'background': (data[8] > 0)?"green":"red", "color": "#fff"});
+
+                // 3 - Wypadło  
+                var bg_color = "red";
+                if(data[3] == 0){ bg_color = "green"}
+                if(data[3] >= 1 && data[3] <= 7){ bg_color = "red"}
+                if(data[3] >= 8 && data[3] <= 14){ bg_color = "black"}
+                $(row).find('td:eq(3)').css({'background': bg_color, "color": "#fff"});
+            },
+            "pageLength": 500
+            // scrollY:        '50vh',
+            // scrollCollapse: true,
+            // paging:         false
+        });
+        // $('#form_result tbody')
+        //     .on( 'mouseenter', 'td', function () {
+        //         var colIdx = table.cell(this).index().column;
+        //         $( table.cells().nodes() ).removeClass( 'highlight' );
+        //         $( table.column( colIdx ).nodes() ).addClass( 'highlight' );
+        //     });
+
+        // $($.fn.dataTable.tables(true)).DataTable().columns.adjust();
+
+    //
+    // Bilans
+    var rundy_bilans = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        rundy_bilans.push(rundy[i].bilans);
+    }
+
+    Highcharts.chart('chart_bilans', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Strategia - bilans'
+        },
+        yAxis: {
+            title: {
+                text: 'Bilans pieniądza'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Kwota',
+            data: rundy_bilans
+        }]
+    });
+
+
+
+    // Bilans - zysk
+    var rundy_chart_bilans_zysk = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        rundy_chart_bilans_zysk.push(rundy[i].bilans - kwota_poczatkowa);
+    }
+
+    Highcharts.chart('chart_bilans_zysk', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Strategia - zysk'
+        },
+        yAxis: {
+            title: {
+                text: 'Zysk'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Kwota',
+            data: rundy_chart_bilans_zysk
+        }]
+    });
+
+
+    
+
+    // 13:24:00
+
+    // var tmp_categories = {};
+    // var chart_bilans_godziny_series = [];
+    // var data_start = moment(rundy[0].t);
+    // var dzien_rozpoczecia = data_start.dayOfYear();
+    // var dzien_zakonczenia = moment(rundy[keys.length - 1].t).dayOfYear();
+    // var index_series = dzien_zakonczenia - dzien_rozpoczecia;
+    // if(index_series <= 0){ index_series = 1; }
+
+    // var day_categories = [];
+    // for(var hh = 0; hh < 24; hh++){
+    //     for(var mm = 0; mm < 60; mm++){
+    //         day_categories.push(`${(hh < 10)?"0"+hh:hh}:${(mm < 10)?"0"+mm:mm}:00`);
+    //     }
+    // }
+    // console.log(day_categories);
+
+    // for(var j = 0; j <= index_series; j++){
+    //     chart_bilans_godziny_series.push({
+    //         name: "Czas: " + data_start.add(j, 'd').format("YYY-MM-DD"),
+    //         _items: {},
+    //         data: []
+    //     })
+    // }
+
+    // for(var i = 0; i < rundy.length; i++){
+
+    //     var category_name = rundy[i].t.split("T")[1];
+    //     if(!tmp_categories[category_name]){ 
+    //         tmp_categories[category_name] = []; 
+    //     }
+
+    //     tmp_categories[category_name].push(rundy[i].bilans);
+
+    //     var item = rundy[i].bilans;
+    //     if(chart_bilans_godziny_series.length > 1){
+    //         var dzien_index = moment(rundy[i].t).dayOfYear();
+    //         var index = dzien_index - dzien_rozpoczecia;
+    //         chart_bilans_godziny_series[index].data.push(item);
+    //     }else{
+    //         chart_bilans_godziny_series[0].data.push(item)
+    //     }
+    // }
+    // console.log(tmp_categories);
+
+    // Highcharts.chart('chart_bilans_godziny', {
+    //     colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
+    //   '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+    //     chart: {
+    //         zoomType: 'x'
+    //     },
+    //     title: {
+    //         text: 'Bilans - czas w dniu'
+    //     },
+    //     xAxis: {
+    //         categories: Object.keys(tmp_categories),
+    //         tickmarkPlacement: 'on'
+    //     },
+    //     yAxis: {
+    //         title: {
+    //             text: 'Bilans (zł)'
+    //         }
+    //     },
+    //     tooltip: {
+    //         crosshairs: true,
+    //         shared: true
+    //     },
+
+    //     plotOptions: {
+    //         spline: {
+    //             marker: {
+    //                 radius: 4,
+    //                 lineColor: '#666666',
+    //                 lineWidth: 1
+    //             }
+    //         }
+    //     },
+    //     legend: {
+    //         enabled: false,
+    //         layout: 'vertical',
+    //         align: 'right',
+    //         verticalAlign: 'middle'
+    //     },
+
+    //     series: chart_bilans_godziny_series
+    // });
+
+
+
+
+
+    //
+    // Seria koloru
+    // var suma = [];
+
+    // for(var i = 0; i < rundy.length; i++){
+    //     suma.push(rundy[i].seria_koloru);
+    // }
+
+    // Highcharts.chart('chart_seria_koloru', {
+    //     chart: {
+    //         zoomType: 'x'
+    //     },
+    //     title: {
+    //         text: 'Pomoc - licznik wystąpien koloru'
+    //     },
+    //     yAxis: {
+    //         title: {
+    //             text: 'licznik wystąpien koloru'
+    //         }
+    //     },
+    //     legend: {
+    //         enabled: false,
+    //         layout: 'vertical',
+    //         align: 'right',
+    //         verticalAlign: 'middle'
+    //     },
+
+    //     series: [{
+    //         name: 'Liczba',
+    //         data: suma
+    //     }]
+    // });
+
+
+
+    //
+    // Seria seria_przegranej
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_przegranej);
+    }
+
+    Highcharts.chart('chart_seria_przegranej', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik przegranych rund'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik przegranych rund'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
+
+
+    //
+    // Seria seria_wygranej
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_wygranej);
+    }
+
+    Highcharts.chart('chart_seria_wygranej', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik wygranych rund'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik wygranych rund'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
+
+
+
+
+    //
+    // Seria seria_koloru_green
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_koloru_green);
+    }
+
+    Highcharts.chart('chart_seria_color_green', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik serii koloru - green'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik serii koloru'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
+
+
+
+    //
+    // Seria seria_koloru_red
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_koloru_red);
+    }
+
+    Highcharts.chart('chart_seria_color_red', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik serii koloru - red'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik serii koloru'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
+
+
+    //
+    // Seria seria_koloru_black
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_koloru_black);
+    }
+
+    Highcharts.chart('chart_seria_color_black', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik serii koloru - black'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik serii koloru'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
+
+
+
+
+
+
+
+    //
+    // Seria seria_brak_koloru_green
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_brak_koloru_green);
+    }
+
+    Highcharts.chart('chart_seria_brak_color_green', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik serii brak koloru - green'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik serii koloru'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
+
+
+    //
+    // Seria seria_brak_koloru_red
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_brak_koloru_red);
+    }
+
+    Highcharts.chart('chart_seria_brak_color_red', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik serii brak koloru - red'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik serii koloru'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
+
+    //
+    // Seria seria_brak_koloru_black
+    var suma = [];
+
+    for(var i = 0; i < rundy.length; i++){
+        suma.push(rundy[i].seria_brak_koloru_black);
+    }
+
+    Highcharts.chart('chart_seria_brak_color_black', {
+        chart: {
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Pomoc - licznik serii brak koloru - black'
+        },
+        yAxis: {
+            title: {
+                text: 'licznik serii koloru'
+            }
+        },
+        legend: {
+            enabled: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        series: [{
+            name: 'Liczba',
+            data: suma
+        }]
+    });
+
+
+
+    if(!_.isUndefined(callback) && _.isFunction(callback)){
+        callback();
+    }    
+}
+
+
+function run_strategy_number(number){
+    var czy_grac = true;
+    var czy_zakonczyc = false;
+    
+    
+    var item_first = results[0];
+    var pierwszy_kolor = item_first.c;
+
+    var kwota_poczatkowa = 1000;
+    var bet_poczatkowy = 1;
+    var bet_aktualny = 1;
+    var bilans = 0;
+
+    var rozegranych_gier = 0;
+    var max_rozegranych_gier = 100;
+
+    bilans = kwota_poczatkowa;
+
+    for(var i = 0; i < keys.length; i++){
+        var wynik_rundy = results[keys[i]];
+
+        if(czy_grac){   
+            var czy_wygrana = wynik_rundy.n == number;
+            
+            bilans += (czy_wygrana ? 1 : -1) * bet_aktualny * 2;
+            rozegranych_gier++; 
+        }
+
+        if(rozegranych_gier >= max_rozegranych_gier){ czy_zakonczyc = true; }
+        if(czy_zakonczyc){ break; }
+    }
+    console.log('co wyszlo?  rg, kw, ba, b, N: ',  rozegranych_gier, kwota_poczatkowa, bet_aktualny, bilans, number)
+}
+
+
+function run_strategy_color(kolor){
+    var czy_grac = true;
+    var czy_zakonczyc = false;
+    
+    
+    var item_first = results[0];
+    var pierwszy_kolor = item_first.c;
+
+    var kwota_poczatkowa = 1000;
+    var bet_poczatkowy = 1;
+    var bet_aktualny = 1;
+    var bilans = 0;
+
+    var rozegranych_gier = 0;
+    var max_rozegranych_gier = 2000;
+
+    bilans = kwota_poczatkowa;
+
+    for(var i = 0; i < keys.length; i++){
+        var wynik_rundy = results[keys[i]];
+
+        if(czy_grac){
+            var czy_wygrana = wynik_rundy.c == kolor;
+            bilans += (czy_wygrana ? 1 : -1) * bet_aktualny * 2;
+            rozegranych_gier++; 
+        }
+
+        if(rozegranych_gier >= max_rozegranych_gier){ czy_zakonczyc = true; }
+        if(czy_zakonczyc){ break; }
+    }
+    console.log('co wyszlo?  rg, kw, ba, b, c: ',  rozegranych_gier, kwota_poczatkowa, bet_aktualny, bilans, kolor)
+}
+
+function draw_title(){
+
+    var item_first = results[0];
+    var item_last = results[keys.length - 1];
+    var time_start = moment(item_first.t).format('YYYY-MM-DD HH:MM');
+    var time_end = moment(item_last.t).format('YYYY-MM-DD HH:MM')
+    var title = `
+        ${time_start} - ${time_end} <br> 
+        ID: ${_minId} - ${_maxId} <br> 
+        Liczba rund: ${keys.length}
+    `;
+    $('#root').append($("<h1>").html(title))
+}
+
+
+function draw_lineChart_histogram(){
+
+    var html__chart_black_vs_red = $('<div id="chart_histogram" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>');
+
+    $('#root').append(html__chart_black_vs_red);
+
+
+    var series = [{
+        name: "Wypadło razy: ",
+        data: []
+    }];
+
+    groups = _.chain(results)
+        .groupBy(function(a){ return a.n })
+        .value()
+
+    _.each(groups, function(key, index){
+        series[0].data.push(key.length);
+    })
+    
+
+    Highcharts.chart('chart_histogram', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Jak często wystąpiły liczby?'
+        },
+        xAxis: {
+            categories: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+            title: {
+                text: 'Numer liczby'
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Liczba wystąpień'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        series: series
+    });
+}
+
+function draw_chartColor(){
+
+    
+    var html__chart_black_vs_red = $('<div id="chart_colors" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>');
+
+    $('#root').append(html__chart_black_vs_red);
+
+    
+
+    var item_first = results[0];
+    var item_last = results[keys.length - 1];
+
+    var count_green = 0;
+    var count_red = 0;
+    var count_black = 0;
+
+    for(var i = 0; i < keys.length; i++){
+        var row = results[keys[i]];
+        if(row.c == "green"){ count_green++; }
+        if(row.c == "red"){ count_red++; }
+        if(row.c == "black"){ count_black++; }
+        
+    }
+
+    Highcharts.chart('chart_colors', {
+        colors: ['green', 'red', 'black'],
+        chart: { type: 'bar' },
+        title: { text: 'Co wystąpiło najczęściej?' },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series: [
+            {
+                name: 'Zielony',
+                data: [count_green]
+            },
+            {
+                name: 'Czerwony',
+                data: [count_red]
+            },
+            {
+                name: 'Czarny',
+                data: [count_black]
+            },
+        ]
+    });
+}
+
+function draw_chartPie(){
+
+    
+    var html__chart_black_vs_red = $('<div id="chart_black_vs_red" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>');
+
+    $('#root').append(html__chart_black_vs_red);
+
+    
+
+    var item_first = results[0];
+    var item_last = results[keys.length - 1];
+
+    var count_green = 0;
+    var count_red = 0;
+    var count_black = 0;
+
+    for(var i = 0; i < keys.length; i++){
+        var row = results[keys[i]];
+        if(row.c == "green"){ count_green++; }
+        if(row.c == "red"){ count_red++; }
+        if(row.c == "black"){ count_black++; }
+        
+    }
+
+
+    Highcharts.chart('chart_black_vs_red', {
+        colors: ['green', 'red', 'black'],
+   
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Co wystąpiło najczęściej?' 
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: false,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} % - {point.y}',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Wynik',
+            colorByPoint: true,
+            data: [{
+                name: 'zielony',
+                y: count_green
+            }, {
+                name: 'czerwony',
+                y: count_red,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'czarny',
+                y: count_black
+            }]
+        }]
+    });
+}
+
+
+function shadeColor(color, percent) {
+
+    var R = parseInt(color.substring(1,3),16);
+    var G = parseInt(color.substring(3,5),16);
+    var B = parseInt(color.substring(5,7),16);
+
+    R = parseInt(R * (100 + percent) / 100);
+    G = parseInt(G * (100 + percent) / 100);
+    B = parseInt(B * (100 + percent) / 100);
+
+    R = (R<255)?R:255;  
+    G = (G<255)?G:255;  
+    B = (B<255)?B:255;  
+
+    var RR = ((R.toString(16).length==1)?"0"+R.toString(16):R.toString(16));
+    var GG = ((G.toString(16).length==1)?"0"+G.toString(16):G.toString(16));
+    var BB = ((B.toString(16).length==1)?"0"+B.toString(16):B.toString(16));
+
+    return "#"+RR+GG+BB;
+}
+
+function shadeBlendConvert(p, from, to) {
+    if(typeof(p)!="number"||p<-1||p>1||typeof(from)!="string"||(from[0]!='r'&&from[0]!='#')||(typeof(to)!="string"&&typeof(to)!="undefined"))return null; //ErrorCheck
+    if(!this.sbcRip)this.sbcRip=(d)=>{
+        let l=d.length,RGB=new Object();
+        if(l>9){
+            d=d.split(",");
+            if(d.length<3||d.length>4)return null;//ErrorCheck
+            RGB[0]=i(d[0].slice(4)),RGB[1]=i(d[1]),RGB[2]=i(d[2]),RGB[3]=d[3]?parseFloat(d[3]):-1;
+        }else{
+            if(l==8||l==6||l<4)return null; //ErrorCheck
+            if(l<6)d="#"+d[1]+d[1]+d[2]+d[2]+d[3]+d[3]+(l>4?d[4]+""+d[4]:""); //3 digit
+            d=i(d.slice(1),16),RGB[0]=d>>16&255,RGB[1]=d>>8&255,RGB[2]=d&255,RGB[3]=l==9||l==5?r(((d>>24&255)/255)*10000)/10000:-1;
+        }
+        return RGB;}
+    var i=parseInt,r=Math.round,h=from.length>9,h=typeof(to)=="string"?to.length>9?true:to=="c"?!h:false:h,b=p<0,p=b?p*-1:p,to=to&&to!="c"?to:b?"#000000":"#FFFFFF",f=this.sbcRip(from),t=this.sbcRip(to);
+    if(!f||!t)return null; //ErrorCheck
+    if(h)return "rgb("+r((t[0]-f[0])*p+f[0])+","+r((t[1]-f[1])*p+f[1])+","+r((t[2]-f[2])*p+f[2])+(f[3]<0&&t[3]<0?")":","+(f[3]>-1&&t[3]>-1?r(((t[3]-f[3])*p+f[3])*10000)/10000:t[3]<0?f[3]:t[3])+")");
+    else return "#"+(0x100000000+(f[3]>-1&&t[3]>-1?r(((t[3]-f[3])*p+f[3])*255):t[3]>-1?r(t[3]*255):f[3]>-1?r(f[3]*255):255)*0x1000000+r((t[0]-f[0])*p+f[0])*0x10000+r((t[1]-f[1])*p+f[1])*0x100+r((t[2]-f[2])*p+f[2])).toString(16).slice(f[3]>-1||t[3]>-1?1:3);
+}
+
+</script>
+
+  </body>
+</html>
