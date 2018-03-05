@@ -1,0 +1,492 @@
+var bilans = 7757, round_count = 0, max_round = 1000, bet_price = 10, curr_bet = bet_price, mnoznik = 1.7, czy_grac = false, czy_obstawione = false;
+
+var last_round_hash = document.getElementById('roundHash').innerHTML;
+var last_rand_num = document.getElementById('randNum').innerHTML;
+var t0 = performance.now();
+
+var bilans_part1 = parseInt(document.querySelector('.coins-component.middle-block').innerHTML);
+var bilans_part2 = parseInt(document.querySelector('.coins-component.middle-block .part').innerHTML);
+var bilans_start = parseInt("" + bilans_part1 + bilans_part2);
+
+bilans = bilans_start;
+
+console.log(`START --- bilans: ${bilans}, rund: ${max_round}, mnoz: ${mnoznik}, bet: ${bet_price}`);
+
+function run(){
+ var curr_rand_num = document.getElementById('randNum').innerHTML;
+ if(curr_rand_num != last_rand_num){ 
+  last_rand_num = curr_rand_num;
+  if(czy_obstawione){
+      czy_obstawione = false;
+      var round_elem = document.querySelector('.bonus-game-state.back.bonus-game-end'); 
+      var win_color = null;
+      if(round_elem.classList.contains('red')){ win_color = "red"; }
+      if(round_elem.classList.contains('black')){ win_color = "black"; }
+      if(round_elem.classList.contains('zero')){ win_color = "green"; }
+      var is_win = win_color == "red";
+
+      if(is_win){
+        var kwota_wygranej = parseInt(curr_bet * 2);
+		curr_bet = bet_price;
+      }else{
+        var kwota_wygranej = 0;
+        curr_bet = parseInt(curr_bet * mnoznik);
+      }
+
+      bilans = bilans + kwota_wygranej; 
+      console.log(`Wynik rundy - kolor:${win_color}, wygr:${kwota_wygranej}, bilans:${bilans}, bet:${curr_bet}, zysk:${bilans - bilans_start}`);
+  }
+ }
+
+ var curr_round_hash = document.getElementById('roundHash').innerHTML;
+ if(curr_round_hash != last_round_hash){
+  last_round_hash = curr_round_hash;
+  var t1 = performance.now(); var time = (t1 - t0); t0 = performance.now();
+  var game_id = document.querySelector('.bonus-game-info .value').innerHTML;
+  console.log(`Nowa runda - ID: ${game_id}, lp:${round_count}, do konca: ${(max_round - round_count)}, T:${parseInt(time / 1000)} - ${new Date()}`)
+  
+  round_count++; 
+  czy_grac = round_count >= 1 && round_count <= max_round;
+
+  if(czy_grac){
+      czy_obstawione = true; 
+      bilans = bilans - curr_bet;
+
+        document.querySelector('.button.clear').click();
+        var el = document.querySelector('.bonus-game-bet-input');
+        var cp = el.selectionStart;
+        el.value = curr_bet;
+        el.dispatchEvent(new Event('change'));
+        el.selectionStart = cp;
+        el.selectionEnd = cp;
+
+        document.querySelector('.bonus-game-calc-place-bet').click();
+        console.log(`Obstawiam. kwota: ${curr_bet}, bilans: ${bilans}, zysk: ${bilans - bilans_start}`)
+  }
+ }else{ console.log('czekam...'); }
+}
+var tm; 
+clearInterval(tm); 
+tm = setInterval(run, 1000);
+
+135995
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7780, bet:17, zysk:-10
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7797, bet:10, zysk:7
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7787, bet:17, zysk:-3
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7804, bet:10, zysk:14
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7794, bet:17, zysk:4
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7777, bet:28, zysk:-13
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:7805, bet:10, zysk:15
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7795, bet:17, zysk:5
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7778, bet:28, zysk:-12
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:7806, bet:10, zysk:16
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7796, bet:17, zysk:6
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7813, bet:10, zysk:23
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7823, bet:10, zysk:33
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7833, bet:10, zysk:43
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7823, bet:17, zysk:33
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7806, bet:28, zysk:16
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7778, bet:47, zysk:-12
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7731, bet:79, zysk:-59
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7652, bet:134, zysk:-138
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7518, bet:227, zysk:-272
+VM12059:37 Wynik rundy - kolor:red, wygr:454, bilans:7745, bet:10, zysk:-45
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:7735, bet:17, zysk:-55
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7752, bet:10, zysk:-38
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7742, bet:17, zysk:-48
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7725, bet:28, zysk:-65
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:7753, bet:10, zysk:-37
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7743, bet:17, zysk:-47
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7726, bet:28, zysk:-64
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7698, bet:47, zysk:-92
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7651, bet:79, zysk:-139
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:7572, bet:134, zysk:-218
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:7438, bet:227, zysk:-352
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7211, bet:385, zysk:-579
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6826, bet:654, zysk:-964
+VM12059:37 Wynik rundy - kolor:red, wygr:1308, bilans:7480, bet:10, zysk:-310
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7490, bet:10, zysk:-300
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7480, bet:17, zysk:-310
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7463, bet:28, zysk:-327
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:7491, bet:10, zysk:-299
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:7481, bet:17, zysk:-309
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7464, bet:28, zysk:-326
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7436, bet:47, zysk:-354
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:7389, bet:79, zysk:-401
+VM12059:37 Wynik rundy - kolor:red, wygr:158, bilans:7468, bet:10, zysk:-322
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7478, bet:10, zysk:-312
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7468, bet:17, zysk:-322
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7485, bet:10, zysk:-305
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7495, bet:10, zysk:-295
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7485, bet:17, zysk:-305
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7468, bet:28, zysk:-322
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:7496, bet:10, zysk:-294
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7486, bet:17, zysk:-304
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7503, bet:10, zysk:-287
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7493, bet:17, zysk:-297
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7476, bet:28, zysk:-314
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7448, bet:47, zysk:-342
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7401, bet:79, zysk:-389
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7322, bet:134, zysk:-468
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7188, bet:227, zysk:-602
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6961, bet:385, zysk:-829
+VM12059:37 Wynik rundy - kolor:red, wygr:770, bilans:7346, bet:10, zysk:-444
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:7336, bet:17, zysk:-454
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7353, bet:10, zysk:-437
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7363, bet:10, zysk:-427
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7373, bet:10, zysk:-417
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7363, bet:17, zysk:-427
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7346, bet:28, zysk:-444
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:7374, bet:10, zysk:-416
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7384, bet:10, zysk:-406
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7394, bet:10, zysk:-396
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7384, bet:17, zysk:-406
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7367, bet:28, zysk:-423
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:7395, bet:10, zysk:-395
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7405, bet:10, zysk:-385
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7415, bet:10, zysk:-375
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7405, bet:17, zysk:-385
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7422, bet:10, zysk:-368
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7432, bet:10, zysk:-358
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7422, bet:17, zysk:-368
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7439, bet:10, zysk:-351
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7449, bet:10, zysk:-341
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7459, bet:10, zysk:-331
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7469, bet:10, zysk:-321
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7479, bet:10, zysk:-311
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7469, bet:17, zysk:-321
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7452, bet:28, zysk:-338
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7424, bet:47, zysk:-366
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7377, bet:79, zysk:-413
+VM12059:37 Wynik rundy - kolor:red, wygr:158, bilans:7456, bet:10, zysk:-334
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:7446, bet:17, zysk:-344
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:7429, bet:28, zysk:-361
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7401, bet:47, zysk:-389
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7354, bet:79, zysk:-436
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7275, bet:134, zysk:-515
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:7141, bet:227, zysk:-649
+VM12059:37 Wynik rundy - kolor:red, wygr:454, bilans:7368, bet:10, zysk:-422
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7358, bet:17, zysk:-432
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7375, bet:10, zysk:-415
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7365, bet:17, zysk:-425
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7348, bet:28, zysk:-442
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7320, bet:47, zysk:-470
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7273, bet:79, zysk:-517
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7194, bet:134, zysk:-596
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7060, bet:227, zysk:-730
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6833, bet:385, zysk:-957
+VM12059:37 Wynik rundy - kolor:red, wygr:770, bilans:7218, bet:10, zysk:-572
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7228, bet:10, zysk:-562
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7238, bet:10, zysk:-552
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7228, bet:17, zysk:-562
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7245, bet:10, zysk:-545
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7255, bet:10, zysk:-535
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7265, bet:10, zysk:-525
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7255, bet:17, zysk:-535
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7238, bet:28, zysk:-552
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:7266, bet:10, zysk:-524
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7276, bet:10, zysk:-514
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7266, bet:17, zysk:-524
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7283, bet:10, zysk:-507
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7293, bet:10, zysk:-497
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7283, bet:17, zysk:-507
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7300, bet:10, zysk:-490
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7310, bet:10, zysk:-480
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7320, bet:10, zysk:-470
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7330, bet:10, zysk:-460
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7320, bet:17, zysk:-470
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7303, bet:28, zysk:-487
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:7331, bet:10, zysk:-459
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7341, bet:10, zysk:-449
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7331, bet:17, zysk:-459
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7348, bet:10, zysk:-442
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7338, bet:17, zysk:-452
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:7355, bet:10, zysk:-435
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:7345, bet:17, zysk:-445
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7328, bet:28, zysk:-462
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:7356, bet:10, zysk:-434
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7366, bet:10, zysk:-424
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:7376, bet:10, zysk:-414
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7366, bet:17, zysk:-424
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7349, bet:28, zysk:-441
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7321, bet:47, zysk:-469
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7274, bet:79, zysk:-516
+VM12059:37 Wynik rundy - kolor:red, wygr:158, bilans:7353, bet:10, zysk:-437
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7343, bet:17, zysk:-447
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7326, bet:28, zysk:-464
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:7298, bet:47, zysk:-492
+VM12059:37 Wynik rundy - kolor:red, wygr:94, bilans:7345, bet:10, zysk:-445
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7335, bet:17, zysk:-455
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:7318, bet:28, zysk:-472
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7290, bet:47, zysk:-500
+VM12059:37 Wynik rundy - kolor:red, wygr:94, bilans:7337, bet:10, zysk:-453
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7327, bet:17, zysk:-463
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7310, bet:28, zysk:-480
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7282, bet:47, zysk:-508
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7235, bet:79, zysk:-555
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:7156, bet:134, zysk:-634
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:7022, bet:227, zysk:-768
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6795, bet:385, zysk:-995
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6410, bet:654, zysk:-1380
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:5756, bet:1111, zysk:-2034
+VM12059:37 Wynik rundy - kolor:red, wygr:2222, bilans:6867, bet:10, zysk:-923
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6877, bet:10, zysk:-913
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6887, bet:10, zysk:-903
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6877, bet:17, zysk:-913
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6860, bet:28, zysk:-930
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6832, bet:47, zysk:-958
+VM12059:37 Wynik rundy - kolor:red, wygr:94, bilans:6879, bet:10, zysk:-911
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6889, bet:10, zysk:-901
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6879, bet:17, zysk:-911
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6896, bet:10, zysk:-894
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6906, bet:10, zysk:-884
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6896, bet:17, zysk:-894
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6913, bet:10, zysk:-877
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6903, bet:17, zysk:-887
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6920, bet:10, zysk:-870
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6930, bet:10, zysk:-860
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6920, bet:17, zysk:-870
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:6903, bet:28, zysk:-887
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6875, bet:47, zysk:-915
+VM12059:37 Wynik rundy - kolor:red, wygr:94, bilans:6922, bet:10, zysk:-868
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6912, bet:17, zysk:-878
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6929, bet:10, zysk:-861
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6939, bet:10, zysk:-851
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6949, bet:10, zysk:-841
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6939, bet:17, zysk:-851
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6956, bet:10, zysk:-834
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6966, bet:10, zysk:-824
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6956, bet:17, zysk:-834
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6973, bet:10, zysk:-817
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:6963, bet:17, zysk:-827
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6946, bet:28, zysk:-844
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6918, bet:47, zysk:-872
+VM12059:37 Wynik rundy - kolor:red, wygr:94, bilans:6965, bet:10, zysk:-825
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6955, bet:17, zysk:-835
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6938, bet:28, zysk:-852
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6910, bet:47, zysk:-880
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6863, bet:79, zysk:-927
+VM12059:37 Wynik rundy - kolor:red, wygr:158, bilans:6942, bet:10, zysk:-848
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6932, bet:17, zysk:-858
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6949, bet:10, zysk:-841
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6959, bet:10, zysk:-831
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6949, bet:17, zysk:-841
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6932, bet:28, zysk:-858
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:6904, bet:47, zysk:-886
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6857, bet:79, zysk:-933
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6778, bet:134, zysk:-1012
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6644, bet:227, zysk:-1146
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6417, bet:385, zysk:-1373
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6032, bet:654, zysk:-1758
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:5378, bet:1111, zysk:-2412
+VM12059:37 Wynik rundy - kolor:red, wygr:2222, bilans:6489, bet:10, zysk:-1301
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6499, bet:10, zysk:-1291
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6509, bet:10, zysk:-1281
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6499, bet:17, zysk:-1291
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6516, bet:10, zysk:-1274
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6506, bet:17, zysk:-1284
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:6489, bet:28, zysk:-1301
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6461, bet:47, zysk:-1329
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6414, bet:79, zysk:-1376
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6335, bet:134, zysk:-1455
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6201, bet:227, zysk:-1589
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:5974, bet:385, zysk:-1816
+VM12059:37 Wynik rundy - kolor:red, wygr:770, bilans:6359, bet:10, zysk:-1431
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6349, bet:17, zysk:-1441
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6366, bet:10, zysk:-1424
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6376, bet:10, zysk:-1414
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6386, bet:10, zysk:-1404
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6396, bet:10, zysk:-1394
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6386, bet:17, zysk:-1404
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6369, bet:28, zysk:-1421
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6397, bet:10, zysk:-1393
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6387, bet:17, zysk:-1403
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6404, bet:10, zysk:-1386
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6414, bet:10, zysk:-1376
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6424, bet:10, zysk:-1366
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6414, bet:17, zysk:-1376
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6397, bet:28, zysk:-1393
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6425, bet:10, zysk:-1365
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6415, bet:17, zysk:-1375
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6432, bet:10, zysk:-1358
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6422, bet:17, zysk:-1368
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6439, bet:10, zysk:-1351
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6449, bet:10, zysk:-1341
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6439, bet:17, zysk:-1351
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6456, bet:10, zysk:-1334
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6446, bet:17, zysk:-1344
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6463, bet:10, zysk:-1327
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6473, bet:10, zysk:-1317
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6463, bet:17, zysk:-1327
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6446, bet:28, zysk:-1344
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6418, bet:47, zysk:-1372
+VM12059:37 Wynik rundy - kolor:red, wygr:94, bilans:6465, bet:10, zysk:-1325
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6455, bet:17, zysk:-1335
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6438, bet:28, zysk:-1352
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6466, bet:10, zysk:-1324
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6476, bet:10, zysk:-1314
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6466, bet:17, zysk:-1324
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6483, bet:10, zysk:-1307
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6493, bet:10, zysk:-1297
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6503, bet:10, zysk:-1287
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6513, bet:10, zysk:-1277
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6503, bet:17, zysk:-1287
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:6486, bet:28, zysk:-1304
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6514, bet:10, zysk:-1276
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6524, bet:10, zysk:-1266
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6514, bet:17, zysk:-1276
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6531, bet:10, zysk:-1259
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6521, bet:17, zysk:-1269
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6504, bet:28, zysk:-1286
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6476, bet:47, zysk:-1314
+VM12059:37 Wynik rundy - kolor:red, wygr:94, bilans:6523, bet:10, zysk:-1267
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6513, bet:17, zysk:-1277
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6496, bet:28, zysk:-1294
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6524, bet:10, zysk:-1266
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6534, bet:10, zysk:-1256
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6524, bet:17, zysk:-1266
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6507, bet:28, zysk:-1283
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6535, bet:10, zysk:-1255
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6525, bet:17, zysk:-1265
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6508, bet:28, zysk:-1282
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6536, bet:10, zysk:-1254
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6546, bet:10, zysk:-1244
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6556, bet:10, zysk:-1234
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6546, bet:17, zysk:-1244
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6563, bet:10, zysk:-1227
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6573, bet:10, zysk:-1217
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6563, bet:17, zysk:-1227
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6546, bet:28, zysk:-1244
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6518, bet:47, zysk:-1272
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6471, bet:79, zysk:-1319
+VM12059:37 Wynik rundy - kolor:red, wygr:158, bilans:6550, bet:10, zysk:-1240
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6560, bet:10, zysk:-1230
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6570, bet:10, zysk:-1220
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6580, bet:10, zysk:-1210
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6590, bet:10, zysk:-1200
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6600, bet:10, zysk:-1190
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6590, bet:17, zysk:-1200
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6573, bet:28, zysk:-1217
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6601, bet:10, zysk:-1189
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6591, bet:17, zysk:-1199
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6608, bet:10, zysk:-1182
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6618, bet:10, zysk:-1172
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6628, bet:10, zysk:-1162
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6618, bet:17, zysk:-1172
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6635, bet:10, zysk:-1155
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:6625, bet:17, zysk:-1165
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6642, bet:10, zysk:-1148
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6632, bet:17, zysk:-1158
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6649, bet:10, zysk:-1141
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6659, bet:10, zysk:-1131
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6669, bet:10, zysk:-1121
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6679, bet:10, zysk:-1111
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6689, bet:10, zysk:-1101
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6679, bet:17, zysk:-1111
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6662, bet:28, zysk:-1128
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6634, bet:47, zysk:-1156
+VM12059:37 Wynik rundy - kolor:red, wygr:94, bilans:6681, bet:10, zysk:-1109
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6671, bet:17, zysk:-1119
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6654, bet:28, zysk:-1136
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:6626, bet:47, zysk:-1164
+VM12059:37 Wynik rundy - kolor:red, wygr:94, bilans:6673, bet:10, zysk:-1117
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6683, bet:10, zysk:-1107
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6673, bet:17, zysk:-1117
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6690, bet:10, zysk:-1100
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6680, bet:17, zysk:-1110
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6697, bet:10, zysk:-1093
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6687, bet:17, zysk:-1103
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6670, bet:28, zysk:-1120
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6698, bet:10, zysk:-1092
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6688, bet:17, zysk:-1102
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6705, bet:10, zysk:-1085
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6695, bet:17, zysk:-1095
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6712, bet:10, zysk:-1078
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6702, bet:17, zysk:-1088
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6685, bet:28, zysk:-1105
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6713, bet:10, zysk:-1077
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6723, bet:10, zysk:-1067
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6733, bet:10, zysk:-1057
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6743, bet:10, zysk:-1047
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6753, bet:10, zysk:-1037
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6763, bet:10, zysk:-1027
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6753, bet:17, zysk:-1037
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6770, bet:10, zysk:-1020
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6760, bet:17, zysk:-1030
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6777, bet:10, zysk:-1013
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6767, bet:17, zysk:-1023
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6784, bet:10, zysk:-1006
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6794, bet:10, zysk:-996
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6804, bet:10, zysk:-986
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6794, bet:17, zysk:-996
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6777, bet:28, zysk:-1013
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6805, bet:10, zysk:-985
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6795, bet:17, zysk:-995
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6778, bet:28, zysk:-1012
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6750, bet:47, zysk:-1040
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6703, bet:79, zysk:-1087
+VM12059:37 Wynik rundy - kolor:red, wygr:158, bilans:6782, bet:10, zysk:-1008
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:6772, bet:17, zysk:-1018
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6789, bet:10, zysk:-1001
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6799, bet:10, zysk:-991
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:6789, bet:17, zysk:-1001
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6772, bet:28, zysk:-1018
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6744, bet:47, zysk:-1046
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6697, bet:79, zysk:-1093
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6618, bet:134, zysk:-1172
+VM12059:37 Wynik rundy - kolor:red, wygr:268, bilans:6752, bet:10, zysk:-1038
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6742, bet:17, zysk:-1048
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6725, bet:28, zysk:-1065
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6753, bet:10, zysk:-1037
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6743, bet:17, zysk:-1047
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6726, bet:28, zysk:-1064
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6698, bet:47, zysk:-1092
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6651, bet:79, zysk:-1139
+VM12059:37 Wynik rundy - kolor:red, wygr:158, bilans:6730, bet:10, zysk:-1060
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6740, bet:10, zysk:-1050
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6750, bet:10, zysk:-1040
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6740, bet:17, zysk:-1050
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6757, bet:10, zysk:-1033
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6767, bet:10, zysk:-1023
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6777, bet:10, zysk:-1013
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6787, bet:10, zysk:-1003
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6777, bet:17, zysk:-1013
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6794, bet:10, zysk:-996
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6804, bet:10, zysk:-986
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6794, bet:17, zysk:-996
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6811, bet:10, zysk:-979
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6821, bet:10, zysk:-969
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6811, bet:17, zysk:-979
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6794, bet:28, zysk:-996
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6682, bet:10, zysk:-1108
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6692, bet:10, zysk:-1098
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6702, bet:10, zysk:-1088
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6712, bet:10, zysk:-1078
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6722, bet:10, zysk:-1068
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6712, bet:17, zysk:-1078
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6695, bet:28, zysk:-1095
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6667, bet:47, zysk:-1123
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6620, bet:79, zysk:-1170
+VM12059:37 Wynik rundy - kolor:red, wygr:158, bilans:6699, bet:10, zysk:-1091
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6709, bet:10, zysk:-1081
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6699, bet:17, zysk:-1091
+VM12059:37 Wynik rundy - kolor:red, wygr:34, bilans:6716, bet:10, zysk:-1074
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6706, bet:17, zysk:-1084
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6689, bet:28, zysk:-1101
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6661, bet:47, zysk:-1129
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6614, bet:79, zysk:-1176
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6535, bet:134, zysk:-1255
+VM12059:37 Wynik rundy - kolor:red, wygr:268, bilans:6669, bet:10, zysk:-1121
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6679, bet:10, zysk:-1111
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6669, bet:17, zysk:-1121
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6652, bet:28, zysk:-1138
+VM12059:37 Wynik rundy - kolor:red, wygr:56, bilans:6680, bet:10, zysk:-1110
+VM12059:37 Wynik rundy - kolor:green, wygr:0, bilans:6670, bet:17, zysk:-1120
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6653, bet:28, zysk:-1137
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6625, bet:47, zysk:-1165
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6578, bet:79, zysk:-1212
+VM12059:37 Wynik rundy - kolor:red, wygr:158, bilans:6657, bet:10, zysk:-1133
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6667, bet:10, zysk:-1123
+VM12059:37 Wynik rundy - kolor:red, wygr:20, bilans:6677, bet:10, zysk:-1113
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6667, bet:17, zysk:-1123
+VM12059:37 Wynik rundy - kolor:black, wygr:0, bilans:6650, bet:28, zysk:-1140
