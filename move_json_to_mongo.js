@@ -37,5 +37,7 @@ const filename = 'results.json';
     client.close();
 })();
 
-
+// LAST ID: 1253658
+// SIZE: 15106
+// SIZE: 7.61 MB
  
