@@ -28,7 +28,7 @@ const filename = 'results.json';
         var id = parseInt(row['id']);
         var last_id = 1253658;
         if(id >= last_id){
-            await db.collection(collection_name).update({"id": row['id']}, row, {upsert: true});
+            await db.collection(collection_name).update({"id": row['id']}, row, {upsert: false});
             console.log('UPDATE saved ', row['id'])
         }
     }
