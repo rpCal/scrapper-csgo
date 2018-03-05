@@ -1,29 +1,31 @@
 {
-  "name": "csgofast",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "lite-server"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "moment": "^2.20.1",
-    "puppeteer": "^1.1.0",
-    "uuid": "^3.2.1",
-    "winston": "^3.0.0-rc1"
-  },
-  "devDependencies": {
-    "lite-server": "^2.3.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rpCal/scrapper-csgo.git"
-  },
-  "bugs": {
-    "url": "https://github.com/rpCal/scrapper-csgo/issues"
-  },
-  "homepage": "https://github.com/rpCal/scrapper-csgo#readme",
-  "description": ""
-}
+    "name": "csgofast",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+      "dev": "lite-server"
+    },
+    "dependencies": {
+      "body-parser": "~1.18.2",
+      "cookie-parser": "~1.4.3",
+      "debug": "~2.6.9",
+      "express": "~4.15.5",
+      "jade": "~1.11.0",
+      "morgan": "~1.9.0",
+      "serve-favicon": "~2.4.5",
+      "ejs": "latest",
+      "aws-sdk": "latest",
+      "moment": "^2.20.1",
+      "puppeteer": "^1.1.0",
+      "uuid": "^3.2.1",
+      "winston": "^3.0.0-rc1"
+    },
+    "devDependencies": {
+      "lite-server": "^2.3.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/rpCal/scrapper-csgo.git"
+    }
+  }
+  

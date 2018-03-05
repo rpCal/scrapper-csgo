@@ -33,3 +33,4 @@
 {"message":"1036e168 BROWSER --- ERROR in puppeteer: Error: Evaluation failed: ReferenceError: $ is not defined\n    at <anonymous>:5:27","level":"error"}
 {"message":"8cb9e0a9 BROWSER --- ERROR in puppeteer: Error: Evaluation failed: ReferenceError: $ is not defined\n    at <anonymous>:5:27","level":"error"}
 {"message":"0f03c998 BROWSER --- ERROR in puppeteer: Error: Evaluation failed: ReferenceError: $ is not defined\n    at <anonymous>:5:27","level":"error"}
+{"message":"08adb719 BROWSER --- ERROR in puppeteer: AssertionError [ERR_ASSERTION]: Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"","level":"error"}
