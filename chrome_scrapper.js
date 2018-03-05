@@ -23,31 +23,33 @@ const _logger = winston.createLogger({
   ]
 });
 
-(async () => {
-    _logger.verbose('APP - start script');
 
-    // const browser = await puppeteer.launch();
-    const browser = await puppeteer.launch({headless: false});
 
-    const page = await browser.newPage();
+// (async () => {
+//     _logger.verbose('APP - start script');
 
-    await page.goto('https://csgofast.com/#game/double');
+//     // const browser = await puppeteer.launch();
+//     const browser = await puppeteer.launch({headless: false});
 
-    await delay(3000);
+//     const page = await browser.newPage();
 
-    const page2 = await browser.newPage();
+//     await page.goto('https://csgofast.com/#game/double');
 
-    await page2.goto('https://csgofast.com/#history/double/all');
+//     await delay(3000);
 
-    await delay(3000);
+//     const page2 = await browser.newPage();
 
-    const results = await page2.evaluate(evaluate_get_history_results);
-    const rund_id = await page.evaluate(evaluate_get_game_id);
+//     await page2.goto('https://csgofast.com/#history/double/all');
 
-    _logger.info(`wyniki: ${Object.keys(results).length} | ${rund_id}`)
+//     await delay(3000);
 
-    await browser.close();
-})();
+//     const results = await page2.evaluate(evaluate_get_history_results);
+//     const rund_id = await page.evaluate(evaluate_get_game_id);
+
+//     _logger.info(`wyniki: ${Object.keys(results).length} | ${rund_id}`)
+
+//     await browser.close();
+// })();
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
