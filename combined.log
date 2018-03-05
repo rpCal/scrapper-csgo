@@ -2429,3 +2429,44 @@
 {"message":"46e2d2f0 new history successfully appended 10","level":"info"}
 {"message":"4f3e8d30 Execution: 0:04s; 2018-03-05T11:14:31 - start; 2018-03-05T11:14:35 - end ","level":"info"}
 {"message":"4f3e8d30 new history successfully appended 12","level":"info"}
+{"message":"8d6bb145 Execution: 0:04s; 2018-03-05T11:25:43 - start; 2018-03-05T11:25:46 - end ","level":"info"}
+{"message":"8d6bb145 new history successfully appended 13","level":"info"}
+{"message":"34b06232 Execution: 0:04s; 2018-03-05T11:33:29 - start; 2018-03-05T11:33:34 - end ","level":"info"}
+{"message":"34b06232 new history successfully appended 10","level":"info"}
+{"message":"31aa2f98 Execution: 0:03s; 2018-03-05T11:43:52 - start; 2018-03-05T11:43:55 - end ","level":"info"}
+{"message":"31aa2f98 new history successfully appended 12","level":"info"}
+{"message":"345790dd Execution: 0:03s; 2018-03-05T11:52:53 - start; 2018-03-05T11:52:56 - end ","level":"info"}
+{"message":"345790dd new history successfully appended 11","level":"info"}
+{"message":"wyniki: undefined, [object Object]","level":"info"}
+{"message":"wyniki: undefined, [object Object]","level":"info"}
+{"message":"wyniki: undefined, [object Object]","level":"info"}
+{"message":"6894c756 Execution: 0:03s; 2018-03-05T12:01:08 - start; 2018-03-05T12:01:11 - end ","level":"info"}
+{"message":"6894c756 new history successfully appended 10","level":"info"}
+{"message":"86056b01 Execution: 0:03s; 2018-03-05T12:08:26 - start; 2018-03-05T12:08:29 - end ","level":"info"}
+{"message":"86056b01 new history successfully appended 9","level":"info"}
+{"message":"wyniki: 49 | 1253183","level":"info"}
+{"message":"fdc8555b Execution: 0:04s; 2018-03-05T12:17:50 - start; 2018-03-05T12:17:54 - end ","level":"info"}
+{"message":"fdc8555b new history successfully appended 11","level":"info"}
+{"message":"wyniki: 50 | 1253189","level":"info"}
+{"message":"63b01479 Execution: 0:03s; 2018-03-05T12:25:01 - start; 2018-03-05T12:25:04 - end ","level":"info"}
+{"message":"63b01479 new history successfully appended 8","level":"info"}
+{"message":"0f03c998 BROWSER --- ERROR in puppeteer: Error: Evaluation failed: ReferenceError: $ is not defined\n    at <anonymous>:5:27","level":"error"}
+{"message":"0f03c998 Execution: 0:04s; 2018-03-05T12:34:12 - start; 2018-03-05T12:34:17 - end ","level":"info"}
+{"message":"090134fe Execution: 0:03s; 2018-03-05T12:46:42 - start; 2018-03-05T12:46:45 - end ","level":"info"}
+{"message":"090134fe new history successfully appended 26","level":"info"}
+{"message":"83abdeea Execution: 0:03s; 2018-03-05T12:59:58 - start; 2018-03-05T13:00:01 - end ","level":"info"}
+{"message":"83abdeea new history successfully appended 0","level":"info"}
+{"message":"0585bd68 Execution: 0:03s; 2018-03-05T13:06:31 - start; 2018-03-05T13:06:34 - end ","level":"info"}
+{"message":"0585bd68 new history successfully appended 24","level":"info"}
+{"message":"a7585df3 Execution: 0:03s; 2018-03-05T13:13:08 - start; 2018-03-05T13:13:11 - end ","level":"info"}
+{"message":"a7585df3 new history successfully appended 8","level":"info"}
+{"message":"f73a8234 Execution: 0:03s; 2018-03-05T13:23:02 - start; 2018-03-05T13:23:06 - end ","level":"info"}
+{"message":"f73a8234 new history successfully appended 12","level":"info"}
+{"message":"b2cdc752 Execution: 0:03s; 2018-03-05T13:30:44 - start; 2018-03-05T13:30:47 - end ","level":"info"}
+{"message":"b2cdc752 new history successfully appended 9","level":"info"}
+{"message":"bb3a42b4 Execution: 0:03s; 2018-03-05T13:44:27 - start; 2018-03-05T13:44:30 - end ","level":"info"}
+{"message":"bb3a42b4 new history successfully appended 17","level":"info"}
+{"message":"4d21af92 Execution: 0:03s; 2018-03-05T13:53:31 - start; 2018-03-05T13:53:34 - end ","level":"info"}
+{"message":"4d21af92 new history successfully appended 10","level":"info"}
+{"message":"35756de7 Execution: 0:03s; 2018-03-05T14:03:36 - start; 2018-03-05T14:03:39 - end ","level":"info"}
+{"message":"35756de7 new history successfully appended 12","level":"info"}
