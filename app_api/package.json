@@ -6,14 +6,15 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "aws-sdk": "latest",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
     "debug": "~2.6.9",
+    "ejs": "latest",
     "express": "~4.15.5",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5",
-    "ejs": "latest",
-    "aws-sdk": "latest"
+    "serve-favicon": "~2.4.5"
   }
 }
