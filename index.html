@@ -34,45 +34,10 @@
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
 
-<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBJxCPjcljGl9XUJkcSp8_t6lTZP9BQKhE",
-    authDomain: "udemy-react-native-app-auth.firebaseapp.com",
-    databaseURL: "https://udemy-react-native-app-auth.firebaseio.com",
-    projectId: "udemy-react-native-app-auth",
-    storageBucket: "udemy-react-native-app-auth.appspot.com",
-    messagingSenderId: "796801885258"
-  };
-  firebase.initializeApp(config);
-
-  var email = "csgo.test@gmail.com";
-  var password = "Test1234";
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    
-    .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-    });
-
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            // User is signed in.
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
-            var isAnonymous = user.isAnonymous;
-            var uid = user.uid;
-            var providerData = user.providerData;
-            // ...
-        } else {
-
-        }
-    });
-
+    $.get('http://node-express-env.k83hs63mss.us-west-2.elasticbeanstalk.com/users').then(function(data){
+        cosole.log('read', data)
+    })
 </script>
 
     
