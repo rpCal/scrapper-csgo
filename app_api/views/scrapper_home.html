@@ -99,9 +99,10 @@
 
 var data_response = [];    
 
-var results = [];
-var keys = [];
+// var results = [];
+// var keys = [];
 
+var _data_response_length = 0;
 var _minId = null;
 var _maxId = null;
 
@@ -127,43 +128,49 @@ function pick_index_min_max(minId, maxId){
 
     // 2018-02-23T11:29:00 | 1235890 - 1237594
     // 2018-02-26T13:58 | 1241201 - 1247357
-    var default_min = 1241201;
-    var default_max = 1247357;
+    // var default_min = 1241201;
+    // var default_max = 1247357;
 
-    if(!minId){ minId = default_min; }    
-    if(isNaN(minId)){ minId = default_min}
-    if(minId < default_min){ minId = default_min; }
-    if(!data_response[minId]){ minId = default_min; }
+    // if(!minId){ minId = default_min; }    
+    // if(isNaN(minId)){ minId = default_min}
+    // if(minId < default_min){ minId = default_min; }
+    // if(!data_response[minId]){ minId = default_min; }
 
-    if(!maxId){ 
-        // set new default_max from result
-        if(default_max == 1247357){
-            keys = Object.keys(data_response);
-            default_max = data_response[keys[keys.length - 1]].id;
-        }
+    // if(!maxId){ 
+    //     // set new default_max from result
+    //     if(default_max == 1247357){
+    //         keys = Object.keys(data_response);
+    //         default_max = data_response[keys[keys.length - 1]].id;
+    //     }
         
-        maxId = default_max; 
-    }
-    if(isNaN(maxId)){ maxId = default_max; }
-    if(!data_response[maxId]){ maxId = default_max; }
+    //     maxId = default_max; 
+    // }
+    // if(isNaN(maxId)){ maxId = default_max; }
+    // if(!data_response[maxId]){ maxId = default_max; }
 
-    _minId = minId + "";
-    _maxId = maxId + "";
+    _data_response_length = data_response.length;
+    // _minId = data_response[0].id;
+    // _maxId = data_response[_data_response_length - 1].id;
 
-    return { minId: minId, maxId: maxId };
+    // console.log('jak jest?', data_response[0].id)
+
+    return { minId: data_response[0].id, maxId: data_response[_data_response_length - 1].id };
 }
 
 function filter_update_results(minId, maxId){
-    results = _.filter(data_response, function(o) { 
-        var id = parseInt(o.id, 10); 
-        return id > minId && id < maxId; 
-    });
-    keys = Object.keys(results);
+    // results = data_response;
+    // keys = data_response.map(function(e){ return e.id; });
+    // results = _.filter(data_response, function(o) { 
+    //     var id = parseInt(o.id, 10); 
+    //     return id > minId && id < maxId; 
+    // });
+    // keys = Object.keys(results);
 }
 
 
 function getJsonData(callback){
-    return $.get('https://rpcal.github.io/scrapper-csgo/results.json')
+    // return $.get('https://rpcal.github.io/scrapper-csgo/results.json')
+    return $.get('/users')
     .done(function (data) {
         data_response = data;
         callback();
@@ -216,8 +223,8 @@ function draw_filter_data_form(index_min, index_max){
         <fieldset>
             <small>* Gry są mniej więcej co minute...</small><br>
             <small>* Zakres 24h to 1700 wpisów</small><br>
-            <small>* Zakres start ID: ${index_min} == ${data_response[index_min].t}</small><br>
-            <small>* Zakres end ID: ${index_max} == ${data_response[index_max].t}</small><br>
+            <small>* Zakres start ID: ${index_min} == ${moment(data_response[0].t)}</small><br>
+            <small>* Zakres end ID: ${index_max} == ${moment(data_response[_data_response_length - 1].t)}</small><br>
             <button type="submit">Filtruj zakres</button>
         </fieldset>
 
@@ -273,12 +280,12 @@ function draw_strategy_form(){
 
         <fieldset>
             <label>Runda konca</label>
-            <input name="index_max" value="${keys.length}" />
+            <input name="index_max" value="${data_response.length}" />
         </fieldset>
 
         <fieldset>
             <label>Max rozegranych rund</label>
-            <input name="max_rounds" value="${keys.length}" />
+            <input name="max_rounds" value="${data_response.length}" />
         </fieldset>
 
         <fieldset>
@@ -477,7 +484,7 @@ function oblicz_rundy(form_values){
     var seria_brak_koloru_red = 0;
     var seria_brak_koloru_green = 0;
 
-    for(var i = 0; i < keys.length; i++){
+    for(var i = 0; i < data_response.length; i++){
         
         flaga_czy_grac = i >= index_min && i <= index_max;
 
@@ -485,7 +492,7 @@ function oblicz_rundy(form_values){
             flaga_czy_grac = false; 
         }
 
-        var wynik_rundy = results[keys[i]];
+        var wynik_rundy = data_response[i];
         var atrubut_wygranej = wynik_rundy[nazwa_attr_wygranej];
         var czy_wygrana = null;
         var kwota_finalna = 0;
@@ -599,6 +606,8 @@ function oblicz_rundy(form_values){
             seria_przegranej = 0;
         }
 
+
+
         _rundy.push(_.merge({}, runda, { 
             index: index_rundy,
             id: wynik_rundy.id,
@@ -626,8 +635,12 @@ function oblicz_rundy(form_values){
 
             seria_brak_koloru_black: seria_brak_koloru_black,
             seria_brak_koloru_red: seria_brak_koloru_red,
-            seria_brak_koloru_green: seria_brak_koloru_green
-            
+            seria_brak_koloru_green: seria_brak_koloru_green,
+
+            "sum_g": wynik_rundy.sum_g,
+            "sum_r": wynik_rundy.sum_r,
+            "sum_b": wynik_rundy.sum_b,
+            "users": wynik_rundy.users
         }))
 
 
@@ -731,7 +744,11 @@ function draw_strategy(form_values, show_table, callback){
             "-----",
             runda.seria_brak_koloru_black,
             runda.seria_brak_koloru_red,
-            runda.seria_brak_koloru_green
+            runda.seria_brak_koloru_green,
+            "-----",
+            runda.sum_b,
+            runda.sum_r,
+            runda.sum_g
         ]);
     //     _tbody.append(`
     //         <tr style="">
@@ -904,7 +921,11 @@ function draw_strategy(form_values, show_table, callback){
                 { title: "-", "width": "25px" }, //16
                 { title: "Seria brak black", "width": "25px"  }, //17
                 { title: "Seria brak red", "width": "25px"  }, //18
-                { title: "Seria brak green", "width": "25px"  } //19
+                { title: "Seria brak green", "width": "25px"  }, //19
+                { title: "-", "width": "25px" }, //20
+                { title: "Suma obstawien black", "width": "25px" }, //21
+                { title: "Suma obstawien red", "width": "25px" }, //22
+                { title: "Suma obstawien green", "width": "25px" }, //23
             ],
             "rowCallback": function( row, data, index ) {
 
@@ -1458,7 +1479,7 @@ function run_strategy_number(number){
     var czy_zakonczyc = false;
     
     
-    var item_first = results[0];
+    var item_first = data_response[0];
     var pierwszy_kolor = item_first.c;
 
     var kwota_poczatkowa = 1000;
@@ -1471,8 +1492,8 @@ function run_strategy_number(number){
 
     bilans = kwota_poczatkowa;
 
-    for(var i = 0; i < keys.length; i++){
-        var wynik_rundy = results[keys[i]];
+    for(var i = 0; i < data_response.length; i++){
+        var wynik_rundy = data_response[i];
 
         if(czy_grac){   
             var czy_wygrana = wynik_rundy.n == number;
@@ -1493,7 +1514,7 @@ function run_strategy_color(kolor){
     var czy_zakonczyc = false;
     
     
-    var item_first = results[0];
+    var item_first = data_response[0];
     var pierwszy_kolor = item_first.c;
 
     var kwota_poczatkowa = 1000;
@@ -1506,8 +1527,8 @@ function run_strategy_color(kolor){
 
     bilans = kwota_poczatkowa;
 
-    for(var i = 0; i < keys.length; i++){
-        var wynik_rundy = results[keys[i]];
+    for(var i = 0; i < data_response.length; i++){
+        var wynik_rundy = data_response[i];
 
         if(czy_grac){
             var czy_wygrana = wynik_rundy.c == kolor;
@@ -1523,14 +1544,14 @@ function run_strategy_color(kolor){
 
 function draw_title(){
 
-    var item_first = results[0];
-    var item_last = results[keys.length - 1];
+    var item_first = data_response[0];
+    var item_last = data_response[_data_response_length - 1];
     var time_start = moment(item_first.t).format('YYYY-MM-DD HH:MM');
     var time_end = moment(item_last.t).format('YYYY-MM-DD HH:MM')
     var title = `
         ${time_start} - ${time_end} <br> 
-        ID: ${_minId} - ${_maxId} <br> 
-        Liczba rund: ${keys.length}
+        ID: ${item_first.id} - ${item_last.id} <br> 
+        Liczba rund: ${_data_response_length}
     `;
     $('#root').append($("<h1>").html(title))
 }
@@ -1548,7 +1569,7 @@ function draw_lineChart_histogram(){
         data: []
     }];
 
-    groups = _.chain(results)
+    groups = _.chain(data_response)
         .groupBy(function(a){ return a.n })
         .value()
 
@@ -1595,15 +1616,15 @@ function draw_chartColor(){
 
     
 
-    var item_first = results[0];
-    var item_last = results[keys.length - 1];
+    var item_first = data_response[0];
+    var item_last = data_response[_data_response_length - 1];
 
     var count_green = 0;
     var count_red = 0;
     var count_black = 0;
 
-    for(var i = 0; i < keys.length; i++){
-        var row = results[keys[i]];
+    for(var i = 0; i < data_response.length; i++){
+        var row = data_response[i];
         if(row.c == "green"){ count_green++; }
         if(row.c == "red"){ count_red++; }
         if(row.c == "black"){ count_black++; }
@@ -1645,15 +1666,15 @@ function draw_chartPie(){
 
     
 
-    var item_first = results[0];
-    var item_last = results[keys.length - 1];
+    var item_first = data_response[0];
+    var item_last = data_response[_data_response_length - 1];
 
     var count_green = 0;
     var count_red = 0;
     var count_black = 0;
 
-    for(var i = 0; i < keys.length; i++){
-        var row = results[keys[i]];
+    for(var i = 0; i < data_response.length; i++){
+        var row = data_responses[i];
         if(row.c == "green"){ count_green++; }
         if(row.c == "red"){ count_red++; }
         if(row.c == "black"){ count_black++; }
