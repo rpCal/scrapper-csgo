@@ -637,10 +637,10 @@ function oblicz_rundy(form_values){
             seria_brak_koloru_red: seria_brak_koloru_red,
             seria_brak_koloru_green: seria_brak_koloru_green,
 
-            "sum_g": wynik_rundy.sum_g,
-            "sum_r": wynik_rundy.sum_r,
-            "sum_b": wynik_rundy.sum_b,
-            "users": wynik_rundy.users
+            "sum_g": (wynik_rundy.sum_g)? wynik_rundy.sum_g: 0,
+            "sum_r": (wynik_rundy.sum_g)? wynik_rundy.sum_r: 0,
+            "sum_b": (wynik_rundy.sum_g)? wynik_rundy.sum_b: 0,
+            "users": (wynik_rundy.users)? wynik_rundy.users: []
         }))
 
 
@@ -955,6 +955,7 @@ function draw_strategy(form_values, show_table, callback){
                 $(row).find('td:eq(19)').css({'background': bg_seria_brak_koloru_green, "color": "#000"});
 
 
+
                 // console.log('??', data[3], data);
 
                 // 6 - wynik
@@ -969,6 +970,10 @@ function draw_strategy(form_values, show_table, callback){
                 if(data[3] >= 1 && data[3] <= 7){ bg_color = "red"}
                 if(data[3] >= 8 && data[3] <= 14){ bg_color = "black"}
                 $(row).find('td:eq(3)').css({'background': bg_color, "color": "#fff"});
+
+                $(row).find('td:eq(21)').css({'background': shadeBlendConvert(0.7 - (bg_color == "black"?0.3:0), "#000000"), "color": "#000"});
+                $(row).find('td:eq(22)').css({'background': shadeBlendConvert(0.7 - (bg_color == "red"?0.3:0), "#ff0000"), "color": "#000"});
+                $(row).find('td:eq(23)').css({'background': shadeBlendConvert(0.7 - (bg_color == "green"?0.3:0), "#00ff00"), "color": "#000"});
             },
             "pageLength": 500
             // scrollY:        '50vh',
