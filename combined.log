@@ -2603,3 +2603,157 @@
 {"message":"2cc752be new history successfully appended 9","level":"info"}
 {"message":"0b0fafd3 Execution: 0:03s; 2018-03-05T23:36:12 - start; 2018-03-05T23:36:15 - end ","level":"info"}
 {"message":"0b0fafd3 new history successfully appended 17","level":"info"}
+{"message":"098c0dc4 Execution: 0:03s; 2018-03-05T23:45:40 - start; 2018-03-05T23:45:43 - end ","level":"info"}
+{"message":"098c0dc4 new history successfully appended 11","level":"info"}
+{"message":"785fddd7 Execution: 0:03s; 2018-03-05T23:53:29 - start; 2018-03-05T23:53:31 - end ","level":"info"}
+{"message":"785fddd7 new history successfully appended 10","level":"info"}
+{"message":"8a5f9ebf Execution: 0:03s; 2018-03-06T00:05:37 - start; 2018-03-06T00:05:40 - end ","level":"info"}
+{"message":"8a5f9ebf new history successfully appended 14","level":"info"}
+{"message":"9bed7dea Execution: 0:08s; 2018-03-06T00:18:27 - start; 2018-03-06T00:18:34 - end ","level":"info"}
+{"message":"9bed7dea new history successfully appended 16","level":"info"}
+{"message":"55a26e65 Execution: 0:03s; 2018-03-06T00:26:06 - start; 2018-03-06T00:26:09 - end ","level":"info"}
+{"message":"55a26e65 new history successfully appended 9","level":"info"}
+{"message":"1fc43830 Execution: 0:03s; 2018-03-06T00:33:18 - start; 2018-03-06T00:33:21 - end ","level":"info"}
+{"message":"1fc43830 new history successfully appended 8","level":"info"}
+{"message":"ba97d949 Execution: 0:03s; 2018-03-06T00:40:18 - start; 2018-03-06T00:40:21 - end ","level":"info"}
+{"message":"ba97d949 new history successfully appended 9","level":"info"}
+{"message":"c9a5e667 Execution: 0:03s; 2018-03-06T00:51:54 - start; 2018-03-06T00:51:57 - end ","level":"info"}
+{"message":"c9a5e667 new history successfully appended 14","level":"info"}
+{"message":"e22abb2e Execution: 0:03s; 2018-03-06T01:01:44 - start; 2018-03-06T01:01:47 - end ","level":"info"}
+{"message":"e22abb2e new history successfully appended 12","level":"info"}
+{"message":"3ce4b562 Execution: 0:03s; 2018-03-06T01:10:00 - start; 2018-03-06T01:10:03 - end ","level":"info"}
+{"message":"3ce4b562 new history successfully appended 9","level":"info"}
+{"message":"1aa74e4f Execution: 0:03s; 2018-03-06T01:21:10 - start; 2018-03-06T01:21:12 - end ","level":"info"}
+{"message":"1aa74e4f new history successfully appended 14","level":"info"}
+{"message":"9984140e Execution: 0:08s; 2018-03-06T01:29:45 - start; 2018-03-06T01:29:53 - end ","level":"info"}
+{"message":"9984140e new history successfully appended 10","level":"info"}
+{"message":"83161646 Execution: 0:05s; 2018-03-06T01:42:44 - start; 2018-03-06T01:42:48 - end ","level":"info"}
+{"message":"83161646 new history successfully appended 16","level":"info"}
+{"message":"e240ee64 Execution: 0:03s; 2018-03-06T01:54:26 - start; 2018-03-06T01:54:29 - end ","level":"info"}
+{"message":"e240ee64 new history successfully appended 14","level":"info"}
+{"message":"f169dd28 Execution: 0:03s; 2018-03-06T02:02:31 - start; 2018-03-06T02:02:34 - end ","level":"info"}
+{"message":"f169dd28 new history successfully appended 9","level":"info"}
+{"message":"08a6b7ee Execution: 0:04s; 2018-03-06T02:14:39 - start; 2018-03-06T02:14:43 - end ","level":"info"}
+{"message":"08a6b7ee new history successfully appended 15","level":"info"}
+{"message":"9ad2c7d5 Execution: 0:03s; 2018-03-06T02:25:01 - start; 2018-03-06T02:25:04 - end ","level":"info"}
+{"message":"9ad2c7d5 new history successfully appended 12","level":"info"}
+{"message":"b920c7d8 Execution: 0:03s; 2018-03-06T02:38:23 - start; 2018-03-06T02:38:26 - end ","level":"info"}
+{"message":"b920c7d8 new history successfully appended 16","level":"info"}
+{"message":"9a385941 Execution: 0:03s; 2018-03-06T02:49:42 - start; 2018-03-06T02:49:45 - end ","level":"info"}
+{"message":"9a385941 new history successfully appended 14","level":"info"}
+{"message":"84ac35d5 Execution: 0:03s; 2018-03-06T03:03:34 - start; 2018-03-06T03:03:37 - end ","level":"info"}
+{"message":"84ac35d5 new history successfully appended 17","level":"info"}
+{"message":"1483148c Execution: 0:03s; 2018-03-06T03:10:37 - start; 2018-03-06T03:10:40 - end ","level":"info"}
+{"message":"1483148c new history successfully appended 8","level":"info"}
+{"message":"0f28cdb0 Execution: 0:03s; 2018-03-06T03:17:16 - start; 2018-03-06T03:17:19 - end ","level":"info"}
+{"message":"0f28cdb0 new history successfully appended 8","level":"info"}
+{"message":"ff2480d5 Execution: 0:03s; 2018-03-06T03:26:28 - start; 2018-03-06T03:26:30 - end ","level":"info"}
+{"message":"ff2480d5 new history successfully appended 11","level":"info"}
+{"message":"d61a266b Execution: 0:03s; 2018-03-06T03:40:25 - start; 2018-03-06T03:40:28 - end ","level":"info"}
+{"message":"d61a266b new history successfully appended 17","level":"info"}
+{"message":"d10261ad Execution: 0:03s; 2018-03-06T03:51:28 - start; 2018-03-06T03:51:31 - end ","level":"info"}
+{"message":"d10261ad new history successfully appended 13","level":"info"}
+{"message":"14082d19 Execution: 0:03s; 2018-03-06T04:01:19 - start; 2018-03-06T04:01:22 - end ","level":"info"}
+{"message":"14082d19 new history successfully appended 12","level":"info"}
+{"message":"2b01c3e0 Execution: 0:03s; 2018-03-06T04:08:29 - start; 2018-03-06T04:08:32 - end ","level":"info"}
+{"message":"2b01c3e0 new history successfully appended 8","level":"info"}
+{"message":"d8e800e9 Execution: 0:03s; 2018-03-06T04:18:17 - start; 2018-03-06T04:18:20 - end ","level":"info"}
+{"message":"d8e800e9 new history successfully appended 12","level":"info"}
+{"message":"540a2794 Execution: 0:03s; 2018-03-06T04:24:56 - start; 2018-03-06T04:24:59 - end ","level":"info"}
+{"message":"540a2794 new history successfully appended 8","level":"info"}
+{"message":"22d00011 Execution: 0:03s; 2018-03-06T04:34:00 - start; 2018-03-06T04:34:03 - end ","level":"info"}
+{"message":"22d00011 new history successfully appended 11","level":"info"}
+{"message":"cc637e9b Execution: 0:03s; 2018-03-06T04:44:49 - start; 2018-03-06T04:44:52 - end ","level":"info"}
+{"message":"cc637e9b new history successfully appended 13","level":"info"}
+{"message":"6eda9311 Execution: 0:03s; 2018-03-06T04:53:20 - start; 2018-03-06T04:53:24 - end ","level":"info"}
+{"message":"6eda9311 new history successfully appended 10","level":"info"}
+{"message":"261a1070 Execution: 0:03s; 2018-03-06T05:02:08 - start; 2018-03-06T05:02:11 - end ","level":"info"}
+{"message":"261a1070 new history successfully appended 11","level":"info"}
+{"message":"c8a42acc Execution: 0:03s; 2018-03-06T05:10:06 - start; 2018-03-06T05:10:09 - end ","level":"info"}
+{"message":"c8a42acc new history successfully appended 9","level":"info"}
+{"message":"a1afb90b Execution: 0:03s; 2018-03-06T05:22:01 - start; 2018-03-06T05:22:04 - end ","level":"info"}
+{"message":"a1afb90b new history successfully appended 15","level":"info"}
+{"message":"faa09433 Execution: 0:03s; 2018-03-06T05:28:54 - start; 2018-03-06T05:28:57 - end ","level":"info"}
+{"message":"faa09433 new history successfully appended 8","level":"info"}
+{"message":"34b1736b Execution: 0:03s; 2018-03-06T05:41:02 - start; 2018-03-06T05:41:05 - end ","level":"info"}
+{"message":"34b1736b new history successfully appended 14","level":"info"}
+{"message":"5bb10dec Execution: 0:03s; 2018-03-06T05:48:23 - start; 2018-03-06T05:48:26 - end ","level":"info"}
+{"message":"5bb10dec new history successfully appended 9","level":"info"}
+{"message":"a878d4cd Execution: 0:05s; 2018-03-06T05:54:43 - start; 2018-03-06T05:54:48 - end ","level":"info"}
+{"message":"a878d4cd new history successfully appended 8","level":"info"}
+{"message":"e8a1f694 Execution: 0:03s; 2018-03-06T06:02:15 - start; 2018-03-06T06:02:18 - end ","level":"info"}
+{"message":"e8a1f694 new history successfully appended 9","level":"info"}
+{"message":"d188dbbc Execution: 0:03s; 2018-03-06T06:12:34 - start; 2018-03-06T06:12:36 - end ","level":"info"}
+{"message":"d188dbbc new history successfully appended 12","level":"info"}
+{"message":"c49f1f2d Execution: 0:03s; 2018-03-06T06:26:08 - start; 2018-03-06T06:26:11 - end ","level":"info"}
+{"message":"c49f1f2d new history successfully appended 17","level":"info"}
+{"message":"8d7d2e82 Execution: 0:03s; 2018-03-06T06:32:50 - start; 2018-03-06T06:32:52 - end ","level":"info"}
+{"message":"8d7d2e82 new history successfully appended 8","level":"info"}
+{"message":"76e2439e Execution: 0:03s; 2018-03-06T06:42:39 - start; 2018-03-06T06:42:42 - end ","level":"info"}
+{"message":"76e2439e new history successfully appended 11","level":"info"}
+{"message":"fef09802 Execution: 0:03s; 2018-03-06T06:52:07 - start; 2018-03-06T06:52:10 - end ","level":"info"}
+{"message":"fef09802 new history successfully appended 12","level":"info"}
+{"message":"3fe03e15 Execution: 0:03s; 2018-03-06T07:03:14 - start; 2018-03-06T07:03:16 - end ","level":"info"}
+{"message":"3fe03e15 new history successfully appended 13","level":"info"}
+{"message":"3e641898 Execution: 0:03s; 2018-03-06T07:12:15 - start; 2018-03-06T07:12:18 - end ","level":"info"}
+{"message":"3e641898 new history successfully appended 11","level":"info"}
+{"message":"4aa4adc1 Execution: 0:03s; 2018-03-06T07:21:51 - start; 2018-03-06T07:21:54 - end ","level":"info"}
+{"message":"4aa4adc1 new history successfully appended 11","level":"info"}
+{"message":"6c75ac58 Execution: 0:03s; 2018-03-06T07:35:09 - start; 2018-03-06T07:35:12 - end ","level":"info"}
+{"message":"6c75ac58 new history successfully appended 16","level":"info"}
+{"message":"22c6f4dd Execution: 0:03s; 2018-03-06T07:43:36 - start; 2018-03-06T07:43:40 - end ","level":"info"}
+{"message":"22c6f4dd new history successfully appended 10","level":"info"}
+{"message":"d6fdefc9 Execution: 0:03s; 2018-03-06T07:52:57 - start; 2018-03-06T07:53:00 - end ","level":"info"}
+{"message":"d6fdefc9 new history successfully appended 12","level":"info"}
+{"message":"0a4aabd3 Execution: 0:03s; 2018-03-06T08:03:35 - start; 2018-03-06T08:03:38 - end ","level":"info"}
+{"message":"0a4aabd3 new history successfully appended 12","level":"info"}
+{"message":"d750d925 Execution: 0:03s; 2018-03-06T08:14:00 - start; 2018-03-06T08:14:03 - end ","level":"info"}
+{"message":"d750d925 new history successfully appended 13","level":"info"}
+{"message":"5f1d12c9 Execution: 0:03s; 2018-03-06T08:24:35 - start; 2018-03-06T08:24:38 - end ","level":"info"}
+{"message":"5f1d12c9 new history successfully appended 13","level":"info"}
+{"message":"53b2bf1b Execution: 0:03s; 2018-03-06T08:35:57 - start; 2018-03-06T08:36:00 - end ","level":"info"}
+{"message":"53b2bf1b new history successfully appended 13","level":"info"}
+{"message":"ac5267a1 Execution: 0:03s; 2018-03-06T08:48:48 - start; 2018-03-06T08:48:51 - end ","level":"info"}
+{"message":"ac5267a1 new history successfully appended 16","level":"info"}
+{"message":"761e5ceb Execution: 0:03s; 2018-03-06T08:55:34 - start; 2018-03-06T08:55:37 - end ","level":"info"}
+{"message":"761e5ceb new history successfully appended 8","level":"info"}
+{"message":"45491ead Execution: 0:03s; 2018-03-06T09:07:03 - start; 2018-03-06T09:07:05 - end ","level":"info"}
+{"message":"45491ead new history successfully appended 13","level":"info"}
+{"message":"0c8ae29f Execution: 0:03s; 2018-03-06T09:17:25 - start; 2018-03-06T09:17:27 - end ","level":"info"}
+{"message":"0c8ae29f new history successfully appended 13","level":"info"}
+{"message":"bb7d3db6 Execution: 0:03s; 2018-03-06T09:28:09 - start; 2018-03-06T09:28:12 - end ","level":"info"}
+{"message":"bb7d3db6 new history successfully appended 13","level":"info"}
+{"message":"98611ab6 Execution: 0:03s; 2018-03-06T09:39:31 - start; 2018-03-06T09:39:34 - end ","level":"info"}
+{"message":"98611ab6 new history successfully appended 13","level":"info"}
+{"message":"eaa43af9 Execution: 0:03s; 2018-03-06T09:47:58 - start; 2018-03-06T09:48:01 - end ","level":"info"}
+{"message":"eaa43af9 new history successfully appended 10","level":"info"}
+{"message":"5e2bb2cd Execution: 0:03s; 2018-03-06T10:01:36 - start; 2018-03-06T10:01:39 - end ","level":"info"}
+{"message":"5e2bb2cd new history successfully appended 17","level":"info"}
+{"message":"1a5671fb Execution: 0:03s; 2018-03-06T10:10:20 - start; 2018-03-06T10:10:23 - end ","level":"info"}
+{"message":"1a5671fb new history successfully appended 10","level":"info"}
+{"message":"3f42882b Execution: 0:03s; 2018-03-06T10:23:40 - start; 2018-03-06T10:23:42 - end ","level":"info"}
+{"message":"3f42882b new history successfully appended 16","level":"info"}
+{"message":"ee12e017 Execution: 0:03s; 2018-03-06T10:33:22 - start; 2018-03-06T10:33:25 - end ","level":"info"}
+{"message":"ee12e017 new history successfully appended 12","level":"info"}
+{"message":"b1f9c399 Execution: 0:03s; 2018-03-06T10:40:19 - start; 2018-03-06T10:40:21 - end ","level":"info"}
+{"message":"b1f9c399 new history successfully appended 8","level":"info"}
+{"message":"2edca188 Execution: 0:03s; 2018-03-06T10:52:50 - start; 2018-03-06T10:52:53 - end ","level":"info"}
+{"message":"2edca188 new history successfully appended 15","level":"info"}
+{"message":"a04c75a1 Execution: 0:03s; 2018-03-06T10:59:34 - start; 2018-03-06T10:59:37 - end ","level":"info"}
+{"message":"a04c75a1 new history successfully appended 8","level":"info"}
+{"message":"9932d93e Execution: 0:03s; 2018-03-06T11:13:18 - start; 2018-03-06T11:13:20 - end ","level":"info"}
+{"message":"9932d93e new history successfully appended 17","level":"info"}
+{"message":"49c59056 Execution: 0:03s; 2018-03-06T11:20:58 - start; 2018-03-06T11:21:01 - end ","level":"info"}
+{"message":"49c59056 new history successfully appended 9","level":"info"}
+{"message":"c1a426d3 Execution: 0:03s; 2018-03-06T11:29:11 - start; 2018-03-06T11:29:14 - end ","level":"info"}
+{"message":"c1a426d3 new history successfully appended 10","level":"info"}
+{"message":"ca831f00 Execution: 0:03s; 2018-03-06T11:35:20 - start; 2018-03-06T11:35:23 - end ","level":"info"}
+{"message":"ca831f00 new history successfully appended 7","level":"info"}
+{"message":"1ed1602a Execution: 0:03s; 2018-03-06T11:44:07 - start; 2018-03-06T11:44:10 - end ","level":"info"}
+{"message":"1ed1602a new history successfully appended 11","level":"info"}
+{"message":"a4ffc7b4 Execution: 0:03s; 2018-03-06T11:52:15 - start; 2018-03-06T11:52:18 - end ","level":"info"}
+{"message":"a4ffc7b4 new history successfully appended 9","level":"info"}
+{"message":"d7a0030a Execution: 0:03s; 2018-03-06T12:01:59 - start; 2018-03-06T12:02:02 - end ","level":"info"}
+{"message":"d7a0030a new history successfully appended 12","level":"info"}
+{"message":"dbc41efd Execution: 0:03s; 2018-03-06T12:10:35 - start; 2018-03-06T12:10:38 - end ","level":"info"}
+{"message":"dbc41efd new history successfully appended 10","level":"info"}
