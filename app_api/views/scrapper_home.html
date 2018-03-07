@@ -657,9 +657,16 @@ function oblicz_rundy(form_values){
             seria_koloru = 1;
         }
 
-        var sum_g = (wynik_rundy.sum_g)? wynik_rundy.sum_g: 0;
-        var sum_r = (wynik_rundy.sum_r)? wynik_rundy.sum_r: 0;
-        var sum_b = (wynik_rundy.sum_b)? wynik_rundy.sum_b: 0;
+        // if(i == 0){
+        //     var ostatnia_runda = data_response[0];
+        // }else{
+        //     var ostatnia_runda = data_response[i-1];
+        // }
+        var ostatnia_runda = data_response[i];
+
+        var sum_g = (ostatnia_runda.sum_g) ? ostatnia_runda.sum_g : 0;
+        var sum_r = (ostatnia_runda.sum_r) ? ostatnia_runda.sum_r : 0;
+        var sum_b = (ostatnia_runda.sum_b) ? ostatnia_runda.sum_b : 0;
 
         var is_max_black = (sum_b > sum_r && sum_b > sum_g)
         var is_max_red = (sum_r > sum_b && sum_r > sum_g)
@@ -668,6 +675,8 @@ function oblicz_rundy(form_values){
         if(is_max_black){ max_color = "black"; }
         if(is_max_red){ max_color = "red"; }
         if(is_max_green){ max_color = "green"; }
+        
+        // console.log('runda?', i, wynik_rundy.id, ostatnia_runda.id, max_color, ostatnia_runda.sum_g, ostatnia_runda.sum_r, ostatnia_runda.sum_b)
 
 
         var wynik_oczekiwany = "-";
