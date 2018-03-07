@@ -116,7 +116,10 @@ function run(){
 
     // var index = pick_index_min_max(0, 0);
 
-    draw_filter_data_form(__data_response[0].id, __data_response[__data_response.length - 1].id);
+    var minId = 1255151;
+    // var minId = __data_response[0].id;
+
+    draw_filter_data_form(minId, __data_response[__data_response.length - 1].id);
 };
 
 function pick_index_min_max(minId, maxId){
@@ -226,6 +229,7 @@ function draw_filter_data_form(index_min, index_max){
         </fieldset>
 
         <fieldset>
+            <small>* Pierwsze ID: 1235890, Pierwsze osoby ID: 1255151</small><br>
             <small>* Gry są mniej więcej co minute...</small><br>
             <small>* Zakres 24h to 1700 wpisów</small><br>
             <small>* Zakres start ID: ${index_min} == ${moment(__data_response[0].t)}</small><br>
@@ -277,27 +281,81 @@ function draw_strategy_form(){
             <label>Kwota poczatkowa (zł)</label>
             <input name="kwota_poczatkowa" value="3250.0" />
         </fieldset>
-
-        <fieldset>
-            <label>Runda startu</label>
-            <input name="index_min" value="0" />
-        </fieldset>
-
-        <fieldset>
-            <label>Runda konca</label>
-            <input name="index_max" value="${data_response.length}" />
-        </fieldset>
-
-        <fieldset>
-            <label>Max rozegranych rund</label>
-            <input name="max_rounds" value="${data_response.length}" />
-        </fieldset>
-
         <fieldset>
             <label>Kwota betu początkowego (zł)</label>
             <input name="start_bet_price" value="10.0" />
         </fieldset>
+        <br><br>
 
+
+        <fieldset>
+            <label>Zacznij grac gdy runda startu większa,równa niż</label>
+            <input name="index_min" value="0" />
+        </fieldset>
+        <fieldset>
+            <label>Zacznij grac od serii wygranych większa,równa niż</label>
+            <input name="start_on_seria_win_number" value="0" />
+            <smal>* Omiń gdy 0</smal>
+        </fieldset>
+        <fieldset>
+            <label>Zacznij grac od serii przegranych większa,równa niż</label>
+            <input name="start_on_seria_lose_number" value="0" />
+            <smal>* Omiń gdy 0</smal>
+        </fieldset>
+        <fieldset>
+            <label>Zacznij grac od seria dowolnego koloru większa,równa niż</label>
+            <input name="start_on_seria_color_all_number" value="0" />
+            <smal>* Omiń gdy 0</smal>
+        </fieldset>
+        <fieldset>
+            <label>Zacznij grac od seria koloru czarnego większa,równa niż</label>
+            <input name="start_on_seria_color_b_number" value="0" />
+            <smal>* Omiń gdy 0</smal>
+        </fieldset>
+        <fieldset>
+            <label>Zacznij grac od seria koloru czerownego większa,równa niż</label>
+            <input name="start_on_seria_color_r_number" value="0" />
+            <smal>* Omiń gdy 0</smal>
+        </fieldset>
+        <fieldset>
+            <label>Zacznij grac od seria koloru zielonego większa,równa niż </label>
+            <input name="start_on_seria_color_g_number" value="0" />
+            <smal>* Omiń gdy 0</smal>
+        </fieldset>
+        <br><br>
+
+
+        <fieldset>
+            <label>Skoncz gdy runda konca większa,równa niż</label>
+            <input name="index_max" value="${data_response.length}" />
+        </fieldset>
+        <fieldset>
+            <label>Skoncz gdy max rozegranych rund większa,równa niż</label>
+            <input name="max_rounds" value="${data_response.length}" />
+        </fieldset>
+        <fieldset>
+            <label>Skoncz grac od seria dowolnego koloru większa,równa niż</label>
+            <input name="stop_on_seria_color_all_number" value="0" />
+            <smal>* Omiń gdy 0</smal>
+        </fieldset>
+        <fieldset>
+            <label>Skoncz grac od seria koloru czarnego większa,równa niż</label>
+            <input name="stop_on_seria_color_b_number" value="0" />
+            <smal>* Omiń gdy 0</smal>
+        </fieldset>
+        <fieldset>
+            <label>Skoncz grac od seria koloru czerownego większa,równa niż</label>
+            <input name="stop_on_seria_color_r_number" value="0" />
+            <smal>* Omiń gdy 0</smal>
+        </fieldset>
+        <fieldset>
+            <label>Skoncz grac od seria koloru zielonego większa,równa niż</label>
+            <input name="stop_on_seria_color_g_number" value="0" />
+            <smal>* Omiń gdy 0</smal>   
+        </fieldset>
+
+
+        <br><br>
         <fieldset>
             <label>Zmian kwote betu po przegranej (mnożenie)</label>
             <input name="change_bet_price_on_lose" value="1.7" />
@@ -317,28 +375,15 @@ function draw_strategy_form(){
             <label>Od ilu serii wygranych zacząć mnożyć?</label>
             <input name="seria_win_number" value="20" />
         </fieldset>
-
+        
+        <br><br>
         <fieldset>
             <label>Wygrywam gdy: </label>
             <select name="succes_value">
+                <option value="max_bet">MAX Suma obstawien</option>    
                 <option value="color_red">Kolor: Czerwony</option>    
                 <option value="color_green">Kolor: Zielony</option>    
-                <option value="color_black">Kolor: Czarny</option>    
-                <option value="number_0">Liczba: 0</option>    
-                <option value="number_1">Liczba: 1</option>    
-                <option value="number_2">Liczba: 2</option>    
-                <option value="number_3">Liczba: 3</option>    
-                <option value="number_4">Liczba: 4</option>    
-                <option value="number_5">Liczba: 5</option>    
-                <option value="number_6">Liczba: 6</option>    
-                <option value="number_7">Liczba: 7</option>    
-                <option value="number_8">Liczba: 8</option>    
-                <option value="number_9">Liczba: 9</option>    
-                <option value="number_10">Liczba: 10</option>    
-                <option value="number_11">Liczba: 11</option>    
-                <option value="number_12">Liczba: 12</option>    
-                <option value="number_13">Liczba: 13</option>  
-                <option value="number_14">Liczba: 14</option>      
+                <option value="color_black">Kolor: Czarny</option>  
             </select>
         </fieldset>
 
@@ -435,6 +480,8 @@ function oblicz_rundy(form_values){
     var seria_win_number = 100;
     var seria_lose_number = 1;
 
+    var obstawiam_na_najwieksza_sume = false;
+
     index_min = parseInt(_.find(form_values, { name: "index_min" })['value'], 10);
     index_max = parseInt(_.find(form_values, { name: "index_max" })['value'], 10);
     max_rozegranych_gier = parseInt(_.find(form_values, { name: "max_rounds" })['value'], 10);
@@ -446,6 +493,20 @@ function oblicz_rundy(form_values){
     seria_win_number = parseInt(_.find(form_values, { name: "seria_win_number" })['value'], 10);
     seria_lose_number = parseInt(_.find(form_values, { name: "seria_lose_number" })['value'], 10);
     
+    start_on_seria_win_number = parseInt(_.find(form_values, { name: "start_on_seria_win_number" })['value'], 10);
+    start_on_seria_lose_number = parseInt(_.find(form_values, { name: "start_on_seria_lose_number" })['value'], 10);
+    start_on_seria_color_b_number = parseInt(_.find(form_values, { name: "start_on_seria_color_b_number" })['value'], 10);
+    start_on_seria_color_r_number = parseInt(_.find(form_values, { name: "start_on_seria_color_r_number" })['value'], 10);
+    start_on_seria_color_g_number = parseInt(_.find(form_values, { name: "start_on_seria_color_g_number" })['value'], 10);
+
+    stop_on_seria_color_g_number = parseInt(_.find(form_values, { name: "stop_on_seria_color_g_number" })['value'], 10);
+    stop_on_seria_color_r_number = parseInt(_.find(form_values, { name: "stop_on_seria_color_r_number" })['value'], 10);
+    stop_on_seria_color_b_number = parseInt(_.find(form_values, { name: "stop_on_seria_color_b_number" })['value'], 10);
+
+    start_on_seria_color_all_number = parseInt(_.find(form_values, { name: "start_on_seria_color_all_number" })['value'], 10);
+    stop_on_seria_color_all_number = parseInt(_.find(form_values, { name: "stop_on_seria_color_all_number" })['value'], 10);
+
+
     
     if(succes_value.indexOf("color_") != -1){
         nazwa_attr_wygranej = "c";
@@ -455,6 +516,9 @@ function oblicz_rundy(form_values){
     if(succes_value.indexOf("number_") != -1){
         nazwa_attr_wygranej = "n";
         oczekiwana_wartosc_atrybutu_wygranej = parseInt(succes_value.split("_")[1]);
+    }
+    if(succes_value == "max_bet"){
+        obstawiam_na_najwieksza_sume = true;
     }
 
     console.log('FORM: ', form_values);
@@ -491,11 +555,51 @@ function oblicz_rundy(form_values){
 
     for(var i = 0; i < data_response.length; i++){
         
-        flaga_czy_grac = i >= index_min && i <= index_max;
+        var czy_index_rundy_start = i >= index_min;
+        var czy_seria_win = start_on_seria_win_number >= seria_wygranej;
+        var czy_seria_lose = start_on_seria_lose_number >= seria_przegranej;
+        var czy_seria_color_g = start_on_seria_color_g_number >= seria_koloru_green;
+        var czy_seria_color_r = start_on_seria_color_r_number >= seria_koloru_red;
+        var czy_seria_color_b = start_on_seria_color_b_number >= seria_koloru_black;
+        var czy_seria_color_all = start_on_seria_color_all_number >= seria_koloru;
+ 
+        if(start_on_seria_win_number == 0){ czy_seria_win = true; }
+        if(start_on_seria_lose_number == 0){ czy_seria_lose = true; }
+        if(start_on_seria_color_g_number == 0){ czy_seria_color_g = true; }
+        if(start_on_seria_color_r_number == 0){ czy_seria_color_r = true; }
+        if(start_on_seria_color_b_number == 0){ czy_seria_color_b = true; }
+        if(start_on_seria_color_all_number == 0){ czy_seria_color_all = true; }
+        
+        var warunek_start = (
+            czy_index_rundy_start 
+            && czy_seria_win && czy_seria_lose
+            && czy_seria_color_g && czy_seria_color_r && czy_seria_color_b
+            && czy_seria_color_all
+        );
 
-        if(flaga_czy_zakonczyc){ 
-            flaga_czy_grac = false; 
-        }
+        var czy_index_rundy_stop = i >= index_max;
+        var czy_jest_max_rund = rozegranych_gier >= max_rozegranych_gier;
+        var czy_stop_seria_color_g = stop_on_seria_color_g_number >= seria_koloru_green;
+        var czy_stop_seria_color_r = stop_on_seria_color_r_number >= seria_koloru_red;
+        var czy_stop_seria_color_b = stop_on_seria_color_b_number >= seria_koloru_black;
+        var czy_stop_seria_color_all = stop_on_seria_color_all_number >= seria_koloru;
+
+        if(stop_on_seria_color_g_number == 0){ czy_stop_seria_color_g = false; }
+        if(stop_on_seria_color_r_number == 0){ czy_stop_seria_color_r = false; }
+        if(stop_on_seria_color_b_number == 0){ czy_stop_seria_color_b = false; }
+        if(stop_on_seria_color_all_number == 0){ czy_stop_seria_color_all = false; }
+        
+        var warunek_stop = (
+            czy_index_rundy_stop && czy_jest_max_rund 
+            && czy_stop_seria_color_g && czy_stop_seria_color_r && czy_stop_seria_color_b
+            && czy_stop_seria_color_all
+        );
+
+        flaga_czy_grac = warunek_start && !warunek_stop;
+
+        // if(flaga_czy_zakonczyc){ 
+        //     flaga_czy_grac = false; 
+        // }
 
         var wynik_rundy = data_response[i];
         var atrubut_wygranej = wynik_rundy[nazwa_attr_wygranej];
@@ -553,15 +657,37 @@ function oblicz_rundy(form_values){
             seria_koloru = 1;
         }
 
+        var sum_g = (wynik_rundy.sum_g)? wynik_rundy.sum_g: 0;
+        var sum_r = (wynik_rundy.sum_r)? wynik_rundy.sum_r: 0;
+        var sum_b = (wynik_rundy.sum_b)? wynik_rundy.sum_b: 0;
 
+        var is_max_black = (sum_b > sum_r && sum_b > sum_g)
+        var is_max_red = (sum_r > sum_b && sum_r > sum_g)
+        var is_max_green = (sum_g > sum_b && sum_g > sum_r)
+        var max_color = null;
+        if(is_max_black){ max_color = "black"; }
+        if(is_max_red){ max_color = "red"; }
+        if(is_max_green){ max_color = "green"; }
+
+
+        var wynik_oczekiwany = "-";
 
 
         if(flaga_czy_grac){
 
             tmp_bet_aktualny = bet_aktualny;
+            var czy_wygrana = false;
 
-            var czy_wygrana = atrubut_wygranej == oczekiwana_wartosc_atrybutu_wygranej;
-
+            if(obstawiam_na_najwieksza_sume){
+                czy_wygrana = wynik_rundy['c'] == max_color;
+                wynik_oczekiwany = max_color;
+            }else{
+                czy_wygrana = atrubut_wygranej == oczekiwana_wartosc_atrybutu_wygranej;
+                wynik_oczekiwany = oczekiwana_wartosc_atrybutu_wygranej;
+            }
+            // czy_wygrana = atrubut_wygranej == oczekiwana_wartosc_atrybutu_wygranej;
+            // wynik_oczekiwany = oczekiwana_wartosc_atrybutu_wygranej;
+            
             if(bet_aktualny > bilans){
                 bet_aktualny = bilans;
                 tmp_bet_aktualny = bet_aktualny;
@@ -613,6 +739,8 @@ function oblicz_rundy(form_values){
 
 
 
+
+
         _rundy.push(_.merge({}, runda, { 
             index: index_rundy,
             id: wynik_rundy.id,
@@ -620,7 +748,7 @@ function oblicz_rundy(form_values){
             wynik_liczba: wynik_rundy.n,
             wynik_kolor: wynik_rundy.c,
             
-            wynik_oczekiwany: oczekiwana_wartosc_atrybutu_wygranej,
+            wynik_oczekiwany: wynik_oczekiwany,
             atrubut_wygranej: atrubut_wygranej,
             czy_grac: flaga_czy_grac,
             czy_wygrana: czy_wygrana,
@@ -642,9 +770,9 @@ function oblicz_rundy(form_values){
             seria_brak_koloru_red: seria_brak_koloru_red,
             seria_brak_koloru_green: seria_brak_koloru_green,
 
-            "sum_g": (wynik_rundy.sum_g)? wynik_rundy.sum_g: 0,
-            "sum_r": (wynik_rundy.sum_g)? wynik_rundy.sum_r: 0,
-            "sum_b": (wynik_rundy.sum_g)? wynik_rundy.sum_b: 0,
+            "sum_g": sum_g,
+            "sum_r": sum_r,
+            "sum_b": sum_b,
             "users": (wynik_rundy.users)? wynik_rundy.users: []
         }))
 
@@ -653,15 +781,20 @@ function oblicz_rundy(form_values){
 
         index_rundy ++;
 
-        if(rozegranych_gier >= max_rozegranych_gier){ 
-            flaga_czy_zakonczyc = true; 
-        }
+        // if(rozegranych_gier >= max_rozegranych_gier){ 
+        //     flaga_czy_zakonczyc = true; 
+        // }
     }
 
     var kwota_zakonczenia = _rundy[_rundy.length - 1].bilans;
     var zysk = kwota_zakonczenia - kwota_poczatkowa;
 
-    return {rundy: _rundy, zysk:zysk, kwota_poczatkowa: kwota_poczatkowa, kwota_zakonczenia:kwota_zakonczenia, nazwa_attr_wygranej: nazwa_attr_wygranej };
+    return {
+        rundy: _rundy, zysk:zysk, 
+        kwota_poczatkowa: kwota_poczatkowa, 
+        kwota_zakonczenia:kwota_zakonczenia, 
+        nazwa_attr_wygranej: nazwa_attr_wygranej 
+    };
 }
 
 
@@ -725,9 +858,9 @@ function draw_strategy(form_values, show_table, callback){
         if(runda.seria_brak_koloru_red > max_seria_brak_red){ max_seria_brak_red = runda.seria_brak_koloru_red; } 
         if(runda.seria_brak_koloru_green > max_seria_brak_green){ max_seria_brak_green = runda.seria_brak_koloru_green; } 
 
-        var wynik_nazwa = nazwa_attr_wygranej == 'c' ? 
-                (runda.wynik_oczekiwany == 'red')? "czerwony": (runda.wynik_oczekiwany == 'green')?"zielony":"czarny"
-            : runda.wynik_oczekiwany;
+        // var wynik_nazwa = nazwa_attr_wygranej == 'c' ? 
+        //         (runda.wynik_oczekiwany == 'red')? "czerwony": (runda.wynik_oczekiwany == 'green')?"zielony":"czarny"
+        //     : runda.wynik_oczekiwany;
 
         tbody_data.push([
             runda.index,
@@ -735,7 +868,8 @@ function draw_strategy(form_values, show_table, callback){
             moment(runda.t).format('MM-DD HH:mm:ss'),
             runda.wynik_liczba,
             (runda.czy_grac)?'tak':'nie',
-            wynik_nazwa,
+            // wynik_nazwa,
+            runda.wynik_oczekiwany,
             (runda.zmiana_bilansu) > 0 ? "+" + runda.zmiana_bilansu.toFixed(2) : runda.zmiana_bilansu.toFixed(2),
             runda.bilans.toFixed(2),
             runda.bilans - kwota_poczatkowa.toFixed(2),
@@ -975,6 +1109,9 @@ function draw_strategy(form_values, show_table, callback){
                 if(data[3] >= 1 && data[3] <= 7){ bg_color = "red"}
                 if(data[3] >= 8 && data[3] <= 14){ bg_color = "black"}
                 $(row).find('td:eq(3)').css({'background': bg_color, "color": "#fff"});
+
+                // 5 - Wypadło  
+                $(row).find('td:eq(5)').css({'background': data[5], "color": "#fff"});
 
 
                 var is_max_black = (data[21] > data[22] && data[21] > data[23])
