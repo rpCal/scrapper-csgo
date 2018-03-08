@@ -392,12 +392,13 @@ function draw_stats_form(index_min, index_max){
         e.preventDefault();
         var user_id = parseInt($('[name="user_id"]').val());
         var index = users_list_ids[user_id];
+        $('#user-data').html("");
         if(!users_list[index]){
             $('#user-data').html("Nie znaleziono ID...");    
         }else{
 
             var str = users_list[index].rundy.map(function(runda){
-                return `Kwota: ${parseInt(runda.sum)}, wybral: ${runda.bet}, bylo: ${runda.c}; wygral: ${(runda.r)?'tak':'nie'}<br>`
+                return `ID: ${runda.rund_id} Kwota: ${parseInt(runda.sum)}, wybral: ${runda.bet}, bylo: ${runda.c}; wygral: ${(runda.r)?'tak':'nie'}<br>`
             });
             $('#user-data')
                 .append(str)
