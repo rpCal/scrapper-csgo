@@ -212,6 +212,12 @@ function run(){
     _form.trigger('submit');
 };
 
+/**
+ * CIEKAWE ID
+5831072 = 45000 w 11 grach
+
+ */
+
 function calc_stats(){
     var rundy = __data_response;
     for(var i = 0; i < rundy.length; i++){
@@ -265,7 +271,9 @@ function calc_stats(){
                 users_list[index].bilans_zmiana.push(zmiana_bilansu);
                 users_list[index].zysk = users_list[index].count_bet_win_sum - users_list[index].count_bet_sum;
                 users_list[index].procent = ((users_list[index].zysk / users_list[index].count_bet_sum ) * 100).toFixed(1);
-                
+                if(u.bet == "zero"){
+                    u.bet = "green";
+                }
                 users_list[index].rundy.push({
                     "rund_id": rundy[i].id,
                     "c": rundy[i].c,
@@ -398,10 +406,28 @@ function draw_stats_form(index_min, index_max){
         }else{
 
             var str = users_list[index].rundy.map(function(runda){
-                return `ID: ${runda.rund_id} Kwota: ${parseInt(runda.sum)}, wybral: ${runda.bet}, bylo: ${runda.c}; wygral: ${(runda.r)?'tak':'nie'}<br>`
+                return `<tr>
+                    <td>${runda.rund_id}</td>
+                    <td>${parseInt(runda.sum)}</td> 
+                    <td style="background: ${runda.bet}; color: #fff;"> ${runda.bet}</td> 
+                    <td style="background: ${runda.c}; color: #fff;"> ${runda.c}</td>
+                    <td style="background: ${(runda.r)?'green':'red'}; color: #fff;">${(runda.r)?'tak':'nie'}</td>
+                </tr>`;
             });
             $('#user-data')
-                .append(str)
+                .append(`<table>
+                    <thead>
+                        <tr>
+                            <th>ID rundy:</th>
+                            <th>Kwota:</th>
+                            <th>wybral:</th>
+                            <th>bylo:</th>
+                            <th>wygral:</th>
+                        </tr>
+                    </thead>
+                    <tbody>${str}</tbody>
+                </table>`)
+                .append(`<div style="white-space: word-break: break-all;">${JSON.stringify(users_list[index].bilans_kwota)}</div>`);
                 
             console.log(users_list[index]);
         }
