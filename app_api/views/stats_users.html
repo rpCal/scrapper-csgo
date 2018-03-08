@@ -225,12 +225,16 @@ function calc_stats(){
                         count_loose: 0,
                         count_bet_sum: 0,
                         count_bet_win_sum: 0,
+                        procent_wygranych: 0,
+                        procent_przegranych: 0,
+                        max_obstawienie: 0,
                         bilans_koniec: 0,
                         zysk: 0,
                         procent: 0,
                         rozegranych_gier: 0,
                         bilans_zmiana: [],
                         bilans_kwota: [],
+                        sumy_obstawien: [],
                         rundy: []
                     }; 
                     users_list_index++;
@@ -247,14 +251,20 @@ function calc_stats(){
                 }else{
                     users_list[index].count_loose++;
                 }
-                
+                if(kwota_obstawienia >= users_list[index].max_obstawienie){
+                    users_list[index].max_obstawienie = kwota_obstawienia;
+                }
+                users_list[index].rozegranych_gier++;
+                users_list[index].procent_wygranych = ((users_list[index].count_win / users_list[index].rozegranych_gier)* 100).toFixed(1);
+                users_list[index].procent_przegranych = ((users_list[index].count_loose / users_list[index].rozegranych_gier)* 100).toFixed(1);
+                users_list[index].sumy_obstawien.push(kwota_obstawienia);
                 users_list[index].count_bet_sum += kwota_obstawienia; 
                 users_list[index].bilans_koniec += zmiana_bilansu;
                 users_list[index].bilans_kwota.push(users_list[index].bilans_koniec);
                 users_list[index].bilans_zmiana.push(zmiana_bilansu);
                 users_list[index].zysk = users_list[index].count_bet_win_sum - users_list[index].count_bet_sum;
                 users_list[index].procent = ((users_list[index].zysk / users_list[index].count_bet_sum ) * 100).toFixed(1);
-                users_list[index].rozegranych_gier++;
+                
                 users_list[index].rundy.push({
                     "rund_id": rundy[i].id,
                     "c": rundy[i].c,
@@ -300,44 +310,35 @@ function draw_users_stats_console(){
     }
 }
 
-var filter_count_bet_sum = 0,
-    filter_count_bet_win_sum = 0,
-    filter_zysk = 0,
-    filter_procent = 0,
-    filter_rozegranych_gier = 0,
-    filter_count_win = 0, 
-    filter_count_loose = 0;
 var _form;
+var form_data = [0,0,0,0,0,0,0,0,0,0,0];
 
 
 function draw_stats_form(index_min, index_max){
 
-    _form = $(`
-    <form>
+    _form = $(`<form id="form1">
         <fieldset><label>Zagral za w sumie >=</label><input name="count_bet_sum" value="0" /></fieldset>
         <fieldset><label>Wygral w sumie>=</label><input name="count_bet_win_sum" value="0" /></fieldset>
-        <fieldset><label>Zysk >=</label><input name="zysk" value="1000" /></fieldset>
-        <fieldset><label>Zysk procent >=</label><input name="procent" value="10" /></fieldset>
-        <fieldset><label>Rozegranych gier lacznie >=</label><input name="rozegranych_gier" value="50" /></fieldset>
+        <fieldset><label>Zysk >=</label><input name="zysk" value="500" /></fieldset>
+        <fieldset><label>Zysk procent >=</label><input name="procent" value="50" /></fieldset>
+        <fieldset><label>Rozegranych gier lacznie >=</label><input name="rozegranych_gier" value="10" /></fieldset>
         <fieldset><label>Wygranych gier lacznie >=</label><input name="count_win" value="0" /></fieldset>
         <fieldset><label>Przegranych gier lacznie >=</label><input name="count_loose" value="0" /></fieldset>
+        <fieldset><label>procent wygranych >=</label><input name="procent_wygranych" value="50" /></fieldset>
+        <fieldset><label>procent przegranych >=</label><input name="procent_przegranych" value="0" /></fieldset>
+        <fieldset><label>max obstawienie >=</label><input name="max_obstawienie" value="0" /></fieldset>
         <button type="submit">Filtruj zakres</button>
-    </form>
-    `);
+    </form>`);
 
     _form.on('submit', function(e){
         e.preventDefault();
         if(table != null){
-            filter_count_bet_sum           = parseInt( $('[name="count_bet_sum"]').val(), 10 );
-            filter_count_bet_win_sum       = parseInt( $('[name="count_bet_win_sum"]').val(), 10 );
-            filter_zysk                    = parseInt( $('[name="zysk"]').val(), 10 );
-            filter_procent                 = parseInt( $('[name="procent"]').val(), 10 );
-            filter_rozegranych_gier        = parseInt( $('[name="rozegranych_gier"]').val(), 10 );
-            filter_count_win               = parseInt( $('[name="count_win"]').val(), 10 );
-            filter_count_loose             = parseInt( $('[name="count_loose"]').val(), 10 );
+            $("#form1 fieldset input").each(function(index, elem){
+                form_data[index + 1] = parseInt( $(elem).val(), 10 );
+            });
 
             table.draw();
-            console.log('poslzo...')
+            console.log('poslzo...', form_data)
         }
         return false;
     })
@@ -346,60 +347,73 @@ function draw_stats_form(index_min, index_max){
         .append($('<h1>').text("Filtruj wyniki"))
         .append(_form);
 
+    var form2 = $(`
+    <form id="form2">
+        <fieldset><label>Wpisz ID usera</label><input name="user_id" value="" /></fieldset>
+        <button type="submit">Pokaz usera</button>
+    </form>`)
+
+    form2.on('submit', function(e){
+        e.preventDefault();
+        var user_id = parseInt($('[name="user_id"]').val());
+        var index = users_list_ids[user_id];
+        if(!users_list[index]){
+            $('#user-data').html("Nie znaleziono ID...");    
+        }else{
+
+            var str = users_list[index].rundy.map(function(runda){
+                return `Kwota: ${parseInt(runda.sum)}, wybral: ${runda.bet}, bylo: ${runda.c}; wygral: ${(runda.r)?'tak':'nie'}<br>`
+            });
+            $('#user-data')
+                .append(str)
+                
+            console.log(users_list[index]);
+        }
+        
+        return false;
+    })
+
+    $('#root_group')
+        .append(form2)
+        .append(`<div id="user-data"></div>`)
+
 }
 
 function draw_users_stats_table(){
 
     $.fn.dataTable.ext.search.push(
         function( settings, data, dataIndex ) {
-            return (
-                   parseInt(data[1]) >= filter_count_bet_sum 
-                && parseInt(data[2]) >= filter_count_bet_win_sum
-                && parseInt(data[3]) >= filter_zysk
-                && parseInt(data[4]) >= filter_procent
-                && parseInt(data[5]) >= filter_rozegranych_gier
-                && parseInt(data[6]) >= filter_count_win
-                && parseInt(data[7]) >= filter_count_loose
-            );
+            var result = true;
+            for(var i = 1; i <form_data.length; i++){
+                if(!(parseInt(data[i]) >= form_data[i])){
+                    result = false;
+                }
+            }
+            return result;
         }
     );
 
-    var tbody_data = users_list
-    // .filter(function(runda){
-    //     return runda.bilans_koniec >= 100 && runda.rozegranych_gier >= 50 && runda.procent >= 10;
-    // })
-    .map(function(runda){
-        return [
-            runda.user_id, //0
-            runda.count_bet_sum, //1
-            runda.count_bet_win_sum, //2
-            runda.zysk, //3
-            runda.procent, //4
-            runda.rozegranych_gier, //5
-            runda.count_win, //6
-            runda.count_loose, //7
-        ];
-    });
+    var tbody_data = users_list.map(function(runda){return [
+        runda.user_id, //0
+        runda.count_bet_sum, //1
+        runda.count_bet_win_sum, //2
+        runda.zysk, //3
+        runda.procent, //4
+        runda.rozegranych_gier, //5
+        runda.count_win, //6
+        runda.count_loose, //7
+        runda.procent_wygranych, //8
+        runda.procent_przegranych, //9
+        runda.max_obstawienie, //10
+    ];});
 
     $('#root_group').append($(`<table id="table_results"></table>`));
 
-    var t = function(title){
-        return Object.assign({
-            title: title,
-            width: 50,
-            // render: function(d){
-            //     if(title.indexOf("K_") != -1){
-            //         return d.toLocaleString();
-            //     }else{
-            //         return d;
-            //     }
-            // }
-        })
-    }
+    var t = function(title){ return Object.assign({title: title,width: 50}) }
 
     table = $('#table_results').DataTable({
         "data": tbody_data,
-        "columns": [t("id"), t("K_Zagralza"), t("K_Wygral"), t("K_Zysk"),t("%"), t("Gier"), t("W"), t("P")],
+        "columns": [t("id"), t("K_Zagralza"), t("K_Wygral"), t("K_Zysk"),t("%"), t("Gier"), t("W"), t("P"), t("% wygranych"), t("% przegranych"), t("max obstawienie")],
         "pageLength": 100,
         "order": [3, 'asc']
     });
