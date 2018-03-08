@@ -187,19 +187,11 @@ $(document).ready(function(){
 });
 
 
+var users_list_ids = {};
+var users_list_index = 0; 
+var users_list = [];
 
-function run(){
-    
-    $('#root_group').html("");
-    draw_users_stats();
-
-    // var index = pick_index_min_max(0, 0);
-
-    // var minId = 1255151;
-    // var minId = __data_response[0].id;
-    
-    // draw_filter_data_form(minId, __data_response[__data_response.length - 1].id);
-};
+var table = null;
 
 Number.prototype.pad = function(size) {
     var s = String(this);
@@ -207,14 +199,22 @@ Number.prototype.pad = function(size) {
     return s;
 }
 
-function draw_users_stats(){
+function run(){
+    
+    $('#root_group').html("");
+    calc_stats();
+    console.log('jak wyszlo?', users_list.length),
+    // draw_users_stats_console();
+    draw_stats_form();
+    draw_users_stats_table();
 
-    var users_list_ids = {};
-    var users_list_index = 0; 
-    var users_list = [];
+    _form.trigger('submit');
+};
+
+function calc_stats(){
     var rundy = __data_response;
-
     for(var i = 0; i < rundy.length; i++){
+        // if(i>100){ continue; }
         if(rundy[i].users){
             rundy[i].users.forEach(function(u){
                 if(!users_list_ids[u.id]){ 
@@ -266,7 +266,11 @@ function draw_users_stats(){
             });
         }
     }
+}
 
+
+function draw_users_stats_console(){
+    
     users_list.sort(function(a, b){
         return b.procent - a.procent;
     });
@@ -294,24 +298,86 @@ function draw_users_stats(){
             console.log(str)
         }   
     }
+}
+
+var filter_count_bet_sum = 0,
+    filter_count_bet_win_sum = 0,
+    filter_zysk = 0,
+    filter_procent = 0,
+    filter_rozegranych_gier = 0,
+    filter_count_win = 0, 
+    filter_count_loose = 0;
+var _form;
 
 
+function draw_stats_form(index_min, index_max){
+
+    _form = $(`
+    <form>
+        <fieldset><label>Zagral za w sumie >=</label><input name="count_bet_sum" value="0" /></fieldset>
+        <fieldset><label>Wygral w sumie>=</label><input name="count_bet_win_sum" value="0" /></fieldset>
+        <fieldset><label>Zysk >=</label><input name="zysk" value="1000" /></fieldset>
+        <fieldset><label>Zysk procent >=</label><input name="procent" value="10" /></fieldset>
+        <fieldset><label>Rozegranych gier lacznie >=</label><input name="rozegranych_gier" value="50" /></fieldset>
+        <fieldset><label>Wygranych gier lacznie >=</label><input name="count_win" value="0" /></fieldset>
+        <fieldset><label>Przegranych gier lacznie >=</label><input name="count_loose" value="0" /></fieldset>
+        <button type="submit">Filtruj zakres</button>
+    </form>
+    `);
+
+    _form.on('submit', function(e){
+        e.preventDefault();
+        if(table != null){
+            filter_count_bet_sum           = parseInt( $('[name="count_bet_sum"]').val(), 10 );
+            filter_count_bet_win_sum       = parseInt( $('[name="count_bet_win_sum"]').val(), 10 );
+            filter_zysk                    = parseInt( $('[name="zysk"]').val(), 10 );
+            filter_procent                 = parseInt( $('[name="procent"]').val(), 10 );
+            filter_rozegranych_gier        = parseInt( $('[name="rozegranych_gier"]').val(), 10 );
+            filter_count_win               = parseInt( $('[name="count_win"]').val(), 10 );
+            filter_count_loose             = parseInt( $('[name="count_loose"]').val(), 10 );
+
+            table.draw();
+            console.log('poslzo...')
+        }
+        return false;
+    })
+
+    $('#root_group')
+        .append($('<h1>').text("Filtruj wyniki"))
+        .append(_form);
+
+}
+
+function draw_users_stats_table(){
+
+    $.fn.dataTable.ext.search.push(
+        function( settings, data, dataIndex ) {
+            return (
+                   parseInt(data[1]) >= filter_count_bet_sum 
+                && parseInt(data[2]) >= filter_count_bet_win_sum
+                && parseInt(data[3]) >= filter_zysk
+                && parseInt(data[4]) >= filter_procent
+                && parseInt(data[5]) >= filter_rozegranych_gier
+                && parseInt(data[6]) >= filter_count_win
+                && parseInt(data[7]) >= filter_count_loose
+            );
+        }
+    );
 
     var tbody_data = users_list
-    .filter(function(runda){
-        return runda.bilans_koniec >= 100 && runda.rozegranych_gier >= 50 && runda.procent >= 10;
-    })
+    // .filter(function(runda){
+    //     return runda.bilans_koniec >= 100 && runda.rozegranych_gier >= 50 && runda.procent >= 10;
+    // })
     .map(function(runda){
         return [
-            runda.user_id,
-            runda.count_bet_sum,
-            runda.count_bet_win_sum,
-            runda.zysk,
-            runda.procent,
-            runda.rozegranych_gier,
-            runda.count_win,
-            runda.count_loose,
-            
+            runda.user_id, //0
+            runda.count_bet_sum, //1
+            runda.count_bet_win_sum, //2
+            runda.zysk, //3
+            runda.procent, //4
+            runda.rozegranych_gier, //5
+            runda.count_win, //6
+            runda.count_loose, //7
         ];
     });
 
@@ -321,58 +387,24 @@ function draw_users_stats(){
         return Object.assign({
             title: title,
             width: 50,
-            render: function(d){
-                if(title.indexOf("K_") != -1){
-                    return d.toLocaleString().toString().padStart(9);
-                }else{
-                    return d.toString().padStart(title.length + 2);
-                }
-            }
+            // render: function(d){
+            //     if(title.indexOf("K_") != -1){
+            //         return d.toLocaleString();
+            //     }else{
+            //         return d;
+            //     }
+            // }
         })
     }
 
-    var table = $('#table_results').DataTable({
+    table = $('#table_results').DataTable({
         "data": tbody_data,
         "columns": [t("id"), t("K_Zagralza"), t("K_Wygral"), t("K_Zysk"),t("%"), t("Gier"), t("W"), t("P")],
         "pageLength": 100,
         "order": [3, 'asc']
     });
-
-    
-
-
-
-    // var _users_list_html = $('<div>').addClass("users-list");
-    // var _users_list_body = "";
-    // for(var i = 0; i < users_list_keys.length; i++){
-    //     var u_id = users_list_keys[i]
-    //     var u_rundy = users_list[u_id];
-    //     if(i >= 100){
-    //         continue;
-    //     }
-    //     if(u_rundy.length < 5){
-    //         continue;
-    //     }
-    //     var _rundy = "";
-    //     for(var j = 0; j < u_rundy.length; j++){
-    //         var runda = u_rundy[j];
-    //         _rundy += `<div class="${(runda.r)?"win":"lose"}  ${"win-" + runda.c} ${"bet-" + runda.bet}">
-    //             <span>${runda.id}</span>
-    //             <strong>${runda.sum}</strong>
-    //         </div>`;
-    //     }
-
-    //     var _row = `
-    //         <div class="row">
-    //             <div class="name">${u_id}</div>
-    //             <div class="rundy">${_rundy}</div>
-    //         </div>
-    //     `;
-    //     _users_list_body += _row;
-    // }
-    // $('#root_group').append(_users_list_body);
-
 }
+
 
 function pick_index_min_max(minId, maxId){
 
