@@ -203,6 +203,7 @@ function run(){
     
     $('#root_group').html("");
     calc_stats();
+    // save_to_csv();
     console.log('jak wyszlo?', users_list.length),
     // draw_users_stats_console();
     draw_stats_form();
@@ -276,6 +277,40 @@ function calc_stats(){
             });
         }
     }
+}
+
+function save_to_csv(){
+    // const rows = [["name1", "city1", "some other info"], ["name2", "city2", "more info"]];
+
+    var rows = users_list.map(function(runda){return [
+        runda.user_id, //0
+        runda.count_bet_sum, //1
+        runda.count_bet_win_sum, //2
+        runda.zysk, //3
+        runda.procent, //4
+        runda.rozegranych_gier, //5
+        runda.count_win, //6
+        runda.count_loose, //7
+        runda.procent_wygranych, //8
+        runda.procent_przegranych, //9
+        runda.max_obstawienie, //10
+    ];});
+
+    let csvContent = "data:text/csv;charset=utf-8,";
+    rows.forEach(function(rowArray){
+    let row = rowArray.join(",");
+        csvContent += row + "\r\n";
+    });
+
+    var encodedUri = encodeURI(csvContent);
+    window.open(encodedUri, "_blank");
+
+    // var encodedUri = encodeURI(csvContent);
+    // var link = document.createElement("a");
+    // link.setAttribute("href", encodedUri);
+    // link.setAttribute("download", "my_data.csv");
+    // document.body.appendChild(link); 
+    // link.click();
 }
 
 
