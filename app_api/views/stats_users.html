@@ -13,7 +13,6 @@
   <body>
         <a href="/">Zobacz strategie</a>  <br>
         <a href="/stats_users">Zobacz statystyki użytkownikow</a><br>
-      
       <div class="container-fluid text-center">
         <div id="root_group"></div>
       </div>
@@ -90,6 +89,82 @@
     table.dataTable thead th, table.dataTable thead td{
         padding: 2px !important;
     }
+
+    .users-list{
+        display: block;
+    }
+    .users-list .row{
+        display: block;
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #eee;
+    }
+    .users-list .row .name{
+        display: block;
+        background: #eee;
+        width: 100%;
+    }
+    .users-list .row .rundy{
+        display: inline-block;
+    }
+    .users-list .row .rundy div{
+        display: inline-block;
+        position: relative;
+        width: 45px;
+        height: 30px;
+        margin-bottom: 10px;
+        line-height: 34px;
+    }
+    .users-list .row .rundy div.win{
+        background: green;
+        color: #fff;
+    }
+    .users-list .row .rundy div.lose{
+        background: red;
+        color: #fff;
+    }
+    .users-list .row .rundy div.win-green:before{
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background: green;
+    }
+    .users-list .row .rundy div.win-red:before{
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background: red;
+    }
+    .users-list .row .rundy div.win-black:before{
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background: black;
+    }
+    .users-list .row .rundy div span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 7px;
+        line-height: 10px;
+    }
+    .users-list .row .rundy div strong{
+        font-weight: normal;
+        font-size: 13px;
+        text-align: center;
+    }
     </style>
 <script>
 
@@ -116,14 +191,188 @@ $(document).ready(function(){
 function run(){
     
     $('#root_group').html("");
+    draw_users_stats();
 
     // var index = pick_index_min_max(0, 0);
 
-    var minId = 1255151;
+    // var minId = 1255151;
     // var minId = __data_response[0].id;
-
-    draw_filter_data_form(minId, __data_response[__data_response.length - 1].id);
+    
+    // draw_filter_data_form(minId, __data_response[__data_response.length - 1].id);
 };
+
+Number.prototype.pad = function(size) {
+    var s = String(this);
+    while (s.length < (size || 2)) {s = " " + s;}
+    return s;
+}
+
+function draw_users_stats(){
+
+    var users_list_ids = {};
+    var users_list_index = 0; 
+    var users_list = [];
+    var rundy = __data_response;
+
+    for(var i = 0; i < rundy.length; i++){
+        if(rundy[i].users){
+            rundy[i].users.forEach(function(u){
+                if(!users_list_ids[u.id]){ 
+                    users_list_ids[u.id] = users_list_index;
+                    users_list[users_list_index] = {
+                        user_id: u.id,
+                        count_win: 0,
+                        count_loose: 0,
+                        count_bet_sum: 0,
+                        count_bet_win_sum: 0,
+                        bilans_koniec: 0,
+                        zysk: 0,
+                        procent: 0,
+                        rozegranych_gier: 0,
+                        bilans_zmiana: [],
+                        bilans_kwota: [],
+                        rundy: []
+                    }; 
+                    users_list_index++;
+                }
+
+                var index = users_list_ids[u.id];
+                var kwota_obstawienia = parseInt(u.sum)
+                var zmiana_bilansu = -1 * kwota_obstawienia;
+                if(u.r == true){
+                    wygrana = (kwota_obstawienia * (rundy[i].c == "green" ? 14 : 2));
+                    zmiana_bilansu = zmiana_bilansu + wygrana;
+                    users_list[index].count_win++;
+                    users_list[index].count_bet_win_sum += wygrana;
+                }else{
+                    users_list[index].count_loose++;
+                }
+                
+                users_list[index].count_bet_sum += kwota_obstawienia; 
+                users_list[index].bilans_koniec += zmiana_bilansu;
+                users_list[index].bilans_kwota.push(users_list[index].bilans_koniec);
+                users_list[index].bilans_zmiana.push(zmiana_bilansu);
+                users_list[index].zysk = users_list[index].count_bet_win_sum - users_list[index].count_bet_sum;
+                users_list[index].procent = ((users_list[index].zysk / users_list[index].count_bet_sum ) * 100).toFixed(1);
+                users_list[index].rozegranych_gier++;
+                users_list[index].rundy.push({
+                    "rund_id": rundy[i].id,
+                    "c": rundy[i].c,
+                    "bet": u.bet,
+                    "id": u.id,
+                    "sum": u.sum,
+                    "r": u.r
+                });
+            });
+        }
+    }
+
+    users_list.sort(function(a, b){
+        return b.procent - a.procent;
+    });
+
+    for(var i = 0; i < users_list.length; i++){
+        var runda = users_list[i]; 
+        if(runda.bilans_koniec >= 100 && runda.rozegranych_gier >= 50 && runda.procent >= 10){
+            id = runda.user_id.toString().padStart(10)
+            kasa = runda.bilans_koniec.toLocaleString()
+            zagran = runda.rozegranych_gier.toString().padStart(4)
+            wygranych = runda.count_win.toString().padStart(3)
+            przegranych = runda.count_loose.toString().padStart(3)
+            obstawil_za = runda.count_bet_sum.toLocaleString().padStart(9)
+            wygrane = runda.count_bet_win_sum.toLocaleString().padStart(9)
+            zysk = runda.zysk.toLocaleString().padStart(8)
+            procent = runda.procent.toString().padStart(3)
+
+            str_id = `ID:${id}; `
+            str_gry = `(Gier:${zagran},W:${wygranych},P:${przegranych}); `.padEnd(25);
+            str_zysk = `Zysk:${zysk}$ (${procent}); `;
+            str_kwoty = `Zagralza:${obstawil_za}$; `;
+            str_wygrana = `Wygral:${wygrane}$; `;
+            str = `${str_id} ${str_gry} ${str_kwoty} ${str_wygrana} ${str_zysk}`;
+            
+            console.log(str)
+        }   
+    }
+
+
+
+    var tbody_data = users_list
+    .filter(function(runda){
+        return runda.bilans_koniec >= 100 && runda.rozegranych_gier >= 50 && runda.procent >= 10;
+    })
+    .map(function(runda){
+        return [
+            runda.user_id,
+            runda.count_bet_sum,
+            runda.count_bet_win_sum,
+            runda.zysk,
+            runda.procent,
+            runda.rozegranych_gier,
+            runda.count_win,
+            runda.count_loose,
+            
+        ];
+    });
+
+    $('#root_group').append($(`<table id="table_results"></table>`));
+
+    var t = function(title){
+        return Object.assign({
+            title: title,
+            width: 50,
+            render: function(d){
+                if(title.indexOf("K_") != -1){
+                    return d.toLocaleString().toString().padStart(9);
+                }else{
+                    return d.toString().padStart(title.length + 2);
+                }
+            }
+        })
+    }
+
+    var table = $('#table_results').DataTable({
+        "data": tbody_data,
+        "columns": [t("id"), t("K_Zagralza"), t("K_Wygral"), t("K_Zysk"),t("%"), t("Gier"), t("W"), t("P")],
+        "pageLength": 100,
+        "order": [3, 'asc']
+    });
+
+    
+
+
+
+    // var _users_list_html = $('<div>').addClass("users-list");
+    // var _users_list_body = "";
+    // for(var i = 0; i < users_list_keys.length; i++){
+    //     var u_id = users_list_keys[i]
+    //     var u_rundy = users_list[u_id];
+    //     if(i >= 100){
+    //         continue;
+    //     }
+    //     if(u_rundy.length < 5){
+    //         continue;
+    //     }
+    //     var _rundy = "";
+    //     for(var j = 0; j < u_rundy.length; j++){
+    //         var runda = u_rundy[j];
+    //         _rundy += `<div class="${(runda.r)?"win":"lose"}  ${"win-" + runda.c} ${"bet-" + runda.bet}">
+    //             <span>${runda.id}</span>
+    //             <strong>${runda.sum}</strong>
+    //         </div>`;
+    //     }
+
+    //     var _row = `
+    //         <div class="row">
+    //             <div class="name">${u_id}</div>
+    //             <div class="rundy">${_rundy}</div>
+    //         </div>
+    //     `;
+    //     _users_list_body += _row;
+    // }
+    // $('#root_group').append(_users_list_body);
+
+}
 
 function pick_index_min_max(minId, maxId){
 
@@ -983,6 +1232,7 @@ function draw_strategy(form_values, show_table, callback){
 
 
 
+
     var _chart_bilans = $('<div id="chart_bilans" style="height: 400px; width: 100%; display: inline-block;"></div>');
     var _chart_bilans_zysk = $('<div id="chart_bilans_zysk" style="height: 400px; width: 100%; display: inline-block;"></div>');
     // var _chart_bilans_czas = $('<div id="chart_bilans_czas" style="height: 400px; width: 100%; display: inline-block;"></div>');
@@ -1036,6 +1286,7 @@ function draw_strategy(form_values, show_table, callback){
             .append(_chart_seria_brak_color_black)
             .append(_chart_seria_brak_color_red)
     )
+    .append(_users_list_html)
     
 
 
