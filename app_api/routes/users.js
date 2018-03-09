@@ -30,3 +30,12 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+
+// Do sprawdzenia:
+// Zagraj gdy jest == 6, to graj
+// Jesli przegrales to zwieksz stawke
+
+// Do sprawdzenia:
+// Jesli serwer duzo przegral to moze zmienic sie dlugość wagonów
+// Czy jest korelacja pomiedzy przegrana/wygrana jest zwiazana z dlugoscia wagonow...

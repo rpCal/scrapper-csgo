@@ -298,7 +298,7 @@ function draw_strategy_form(){
 
         <fieldset>
             <label>Zacznij grac od seria dowolnego koloru większa,równa niż</label>
-            <input name="start_on_seria_color_all_number" value="5" />
+            <input name="start_on_seria_color_all_number" value="0" />
             <smal>* Omiń gdy 0</smal>
         </fieldset>
         <!--
@@ -389,6 +389,7 @@ function draw_strategy_form(){
         <fieldset>
             <label>Wygrywam gdy: </label>
             <select name="succes_value">
+                <option value="bet_by_series_equal">graj tylko gdy seria == </option>    
                 <option value="bet_by_series">graj tylko gdy seria >= </option>    
                 <option value="max_bet">MAX Suma obstawien</option>    
                 <option value="color_red">Kolor: Czerwony</option>    
@@ -494,6 +495,7 @@ function oblicz_rundy(form_values){
 
     var obstawiam_na_najwieksza_sume = false;
     var obstawiam_na_serie_koloru = false;
+    var obstawiam_na_serie_koloru_dokladnie = false;
 
     index_min = parseInt(_.find(form_values, { name: "index_min" })['value'], 10);
     index_max = parseInt(_.find(form_values, { name: "index_max" })['value'], 10);
@@ -519,7 +521,6 @@ function oblicz_rundy(form_values){
     start_on_seria_color_all_number = parseInt(_.find(form_values, { name: "start_on_seria_color_all_number" })['value'], 10);
     // stop_on_seria_color_all_number = parseInt(_.find(form_values, { name: "stop_on_seria_color_all_number" })['value'], 10);
 
-
     
     if(succes_value.indexOf("color_") != -1){
         nazwa_attr_wygranej = "c";
@@ -536,6 +537,12 @@ function oblicz_rundy(form_values){
     if(succes_value == "bet_by_series"){
         obstawiam_na_serie_koloru = true;
     }
+    if(succes_value == "bet_by_series_equal"){
+        obstawiam_na_serie_koloru_dokladnie = true;
+    }
+    
+
+
     
 
     console.log('FORM: ', form_values);
@@ -583,6 +590,23 @@ function oblicz_rundy(form_values){
             if(seria_koloru >= start_on_seria_color_all_number){
                 if(czy_obstawiam_po_serii == false){
                     bet_aktualny = bet_poczatkowy;
+                    if(seria_koloru_red > 0){ obstawiam_po_serii_color = "red"; }
+                    if(seria_koloru_green > 0){ obstawiam_po_serii_color = "green"; }
+                    if(seria_koloru_black > 0){ obstawiam_po_serii_color = "black"; }
+                    czy_obstawiam_po_serii = true;
+                }
+                
+                flaga_czy_grac = true;
+            }else{
+                flaga_czy_grac = false;
+                czy_obstawiam_po_serii = false;
+            }
+        }
+
+        if(obstawiam_na_serie_koloru_dokladnie && start_on_seria_color_all_number != 0){
+            if(seria_koloru == start_on_seria_color_all_number){
+                if(czy_obstawiam_po_serii == false){
+                    // bet_aktualny = bet_poczatkowy;
                     if(seria_koloru_red > 0){ obstawiam_po_serii_color = "red"; }
                     if(seria_koloru_green > 0){ obstawiam_po_serii_color = "green"; }
                     if(seria_koloru_black > 0){ obstawiam_po_serii_color = "black"; }
