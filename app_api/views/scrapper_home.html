@@ -487,6 +487,8 @@ function oblicz_rundy(form_values){
     var index_max = 200;
     var max_rozegranych_gier = 100;
 
+    var minimalny_bet_w_grze = 10;
+
     var seria_win_number = 100;
     var seria_lose_number = 1;
 
@@ -766,7 +768,15 @@ function oblicz_rundy(form_values){
                 seria_wygranej++;
 
                 if(seria_wygranej >= seria_win_number){
-                    bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik_wygranej, 10);
+                    if(mnoznik_wygranej < 0){
+                        bet_aktualny = parseInt(bet_aktualny - (bet_aktualny * (mnoznik_wygranej * -1)), 10);
+                        if(bet_aktualny < minimalny_bet_w_grze){
+                            bet_aktualny = minimalny_bet_w_grze;
+                        }
+                    }else{
+                        bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik_wygranej, 10);
+                    }
+                    
                 }else{
                     bet_aktualny = bet_poczatkowy;
                 }
@@ -780,7 +790,14 @@ function oblicz_rundy(form_values){
                 seria_przegranej++;
 
                 if(seria_przegranej >= seria_lose_number){
-                    bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik_przegranej, 10);
+                    if(mnoznik_przegranej < 0){
+                        bet_aktualny = parseInt(bet_aktualny - (bet_aktualny * (mnoznik_przegranej * -1)), 10);
+                        if(bet_aktualny < minimalny_bet_w_grze){
+                            bet_aktualny = minimalny_bet_w_grze;
+                        }
+                    }else{
+                        bet_aktualny = 1 * parseInt(bet_aktualny * mnoznik_przegranej, 10);
+                    }
                 }else{
                     bet_aktualny = bet_poczatkowy;
                 }
@@ -920,7 +937,7 @@ function draw_strategy(form_values, show_table, callback){
         //     : runda.wynik_oczekiwany;
 
         var znak = (runda.zmiana_bilansu) > 0 ? "+": "";
-        var str_zmiana_bilansu = `${znak}${runda.zmiana_bilansu.toFixed(2)} - ${runda.bet_aktualny}`;
+        var str_zmiana_bilansu = `${znak}${runda.zmiana_bilansu.toFixed(2)};${runda.bet_aktualny}`;
 
         tbody_data.push([
             runda.index,
