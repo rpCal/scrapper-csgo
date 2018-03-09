@@ -16,8 +16,8 @@ router.get('/', function(req, res, next) {
       if(err){ return next(err);}
       var result = collection
         .find({"id":
-          // { "$gt": 1241201 } 
-          { "$gt": 1255151 } 
+          { "$gt": 1241201 } 
+          // { "$gt": 1255151 } 
         })
         .sort({ id: 1 })
         .toArray(function(err, result){
