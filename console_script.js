@@ -1,3 +1,5 @@
+// VER. 1 - graj tylko na czerwony
+// Niestety nie działa gdy pojawi się wagon koloru np. powyżej 15
 var bilans = 7757, round_count = 0, max_round = 1000, bet_price = 10, curr_bet = bet_price, mnoznik = 1.7, czy_grac = false, czy_obstawione = false;
 
 var last_round_hash = document.getElementById('roundHash').innerHTML;

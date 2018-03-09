@@ -36,3 +36,5 @@
 {"message":"08adb719 BROWSER --- ERROR in puppeteer: AssertionError [ERR_ASSERTION]: Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"","level":"error"}
 {"message":"3bb74a0a BROWSER --- ERROR in puppeteer: Error: net::ERR_CONNECTION_REFUSED","level":"error"}
 {"message":"c6335593 BROWSER --- ERROR in puppeteer: Error: Navigation Timeout Exceeded: 30000ms exceeded","level":"error"}
+{"message":"2c0103cf BROWSER --- ERROR in puppeteer: Error: Navigation Timeout Exceeded: 30000ms exceeded","level":"error"}
+{"message":"b67a29bc BROWSER --- ERROR in puppeteer: Error: Navigation Timeout Exceeded: 30000ms exceeded","level":"error"}

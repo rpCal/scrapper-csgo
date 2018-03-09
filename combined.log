@@ -3591,3 +3591,53 @@
 {"message":"aac1528f new history successfully appended 16","level":"info"}
 {"message":"fc05f5d4 Execution: 0:06s; 2018-03-09T09:48:42 - start; 2018-03-09T09:48:48 - end ","level":"info"}
 {"message":"fc05f5d4 new history successfully appended 10","level":"info"}
+{"message":"1e855467 Execution: 0:08s; 2018-03-09T17:09:13 - start; 2018-03-09T17:09:21 - end ","level":"info"}
+{"message":"1e855467 new history successfully appended 50","level":"info"}
+{"message":"3261b906 Execution: 0:09s; 2018-03-09T17:20:04 - start; 2018-03-09T17:20:13 - end ","level":"info"}
+{"message":"3261b906 new history successfully appended 13","level":"info"}
+{"message":"11b1bf6f Execution: 0:08s; 2018-03-09T17:31:46 - start; 2018-03-09T17:31:54 - end ","level":"info"}
+{"message":"11b1bf6f new history successfully appended 14","level":"info"}
+{"message":"e5f65667 Execution: 0:06s; 2018-03-09T17:44:25 - start; 2018-03-09T17:44:31 - end ","level":"info"}
+{"message":"e5f65667 new history successfully appended 0","level":"info"}
+{"message":"f9f79cc6 Execution: 0:09s; 2018-03-09T17:54:08 - start; 2018-03-09T17:54:17 - end ","level":"info"}
+{"message":"f9f79cc6 new history successfully appended 26","level":"info"}
+{"message":"bd4ff356 Execution: 0:06s; 2018-03-09T18:06:02 - start; 2018-03-09T18:06:08 - end ","level":"info"}
+{"message":"bd4ff356 new history successfully appended 15","level":"info"}
+{"message":"e6bfc58a Execution: 0:07s; 2018-03-09T18:14:17 - start; 2018-03-09T18:14:24 - end ","level":"info"}
+{"message":"e6bfc58a new history successfully appended 10","level":"info"}
+{"message":"08b74eeb Execution: 0:21s; 2018-03-09T18:23:24 - start; 2018-03-09T18:23:44 - end ","level":"info"}
+{"message":"08b74eeb new history successfully appended 10","level":"info"}
+{"message":"cf3cc4a8 Execution: 0:13s; 2018-03-09T18:36:42 - start; 2018-03-09T18:36:54 - end ","level":"info"}
+{"message":"cf3cc4a8 new history successfully appended 16","level":"info"}
+{"message":"da2a9fa9 Execution: 0:07s; 2018-03-09T18:45:08 - start; 2018-03-09T18:45:15 - end ","level":"info"}
+{"message":"da2a9fa9 new history successfully appended 10","level":"info"}
+{"message":"69676015 Execution: 0:15s; 2018-03-09T18:58:05 - start; 2018-03-09T18:58:20 - end ","level":"info"}
+{"message":"69676015 new history successfully appended 16","level":"info"}
+{"message":"2c0103cf BROWSER --- ERROR in puppeteer: Error: Navigation Timeout Exceeded: 30000ms exceeded","level":"error"}
+{"message":"2c0103cf Execution: 0:30s; 2018-03-09T19:05:57 - start; 2018-03-09T19:06:27 - end ","level":"info"}
+{"message":"e91cbefb Execution: 0:09s; 2018-03-09T19:16:38 - start; 2018-03-09T19:16:46 - end ","level":"info"}
+{"message":"e91cbefb new history successfully appended 0","level":"info"}
+{"message":"706f704d Execution: 0:16s; 2018-03-09T19:25:33 - start; 2018-03-09T19:25:49 - end ","level":"info"}
+{"message":"706f704d new history successfully appended 33","level":"info"}
+{"message":"8bb1f180 Execution: 0:14s; 2018-03-09T19:36:07 - start; 2018-03-09T19:36:22 - end ","level":"info"}
+{"message":"8bb1f180 new history successfully appended 13","level":"info"}
+{"message":"019e26bb Execution: 0:09s; 2018-03-09T19:42:28 - start; 2018-03-09T19:42:37 - end ","level":"info"}
+{"message":"019e26bb new history successfully appended 7","level":"info"}
+{"message":"e9b39178 Execution: 0:05s; 2018-03-09T19:54:39 - start; 2018-03-09T19:54:44 - end ","level":"info"}
+{"message":"e9b39178 new history successfully appended 0","level":"info"}
+{"message":"fd52678c Execution: 0:10s; 2018-03-09T20:04:26 - start; 2018-03-09T20:04:36 - end ","level":"info"}
+{"message":"fd52678c new history successfully appended 26","level":"info"}
+{"message":"f7c51c23 Execution: 0:22s; 2018-03-09T20:16:52 - start; 2018-03-09T20:17:14 - end ","level":"info"}
+{"message":"f7c51c23 new history successfully appended 15","level":"info"}
+{"message":"ba4b9dc2 Execution: 0:22s; 2018-03-09T20:23:46 - start; 2018-03-09T20:24:09 - end ","level":"info"}
+{"message":"ba4b9dc2 new history successfully appended 9","level":"info"}
+{"message":"9c7e2ed0 Execution: 0:09s; 2018-03-09T20:35:10 - start; 2018-03-09T20:35:19 - end ","level":"info"}
+{"message":"9c7e2ed0 new history successfully appended 13","level":"info"}
+{"message":"73ccd606 Execution: 0:07s; 2018-03-09T20:43:25 - start; 2018-03-09T20:43:32 - end ","level":"info"}
+{"message":"73ccd606 new history successfully appended 0","level":"info"}
+{"message":"b67a29bc BROWSER --- ERROR in puppeteer: Error: Navigation Timeout Exceeded: 30000ms exceeded","level":"error"}
+{"message":"b67a29bc Execution: 0:30s; 2018-03-09T20:49:35 - start; 2018-03-09T20:50:05 - end ","level":"info"}
+{"message":"178cea3f Execution: 0:07s; 2018-03-09T20:56:17 - start; 2018-03-09T20:56:24 - end ","level":"info"}
+{"message":"178cea3f new history successfully appended 25","level":"info"}
+{"message":"f1286c38 Execution: 0:09s; 2018-03-09T21:03:00 - start; 2018-03-09T21:03:10 - end ","level":"info"}
+{"message":"f1286c38 new history successfully appended 8","level":"info"}
