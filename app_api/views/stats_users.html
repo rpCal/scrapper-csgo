@@ -538,7 +538,7 @@ function filter_update_results(minId, maxId){
 
 function getJsonData(callback){
     // return $.get('https://rpcal.github.io/scrapper-csgo/results.json')
-    return $.get('/users')
+    return $.get('/users/all')
     .done(function (data) {
         __data_response = data;
         callback();
