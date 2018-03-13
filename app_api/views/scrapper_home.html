@@ -577,6 +577,9 @@ function oblicz_rundy(form_values){
     var seria_brak_koloru_red = 0;
     var seria_brak_koloru_green = 0;
 
+    var suma_wygranych = 0;
+    var suma_przegranych = 0;
+
     var obstawiam_po_serii_color;
     var czy_obstawiam_po_serii = false;
 
@@ -778,7 +781,9 @@ function oblicz_rundy(form_values){
 
             var kwota_wygranej = 0;
 
+
             if(czy_wygrana){
+                suma_wygranych++;
                 var default_mnoznik_wygranej = 2;
                 if(wynik_rundy['c'] == "green"){
                     default_mnoznik_wygranej = 14;
@@ -805,6 +810,7 @@ function oblicz_rundy(form_values){
                     bet_aktualny = bet_poczatkowy;
                 }
             }else{
+                suma_przegranych++;
                 tmp_bet_aktualny = parseInt(bet_aktualny, 10);
                 kwota_wygranej = -1 * tmp_bet_aktualny;
                 kwota_finalna = kwota_wygranej;
@@ -883,6 +889,8 @@ function oblicz_rundy(form_values){
         //     flaga_czy_zakonczyc = true; 
         // }
     }
+
+    console.log('Strategia wynik:', suma_wygranych, suma_przegranych);
 
     var kwota_zakonczenia = _rundy[_rundy.length - 1].bilans;
     var zysk = kwota_zakonczenia - kwota_poczatkowa;

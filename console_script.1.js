@@ -1,7 +1,7 @@
 // VER. 2 - graj tylko gdy bedzie seria koloru 5
 var bet_poczatkowy = 100,
   mnoznik_po_przegranej = 1.5,
-  gier_do_rozegrania = 1700;
+  gier_do_rozegrania = 10000;
 
 var updateColorStats = function (win_color) {
   if (color_starts.last_color == null) {
@@ -107,6 +107,10 @@ var bet_aktualny = bet_poczatkowy;
 var bilans = bilans_poczatkowy;
 var wynik_odczytany = true;
 var obstawiony_color = null;
+var licznik_wygranych = 0;
+var licznik_przegranych = 0;
+var suma_wygranych = 0;
+var suma_przegranych = 0;
 var color_starts = {
   green: 0,
   red: 0,
@@ -137,13 +141,24 @@ function run() {
         var kwota_wygranej = 0;
         var kwota_obstawienia = bet_aktualny;
         if (win_color == obstawiony_color) {
-          kwota_wygranej = parseInt(bet_aktualny * (win_color == "zero") ? 14 : 2);
+          suma_wygranych++;
+          licznik_wygranych++;
+          licznik_przegranych = 0;
+          kwota_wygranej = parseInt(kwota_obstawienia * ((win_color == "zero") ? 14 : 2));
           bet_aktualny = bet_poczatkowy;
         } else {
+          suma_przegranych++;
+          licznik_przegranych++;
+          licznik_wygranych = 0;
           bet_aktualny = parseInt(bet_aktualny * mnoznik_po_przegranej);
         }
-        bilans = readBilans();
-        console.log(`2b. Wygrana:${kwota_wygranej}; Obstawiono:${kwota_obstawienia} na ${obstawiony_color}; Bilans:${bilans}; Zysk:${bilans - bilans_poczatkowy}; `)
+        setTimeout(function(){
+          bilans = readBilans();
+          var str = `2b. W:${kwota_wygranej}; Obstawiono:${kwota_obstawienia} na ${obstawiony_color}; `;
+          str += `Bilans:${bilans}; Zysk:${bilans - bilans_poczatkowy}; `;
+          str += `Gry: ${licznik_wygranych};${licznik_przegranych}; SUM: ${suma_wygranych};${suma_przegranych}`;
+          console.log(str)
+        }, 500);
       }
     }
   }

@@ -48,18 +48,24 @@ const url_game = 'https://csgofast.com/#game/double';
             }
         }
     });
+    await page.exposeFunction('saveDoubleRound', (data) => {
+        // logger.verbose(`wykonano ${data}`);
+        // logger.verbose(`Mam wynik i zapisuje ${data['id']} ${data['users'].length}`);
+        db.collection(collection_name).update({"id": data['id']}, data, { upsert: true });
+    });
+    await page.exposeFunction('saveCrashRound', (id, data) => {
+        db.collection("rounds_crash").update({"id": id}, row, { upsert: true });
+    });
     await page.evaluateOnNewDocument( () => {
         (function debugify_content_script(){
             
                 var newRound = null;
                 var totalSumValue = null;
                 var totalUsers = [];
-                var lastRoundNumber = null;
             
                 var nativeWebSocket = window.WebSocket;
                 var requests = window.requestLog = {}; 
                 var WebSocket = window.WebSocket = function(uri) {
-                //   console.log('new WebSocket created', uri);
                   this.websocket = new nativeWebSocket(uri);
                   this.websocket.onopen = this.onOpen.bind(this);
                   this.websocket.onmessage = this.onMessage.bind(this);
@@ -77,11 +83,11 @@ const url_game = 'https://csgofast.com/#game/double';
                   this.listeners.onopen(e);
                 }
                 WebSocket.prototype.onMessage = function(e){
+                    
                     if(e.data.includes("rooms:double:update")){
                         var data = JSON.parse(e.data.slice(2))[1];
                         var keys = Object.keys(data);
-
-            
+                        
                         if(keys.includes("number")){ // NOWA RUNDA i HISTORIA OSTATNIEJ RUNDY
                             // ["number","md5","salt","timeOldEnds","rand","history","totalSum","topPlayers"]
                             
@@ -98,6 +104,7 @@ const url_game = 'https://csgofast.com/#game/double';
                                 newRound["c"] = color;
 
                                 for(var i = 0; i < totalUsers.length; i++){
+                                    if(totalUsers[i]['bet'] == "zero"){ totalUsers[i]['bet'] = "green"; }
                                     totalUsers[i]['r'] = totalUsers[i]['bet'] == color;
                                 }
 
@@ -107,7 +114,13 @@ const url_game = 'https://csgofast.com/#game/double';
                                 newRound["sum_r"] = totalSumValue['red'];
                                 newRound["sum_b"] = totalSumValue['black'];
 
-                                console.log(`_SAVE_RESULTS_${JSON.stringify(newRound)}`);
+                                try{
+                                    window.saveDoubleRound(newRound);
+                                }catch(err) {
+                                    console.log('_SOCKET_ Problem z zapisem saveDoubleRound', err);
+                                }
+                                
+                                // console.log(`_SAVE_RESULTS_${JSON.stringify(newRound)}`);
 
                                 totalSumValue = null;
                                 newRound = null;
@@ -115,7 +128,7 @@ const url_game = 'https://csgofast.com/#game/double';
                                 
                                 // console.log('_SOCKET_ kolejna runda')
                             }else{
-                                console.log('_SOCKET_ omijam zapis rundy...')
+                                // console.log('_SOCKET_ omijam zapis rundy...')
                             }
                             
 
@@ -174,6 +187,8 @@ const url_game = 'https://csgofast.com/#game/double';
                                 newRound['num'] = data['rand'];
                             }
                         }
+                        data = null;
+                        keys = null;
                     }
                   this.listeners.onmessage(e);
                 }
@@ -229,7 +244,7 @@ const url_game = 'https://csgofast.com/#game/double';
     // await delay(1000);
     // const results = await page2.evaluate(evaluate_get_history_results);
     
-    logger.info(`wyniki ${rund_id}`);
+    logger.info(`Aktualna runda: ${rund_id}`);
     
     // await delay(1000);
     // await browser.close();

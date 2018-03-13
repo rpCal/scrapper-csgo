@@ -1,0 +1,3140 @@
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260757; lp:161/1539; T:49 Fri Mar 09 2018 21:37:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260758; lp:162/1538; T:50 Fri Mar 09 2018 21:38:11 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260759; lp:163/1537; T:50 Fri Mar 09 2018 21:39:02 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260760; lp:164/1536; T:50 Fri Mar 09 2018 21:39:52 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260761; lp:165/1535; T:49 Fri Mar 09 2018 21:40:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 5, black: 0, any: 5, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260762; lp:166/1534; T:49 Fri Mar 09 2018 21:41:32 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 100 na red, bilans: 250, zysk: -3000
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1695567147&_v=j66&z=932347201:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1695567147&_v=j66&z=932347201 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+Grammarly.js:32857 GET https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/70/70360cb607a6f2c2057476fa560800f95b99734d_full.jpg 404 (Not Found)
+(anonymous) @ Grammarly.js:32857
+get @ Grammarly.js:32873
+(anonymous) @ Grammarly.js:32723
+measure @ Grammarly.js:6147
+watchNodes @ Grammarly.js:32719
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+jquery.js:5800 GET https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/70/70360cb607a6f2c2057476fa560800f95b99734d_full.jpg 404 (Not Found)
+Ct @ jquery.js:5800
+css @ jquery.js:6188
+G @ jquery.js:4181
+Wt @ jquery.js:6035
+hide @ jquery.js:6323
+m.fn.(anonymous function) @ jquery.js:6994
+(anonymous) @ chatFooterView.js:62
+_ @ backbone.js:368
+g @ backbone.js:356
+h @ backbone.js:155
+c.trigger @ backbone.js:346
+(anonymous) @ chatApp.js:39
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 6, black: 0, any: 6, last_color: "red", …}
+VM26575:146 2b. Wygrana:2; Obstawiono:100 na red; Bilans:360; Zysk:-2890; 
+VM26575:160 1a. Nowa runda - ID:1260763; lp:167/1533; T:50 Fri Mar 09 2018 21:42:22 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260764; lp:168/1532; T:49 Fri Mar 09 2018 21:43:12 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260765; lp:169/1531; T:50 Fri Mar 09 2018 21:44:02 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260766; lp:170/1530; T:49 Fri Mar 09 2018 21:44:52 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260767; lp:171/1529; T:51 Fri Mar 09 2018 21:45:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260768; lp:172/1528; T:50 Fri Mar 09 2018 21:46:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260769; lp:173/1527; T:49 Fri Mar 09 2018 21:47:22 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260770; lp:174/1526; T:50 Fri Mar 09 2018 21:48:13 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260771; lp:175/1525; T:50 Fri Mar 09 2018 21:49:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260772; lp:176/1524; T:50 Fri Mar 09 2018 21:49:53 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260773; lp:177/1523; T:49 Fri Mar 09 2018 21:50:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260774; lp:178/1522; T:49 Fri Mar 09 2018 21:51:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260775; lp:179/1521; T:50 Fri Mar 09 2018 21:52:23 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260776; lp:180/1520; T:50 Fri Mar 09 2018 21:53:13 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260777; lp:181/1519; T:49 Fri Mar 09 2018 21:54:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260778; lp:182/1518; T:50 Fri Mar 09 2018 21:54:53 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260779; lp:183/1517; T:49 Fri Mar 09 2018 21:55:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260780; lp:184/1516; T:51 Fri Mar 09 2018 21:56:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260781; lp:185/1515; T:50 Fri Mar 09 2018 21:57:24 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260782; lp:186/1514; T:50 Fri Mar 09 2018 21:58:14 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260783; lp:187/1513; T:50 Fri Mar 09 2018 21:59:04 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260784; lp:188/1512; T:49 Fri Mar 09 2018 21:59:54 GMT+0100 (CET)
+jquery.mCustomScrollbar.concat.min.js:4 GET https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/cb/cb39809d87fcf30ddcd50386767645bf6fd096af_full.jpg 404 (Not Found)
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260785; lp:189/1511; T:50 Fri Mar 09 2018 22:00:44 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260786; lp:190/1510; T:50 Fri Mar 09 2018 22:01:34 GMT+0100 (CET)
+jquery.mCustomScrollbar.concat.min.js:4 GET https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/cb/cb39809d87fcf30ddcd50386767645bf6fd096af_full.jpg 404 (Not Found)
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260787; lp:191/1509; T:50 Fri Mar 09 2018 22:02:25 GMT+0100 (CET)
+Grammarly.js:32857 GET https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/cb/cb39809d87fcf30ddcd50386767645bf6fd096af_full.jpg 404 (Not Found)
+(anonymous) @ Grammarly.js:32857
+get @ Grammarly.js:32873
+(anonymous) @ Grammarly.js:32723
+measure @ Grammarly.js:6147
+watchNodes @ Grammarly.js:32719
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260788; lp:192/1508; T:49 Fri Mar 09 2018 22:03:14 GMT+0100 (CET)
+jquery.mCustomScrollbar.concat.min.js:4 GET https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/cb/cb39809d87fcf30ddcd50386767645bf6fd096af_full.jpg 404 (Not Found)
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260789; lp:193/1507; T:50 Fri Mar 09 2018 22:04:05 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260790; lp:194/1506; T:49 Fri Mar 09 2018 22:04:55 GMT+0100 (CET)
+jquery.mCustomScrollbar.concat.min.js:4 GET https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/cb/cb39809d87fcf30ddcd50386767645bf6fd096af_full.jpg 404 (Not Found)
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260791; lp:195/1505; T:50 Fri Mar 09 2018 22:05:45 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260792; lp:196/1504; T:50 Fri Mar 09 2018 22:06:35 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260793; lp:197/1503; T:49 Fri Mar 09 2018 22:07:25 GMT+0100 (CET)
+jquery.mCustomScrollbar.concat.min.js:4 GET https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/cb/cb39809d87fcf30ddcd50386767645bf6fd096af_full.jpg 404 (Not Found)
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+setTimeout (async)
+e @ jquery.mCustomScrollbar.concat.min.js:4
+(anonymous) @ jquery.mCustomScrollbar.concat.min.js:4
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260794; lp:198/1502; T:50 Fri Mar 09 2018 22:08:15 GMT+0100 (CET)
+Grammarly.js:32857 GET https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/cb/cb39809d87fcf30ddcd50386767645bf6fd096af_full.jpg 404 (Not Found)
+(anonymous) @ Grammarly.js:32857
+get @ Grammarly.js:32873
+(anonymous) @ Grammarly.js:32723
+measure @ Grammarly.js:6147
+watchNodes @ Grammarly.js:32719
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260795; lp:199/1501; T:49 Fri Mar 09 2018 22:09:05 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+Grammarly.js:32857 GET https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/cb/cb39809d87fcf30ddcd50386767645bf6fd096af_full.jpg 404 (Not Found)
+(anonymous) @ Grammarly.js:32857
+get @ Grammarly.js:32873
+(anonymous) @ Grammarly.js:32723
+measure @ Grammarly.js:6147
+watchNodes @ Grammarly.js:32719
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+VM26575:160 1a. Nowa runda - ID:1260796; lp:200/1500; T:51 Fri Mar 09 2018 22:09:56 GMT+0100 (CET)
+Grammarly.js:32857 GET https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/cb/cb39809d87fcf30ddcd50386767645bf6fd096af_full.jpg 404 (Not Found)
+(anonymous) @ Grammarly.js:32857
+get @ Grammarly.js:32873
+(anonymous) @ Grammarly.js:32723
+measure @ Grammarly.js:6147
+watchNodes @ Grammarly.js:32719
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260797; lp:201/1499; T:49 Fri Mar 09 2018 22:10:45 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260798; lp:202/1498; T:50 Fri Mar 09 2018 22:11:36 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260799; lp:203/1497; T:48 Fri Mar 09 2018 22:12:25 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260800; lp:204/1496; T:50 Fri Mar 09 2018 22:13:16 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260801; lp:205/1495; T:50 Fri Mar 09 2018 22:14:06 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260802; lp:206/1494; T:49 Fri Mar 09 2018 22:14:56 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260803; lp:207/1493; T:50 Fri Mar 09 2018 22:15:46 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260804; lp:208/1492; T:50 Fri Mar 09 2018 22:16:36 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 5, black: 0, any: 5, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260805; lp:209/1491; T:49 Fri Mar 09 2018 22:17:26 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 100 na red, bilans: 260, zysk: -2990
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1114283974&_v=j66&z=540303368:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1114283974&_v=j66&z=540303368 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:146 2b. Wygrana:0; Obstawiono:100 na red; Bilans:350; Zysk:-2900; 
+VM26575:160 1a. Nowa runda - ID:1260806; lp:210/1490; T:49 Fri Mar 09 2018 22:18:16 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260807; lp:211/1489; T:50 Fri Mar 09 2018 22:19:07 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260808; lp:212/1488; T:49 Fri Mar 09 2018 22:19:56 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260809; lp:213/1487; T:52 Fri Mar 09 2018 22:20:48 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260810; lp:214/1486; T:48 Fri Mar 09 2018 22:21:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260811; lp:215/1485; T:49 Fri Mar 09 2018 22:22:27 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260812; lp:216/1484; T:50 Fri Mar 09 2018 22:23:17 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260813; lp:217/1483; T:64 Fri Mar 09 2018 22:24:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260814; lp:218/1482; T:35 Fri Mar 09 2018 22:24:57 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260815; lp:219/1481; T:50 Fri Mar 09 2018 22:25:48 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260816; lp:220/1480; T:51 Fri Mar 09 2018 22:26:39 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260817; lp:221/1479; T:47 Fri Mar 09 2018 22:27:27 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260818; lp:222/1478; T:50 Fri Mar 09 2018 22:28:18 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 5, any: 5, last_color: "black", …}any: 1black: 0green: 0last_color: "red"no_black: 1no_green: 42no_red: 0red: 1__proto__: Object
+VM26575:160 1a. Nowa runda - ID:1260819; lp:223/1477; T:50 Fri Mar 09 2018 22:29:08 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 150 na black, bilans: 200, zysk: -3050
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1590055913&_v=j66&z=2082356489:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1590055913&_v=j66&z=2082356489 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:146 2b. Wygrana:0; Obstawiono:150 na black; Bilans:3350; Zysk:100; 
+VM26575:160 1a. Nowa runda - ID:1260820; lp:224/1476; T:49 Fri Mar 09 2018 22:29:58 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260821; lp:225/1475; T:51 Fri Mar 09 2018 22:30:49 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260822; lp:226/1474; T:48 Fri Mar 09 2018 22:31:38 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260823; lp:227/1473; T:49 Fri Mar 09 2018 22:32:28 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}any: 1black: 0green: 0last_color: "red"no_black: 1no_green: 42no_red: 0red: 1__proto__: Object
+VM26575:160 1a. Nowa runda - ID:1260824; lp:228/1472; T:50 Fri Mar 09 2018 22:33:19 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260825; lp:229/1471; T:49 Fri Mar 09 2018 22:34:08 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260826; lp:230/1470; T:50 Fri Mar 09 2018 22:34:59 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260827; lp:231/1469; T:49 Fri Mar 09 2018 22:35:49 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260828; lp:232/1468; T:49 Fri Mar 09 2018 22:36:39 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260829; lp:233/1467; T:50 Fri Mar 09 2018 22:37:29 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260830; lp:234/1466; T:49 Fri Mar 09 2018 22:38:19 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260831; lp:235/1465; T:50 Fri Mar 09 2018 22:39:09 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260832; lp:236/1464; T:50 Fri Mar 09 2018 22:39:59 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260833; lp:237/1463; T:49 Fri Mar 09 2018 22:40:49 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260834; lp:238/1462; T:49 Fri Mar 09 2018 22:41:39 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260835; lp:239/1461; T:50 Fri Mar 09 2018 22:42:29 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260836; lp:240/1460; T:49 Fri Mar 09 2018 22:43:19 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260837; lp:241/1459; T:50 Fri Mar 09 2018 22:44:09 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260838; lp:242/1458; T:50 Fri Mar 09 2018 22:44:59 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260839; lp:243/1457; T:50 Fri Mar 09 2018 22:45:50 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260840; lp:244/1456; T:50 Fri Mar 09 2018 22:46:40 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 5, black: 0, any: 5, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260841; lp:245/1455; T:49 Fri Mar 09 2018 22:47:30 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 225 na red, bilans: 3125, zysk: -125
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1207344291&_v=j66&z=97737478:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1207344291&_v=j66&z=97737478 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 6, black: 0, any: 6, last_color: "red", …}
+VM26575:146 2b. Wygrana:2; Obstawiono:225 na red; Bilans:3575; Zysk:325; 
+VM26575:160 1a. Nowa runda - ID:1260842; lp:246/1454; T:50 Fri Mar 09 2018 22:48:20 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 7, black: 0, any: 7, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260843; lp:247/1453; T:49 Fri Mar 09 2018 22:49:10 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 8, black: 0, any: 8, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260844; lp:248/1452; T:50 Fri Mar 09 2018 22:50:00 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260845; lp:249/1451; T:53 Fri Mar 09 2018 22:50:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260846; lp:250/1450; T:45 Fri Mar 09 2018 22:51:40 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260847; lp:251/1449; T:49 Fri Mar 09 2018 22:52:30 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260848; lp:252/1448; T:51 Fri Mar 09 2018 22:53:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260849; lp:253/1447; T:49 Fri Mar 09 2018 22:54:10 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260850; lp:254/1446; T:50 Fri Mar 09 2018 22:55:01 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 5, any: 5, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260851; lp:255/1445; T:50 Fri Mar 09 2018 22:55:51 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 100 na black, bilans: 3475, zysk: 225
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=595998803&_v=j66&z=576639990:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=595998803&_v=j66&z=576639990 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:146 2b. Wygrana:0; Obstawiono:100 na black; Bilans:3475; Zysk:225; 
+VM26575:160 1a. Nowa runda - ID:1260852; lp:256/1444; T:50 Fri Mar 09 2018 22:56:41 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260853; lp:257/1443; T:49 Fri Mar 09 2018 22:57:31 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260854; lp:258/1442; T:50 Fri Mar 09 2018 22:58:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260855; lp:259/1441; T:50 Fri Mar 09 2018 22:59:12 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260856; lp:260/1440; T:50 Fri Mar 09 2018 23:00:02 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260857; lp:261/1439; T:55 Fri Mar 09 2018 23:00:57 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260858; lp:262/1438; T:44 Fri Mar 09 2018 23:01:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260859; lp:263/1437; T:49 Fri Mar 09 2018 23:02:31 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260860; lp:264/1436; T:50 Fri Mar 09 2018 23:03:22 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 5, black: 0, any: 5, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260861; lp:265/1435; T:50 Fri Mar 09 2018 23:04:12 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 150 na red, bilans: 3325, zysk: 75
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=450448396&_v=j66&z=1006566463:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=450448396&_v=j66&z=1006566463 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 6, black: 0, any: 6, last_color: "red", …}
+VM26575:146 2b. Wygrana:2; Obstawiono:150 na red; Bilans:3325; Zysk:75; 
+VM26575:160 1a. Nowa runda - ID:1260862; lp:266/1434; T:49 Fri Mar 09 2018 23:05:02 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260863; lp:267/1433; T:50 Fri Mar 09 2018 23:05:52 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260864; lp:268/1432; T:50 Fri Mar 09 2018 23:06:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260865; lp:269/1431; T:49 Fri Mar 09 2018 23:07:32 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260866; lp:270/1430; T:50 Fri Mar 09 2018 23:08:22 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260867; lp:271/1429; T:50 Fri Mar 09 2018 23:09:12 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260868; lp:272/1428; T:50 Fri Mar 09 2018 23:10:02 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260869; lp:273/1427; T:53 Fri Mar 09 2018 23:10:56 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260870; lp:274/1426; T:45 Fri Mar 09 2018 23:11:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260871; lp:275/1425; T:51 Fri Mar 09 2018 23:12:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260872; lp:276/1424; T:49 Fri Mar 09 2018 23:13:23 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260873; lp:277/1423; T:50 Fri Mar 09 2018 23:14:13 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260874; lp:278/1422; T:49 Fri Mar 09 2018 23:15:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260875; lp:279/1421; T:50 Fri Mar 09 2018 23:15:53 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260876; lp:280/1420; T:49 Fri Mar 09 2018 23:16:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260877; lp:281/1419; T:50 Fri Mar 09 2018 23:17:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+Grammarly.js:32857 GET https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/b7/b7ec8f5df07bd4460ab3da9c0ec86df9fba2f713_full.jpg 404 (Not Found)
+(anonymous) @ Grammarly.js:32857
+get @ Grammarly.js:32873
+(anonymous) @ Grammarly.js:32723
+measure @ Grammarly.js:6147
+watchNodes @ Grammarly.js:32719
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+setTimeout (async)
+timeout @ Grammarly.js:239
+_cb @ Grammarly.js:236
+VM26575:160 1a. Nowa runda - ID:1260878; lp:282/1418; T:49 Fri Mar 09 2018 23:18:23 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260879; lp:283/1417; T:50 Fri Mar 09 2018 23:19:13 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260880; lp:284/1416; T:50 Fri Mar 09 2018 23:20:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260881; lp:285/1415; T:50 Fri Mar 09 2018 23:20:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260882; lp:286/1414; T:50 Fri Mar 09 2018 23:21:44 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260883; lp:287/1413; T:50 Fri Mar 09 2018 23:22:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260884; lp:288/1412; T:50 Fri Mar 09 2018 23:23:24 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260885; lp:289/1411; T:49 Fri Mar 09 2018 23:24:14 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260886; lp:290/1410; T:50 Fri Mar 09 2018 23:25:04 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260887; lp:291/1409; T:49 Fri Mar 09 2018 23:25:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260888; lp:292/1408; T:49 Fri Mar 09 2018 23:26:44 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260889; lp:293/1407; T:49 Fri Mar 09 2018 23:27:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260890; lp:294/1406; T:50 Fri Mar 09 2018 23:28:24 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260891; lp:295/1405; T:49 Fri Mar 09 2018 23:29:14 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260892; lp:296/1404; T:50 Fri Mar 09 2018 23:30:05 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 5, any: 5, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260893; lp:297/1403; T:50 Fri Mar 09 2018 23:30:55 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 100 na black, bilans: 3225, zysk: -25
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=914886555&_v=j66&z=986207719:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=914886555&_v=j66&z=986207719 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:146 2b. Wygrana:0; Obstawiono:100 na black; Bilans:3525; Zysk:275; 
+VM26575:160 1a. Nowa runda - ID:1260894; lp:298/1402; T:49 Fri Mar 09 2018 23:31:45 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260895; lp:299/1401; T:49 Fri Mar 09 2018 23:32:35 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260896; lp:300/1400; T:50 Fri Mar 09 2018 23:33:25 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260897; lp:301/1399; T:49 Fri Mar 09 2018 23:34:15 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260898; lp:302/1398; T:50 Fri Mar 09 2018 23:35:05 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260899; lp:303/1397; T:49 Fri Mar 09 2018 23:35:55 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260900; lp:304/1396; T:50 Fri Mar 09 2018 23:36:45 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260901; lp:305/1395; T:49 Fri Mar 09 2018 23:37:35 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260902; lp:306/1394; T:50 Fri Mar 09 2018 23:38:25 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 5, black: 0, any: 5, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260903; lp:307/1393; T:49 Fri Mar 09 2018 23:39:15 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 150 na red, bilans: 3375, zysk: 125
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=698591605&_v=j66&z=1480456864:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=698591605&_v=j66&z=1480456864 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 6, black: 0, any: 6, last_color: "red", …}
+VM26575:146 2b. Wygrana:2; Obstawiono:150 na red; Bilans:3675; Zysk:425; 
+VM26575:160 1a. Nowa runda - ID:1260904; lp:308/1392; T:50 Fri Mar 09 2018 23:40:05 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260905; lp:309/1391; T:50 Fri Mar 09 2018 23:40:56 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260906; lp:310/1390; T:48 Fri Mar 09 2018 23:41:45 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260907; lp:311/1389; T:50 Fri Mar 09 2018 23:42:35 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260908; lp:312/1388; T:51 Fri Mar 09 2018 23:43:26 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260909; lp:313/1387; T:50 Fri Mar 09 2018 23:44:16 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260910; lp:314/1386; T:49 Fri Mar 09 2018 23:45:06 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260911; lp:315/1385; T:50 Fri Mar 09 2018 23:45:56 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260912; lp:316/1384; T:50 Fri Mar 09 2018 23:46:46 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260913; lp:317/1383; T:50 Fri Mar 09 2018 23:47:36 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260914; lp:318/1382; T:49 Fri Mar 09 2018 23:48:26 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260915; lp:319/1381; T:50 Fri Mar 09 2018 23:49:16 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260916; lp:320/1380; T:50 Fri Mar 09 2018 23:50:07 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260917; lp:321/1379; T:50 Fri Mar 09 2018 23:50:57 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260918; lp:322/1378; T:49 Fri Mar 09 2018 23:51:47 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260919; lp:323/1377; T:49 Fri Mar 09 2018 23:52:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260920; lp:324/1376; T:50 Fri Mar 09 2018 23:53:27 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260921; lp:325/1375; T:49 Fri Mar 09 2018 23:54:17 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260922; lp:326/1374; T:49 Fri Mar 09 2018 23:55:07 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260923; lp:327/1373; T:50 Fri Mar 09 2018 23:55:57 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260924; lp:328/1372; T:50 Fri Mar 09 2018 23:56:47 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260925; lp:329/1371; T:49 Fri Mar 09 2018 23:57:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260926; lp:330/1370; T:50 Fri Mar 09 2018 23:58:28 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260927; lp:331/1369; T:49 Fri Mar 09 2018 23:59:17 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260928; lp:332/1368; T:51 Sat Mar 10 2018 00:00:08 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260929; lp:333/1367; T:51 Sat Mar 10 2018 00:00:59 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260930; lp:334/1366; T:49 Sat Mar 10 2018 00:01:48 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260931; lp:335/1365; T:50 Sat Mar 10 2018 00:02:38 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260932; lp:336/1364; T:49 Sat Mar 10 2018 00:03:28 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260933; lp:337/1363; T:49 Sat Mar 10 2018 00:04:18 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260934; lp:338/1362; T:50 Sat Mar 10 2018 00:05:08 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260935; lp:339/1361; T:50 Sat Mar 10 2018 00:05:58 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260936; lp:340/1360; T:56 Sat Mar 10 2018 00:06:55 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260937; lp:341/1359; T:43 Sat Mar 10 2018 00:07:38 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260938; lp:342/1358; T:49 Sat Mar 10 2018 00:08:28 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260939; lp:343/1357; T:50 Sat Mar 10 2018 00:09:18 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260940; lp:344/1356; T:51 Sat Mar 10 2018 00:10:09 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260941; lp:345/1355; T:49 Sat Mar 10 2018 00:10:58 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260942; lp:346/1354; T:50 Sat Mar 10 2018 00:11:49 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260943; lp:347/1353; T:50 Sat Mar 10 2018 00:12:39 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260944; lp:348/1352; T:50 Sat Mar 10 2018 00:13:29 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260945; lp:349/1351; T:50 Sat Mar 10 2018 00:14:20 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260946; lp:350/1350; T:49 Sat Mar 10 2018 00:15:09 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260947; lp:351/1349; T:50 Sat Mar 10 2018 00:16:00 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260948; lp:352/1348; T:50 Sat Mar 10 2018 00:16:50 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260949; lp:353/1347; T:49 Sat Mar 10 2018 00:17:39 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260950; lp:354/1346; T:50 Sat Mar 10 2018 00:18:29 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260951; lp:355/1345; T:50 Sat Mar 10 2018 00:19:20 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260952; lp:356/1344; T:50 Sat Mar 10 2018 00:20:10 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260953; lp:357/1343; T:49 Sat Mar 10 2018 00:21:00 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260954; lp:358/1342; T:50 Sat Mar 10 2018 00:21:50 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260955; lp:359/1341; T:49 Sat Mar 10 2018 00:22:40 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260956; lp:360/1340; T:50 Sat Mar 10 2018 00:23:30 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260957; lp:361/1339; T:49 Sat Mar 10 2018 00:24:20 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260958; lp:362/1338; T:49 Sat Mar 10 2018 00:25:10 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260959; lp:363/1337; T:49 Sat Mar 10 2018 00:26:00 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260960; lp:364/1336; T:54 Sat Mar 10 2018 00:26:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260961; lp:365/1335; T:45 Sat Mar 10 2018 00:27:40 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260962; lp:366/1334; T:50 Sat Mar 10 2018 00:28:30 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260963; lp:367/1333; T:50 Sat Mar 10 2018 00:29:20 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260964; lp:368/1332; T:50 Sat Mar 10 2018 00:30:11 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260965; lp:369/1331; T:49 Sat Mar 10 2018 00:31:01 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260966; lp:370/1330; T:50 Sat Mar 10 2018 00:31:51 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260967; lp:371/1329; T:50 Sat Mar 10 2018 00:32:41 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260968; lp:372/1328; T:49 Sat Mar 10 2018 00:33:31 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260969; lp:373/1327; T:49 Sat Mar 10 2018 00:34:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260970; lp:374/1326; T:50 Sat Mar 10 2018 00:35:11 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260971; lp:375/1325; T:50 Sat Mar 10 2018 00:36:01 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260972; lp:376/1324; T:52 Sat Mar 10 2018 00:36:53 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260973; lp:377/1323; T:48 Sat Mar 10 2018 00:37:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 5, black: 0, any: 5, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260974; lp:378/1322; T:48 Sat Mar 10 2018 00:38:31 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 100 na red, bilans: 3575, zysk: 325
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1561684720&_v=j66&z=230944962:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1561684720&_v=j66&z=230944962 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:146 2b. Wygrana:0; Obstawiono:100 na red; Bilans:3575; Zysk:325; 
+VM26575:160 1a. Nowa runda - ID:1260975; lp:379/1321; T:50 Sat Mar 10 2018 00:39:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260976; lp:380/1320; T:51 Sat Mar 10 2018 00:40:12 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260977; lp:381/1319; T:49 Sat Mar 10 2018 00:41:02 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260978; lp:382/1318; T:49 Sat Mar 10 2018 00:41:52 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260979; lp:383/1317; T:49 Sat Mar 10 2018 00:42:41 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260980; lp:384/1316; T:50 Sat Mar 10 2018 00:43:32 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260981; lp:385/1315; T:49 Sat Mar 10 2018 00:44:22 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 2, red: 0, black: 0, any: 2, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1260982; lp:386/1314; T:49 Sat Mar 10 2018 00:45:12 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260983; lp:387/1313; T:51 Sat Mar 10 2018 00:46:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260984; lp:388/1312; T:50 Sat Mar 10 2018 00:46:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260985; lp:389/1311; T:48 Sat Mar 10 2018 00:47:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260986; lp:390/1310; T:50 Sat Mar 10 2018 00:48:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260987; lp:391/1309; T:49 Sat Mar 10 2018 00:49:22 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260988; lp:392/1308; T:50 Sat Mar 10 2018 00:50:13 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260989; lp:393/1307; T:49 Sat Mar 10 2018 00:51:02 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260990; lp:394/1306; T:50 Sat Mar 10 2018 00:51:52 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260991; lp:395/1305; T:50 Sat Mar 10 2018 00:52:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260992; lp:396/1304; T:49 Sat Mar 10 2018 00:53:32 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260993; lp:397/1303; T:50 Sat Mar 10 2018 00:54:23 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260994; lp:398/1302; T:50 Sat Mar 10 2018 00:55:13 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260995; lp:399/1301; T:49 Sat Mar 10 2018 00:56:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260996; lp:400/1300; T:50 Sat Mar 10 2018 00:56:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260997; lp:401/1299; T:49 Sat Mar 10 2018 00:57:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1260998; lp:402/1298; T:49 Sat Mar 10 2018 00:58:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1260999; lp:403/1297; T:50 Sat Mar 10 2018 00:59:23 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261000; lp:404/1296; T:50 Sat Mar 10 2018 01:00:13 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261001; lp:405/1295; T:49 Sat Mar 10 2018 01:01:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261002; lp:406/1294; T:50 Sat Mar 10 2018 01:01:53 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261003; lp:407/1293; T:49 Sat Mar 10 2018 01:02:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261004; lp:408/1292; T:51 Sat Mar 10 2018 01:03:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261005; lp:409/1291; T:49 Sat Mar 10 2018 01:04:23 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261006; lp:410/1290; T:51 Sat Mar 10 2018 01:05:14 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261007; lp:411/1289; T:49 Sat Mar 10 2018 01:06:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261008; lp:412/1288; T:51 Sat Mar 10 2018 01:06:55 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261009; lp:413/1287; T:48 Sat Mar 10 2018 01:07:44 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261010; lp:414/1286; T:50 Sat Mar 10 2018 01:08:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261011; lp:415/1285; T:49 Sat Mar 10 2018 01:09:23 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261012; lp:416/1284; T:50 Sat Mar 10 2018 01:10:14 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261013; lp:417/1283; T:49 Sat Mar 10 2018 01:11:04 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261014; lp:418/1282; T:49 Sat Mar 10 2018 01:11:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261015; lp:419/1281; T:50 Sat Mar 10 2018 01:12:44 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261016; lp:420/1280; T:50 Sat Mar 10 2018 01:13:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261017; lp:421/1279; T:50 Sat Mar 10 2018 01:14:24 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261018; lp:422/1278; T:49 Sat Mar 10 2018 01:15:14 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261019; lp:423/1277; T:50 Sat Mar 10 2018 01:16:04 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261020; lp:424/1276; T:51 Sat Mar 10 2018 01:16:55 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261021; lp:425/1275; T:48 Sat Mar 10 2018 01:17:44 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261022; lp:426/1274; T:50 Sat Mar 10 2018 01:18:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261023; lp:427/1273; T:51 Sat Mar 10 2018 01:19:25 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261024; lp:428/1272; T:49 Sat Mar 10 2018 01:20:15 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261025; lp:429/1271; T:49 Sat Mar 10 2018 01:21:04 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261026; lp:430/1270; T:51 Sat Mar 10 2018 01:21:55 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261027; lp:431/1269; T:48 Sat Mar 10 2018 01:22:44 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261028; lp:432/1268; T:51 Sat Mar 10 2018 01:23:35 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 5, any: 5, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261029; lp:433/1267; T:49 Sat Mar 10 2018 01:24:25 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 150 na black, bilans: 3425, zysk: 175
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=888522681&_v=j66&z=2139214496:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=888522681&_v=j66&z=2139214496 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 6, any: 6, last_color: "black", …}
+VM26575:146 2b. Wygrana:2; Obstawiono:150 na black; Bilans:3725; Zysk:475; 
+VM26575:160 1a. Nowa runda - ID:1261030; lp:434/1266; T:49 Sat Mar 10 2018 01:25:15 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261031; lp:435/1265; T:50 Sat Mar 10 2018 01:26:05 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261032; lp:436/1264; T:50 Sat Mar 10 2018 01:26:55 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261033; lp:437/1263; T:49 Sat Mar 10 2018 01:27:45 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261034; lp:438/1262; T:50 Sat Mar 10 2018 01:28:35 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261035; lp:439/1261; T:51 Sat Mar 10 2018 01:29:26 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261036; lp:440/1260; T:48 Sat Mar 10 2018 01:30:15 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261037; lp:441/1259; T:50 Sat Mar 10 2018 01:31:05 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261038; lp:442/1258; T:50 Sat Mar 10 2018 01:31:55 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261039; lp:443/1257; T:49 Sat Mar 10 2018 01:32:45 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261040; lp:444/1256; T:49 Sat Mar 10 2018 01:33:35 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261041; lp:445/1255; T:50 Sat Mar 10 2018 01:34:25 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261042; lp:446/1254; T:49 Sat Mar 10 2018 01:35:15 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261043; lp:447/1253; T:51 Sat Mar 10 2018 01:36:06 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261044; lp:448/1252; T:50 Sat Mar 10 2018 01:36:56 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261045; lp:449/1251; T:49 Sat Mar 10 2018 01:37:46 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261046; lp:450/1250; T:49 Sat Mar 10 2018 01:38:36 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261047; lp:451/1249; T:49 Sat Mar 10 2018 01:39:25 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261048; lp:452/1248; T:50 Sat Mar 10 2018 01:40:16 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261049; lp:453/1247; T:49 Sat Mar 10 2018 01:41:06 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261050; lp:454/1246; T:50 Sat Mar 10 2018 01:41:56 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261051; lp:455/1245; T:50 Sat Mar 10 2018 01:42:46 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261052; lp:456/1244; T:51 Sat Mar 10 2018 01:43:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261053; lp:457/1243; T:49 Sat Mar 10 2018 01:44:26 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261054; lp:458/1242; T:49 Sat Mar 10 2018 01:45:16 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261055; lp:459/1241; T:50 Sat Mar 10 2018 01:46:06 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261056; lp:460/1240; T:51 Sat Mar 10 2018 01:46:57 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261057; lp:461/1239; T:48 Sat Mar 10 2018 01:47:46 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261058; lp:462/1238; T:50 Sat Mar 10 2018 01:48:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261059; lp:463/1237; T:50 Sat Mar 10 2018 01:49:27 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 5, black: 0, any: 5, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261060; lp:464/1236; T:48 Sat Mar 10 2018 01:50:16 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 100 na red, bilans: 3625, zysk: 375
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1587786272&_v=j66&z=793535951:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1587786272&_v=j66&z=793535951 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 6, black: 0, any: 6, last_color: "red", …}
+VM26575:146 2b. Wygrana:2; Obstawiono:100 na red; Bilans:3825; Zysk:575; 
+VM26575:160 1a. Nowa runda - ID:1261061; lp:465/1235; T:51 Sat Mar 10 2018 01:51:08 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 7, black: 0, any: 7, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261062; lp:466/1234; T:49 Sat Mar 10 2018 01:51:57 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 8, black: 0, any: 8, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261063; lp:467/1233; T:49 Sat Mar 10 2018 01:52:47 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 9, black: 0, any: 9, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261064; lp:468/1232; T:49 Sat Mar 10 2018 01:53:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 10, black: 0, any: 10, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261065; lp:469/1231; T:50 Sat Mar 10 2018 01:54:27 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261066; lp:470/1230; T:49 Sat Mar 10 2018 01:55:17 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 2, red: 0, black: 0, any: 2, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261067; lp:471/1229; T:50 Sat Mar 10 2018 01:56:07 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261068; lp:472/1228; T:49 Sat Mar 10 2018 01:56:57 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261069; lp:473/1227; T:50 Sat Mar 10 2018 01:57:47 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261070; lp:474/1226; T:49 Sat Mar 10 2018 01:58:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261071; lp:475/1225; T:51 Sat Mar 10 2018 01:59:28 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261072; lp:476/1224; T:49 Sat Mar 10 2018 02:00:17 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261073; lp:477/1223; T:50 Sat Mar 10 2018 02:01:08 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261074; lp:478/1222; T:50 Sat Mar 10 2018 02:01:58 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261075; lp:479/1221; T:50 Sat Mar 10 2018 02:02:48 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261076; lp:480/1220; T:48 Sat Mar 10 2018 02:03:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261077; lp:481/1219; T:50 Sat Mar 10 2018 02:04:28 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261078; lp:482/1218; T:50 Sat Mar 10 2018 02:05:18 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261079; lp:483/1217; T:50 Sat Mar 10 2018 02:06:08 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261080; lp:484/1216; T:49 Sat Mar 10 2018 02:06:58 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261081; lp:485/1215; T:49 Sat Mar 10 2018 02:07:48 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261082; lp:486/1214; T:50 Sat Mar 10 2018 02:08:38 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261083; lp:487/1213; T:49 Sat Mar 10 2018 02:09:28 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261084; lp:488/1212; T:49 Sat Mar 10 2018 02:10:18 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261085; lp:489/1211; T:50 Sat Mar 10 2018 02:11:08 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261086; lp:490/1210; T:49 Sat Mar 10 2018 02:11:58 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261087; lp:491/1209; T:51 Sat Mar 10 2018 02:12:49 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261088; lp:492/1208; T:50 Sat Mar 10 2018 02:13:39 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261089; lp:493/1207; T:48 Sat Mar 10 2018 02:14:28 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261090; lp:494/1206; T:49 Sat Mar 10 2018 02:15:18 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261091; lp:495/1205; T:49 Sat Mar 10 2018 02:16:08 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261092; lp:496/1204; T:51 Sat Mar 10 2018 02:16:59 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 5, any: 5, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261093; lp:497/1203; T:50 Sat Mar 10 2018 02:17:49 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 100 na black, bilans: 3725, zysk: 475
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=471249124&_v=j66&z=891948246:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=471249124&_v=j66&z=891948246 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:146 2b. Wygrana:0; Obstawiono:100 na black; Bilans:3725; Zysk:475; 
+VM26575:160 1a. Nowa runda - ID:1261094; lp:498/1202; T:49 Sat Mar 10 2018 02:18:39 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261095; lp:499/1201; T:50 Sat Mar 10 2018 02:19:29 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261096; lp:500/1200; T:49 Sat Mar 10 2018 02:20:19 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261097; lp:501/1199; T:49 Sat Mar 10 2018 02:21:09 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261098; lp:502/1198; T:50 Sat Mar 10 2018 02:21:59 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261099; lp:503/1197; T:53 Sat Mar 10 2018 02:22:53 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261100; lp:504/1196; T:46 Sat Mar 10 2018 02:23:39 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261101; lp:505/1195; T:49 Sat Mar 10 2018 02:24:29 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261102; lp:506/1194; T:51 Sat Mar 10 2018 02:25:20 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261103; lp:507/1193; T:48 Sat Mar 10 2018 02:26:09 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261104; lp:508/1192; T:49 Sat Mar 10 2018 02:26:59 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 5, black: 0, any: 5, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261105; lp:509/1191; T:49 Sat Mar 10 2018 02:27:49 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 150 na red, bilans: 3575, zysk: 325
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=539488366&_v=j66&z=1251907838:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=539488366&_v=j66&z=1251907838 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 6, black: 0, any: 6, last_color: "red", …}
+VM26575:146 2b. Wygrana:2; Obstawiono:150 na red; Bilans:3875; Zysk:625; 
+VM26575:160 1a. Nowa runda - ID:1261106; lp:510/1190; T:51 Sat Mar 10 2018 02:28:40 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 7, black: 0, any: 7, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261107; lp:511/1189; T:50 Sat Mar 10 2018 02:29:30 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 8, black: 0, any: 8, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261108; lp:512/1188; T:48 Sat Mar 10 2018 02:30:19 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261109; lp:513/1187; T:50 Sat Mar 10 2018 02:31:10 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261110; lp:514/1186; T:50 Sat Mar 10 2018 02:32:00 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261111; lp:515/1185; T:52 Sat Mar 10 2018 02:32:52 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261112; lp:516/1184; T:47 Sat Mar 10 2018 02:33:40 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261113; lp:517/1183; T:50 Sat Mar 10 2018 02:34:30 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261114; lp:518/1182; T:50 Sat Mar 10 2018 02:35:20 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261115; lp:519/1181; T:49 Sat Mar 10 2018 02:36:10 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261116; lp:520/1180; T:49 Sat Mar 10 2018 02:37:00 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261117; lp:521/1179; T:49 Sat Mar 10 2018 02:37:50 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 2, red: 0, black: 0, any: 2, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261118; lp:522/1178; T:49 Sat Mar 10 2018 02:38:40 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261119; lp:523/1177; T:49 Sat Mar 10 2018 02:39:30 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261120; lp:524/1176; T:50 Sat Mar 10 2018 02:40:20 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261121; lp:525/1175; T:50 Sat Mar 10 2018 02:41:10 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261122; lp:526/1174; T:49 Sat Mar 10 2018 02:42:00 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261123; lp:527/1173; T:50 Sat Mar 10 2018 02:42:50 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261124; lp:528/1172; T:51 Sat Mar 10 2018 02:43:41 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261125; lp:529/1171; T:48 Sat Mar 10 2018 02:44:30 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261126; lp:530/1170; T:50 Sat Mar 10 2018 02:45:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261127; lp:531/1169; T:48 Sat Mar 10 2018 02:46:10 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261128; lp:532/1168; T:51 Sat Mar 10 2018 02:47:01 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261129; lp:533/1167; T:49 Sat Mar 10 2018 02:47:51 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261130; lp:534/1166; T:49 Sat Mar 10 2018 02:48:41 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261131; lp:535/1165; T:50 Sat Mar 10 2018 02:49:31 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261132; lp:536/1164; T:49 Sat Mar 10 2018 02:50:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261133; lp:537/1163; T:50 Sat Mar 10 2018 02:51:11 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261134; lp:538/1162; T:51 Sat Mar 10 2018 02:52:02 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261135; lp:539/1161; T:51 Sat Mar 10 2018 02:52:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261136; lp:540/1160; T:48 Sat Mar 10 2018 02:53:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261137; lp:541/1159; T:48 Sat Mar 10 2018 02:54:31 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261138; lp:542/1158; T:50 Sat Mar 10 2018 02:55:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261139; lp:543/1157; T:49 Sat Mar 10 2018 02:56:11 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261140; lp:544/1156; T:50 Sat Mar 10 2018 02:57:01 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261141; lp:545/1155; T:50 Sat Mar 10 2018 02:57:52 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261142; lp:546/1154; T:50 Sat Mar 10 2018 02:58:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261143; lp:547/1153; T:48 Sat Mar 10 2018 02:59:31 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261144; lp:548/1152; T:51 Sat Mar 10 2018 03:00:22 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261145; lp:549/1151; T:50 Sat Mar 10 2018 03:01:12 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261146; lp:550/1150; T:49 Sat Mar 10 2018 03:02:02 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261147; lp:551/1149; T:53 Sat Mar 10 2018 03:02:55 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261148; lp:552/1148; T:48 Sat Mar 10 2018 03:03:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261149; lp:553/1147; T:49 Sat Mar 10 2018 03:04:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261150; lp:554/1146; T:50 Sat Mar 10 2018 03:05:23 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261151; lp:555/1145; T:49 Sat Mar 10 2018 03:06:12 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261152; lp:556/1144; T:50 Sat Mar 10 2018 03:07:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261153; lp:557/1143; T:48 Sat Mar 10 2018 03:07:52 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261154; lp:558/1142; T:50 Sat Mar 10 2018 03:08:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261155; lp:559/1141; T:49 Sat Mar 10 2018 03:09:32 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261156; lp:560/1140; T:50 Sat Mar 10 2018 03:10:22 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261157; lp:561/1139; T:49 Sat Mar 10 2018 03:11:12 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261158; lp:562/1138; T:51 Sat Mar 10 2018 03:12:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261159; lp:563/1137; T:50 Sat Mar 10 2018 03:12:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261160; lp:564/1136; T:49 Sat Mar 10 2018 03:13:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261161; lp:565/1135; T:49 Sat Mar 10 2018 03:14:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261162; lp:566/1134; T:50 Sat Mar 10 2018 03:15:23 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261163; lp:567/1133; T:50 Sat Mar 10 2018 03:16:13 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261164; lp:568/1132; T:49 Sat Mar 10 2018 03:17:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261165; lp:569/1131; T:49 Sat Mar 10 2018 03:17:53 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261166; lp:570/1130; T:51 Sat Mar 10 2018 03:18:44 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261167; lp:571/1129; T:49 Sat Mar 10 2018 03:19:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261168; lp:572/1128; T:49 Sat Mar 10 2018 03:20:23 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 2, red: 0, black: 0, any: 2, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261169; lp:573/1127; T:49 Sat Mar 10 2018 03:21:13 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261170; lp:574/1126; T:51 Sat Mar 10 2018 03:22:04 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261171; lp:575/1125; T:51 Sat Mar 10 2018 03:22:56 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261172; lp:576/1124; T:46 Sat Mar 10 2018 03:23:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261173; lp:577/1123; T:51 Sat Mar 10 2018 03:24:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261174; lp:578/1122; T:50 Sat Mar 10 2018 03:25:24 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261175; lp:579/1121; T:49 Sat Mar 10 2018 03:26:13 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261176; lp:580/1120; T:49 Sat Mar 10 2018 03:27:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261177; lp:581/1119; T:50 Sat Mar 10 2018 03:27:53 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261178; lp:582/1118; T:51 Sat Mar 10 2018 03:28:44 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261179; lp:583/1117; T:48 Sat Mar 10 2018 03:29:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261180; lp:584/1116; T:51 Sat Mar 10 2018 03:30:24 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261181; lp:585/1115; T:48 Sat Mar 10 2018 03:31:13 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261182; lp:586/1114; T:50 Sat Mar 10 2018 03:32:04 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261183; lp:587/1113; T:50 Sat Mar 10 2018 03:32:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261184; lp:588/1112; T:49 Sat Mar 10 2018 03:33:44 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261185; lp:589/1111; T:49 Sat Mar 10 2018 03:34:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261186; lp:590/1110; T:50 Sat Mar 10 2018 03:35:24 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261187; lp:591/1109; T:49 Sat Mar 10 2018 03:36:14 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261188; lp:592/1108; T:51 Sat Mar 10 2018 03:37:05 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261189; lp:593/1107; T:50 Sat Mar 10 2018 03:37:55 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261190; lp:594/1106; T:50 Sat Mar 10 2018 03:38:45 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261191; lp:595/1105; T:48 Sat Mar 10 2018 03:39:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261192; lp:596/1104; T:51 Sat Mar 10 2018 03:40:25 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261193; lp:597/1103; T:49 Sat Mar 10 2018 03:41:15 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261194; lp:598/1102; T:48 Sat Mar 10 2018 03:42:04 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261195; lp:599/1101; T:49 Sat Mar 10 2018 03:42:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261196; lp:600/1100; T:50 Sat Mar 10 2018 03:43:44 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261197; lp:601/1099; T:50 Sat Mar 10 2018 03:44:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261198; lp:602/1098; T:50 Sat Mar 10 2018 03:45:24 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261199; lp:603/1097; T:49 Sat Mar 10 2018 03:46:14 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261200; lp:604/1096; T:49 Sat Mar 10 2018 03:47:04 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261201; lp:605/1095; T:49 Sat Mar 10 2018 03:47:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261202; lp:606/1094; T:52 Sat Mar 10 2018 03:48:46 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261203; lp:607/1093; T:47 Sat Mar 10 2018 03:49:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261204; lp:608/1092; T:50 Sat Mar 10 2018 03:50:25 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261205; lp:609/1091; T:49 Sat Mar 10 2018 03:51:15 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261206; lp:610/1090; T:50 Sat Mar 10 2018 03:52:05 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261207; lp:611/1089; T:51 Sat Mar 10 2018 03:52:56 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261208; lp:612/1088; T:48 Sat Mar 10 2018 03:53:45 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261209; lp:613/1087; T:50 Sat Mar 10 2018 03:54:35 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261210; lp:614/1086; T:49 Sat Mar 10 2018 03:55:25 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261211; lp:615/1085; T:50 Sat Mar 10 2018 03:56:15 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261212; lp:616/1084; T:49 Sat Mar 10 2018 03:57:05 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261213; lp:617/1083; T:50 Sat Mar 10 2018 03:57:55 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261214; lp:618/1082; T:50 Sat Mar 10 2018 03:58:46 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261215; lp:619/1081; T:48 Sat Mar 10 2018 03:59:35 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261216; lp:620/1080; T:50 Sat Mar 10 2018 04:00:25 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261217; lp:621/1079; T:50 Sat Mar 10 2018 04:01:16 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261218; lp:622/1078; T:48 Sat Mar 10 2018 04:02:05 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261219; lp:623/1077; T:54 Sat Mar 10 2018 04:03:00 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261220; lp:624/1076; T:45 Sat Mar 10 2018 04:03:45 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261221; lp:625/1075; T:50 Sat Mar 10 2018 04:04:35 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261222; lp:626/1074; T:50 Sat Mar 10 2018 04:05:26 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261223; lp:627/1073; T:49 Sat Mar 10 2018 04:06:16 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261224; lp:628/1072; T:50 Sat Mar 10 2018 04:07:06 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261225; lp:629/1071; T:50 Sat Mar 10 2018 04:07:56 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261226; lp:630/1070; T:50 Sat Mar 10 2018 04:08:47 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261227; lp:631/1069; T:48 Sat Mar 10 2018 04:09:36 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261228; lp:632/1068; T:50 Sat Mar 10 2018 04:10:26 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261229; lp:633/1067; T:50 Sat Mar 10 2018 04:11:16 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261230; lp:634/1066; T:49 Sat Mar 10 2018 04:12:06 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261231; lp:635/1065; T:50 Sat Mar 10 2018 04:12:56 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261232; lp:636/1064; T:49 Sat Mar 10 2018 04:13:46 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261233; lp:637/1063; T:51 Sat Mar 10 2018 04:14:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261234; lp:638/1062; T:49 Sat Mar 10 2018 04:15:27 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261235; lp:639/1061; T:48 Sat Mar 10 2018 04:16:16 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261236; lp:640/1060; T:50 Sat Mar 10 2018 04:17:06 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261237; lp:641/1059; T:49 Sat Mar 10 2018 04:17:56 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261238; lp:642/1058; T:50 Sat Mar 10 2018 04:18:46 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261239; lp:643/1057; T:50 Sat Mar 10 2018 04:19:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261240; lp:644/1056; T:49 Sat Mar 10 2018 04:20:26 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261241; lp:645/1055; T:51 Sat Mar 10 2018 04:21:18 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261242; lp:646/1054; T:47 Sat Mar 10 2018 04:22:06 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261243; lp:647/1053; T:51 Sat Mar 10 2018 04:22:57 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261244; lp:648/1052; T:49 Sat Mar 10 2018 04:23:47 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261245; lp:649/1051; T:50 Sat Mar 10 2018 04:24:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261246; lp:650/1050; T:49 Sat Mar 10 2018 04:25:27 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261247; lp:651/1049; T:49 Sat Mar 10 2018 04:26:17 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261248; lp:652/1048; T:49 Sat Mar 10 2018 04:27:07 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261249; lp:653/1047; T:50 Sat Mar 10 2018 04:27:57 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261250; lp:654/1046; T:49 Sat Mar 10 2018 04:28:47 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261251; lp:655/1045; T:50 Sat Mar 10 2018 04:29:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261252; lp:656/1044; T:50 Sat Mar 10 2018 04:30:27 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261253; lp:657/1043; T:50 Sat Mar 10 2018 04:31:18 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261254; lp:658/1042; T:48 Sat Mar 10 2018 04:32:07 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261255; lp:659/1041; T:52 Sat Mar 10 2018 04:32:59 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261256; lp:660/1040; T:48 Sat Mar 10 2018 04:33:47 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261257; lp:661/1039; T:49 Sat Mar 10 2018 04:34:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261258; lp:662/1038; T:50 Sat Mar 10 2018 04:35:27 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261259; lp:663/1037; T:50 Sat Mar 10 2018 04:36:18 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261260; lp:664/1036; T:49 Sat Mar 10 2018 04:37:07 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261261; lp:665/1035; T:49 Sat Mar 10 2018 04:37:57 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261262; lp:666/1034; T:50 Sat Mar 10 2018 04:38:48 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261263; lp:667/1033; T:49 Sat Mar 10 2018 04:39:37 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261264; lp:668/1032; T:50 Sat Mar 10 2018 04:40:28 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261265; lp:669/1031; T:50 Sat Mar 10 2018 04:41:18 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261266; lp:670/1030; T:49 Sat Mar 10 2018 04:42:08 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261267; lp:671/1029; T:51 Sat Mar 10 2018 04:42:59 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261268; lp:672/1028; T:48 Sat Mar 10 2018 04:43:48 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261269; lp:673/1027; T:49 Sat Mar 10 2018 04:44:38 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261270; lp:674/1026; T:50 Sat Mar 10 2018 04:45:29 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261271; lp:675/1025; T:49 Sat Mar 10 2018 04:46:18 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261272; lp:676/1024; T:49 Sat Mar 10 2018 04:47:08 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261273; lp:677/1023; T:50 Sat Mar 10 2018 04:47:58 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261274; lp:678/1022; T:49 Sat Mar 10 2018 04:48:48 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261275; lp:679/1021; T:49 Sat Mar 10 2018 04:49:38 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261276; lp:680/1020; T:49 Sat Mar 10 2018 04:50:28 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261277; lp:681/1019; T:51 Sat Mar 10 2018 04:51:19 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261278; lp:682/1018; T:48 Sat Mar 10 2018 04:52:08 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261279; lp:683/1017; T:49 Sat Mar 10 2018 04:52:58 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261280; lp:684/1016; T:50 Sat Mar 10 2018 04:53:48 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261281; lp:685/1015; T:49 Sat Mar 10 2018 04:54:38 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261282; lp:686/1014; T:50 Sat Mar 10 2018 04:55:29 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261283; lp:687/1013; T:48 Sat Mar 10 2018 04:56:18 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261284; lp:688/1012; T:49 Sat Mar 10 2018 04:57:08 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261285; lp:689/1011; T:50 Sat Mar 10 2018 04:57:58 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261286; lp:690/1010; T:50 Sat Mar 10 2018 04:58:49 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261287; lp:691/1009; T:50 Sat Mar 10 2018 04:59:39 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261288; lp:692/1008; T:50 Sat Mar 10 2018 05:00:29 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261289; lp:693/1007; T:49 Sat Mar 10 2018 05:01:19 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261290; lp:694/1006; T:50 Sat Mar 10 2018 05:02:09 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261291; lp:695/1005; T:50 Sat Mar 10 2018 05:02:59 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261292; lp:696/1004; T:49 Sat Mar 10 2018 05:03:49 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261293; lp:697/1003; T:50 Sat Mar 10 2018 05:04:39 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261294; lp:698/1002; T:49 Sat Mar 10 2018 05:05:29 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261295; lp:699/1001; T:50 Sat Mar 10 2018 05:06:19 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261296; lp:700/1000; T:49 Sat Mar 10 2018 05:07:09 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261297; lp:701/999; T:49 Sat Mar 10 2018 05:07:59 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261298; lp:702/998; T:55 Sat Mar 10 2018 05:08:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261299; lp:703/997; T:45 Sat Mar 10 2018 05:09:39 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261300; lp:704/996; T:49 Sat Mar 10 2018 05:10:29 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261301; lp:705/995; T:49 Sat Mar 10 2018 05:11:19 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261302; lp:706/994; T:50 Sat Mar 10 2018 05:12:09 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261303; lp:707/993; T:50 Sat Mar 10 2018 05:13:00 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261304; lp:708/992; T:48 Sat Mar 10 2018 05:13:49 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261305; lp:709/991; T:50 Sat Mar 10 2018 05:14:39 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261306; lp:710/990; T:49 Sat Mar 10 2018 05:15:29 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261307; lp:711/989; T:50 Sat Mar 10 2018 05:16:20 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261308; lp:712/988; T:49 Sat Mar 10 2018 05:17:10 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261309; lp:713/987; T:51 Sat Mar 10 2018 05:18:01 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261310; lp:714/986; T:50 Sat Mar 10 2018 05:18:52 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261311; lp:715/985; T:48 Sat Mar 10 2018 05:19:40 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261312; lp:716/984; T:50 Sat Mar 10 2018 05:20:31 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261313; lp:717/983; T:50 Sat Mar 10 2018 05:21:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261314; lp:718/982; T:48 Sat Mar 10 2018 05:22:10 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261315; lp:719/981; T:50 Sat Mar 10 2018 05:23:00 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261316; lp:720/980; T:49 Sat Mar 10 2018 05:23:50 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261317; lp:721/979; T:50 Sat Mar 10 2018 05:24:40 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261318; lp:722/978; T:49 Sat Mar 10 2018 05:25:30 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 5, black: 0, any: 5, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261319; lp:723/977; T:51 Sat Mar 10 2018 05:26:21 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 100 na red, bilans: 3775, zysk: 525
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=464708198&_v=j66&z=15779713:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=464708198&_v=j66&z=15779713 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:146 2b. Wygrana:0; Obstawiono:100 na red; Bilans:3775; Zysk:525; 
+VM26575:160 1a. Nowa runda - ID:1261320; lp:724/976; T:48 Sat Mar 10 2018 05:27:10 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261321; lp:725/975; T:49 Sat Mar 10 2018 05:28:00 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261322; lp:726/974; T:50 Sat Mar 10 2018 05:28:51 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261323; lp:727/973; T:49 Sat Mar 10 2018 05:29:40 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261324; lp:728/972; T:50 Sat Mar 10 2018 05:30:31 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261325; lp:729/971; T:50 Sat Mar 10 2018 05:31:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261326; lp:730/970; T:49 Sat Mar 10 2018 05:32:10 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261327; lp:731/969; T:50 Sat Mar 10 2018 05:33:01 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261328; lp:732/968; T:51 Sat Mar 10 2018 05:33:52 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261329; lp:733/967; T:48 Sat Mar 10 2018 05:34:41 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261330; lp:734/966; T:50 Sat Mar 10 2018 05:35:31 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261331; lp:735/965; T:50 Sat Mar 10 2018 05:36:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261332; lp:736/964; T:49 Sat Mar 10 2018 05:37:11 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261333; lp:737/963; T:50 Sat Mar 10 2018 05:38:01 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 2, red: 0, black: 0, any: 2, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261334; lp:738/962; T:49 Sat Mar 10 2018 05:38:51 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261335; lp:739/961; T:51 Sat Mar 10 2018 05:39:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261336; lp:740/960; T:48 Sat Mar 10 2018 05:40:31 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261337; lp:741/959; T:50 Sat Mar 10 2018 05:41:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261338; lp:742/958; T:49 Sat Mar 10 2018 05:42:11 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261339; lp:743/957; T:50 Sat Mar 10 2018 05:43:01 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261340; lp:744/956; T:50 Sat Mar 10 2018 05:43:51 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261341; lp:745/955; T:49 Sat Mar 10 2018 05:44:41 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261342; lp:746/954; T:52 Sat Mar 10 2018 05:45:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261343; lp:747/953; T:47 Sat Mar 10 2018 05:46:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261344; lp:748/952; T:50 Sat Mar 10 2018 05:47:12 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261345; lp:749/951; T:51 Sat Mar 10 2018 05:48:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261346; lp:750/950; T:49 Sat Mar 10 2018 05:48:53 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261347; lp:751/949; T:49 Sat Mar 10 2018 05:49:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261348; lp:752/948; T:49 Sat Mar 10 2018 05:50:32 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261349; lp:753/947; T:48 Sat Mar 10 2018 05:51:21 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261350; lp:754/946; T:51 Sat Mar 10 2018 05:52:12 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261351; lp:755/945; T:49 Sat Mar 10 2018 05:53:02 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261352; lp:756/944; T:49 Sat Mar 10 2018 05:53:52 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261353; lp:757/943; T:49 Sat Mar 10 2018 05:54:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261354; lp:758/942; T:50 Sat Mar 10 2018 05:55:32 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 5, black: 0, any: 5, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261355; lp:759/941; T:49 Sat Mar 10 2018 05:56:22 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 150 na red, bilans: 3625, zysk: 375
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=635887628&_v=j66&z=36703172:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=635887628&_v=j66&z=36703172 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:146 2b. Wygrana:0; Obstawiono:150 na red; Bilans:3625; Zysk:375; 
+VM26575:160 1a. Nowa runda - ID:1261356; lp:760/940; T:50 Sat Mar 10 2018 05:57:12 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261357; lp:761/939; T:49 Sat Mar 10 2018 05:58:02 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261358; lp:762/938; T:51 Sat Mar 10 2018 05:58:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261359; lp:763/937; T:49 Sat Mar 10 2018 05:59:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261360; lp:764/936; T:50 Sat Mar 10 2018 06:00:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261361; lp:765/935; T:48 Sat Mar 10 2018 06:01:22 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261362; lp:766/934; T:49 Sat Mar 10 2018 06:02:12 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261363; lp:767/933; T:50 Sat Mar 10 2018 06:03:02 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261364; lp:768/932; T:50 Sat Mar 10 2018 06:03:52 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261365; lp:769/931; T:49 Sat Mar 10 2018 06:04:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261366; lp:770/930; T:50 Sat Mar 10 2018 06:05:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261367; lp:771/929; T:49 Sat Mar 10 2018 06:06:22 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261368; lp:772/928; T:50 Sat Mar 10 2018 06:07:13 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261369; lp:773/927; T:49 Sat Mar 10 2018 06:08:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261370; lp:774/926; T:51 Sat Mar 10 2018 06:08:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 4, any: 4, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261371; lp:775/925; T:47 Sat Mar 10 2018 06:09:42 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 5, any: 5, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261372; lp:776/924; T:51 Sat Mar 10 2018 06:10:33 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 225 na black, bilans: 3400, zysk: 150
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1980350851&_v=j66&z=2031082914:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1980350851&_v=j66&z=2031082914 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 6, any: 6, last_color: "black", …}
+VM26575:146 2b. Wygrana:2; Obstawiono:225 na black; Bilans:3850; Zysk:600; 
+VM26575:160 1a. Nowa runda - ID:1261373; lp:777/923; T:50 Sat Mar 10 2018 06:11:23 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 7, any: 7, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261374; lp:778/922; T:50 Sat Mar 10 2018 06:12:14 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 8, any: 8, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261375; lp:779/921; T:49 Sat Mar 10 2018 06:13:04 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 9, any: 9, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261376; lp:780/920; T:49 Sat Mar 10 2018 06:13:53 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 10, any: 10, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261377; lp:781/919; T:49 Sat Mar 10 2018 06:14:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261378; lp:782/918; T:49 Sat Mar 10 2018 06:15:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261379; lp:783/917; T:51 Sat Mar 10 2018 06:16:24 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261380; lp:784/916; T:48 Sat Mar 10 2018 06:17:13 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261381; lp:785/915; T:50 Sat Mar 10 2018 06:18:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261382; lp:786/914; T:51 Sat Mar 10 2018 06:18:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261383; lp:787/913; T:48 Sat Mar 10 2018 06:19:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261384; lp:788/912; T:49 Sat Mar 10 2018 06:20:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 4, black: 0, any: 4, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261385; lp:789/911; T:49 Sat Mar 10 2018 06:21:23 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 5, black: 0, any: 5, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261386; lp:790/910; T:51 Sat Mar 10 2018 06:22:14 GMT+0100 (CET)
+VM26575:169 1b. Obstawiam. kwota: 100 na red, bilans: 3750, zysk: 500
+www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1321753176&_v=j66&z=202207468:1 GET https://www.google.com/ads/ga-audiences?v=1&aip=1&t=sr&_r=4&tid=UA-40001062-2&cid=1545273210.1518266172&jid=1321753176&_v=j66&z=202207468 net::ERR_BLOCKED_BY_CLIENT
+Image (async)
+ta @ analytics.js:2
+wc @ analytics.js:9
+ba @ analytics.js:9
+Sa @ analytics.js:14
+Ha.D @ analytics.js:12
+pc.send @ analytics.js:48
+X.b.(anonymous function) @ analytics.js:25
+Z.v @ analytics.js:55
+Z.D @ analytics.js:54
+N @ analytics.js:55
+t @ gtm.js?id=GTM-TQKXK3:18
+(anonymous) @ gtm.js?id=GTM-TQKXK3:20
+Sf @ gtm.js?id=GTM-TQKXK3:66
+(anonymous) @ gtm.js?id=GTM-TQKXK3:123
+vl @ gtm.js?id=GTM-TQKXK3:119
+Lg @ gtm.js?id=GTM-TQKXK3:125
+Yg @ gtm.js?id=GTM-TQKXK3:82
+a.push @ gtm.js?id=GTM-TQKXK3:83
+(anonymous) @ app.js:230
+i.emit @ index.js:133
+n @ index.js:14
+AYMf.d.onpacket @ socket.js:232
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Ctjl.f.ondecoded @ manager.js:345
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xz3Q.u.add @ index.js:241
+Ctjl.f.ondata @ manager.js:335
+(anonymous) @ index.js:21
+i.emit @ index.js:133
+Xqxu.h.onPacket @ socket.js:457
+(anonymous) @ socket.js:274
+i.emit @ index.js:133
+ZOjo.o.onPacket @ transport.js:145
+ZOjo.o.onData @ transport.js:137
+ws.onmessage @ websocket.js:147
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 6, black: 0, any: 6, last_color: "red", …}
+VM26575:146 2b. Wygrana:2; Obstawiono:100 na red; Bilans:3950; Zysk:700; 
+VM26575:160 1a. Nowa runda - ID:1261387; lp:791/909; T:49 Sat Mar 10 2018 06:23:03 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 7, black: 0, any: 7, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261388; lp:792/908; T:49 Sat Mar 10 2018 06:23:53 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 8, black: 0, any: 8, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261389; lp:793/907; T:49 Sat Mar 10 2018 06:24:43 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 9, black: 0, any: 9, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261390; lp:794/906; T:49 Sat Mar 10 2018 06:25:33 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 10, black: 0, any: 10, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261391; lp:795/905; T:51 Sat Mar 10 2018 06:26:24 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261392; lp:796/904; T:50 Sat Mar 10 2018 06:27:15 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261393; lp:797/903; T:50 Sat Mar 10 2018 06:28:05 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261394; lp:798/902; T:48 Sat Mar 10 2018 06:28:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261395; lp:799/901; T:51 Sat Mar 10 2018 06:29:45 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261396; lp:800/900; T:48 Sat Mar 10 2018 06:30:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261397; lp:801/899; T:50 Sat Mar 10 2018 06:31:24 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261398; lp:802/898; T:49 Sat Mar 10 2018 06:32:14 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261399; lp:803/897; T:50 Sat Mar 10 2018 06:33:04 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261400; lp:804/896; T:49 Sat Mar 10 2018 06:33:54 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261401; lp:805/895; T:51 Sat Mar 10 2018 06:34:45 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 3, any: 3, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261402; lp:806/894; T:48 Sat Mar 10 2018 06:35:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261403; lp:807/893; T:50 Sat Mar 10 2018 06:36:25 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261404; lp:808/892; T:48 Sat Mar 10 2018 06:37:14 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261405; lp:809/891; T:50 Sat Mar 10 2018 06:38:04 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261406; lp:810/890; T:51 Sat Mar 10 2018 06:38:55 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261407; lp:811/889; T:49 Sat Mar 10 2018 06:39:45 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261408; lp:812/888; T:49 Sat Mar 10 2018 06:40:34 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 2, black: 0, any: 2, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261409; lp:813/887; T:50 Sat Mar 10 2018 06:41:24 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 3, black: 0, any: 3, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261410; lp:814/886; T:50 Sat Mar 10 2018 06:42:15 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261411; lp:815/885; T:49 Sat Mar 10 2018 06:43:05 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 2, any: 2, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261412; lp:816/884; T:49 Sat Mar 10 2018 06:43:55 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261413; lp:817/883; T:49 Sat Mar 10 2018 06:44:44 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  black {green: 0, red: 0, black: 1, any: 1, last_color: "black", …}
+VM26575:160 1a. Nowa runda - ID:1261414; lp:818/882; T:51 Sat Mar 10 2018 06:45:35 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 1, red: 0, black: 0, any: 1, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261415; lp:819/881; T:49 Sat Mar 10 2018 06:46:25 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  zero {green: 2, red: 0, black: 0, any: 2, last_color: "zero", …}
+VM26575:160 1a. Nowa runda - ID:1261416; lp:820/880; T:50 Sat Mar 10 2018 06:47:15 GMT+0100 (CET)
+VM26575:133 2a. Wynik rundy:  red {green: 0, red: 1, black: 0, any: 1, last_color: "red", …}
+VM26575:160 1a. Nowa runda - ID:1261417; lp:821/879; T:50 Sat Mar 10 2018 06:48:06 GMT+0100 (CET)
