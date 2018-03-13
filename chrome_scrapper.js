@@ -18,8 +18,10 @@ let logger = winston.createLogger({
 
 
 
-const url_history = 'https://csgofast.com/#history/double/all';
-const url_game = 'https://csgofast.com/#game/double';
+// const url_history = 'https://csgofast.com/#history/double/all';
+// const url_game = 'https://csgofast.com/#game/double';
+const url_game = 'https://csgofast.com/#faq';
+
 
 (async () => {
     logger.verbose('APP - start script');
@@ -31,224 +33,363 @@ const url_game = 'https://csgofast.com/#game/double';
     const collection_name = 'rounds';
     let client = await MongoClient.connect(url);
     logger.verbose("DB Connected successfully to server");
-    const db = await client.db(dbName);
+    const _db = await client.db(dbName);
 
-    const browser = await puppeteer.launch();
-    // const browser = await puppeteer.launch({headless: false});
+    const _browser = await puppeteer.launch();
+    // const _browser = await puppeteer.launch({headless: false});
 
-    const page = await browser.newPage();
-    await page.on('console', msg => {
-        if(msg.text().includes("_SAVE_RESULTS_")){
-            var row = JSON.parse(msg.text().split('_RESULTS_')[1]);
-            db.collection(collection_name).update({"id": row['id']}, row, {upsert: true});
-            logger.info('UPDATE saved ', row['id']);
-        }else{
+
+    const runNewScrapperPage = async (browser, db, callback) => {
+        const page = await browser.newPage();
+        let savedRoundCount = 0;
+        await page.on('console', msg => {
             if(msg.text().includes("_SOCKET_")){
                 logger.verbose(`LOG: ${msg.text()}`);
             }
-        }
-    });
-    await page.exposeFunction('saveDoubleRound', (data) => {
-        // logger.verbose(`wykonano ${data}`);
-        // logger.verbose(`Mam wynik i zapisuje ${data['id']} ${data['users'].length}`);
-        db.collection(collection_name).update({"id": data['id']}, data, { upsert: true });
-    });
-    await page.exposeFunction('saveCrashRound', (id, data) => {
-        db.collection("rounds_crash").update({"id": id}, row, { upsert: true });
-    });
-    await page.evaluateOnNewDocument( () => {
-        (function debugify_content_script(){
+            // logger.verbose(`LOG: ${msg.text()}`);
+        });
+        await page.exposeFunction('saveDoubleRound', (data) => {
+            logger.info(`saveDoubleRound; ${data['id']}; ${data['c']}; Users: ${data['users'].length}`);
+            db.collection('rounds').update({"id": data['id']}, data, { upsert: true });
+    
+            savedRoundCount++;
+            logger.info(`-- savedRoundCount; ${savedRoundCount}`);
+            if(savedRoundCount > 150){
+                runNewScrapperPage(browser, db, function(){
+                    setTimeout(function(){
+                        page.close();
+                    }, 70000);
+                });
+            }
+        });
+        await page.exposeFunction('saveCrashRound', (data) => {
+            logger.info(`saveCrashRound; ${data['id']}; ${data['coef']}; ${data['rand']}; Users: ${data['playerBets'].length}`);
+            db.collection("crash").update({"id": data['id']}, data, { upsert: true });
+        });
+        await page.exposeFunction('saveXRound', (data) => {
+            logger.info(`saveXRound; ${data['id']}; ${data['s']}; ${data['rand']}; Users: ${data['topPlayers'].length}`);
+            db.collection("x50").update({"id": data['id']}, data, { upsert: true });
+        });
+    
+        await page.evaluateOnNewDocument( () => {
+            var newRound = null;
+            var totalSumValue = null;
+            var totalUsers = [];
+    
+            var handleEventRoomsDoubleUpdate = function(stringData){
+                var data = JSON.parse(stringData.slice(2))[1];
+                var keys = Object.keys(data);
+                
+                if(keys.includes("number")){ // NOWA RUNDA i HISTORIA OSTATNIEJ RUNDY
+                    // ["number","md5","salt","timeOldEnds","rand","history","totalSum","topPlayers"]
+                    
+                    // WYSLIJ EVENT Z PODSUMOWANIEM RUNDY
+                    if(newRound !== null){
+    
+                        var number = data["history"][0];
+                        newRound["n"] = number;
+    
+                        var color = null;
+                        if(number == 0){ color = "green"; }
+                        if(number >= 1 && number <= 7){ color = "red"; }
+                        if(number >= 8 && number <= 14){ color = "black"; }
+                        newRound["c"] = color;
+    
+                        for(var i = 0; i < totalUsers.length; i++){
+                            if(totalUsers[i]['bet'] == "zero"){ totalUsers[i]['bet'] = "green"; }
+                            totalUsers[i]['r'] = totalUsers[i]['bet'] == color;
+                        }
+    
+                        newRound["users"] = totalUsers;
+    
+                        newRound["sum_g"] = totalSumValue['zero'];
+                        newRound["sum_r"] = totalSumValue['red'];
+                        newRound["sum_b"] = totalSumValue['black'];
+    
+                        try{
+                            window.saveDoubleRound(newRound);
+                        }catch(err) {
+                            console.log('_SOCKET_ Problem z zapisem saveDoubleRound', err);
+                        }
+                        
+                        // console.log(`_SAVE_RESULTS_${JSON.stringify(newRound)}`);
+    
+                        totalSumValue = null;
+                        newRound = null;
+                        totalUsers = [];
+                        
+                        // console.log('_SOCKET_ kolejna runda')
+                    }else{
+                        // console.log('_SOCKET_ omijam zapis rundy...')
+                    }
+                    
+    
+    
+                    // ZAPIS NOWA RUNDE 
+                    console.log('_SOCKET_ DOUBLE',  JSON.stringify( data["number"]) );
+                    newRound = Object.assign({
+                        "id": data["number"],
+                        "hash": data["md5"],
+                        "salt": data["salt"],
+                        "t": data["timeOldEnds"],
+                        "num": "",
+                        "n": "",
+                        "c": "",
+                        "sum_g": "",
+                        "sum_r": "",
+                        "sum_b": "",
+                        "users": []
+                    });
+                    data["topPlayers"].forEach(function(i){
+                        var betType = i['betType'];
+                        if(i['betType'] == "zero"){ betType = "green"; }
+                        totalUsers.push({
+                            "bet": betType,
+                            "id": i['playerId'],
+                            "sum": i['sum'],
+                            "r": false
+                        })
+                    });
+                }
+                if(keys.length == 2 && 
+                    keys.includes("totalSum") && 
+                    keys.includes("topPlayers")){ // ZMIANA NA LISCIE OSOB
+                    // ["totalSum","topPlayers"]
+                    if(newRound !== null){
+                        totalSumValue = data['totalSum'];
+                        data["topPlayers"].forEach(function(i){
+                            totalUsers.push({
+                                "bet": i['betType'],
+                                "id": i['playerId'],
+                                "sum": i['sum'],
+                                "r": false
+                            })
+                        });
+                    }
+                }
+    
+                if(keys.length == 3 && 
+                    keys.includes("salt") && 
+                    keys.includes("rand") && 
+                    keys.includes("timeOldEnds")){ // WYNIK
+                    // ["salt","timeOldEnds","rand"]
+                    if(newRound !== null){
+                        newRound['salt'] = data['salt'];
+                        newRound['t'] = data['timeOldEnds'];
+                        newRound['num'] = data['rand'];
+                    }
+                }
+                data = null;
+                keys = null;
+            };
+    
+    
+            var crashNewRound = null;
+            var crashPlayerBets = [];
+    
+            var handleEventRoomsCrashUpdate = function(stringData){            
+                // len 1 && playerBets -- aktualizacja ludzi
+                // len 2 && gameRun,playerBets
+                // len 4 && crashed,rand,coef,salt -- wynik
+                // len 9 && id,number,md5,gameRunTs,gameRun,crashed,rand,coef,salt -- nowa runda
+    
+                var data = JSON.parse(stringData.slice(2))[1];
+                var keys = Object.keys(data);
+    
+                if(keys.includes("number")){ //Nowa runda
+    
+                    // WYSLIJ EVENT Z PODSUMOWANIEM RUNDY
+                    if(crashNewRound !== null){
+                        crashNewRound["playerBets"] = crashPlayerBets;
+    
+                        try{
+                            window.saveCrashRound(crashNewRound);
+                        }catch(err) {
+                            console.log('_SOCKET_ Problem z zapisem saveCrashRound', err);
+                        }
+    
+                        crashNewRound = null;
+                        crashPlayerBets = [];
+                    }
+    
+                    console.log('_SOCKET_ CRASH',  JSON.stringify( data["number"]) );
+                    crashNewRound = {
+                        "id": data["number"],
+                        "hash": data["md5"],
+                        "salt": data["salt"],
+                        "rand": data["rand"],
+                        "coef": data['coef'],
+                        "t": data["gameRunTs"],
+                        "playerBets": []
+                    };
+                }
+    
+                if(keys.includes("crashed") && data["crashed"] == true){ // wynik rundy
+                    crashNewRound['coef'] = data['coef'];
+                    crashNewRound['rand'] = data['rand'];
+                    crashNewRound['salt'] = data['salt'];
+                }
+    
+                if(keys.includes("playerBets")){ // aktualizacja betów
+                    data["playerBets"].forEach(function(player){
+                        crashPlayerBets.push({
+                            "id": player['id'],
+                            "playerId": player['playerId'],
+                            "playerName": player['playerName'],
+                            "coef": player['coef'],
+                            "coefAutoStop": player['coefAutoStop'],
+                            "amount": player['amount']
+                        })
+                    });
+                }
+                // console.log(`KEYS ${keys.length} ${keys}`);
+            };
+    
+    
+            var xNewRound = null;
+            var xTotalSum = null;
+            var xPlayerBets = [];
+    
             
-                var newRound = null;
-                var totalSumValue = null;
-                var totalUsers = [];
-            
+            var handleEventRoomsXUpdate = function(stringData){
+                // len 1 && playerBets -- aktualizacja ludzi
+                // len 2 && gameRun,playerBets
+                // len 4 && crashed,rand,coef,salt -- wynik
+                // len 9 && id,number,md5,gameRunTs,gameRun,crashed,rand,coef,salt -- nowa runda
+    
+                var data = JSON.parse(stringData.slice(2))[1];
+                var keys = Object.keys(data);
+    
+                if(keys.includes("number")){ //Nowa runda
+    
+                    // WYSLIJ EVENT Z PODSUMOWANIEM RUNDY
+                    if(xNewRound !== null){
+    
+                        xNewRound["topPlayers"] = xPlayerBets;
+    
+                        try{
+                            window.saveXRound(xNewRound);
+                        }catch(err) {
+                            console.log('_SOCKET_ Problem z zapisem saveX50Round', err);
+                        }
+    
+                        xNewRound = null;
+                        xPlayerBets = [];
+                    }
+    
+                    console.log('_SOCKET_  X50',  JSON.stringify( data["number"]) );
+                    xNewRound = {
+                        "id": data["number"],
+                        "hash": data["md5"],
+                        "salt": data["salt"],
+                        "rand": data["rand"],
+                        "s": null,
+                        "t": data["timeOldEnds"],
+                        "topPlayers": [],
+                        "totalSum": {}
+                    };
+                }
+    
+    
+                if(keys.includes("history")){ // wynik rundy
+                    if(xNewRound !== null){
+                        xNewRound['s'] = data['history'][0]['s'];
+                    }
+                }
+    
+                if(keys.length == 3 && 
+                    keys.includes("salt") && 
+                    keys.includes("rand") && 
+                    keys.includes("timeOldEnds")){ // wynik z losową liczbą
+                    // ["salt","timeOldEnds","rand"]
+                    if(xNewRound !== null){
+                        xNewRound['salt'] = data['salt'];
+                        xNewRound['t'] = data['timeOldEnds'];
+                        xNewRound['rand'] = data['rand'];
+                    }
+                }
+    
+                if(keys.includes("totalSum")){ // aktualizacja sumy obstawien
+                    if(xNewRound !== null){
+                        xTotalSum['totalSum']['blue'] = data["totalSum"]['blue'];
+                        xTotalSum['totalSum']['gold'] = data["totalSum"]['gold'];
+                        xTotalSum['totalSum']['green'] = data["totalSum"]['green'];
+                        xTotalSum['totalSum']['red'] = data["totalSum"]['red'];
+                    }
+                }
+    
+                if(keys.includes("topPlayers")){ // aktualizacja betów
+                    data["topPlayers"].forEach(function(player){
+                        xPlayerBets.push({
+                            "id": player['id'],
+                            "playerId": player['playerId'],
+                            "playerName": player['playerName'],
+                            "betType": player['betType'],
+                            "sum": player['sum']
+                        })
+                    });
+                }
+            };
+    
+    
+            (function debugify_content_script(){
                 var nativeWebSocket = window.WebSocket;
                 var requests = window.requestLog = {}; 
                 var WebSocket = window.WebSocket = function(uri) {
-                  this.websocket = new nativeWebSocket(uri);
-                  this.websocket.onopen = this.onOpen.bind(this);
-                  this.websocket.onmessage = this.onMessage.bind(this);
-                  this.listeners = {onmessage: null, onopen: null};
-              
-                  if (!window._openWebSockets) window._openWebSockets = [];
-                  window._openWebSockets.push(this);
+                    this.websocket = new nativeWebSocket(uri);
+                    this.websocket.onopen = this.onOpen.bind(this);
+                    this.websocket.onmessage = this.onMessage.bind(this);
+                    this.listeners = {onmessage: null, onopen: null};
+                    if (!window._openWebSockets) window._openWebSockets = [];
+                    window._openWebSockets.push(this);
                 };
                 WebSocket.prototype.send = function(msg) {
-                    // console.log('>>',  msg);
-                  this.websocket.send.apply(this.websocket, arguments);
+                    this.websocket.send.apply(this.websocket, arguments);
                 }
                 WebSocket.prototype.onOpen = function(e){
-                //   console.log('OPEN', arguments);
-                  this.listeners.onopen(e);
+                    this.listeners.onopen(e);
                 }
                 WebSocket.prototype.onMessage = function(e){
-                    
                     if(e.data.includes("rooms:double:update")){
-                        var data = JSON.parse(e.data.slice(2))[1];
-                        var keys = Object.keys(data);
-                        
-                        if(keys.includes("number")){ // NOWA RUNDA i HISTORIA OSTATNIEJ RUNDY
-                            // ["number","md5","salt","timeOldEnds","rand","history","totalSum","topPlayers"]
-                            
-                            // WYSLIJ EVENT Z PODSUMOWANIEM RUNDY
-                            if(newRound !== null){
-
-                                var number = data["history"][0];
-                                newRound["n"] = number;
-
-                                var color = null;
-                                if(number == 0){ color = "green"; }
-                                if(number >= 1 && number <= 7){ color = "red"; }
-                                if(number >= 8 && number <= 14){ color = "black"; }
-                                newRound["c"] = color;
-
-                                for(var i = 0; i < totalUsers.length; i++){
-                                    if(totalUsers[i]['bet'] == "zero"){ totalUsers[i]['bet'] = "green"; }
-                                    totalUsers[i]['r'] = totalUsers[i]['bet'] == color;
-                                }
-
-                                newRound["users"] = totalUsers;
-
-                                newRound["sum_g"] = totalSumValue['zero'];
-                                newRound["sum_r"] = totalSumValue['red'];
-                                newRound["sum_b"] = totalSumValue['black'];
-
-                                try{
-                                    window.saveDoubleRound(newRound);
-                                }catch(err) {
-                                    console.log('_SOCKET_ Problem z zapisem saveDoubleRound', err);
-                                }
-                                
-                                // console.log(`_SAVE_RESULTS_${JSON.stringify(newRound)}`);
-
-                                totalSumValue = null;
-                                newRound = null;
-                                totalUsers = [];
-                                
-                                // console.log('_SOCKET_ kolejna runda')
-                            }else{
-                                // console.log('_SOCKET_ omijam zapis rundy...')
-                            }
-                            
-
-
-                            // ZAPIS NOWA RUNDE 
-                            console.log('_SOCKET_',  JSON.stringify( data["number"]) );
-                            newRound = Object.assign({
-                                "id": data["number"],
-                                "hash": data["md5"],
-                                "salt": data["salt"],
-                                "t": data["timeOldEnds"],
-                                "num": "",
-                                "n": "",
-                                "c": "",
-                                "sum_g": "",
-                                "sum_r": "",
-                                "sum_b": "",
-                                "users": []
-                            });
-                            data["topPlayers"].forEach(function(i){
-                                var betType = i['betType'];
-                                if(i['betType'] == "zero"){ betType = "green"; }
-                                totalUsers.push({
-                                    "bet": betType,
-                                    "id": i['playerId'],
-                                    "sum": i['sum'],
-                                    "r": false
-                                })
-                            });
-                        }
-                        if(keys.length == 2 && 
-                            keys.includes("totalSum") && 
-                            keys.includes("topPlayers")){ // ZMIANA NA LISCIE OSOB
-                            // ["totalSum","topPlayers"]
-                            if(newRound !== null){
-                                totalSumValue = data['totalSum'];
-                                data["topPlayers"].forEach(function(i){
-                                    totalUsers.push({
-                                        "bet": i['betType'],
-                                        "id": i['playerId'],
-                                        "sum": i['sum'],
-                                        "r": false
-                                    })
-                                });
-                            }
-                        }
-            
-                        if(keys.length == 3 && 
-                            keys.includes("salt") && 
-                            keys.includes("rand") && 
-                            keys.includes("timeOldEnds")){ // WYNIK
-                            // ["salt","timeOldEnds","rand"]
-                            if(newRound !== null){
-                                newRound['salt'] = data['salt'];
-                                newRound['t'] = data['timeOldEnds'];
-                                newRound['num'] = data['rand'];
-                            }
-                        }
-                        data = null;
-                        keys = null;
+                        handleEventRoomsDoubleUpdate(e.data);
                     }
-                  this.listeners.onmessage(e);
+                    if(e.data.includes("rooms:crash:update")){
+                        handleEventRoomsCrashUpdate(e.data);
+                    }
+                    if(e.data.includes("rooms:x50:update")){
+                        handleEventRoomsXUpdate(e.data);
+                    }
+                    this.listeners.onmessage(e);
                 }
                 Object.defineProperty(WebSocket.prototype, 'readyState', {
-                  get: function() {
-                    return this.websocket.readyState;
-                  }
+                    get: function() { return this.websocket.readyState; }
                 });
                 Object.defineProperty(WebSocket.prototype, 'onopen', {
-                  get: function() {
-                    return this.listeners.onopen;
-                  },
-                  set: function(fn) {
-                    this.listeners.onopen = fn;
-                  }
+                    get: function() {return this.listeners.onopen;},
+                    set: function(fn) { this.listeners.onopen = fn;}
                 });
                 Object.defineProperty(WebSocket.prototype, 'onclose', {
-                  get: function() {
-                    return this.websocket.onclose;
-                  },
-                  set: function(fn) {
-                    this.websocket.onclose = fn;
-                  }
+                    get: function() { return this.websocket.onclose; },
+                    set: function(fn) { this.websocket.onclose = fn; }
                 });
                 Object.defineProperty(WebSocket.prototype, 'onmessage', {
-                  get: function() {
-                    return this.listeners.onmessage;
-                  },
-                  set: function(fn) {
-                    this.listeners.onmessage = fn;
-                  }
+                    get: function() { return this.listeners.onmessage; },
+                    set: function(fn) { this.listeners.onmessage = fn; }
                 });
                 Object.defineProperty(WebSocket.prototype, 'onerror', {
-                  get: function() {
-                    return this.websocket.onerror;
-                  },
-                  set: function(fn) {
-                    this.websocket.onerror = fn;
-                  }
+                    get: function() { return this.websocket.onerror; },
+                    set: function(fn) { this.websocket.onerror = fn; }
                 });
-              })();
-        // .bind(this);
-    });
-    await page.goto(url_game);
-    // await page.evaluate(() => console.log(`url is ${location.href}`));
-    // await page.evaluate(() => console.log(`url is ${location.href}`));
-    const rund_id = await page.evaluate(evaluate_get_game_id);
-   
-    // await delay(1000);
-    // const page2 = await browser.newPage();
-    // await page2.goto(url_history);
-    // await page2.reload();
-    // await delay(1000);
-    // const results = await page2.evaluate(evaluate_get_history_results);
-    
-    logger.info(`Aktualna runda: ${rund_id}`);
-    
-    // await delay(1000);
-    // await browser.close();
-    // logger.info(`wyniki ${rund_id}`)
+            })();
+        });
+        await page.goto(url_game);
+
+        if(callback){
+            callback();
+        }
+    };
+
+    await runNewScrapperPage(_browser, _db);
 })();
 
 

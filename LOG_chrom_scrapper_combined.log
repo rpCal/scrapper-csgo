@@ -11449,3 +11449,403 @@
 {"level":"info","message":"UPDATE saved "}
 {"level":"info","message":"UPDATE saved "}
 {"level":"info","message":"UPDATE saved "}
+{"message":"Aktualna runda: 1267240","level":"info"}
+{"message":"Aktualna runda: 1267240","level":"info"}
+{"message":"Aktualna runda: 1267325","level":"info"}
+{"message":"Aktualna runda: 1267332","level":"info"}
+{"message":"saveCrashRound; 511702; 1.62; 0.3836465422957313; Users: 92","level":"info"}
+{"message":"saveCrashRound; 511703; 1.4; 0.2847839270915798; Users: 68","level":"info"}
+{"message":"saveDoubleRound; 1267364; red; Users: 230","level":"info"}
+{"message":"saveCrashRound; 511704; 3.24; 0.6916026330300614; Users: 87","level":"info"}
+{"message":"saveDoubleRound; 1267365; red; Users: 201","level":"info"}
+{"message":"saveCrashRound; 511705; 7.72; 0.8706608260680597; Users: 85","level":"info"}
+{"message":"saveDoubleRound; 1267366; red; Users: 218","level":"info"}
+{"message":"saveCrashRound; 511706; 2.81; 0.6439846743931958; Users: 78","level":"info"}
+{"message":"saveCrashRound; 511707; 1; 0.7673987722414077; Users: 66","level":"info"}
+{"message":"saveDoubleRound; 1267367; black; Users: 211","level":"info"}
+{"message":"saveCrashRound; 511708; 7.96; 0.8744333781940942; Users: 91","level":"info"}
+{"message":"saveDoubleRound; 1267368; red; Users: 211","level":"info"}
+{"message":"saveCrashRound; 511709; 4.48; 0.7770485500285981; Users: 105","level":"info"}
+{"message":"saveCrashRound; 511710; 1.54; 0.3501802276238287; Users: 73","level":"info"}
+{"message":"saveDoubleRound; 1267369; red; Users: 221","level":"info"}
+{"message":"saveCrashRound; 511711; 1.67; 0.4027428569744209; Users: 83","level":"info"}
+{"message":"saveCrashRound; 511712; 1; 0.1476254014176376; Users: 76","level":"info"}
+{"message":"saveDoubleRound; 1267370; black; Users: 196","level":"info"}
+{"message":"saveCrashRound; 511713; 6.18; 0.8382077114279867; Users: 121","level":"info"}
+{"message":"saveDoubleRound; 1267371; black; Users: 213","level":"info"}
+{"message":"saveCrashRound; 511714; 3.49; 0.7133505087609753; Users: 103","level":"info"}
+{"message":"saveCrashRound; 511715; 1.13; 0.1182869219030922; Users: 68","level":"info"}
+{"message":"saveDoubleRound; 1267372; black; Users: 221","level":"info"}
+{"message":"saveDoubleRound; 1267373; black; Users: 210","level":"info"}
+{"message":"saveCrashRound; 511716; 39.47; 0.9746868107408952; Users: 95","level":"info"}
+{"message":"saveDoubleRound; 1267374; red; Users: 245","level":"info"}
+{"message":"saveCrashRound; 511717; 4.09; 0.7558207716224299; Users: 104","level":"info"}
+{"message":"saveCrashRound; 511718; 1.03; 0.0257490235440781; Users: 75","level":"info"}
+{"message":"saveDoubleRound; 1267375; red; Users: 262","level":"info"}
+{"message":"saveCrashRound; 511719; 1; 0.7867126736759006; Users: 84","level":"info"}
+{"message":"saveCrashRound; 511720; 3.15; 0.6830242005370148; Users: 110","level":"info"}
+{"message":"saveDoubleRound; 1267376; black; Users: 235","level":"info"}
+{"message":"saveCrashRound; 511721; 1; 0.7522443490457360; Users: 86","level":"info"}
+{"message":"saveCrashRound; 511722; 1.26; 0.2088406680172404; Users: 76","level":"info"}
+{"message":"saveDoubleRound; 1267377; black; Users: 247","level":"info"}
+{"message":"saveCrashRound; 511723; 4.61; 0.7833889997059923; Users: 103","level":"info"}
+{"message":"saveDoubleRound; 1267378; red; Users: 239","level":"info"}
+{"message":"saveCrashRound; 511724; 5.26; 0.8099403704539735; Users: 104","level":"info"}
+{"message":"saveDoubleRound; 1267379; red; Users: 233","level":"info"}
+{"message":"saveCrashRound; 511725; 3.49; 0.7134644984531833; Users: 77","level":"info"}
+{"message":"saveCrashRound; 511726; 1.24; 0.1960960915768743; Users: 75","level":"info"}
+{"message":"saveDoubleRound; 1267380; red; Users: 255","level":"info"}
+{"message":"saveCrashRound; 511727; 1.01; 0.0053542722029039; Users: 71","level":"info"}
+{"message":"saveCrashRound; 511728; 1.91; 0.4770805995159504; Users: 98","level":"info"}
+{"message":"saveDoubleRound; 1267381; black; Users: 243","level":"info"}
+{"message":"saveDoubleRound; 1267382; black; Users: 245","level":"info"}
+{"message":"saveCrashRound; 511729; 13.94; 0.9283292428423486; Users: 132","level":"info"}
+{"message":"saveCrashRound; 511730; 1; 0.0399211431015099; Users: 82","level":"info"}
+{"message":"saveCrashRound; 511731; 1.03; 0.0296442781178384; Users: 74","level":"info"}
+{"message":"saveDoubleRound; 1267383; black; Users: 247","level":"info"}
+{"message":"saveCrashRound; 511732; 2.77; 0.6394729026685173; Users: 121","level":"info"}
+{"message":"saveCrashRound; 511733; 1.99; 0.4975654216244736; Users: 117","level":"info"}
+{"message":"saveDoubleRound; 1267384; black; Users: 255","level":"info"}
+{"message":"saveCrashRound; 511734; 6.39; 0.8436052626566042; Users: 119","level":"info"}
+{"message":"saveDoubleRound; 1267385; red; Users: 260","level":"info"}
+{"message":"saveCrashRound; 511735; 2.51; 0.6018236450855219; Users: 113","level":"info"}
+{"message":"saveDoubleRound; 1267386; black; Users: 253","level":"info"}
+{"message":"saveCrashRound; 511736; 5.19; 0.8073758638481088; Users: 97","level":"info"}
+{"message":"saveCrashRound; 511737; 1.49; 0.3304261673079865; Users: 90","level":"info"}
+{"message":"saveDoubleRound; 1267387; green; Users: 234","level":"info"}
+{"message":"saveCrashRound; 511738; 1.82; 0.4500969069660867; Users: 103","level":"info"}
+{"message":"saveDoubleRound; 1267388; black; Users: 209","level":"info"}
+{"message":"saveCrashRound; 511739; 1.67; 0.4025735944515498; Users: 101","level":"info"}
+{"message":"saveCrashRound; 511740; 4.91; 0.7966910271897658; Users: 146","level":"info"}
+{"message":"saveDoubleRound; 1267389; black; Users: 203","level":"info"}
+{"message":"saveCrashRound; 511741; 1.08; 0.0749986150942275; Users: 90","level":"info"}
+{"message":"saveCrashRound; 511742; 1.25; 0.1994049456434802; Users: 80","level":"info"}
+{"message":"saveDoubleRound; 1267390; red; Users: 230","level":"info"}
+{"message":"saveCrashRound; 511743; 1.74; 0.4240161381717809; Users: 94","level":"info"}
+{"message":"saveCrashRound; 511744; 1.07; 0.0627978139237496; Users: 105","level":"info"}
+{"message":"saveDoubleRound; 1267391; red; Users: 203","level":"info"}
+{"message":"saveCrashRound; 511745; 1.17; 0.1453790017742149; Users: 82","level":"info"}
+{"message":"saveCrashRound; 511746; 1.24; 0.1923453293722927; Users: 88","level":"info"}
+{"message":"saveDoubleRound; 1267392; black; Users: 199","level":"info"}
+{"message":"saveCrashRound; 511747; 4.83; 0.7930982473290289; Users: 97","level":"info"}
+{"message":"saveCrashRound; 511748; 1.32; 0.2427868992655507; Users: 84","level":"info"}
+{"message":"saveDoubleRound; 1267393; black; Users: 212","level":"info"}
+{"message":"saveDoubleRound; 1267394; black; Users: 234","level":"info"}
+{"message":"saveCrashRound; 511749; 12.48; 0.9199405931681256; Users: 112","level":"info"}
+{"message":"saveCrashRound; 511750; 1.59; 0.3711708684850416; Users: 87","level":"info"}
+{"message":"saveDoubleRound; 1267395; red; Users: 253","level":"info"}
+{"message":"saveCrashRound; 511751; 1.8; 0.4442121133776876; Users: 80","level":"info"}
+{"message":"saveCrashRound; 511752; 1.32; 0.2448196050815332; Users: 74","level":"info"}
+{"message":"saveCrashRound; 511753; 1.37; 0.2716279442588864; Users: 83","level":"info"}
+{"message":"saveDoubleRound; 1267396; black; Users: 218","level":"info"}
+{"message":"saveCrashRound; 511754; 1.24; 0.1945379176630028; Users: 79","level":"info"}
+{"message":"saveDoubleRound; 1267397; black; Users: 226","level":"info"}
+{"message":"saveCrashRound; 511755; 7.82; 0.8723009298258231; Users: 115","level":"info"}
+{"message":"saveDoubleRound; 1267398; black; Users: 210","level":"info"}
+{"message":"saveCrashRound; 511756; 2.84; 0.6476137423067385; Users: 71","level":"info"}
+{"message":"saveCrashRound; 511757; 1.01; 0.0051134407997861; Users: 54","level":"info"}
+{"message":"saveDoubleRound; 1267399; red; Users: 217","level":"info"}
+{"message":"saveCrashRound; 511758; 2.08; 0.5186204531971880; Users: 81","level":"info"}
+{"message":"saveCrashRound; 511759; 1.68; 0.4044947252619301; Users: 78","level":"info"}
+{"message":"saveDoubleRound; 1267400; black; Users: 215","level":"info"}
+{"message":"saveCrashRound; 511760; 2.98; 0.6644215550423656; Users: 76","level":"info"}
+{"message":"saveDoubleRound; 1267401; black; Users: 226","level":"info"}
+{"message":"saveDoubleRound; 1267402; red; Users: 232","level":"info"}
+{"message":"saveCrashRound; 511761; 44.81; 0.9777064048633227; Users: 90","level":"info"}
+{"message":"saveCrashRound; 511762; 1.13; 0.1169513843760247; Users: 74","level":"info"}
+{"message":"saveDoubleRound; 1267403; red; Users: 229","level":"info"}
+{"message":"saveCrashRound; 511763; 6.29; 0.8412638625226132; Users: 83","level":"info"}
+{"message":"saveDoubleRound; 1267404; black; Users: 225","level":"info"}
+{"message":"saveCrashRound; 511764; 1.19; 0.1623755768319535; Users: 60","level":"info"}
+{"message":"saveCrashRound; 511765; 1; 0.2365711136340562; Users: 67","level":"info"}
+{"message":"saveDoubleRound; 1267405; red; Users: 220","level":"info"}
+{"message":"saveCrashRound; 511766; 12.77; 0.9217824365295896; Users: 99","level":"info"}
+{"message":"saveDoubleRound; 1267406; green; Users: 242","level":"info"}
+{"message":"saveCrashRound; 511767; 4.64; 0.7848155125474593; Users: 91","level":"info"}
+{"message":"saveDoubleRound; 1267407; black; Users: 210","level":"info"}
+{"message":"saveCrashRound; 511768; 2.41; 0.5858669957578804; Users: 79","level":"info"}
+{"message":"saveCrashRound; 511769; 1.28; 0.2200005462439732; Users: 73","level":"info"}
+{"message":"saveDoubleRound; 1267408; green; Users: 187","level":"info"}
+{"message":"saveCrashRound; 511770; 1.06; 0.0569276404699608; Users: 67","level":"info"}
+{"message":"saveCrashRound; 511771; 5.24; 0.8094084157630356; Users: 84","level":"info"}
+{"message":"saveDoubleRound; 1267409; black; Users: 213","level":"info"}
+{"message":"saveDoubleRound; 1267410; red; Users: 221","level":"info"}
+{"message":"saveCrashRound; 511772; 15.76; 0.9366079023891614; Users: 101","level":"info"}
+{"message":"saveCrashRound; 511773; 1.78; 0.4384738280061805; Users: 68","level":"info"}
+{"message":"saveDoubleRound; 1267411; red; Users: 177","level":"info"}
+{"message":"saveCrashRound; 511774; 2.19; 0.5430976465677604; Users: 93","level":"info"}
+{"message":"saveCrashRound; 511775; 1.45; 0.3103224107321171; Users: 72","level":"info"}
+{"message":"saveDoubleRound; 1267412; red; Users: 177","level":"info"}
+{"message":"saveCrashRound; 511776; 1.61; 0.3780699647911988; Users: 80","level":"info"}
+{"message":"saveCrashRound; 511777; 1.38; 0.2768833779908911; Users: 79","level":"info"}
+{"message":"saveDoubleRound; 1267413; black; Users: 216","level":"info"}
+{"message":"saveCrashRound; 511778; 2.44; 0.5910358532776675; Users: 85","level":"info"}
+{"message":"saveDoubleRound; 1267414; black; Users: 184","level":"info"}
+{"message":"saveDoubleRound; 1267415; red; Users: 239","level":"info"}
+{"message":"saveCrashRound; 511779; 126.65; 0.9921119699701928; Users: 99","level":"info"}
+{"message":"saveDoubleRound; 1267416; green; Users: 209","level":"info"}
+{"message":"saveDoubleRound; 1267417; red; Users: 203","level":"info"}
+{"message":"saveCrashRound; 511780; 9.79; 0.8979355608806796; Users: 134","level":"info"}
+{"message":"saveCrashRound; 511781; 1; 0.4516454035070830; Users: 78","level":"info"}
+{"message":"saveCrashRound; 511782; 1.09; 0.0813285957745576; Users: 87","level":"info"}
+{"message":"saveDoubleRound; 1267418; black; Users: 224","level":"info"}
+{"message":"saveCrashRound; 511783; 5.28; 0.8108832297872014; Users: 98","level":"info"}
+{"message":"saveDoubleRound; 1267419; black; Users: 209","level":"info"}
+{"message":"saveCrashRound; 511784; 1.89; 0.4711958762424057; Users: 97","level":"info"}
+{"message":"saveCrashRound; 511785; 1.24; 0.1956080773835089; Users: 90","level":"info"}
+{"message":"saveDoubleRound; 1267420; black; Users: 219","level":"info"}
+{"message":"saveCrashRound; 511786; 3.6; 0.7223748072801099; Users: 111","level":"info"}
+{"message":"saveDoubleRound; 1267421; black; Users: 231","level":"info"}
+{"message":"saveCrashRound; 511787; 1.79; 0.4403190374002603; Users: 101","level":"info"}
+{"message":"saveCrashRound; 511788; 1.21; 0.1707255372709421; Users: 100","level":"info"}
+{"message":"saveDoubleRound; 1267422; red; Users: 232","level":"info"}
+{"message":"saveCrashRound; 511789; 3.74; 0.7330243719585764; Users: 128","level":"info"}
+{"message":"saveDoubleRound; 1267423; black; Users: 221","level":"info"}
+{"message":"saveCrashRound; 511790; 6.94; 0.8560475730002037; Users: 141","level":"info"}
+{"message":"saveCrashRound; 511791; 1.41; 0.2914951223161759; Users: 97","level":"info"}
+{"message":"saveDoubleRound; 1267424; black; Users: 202","level":"info"}
+{"message":"saveCrashRound; 511792; 1.44; 0.3075541007117261; Users: 101","level":"info"}
+{"message":"saveCrashRound; 511793; 1.02; 0.0203861941165259; Users: 95","level":"info"}
+{"message":"saveDoubleRound; 1267425; red; Users: 221","level":"info"}
+{"message":"saveCrashRound; 511794; 1.32; 0.2438578033456248; Users: 100","level":"info"}
+{"message":"saveDoubleRound; 1267426; black; Users: 190","level":"info"}
+{"message":"saveCrashRound; 511795; 20.05; 0.9501645378652411; Users: 145","level":"info"}
+{"message":"saveDoubleRound; 1267427; red; Users: 195","level":"info"}
+{"message":"saveCrashRound; 511796; 4.45; 0.7754060439242529; Users: 120","level":"info"}
+{"message":"saveDoubleRound; 1267428; black; Users: 202","level":"info"}
+{"message":"saveCrashRound; 511797; 2.68; 0.6272527141559991; Users: 102","level":"info"}
+{"message":"saveCrashRound; 511798; 2.2; 0.5464400280142296; Users: 97","level":"info"}
+{"message":"saveDoubleRound; 1267429; black; Users: 201","level":"info"}
+{"message":"saveDoubleRound; 1267430; green; Users: 219","level":"info"}
+{"message":"saveDoubleRound; 1267431; red; Users: 195","level":"info"}
+{"message":"saveDoubleRound; 1267432; black; Users: 196","level":"info"}
+{"message":"saveCrashRound; 511799; 867.52; 0.9988484461789132; Users: 90","level":"info"}
+{"message":"saveCrashRound; 511800; 1.5; 0.3356524264290119; Users: 107","level":"info"}
+{"message":"saveDoubleRound; 1267433; red; Users: 209","level":"info"}
+{"message":"saveCrashRound; 511801; 1.56; 0.3574763621104594; Users: 104","level":"info"}
+{"message":"saveDoubleRound; 1267434; black; Users: 203","level":"info"}
+{"message":"saveCrashRound; 511802; 9.14; 0.8907449331345841; Users: 143","level":"info"}
+{"message":"saveCrashRound; 511803; 1.67; 0.4001657516695945; Users: 98","level":"info"}
+{"message":"saveDoubleRound; 1267435; black; Users: 200","level":"info"}
+{"message":"saveCrashRound; 511804; 1.12; 0.1064631352448983; Users: 113","level":"info"}
+{"message":"saveDoubleRound; 1267436; red; Users: 184","level":"info"}
+{"message":"saveCrashRound; 511805; 36.44; 0.9725830750476064; Users: 162","level":"info"}
+{"message":"saveDoubleRound; 1267437; black; Users: 198","level":"info"}
+{"message":"saveCrashRound; 511806; 1.29; 0.2274953183316382; Users: 111","level":"info"}
+{"message":"saveDoubleRound; 1267438; black; Users: 229","level":"info"}
+{"message":"saveCrashRound; 511807; 4.33; 0.7690060126523035; Users: 128","level":"info"}
+{"message":"saveCrashRound; 511808; 1.82; 0.4499209298402818; Users: 103","level":"info"}
+{"message":"saveDoubleRound; 1267439; red; Users: 206","level":"info"}
+{"message":"saveCrashRound; 511809; 1.65; 0.3926882295386606; Users: 120","level":"info"}
+{"message":"saveCrashRound; 511810; 1.28; 0.2174812593072376; Users: 130","level":"info"}
+{"message":"saveCrashRound; 511811; 1; 0.7438362549859652; Users: 112","level":"info"}
+{"message":"saveDoubleRound; 1267440; red; Users: 190","level":"info"}
+{"message":"saveCrashRound; 511812; 1.67; 0.4010504135864438; Users: 115","level":"info"}
+{"message":"saveDoubleRound; 1267441; black; Users: 195","level":"info"}
+{"message":"saveDoubleRound; 1267442; black; Users: 184","level":"info"}
+{"message":"saveCrashRound; 511813; 139.7; 0.9928489923460524; Users: 134","level":"info"}
+{"message":"saveDoubleRound; 1267443; black; Users: 177","level":"info"}
+{"message":"saveCrashRound; 511814; 1.11; 0.0980700233713887; Users: 94","level":"info"}
+{"message":"saveDoubleRound; 1267444; black; Users: 218","level":"info"}
+{"message":"saveCrashRound; 511815; 4.99; 0.7998759583104114; Users: 126","level":"info"}
+{"message":"saveDoubleRound; 1267445; red; Users: 231","level":"info"}
+{"message":"saveCrashRound; 511816; 20.74; 0.9518395275696738; Users: 128","level":"info"}
+{"message":"saveDoubleRound; 1267446; red; Users: 202","level":"info"}
+{"message":"saveDoubleRound; 1267447; red; Users: 186","level":"info"}
+{"message":"saveCrashRound; 511817; 52.34; 0.9809134507041689; Users: 109","level":"info"}
+{"message":"saveDoubleRound; 1267448; red; Users: 210","level":"info"}
+{"message":"saveCrashRound; 511818; 1.36; 0.2643999981843866; Users: 84","level":"info"}
+{"message":"saveDoubleRound; 1267449; black; Users: 212","level":"info"}
+{"message":"saveDoubleRound; 1267450; black; Users: 217","level":"info"}
+{"message":"saveCrashRound; 511819; 45.72; 0.9781468037930664; Users: 119","level":"info"}
+{"message":"saveDoubleRound; 1267451; black; Users: 214","level":"info"}
+{"message":"saveCrashRound; 511820; 4; 0.7499876215006196; Users: 120","level":"info"}
+{"message":"saveCrashRound; 511821; 1.52; 0.3409802844610485; Users: 93","level":"info"}
+{"message":"saveDoubleRound; 1267452; black; Users: 226","level":"info"}
+{"message":"saveCrashRound; 511822; 12.44; 0.9197006688731957; Users: 129","level":"info"}
+{"message":"saveDoubleRound; 1267453; green; Users: 213","level":"info"}
+{"message":"saveDoubleRound; 1267454; red; Users: 210","level":"info"}
+{"message":"saveCrashRound; 511823; 27; 0.9629982793617525; Users: 140","level":"info"}
+{"message":"saveDoubleRound; 1267455; black; Users: 173","level":"info"}
+{"message":"saveCrashRound; 511824; 3.43; 0.7088761335957973; Users: 103","level":"info"}
+{"message":"saveCrashRound; 511825; 1.26; 0.2083143620305495; Users: 97","level":"info"}
+{"message":"saveDoubleRound; 1267456; black; Users: 182","level":"info"}
+{"message":"saveCrashRound; 511826; 2.01; 0.5024007722973827; Users: 118","level":"info"}
+{"message":"saveCrashRound; 511827; 2.78; 0.6403342393786493; Users: 140","level":"info"}
+{"message":"saveDoubleRound; 1267457; red; Users: 183","level":"info"}
+{"message":"saveCrashRound; 511828; 5.8; 0.8278028792300733; Users: 159","level":"info"}
+{"message":"saveDoubleRound; 1267458; red; Users: 202","level":"info"}
+{"message":"saveDoubleRound; 1267459; red; Users: 197","level":"info"}
+{"message":"saveDoubleRound; 1267460; red; Users: 201","level":"info"}
+{"message":"saveCrashRound; 511829; 123.97; 0.9919416385218366; Users: 154","level":"info"}
+{"message":"saveCrashRound; 511830; 1.14; 0.1203298373428012; Users: 110","level":"info"}
+{"message":"saveDoubleRound; 1267461; black; Users: 223","level":"info"}
+{"message":"saveCrashRound; 511831; 2.41; 0.5853986054624893; Users: 131","level":"info"}
+{"message":"saveCrashRound; 511832; 1.2; 0.1678578860982922; Users: 126","level":"info"}
+{"message":"saveDoubleRound; 1267462; black; Users: 202","level":"info"}
+{"message":"saveCrashRound; 511833; 1.85; 0.4589609025183509; Users: 142","level":"info"}
+{"message":"saveCrashRound; 511834; 1.15; 0.1304401220126171; Users: 110","level":"info"}
+{"message":"saveDoubleRound; 1267463; black; Users: 200","level":"info"}
+{"message":"saveDoubleRound; 1267464; black; Users: 209","level":"info"}
+{"message":"saveDoubleRound; 1267465; black; Users: 237","level":"info"}
+{"message":"saveCrashRound; 511835; 149.39; 0.9933126964590776; Users: 147","level":"info"}
+{"message":"saveCrashRound; 511836; 1.36; 0.2653330097127084; Users: 117","level":"info"}
+{"message":"saveDoubleRound; 1267466; black; Users: 206","level":"info"}
+{"message":"saveCrashRound; 511837; 5.74; 0.8257788626537145; Users: 145","level":"info"}
+{"message":"saveCrashRound; 511838; 1; 0.4110801330327709; Users: 100","level":"info"}
+{"message":"saveDoubleRound; 1267467; black; Users: 262","level":"info"}
+{"message":"saveCrashRound; 511839; 5.72; 0.8251888989063886; Users: 161","level":"info"}
+{"message":"saveDoubleRound; 1267468; red; Users: 223","level":"info"}
+{"message":"saveCrashRound; 511840; 1.79; 0.4408265609389234; Users: 106","level":"info"}
+{"message":"saveCrashRound; 511841; 2.02; 0.5058654026374839; Users: 117","level":"info"}
+{"message":"saveDoubleRound; 1267469; black; Users: 236","level":"info"}
+{"message":"saveCrashRound; 511842; 3.66; 0.7266054476440431; Users: 143","level":"info"}
+{"message":"saveDoubleRound; 1267470; red; Users: 204","level":"info"}
+{"message":"saveCrashRound; 511843; 1.39; 0.2794027433915536; Users: 103","level":"info"}
+{"message":"saveCrashRound; 511844; 1.32; 0.2454317422223817; Users: 125","level":"info"}
+{"message":"saveCrashRound; 511845; 1.13; 0.1177659016376748; Users: 121","level":"info"}
+{"message":"saveDoubleRound; 1267471; red; Users: 211","level":"info"}
+{"message":"saveCrashRound; 511846; 3.41; 0.7072422229003259; Users: 140","level":"info"}
+{"message":"saveDoubleRound; 1267472; black; Users: 214","level":"info"}
+{"message":"saveCrashRound; 511847; 1; 0.6932671514091239; Users: 110","level":"info"}
+{"message":"saveCrashRound; 511848; 2.36; 0.5768621013445925; Users: 146","level":"info"}
+{"message":"saveDoubleRound; 1267473; black; Users: 196","level":"info"}
+{"message":"saveCrashRound; 511849; 2.96; 0.6629156965443204; Users: 139","level":"info"}
+{"message":"saveCrashRound; 511850; 1; 0.9430964197830989; Users: 96","level":"info"}
+{"message":"saveCrashRound; 511850; 1; 0.9430964197830989; Users: 127","level":"info"}
+{"message":"saveDoubleRound; 1267474; red; Users: 188","level":"info"}
+{"message":"saveCrashRound; 511851; 1.72; 0.4178647511680296; Users: 115","level":"info"}
+{"message":"saveCrashRound; 511852; 1; 0.7048673852591001; Users: 112","level":"info"}
+{"message":"saveCrashRound; 511852; 1; 0.7048673852591001; Users: 180","level":"info"}
+{"message":"saveDoubleRound; 1267475; red; Users: 213","level":"info"}
+{"message":"saveDoubleRound; 1267475; red; Users: 213","level":"info"}
+{"message":"saveCrashRound; 511853; 2.68; 0.6268233795712758; Users: 129","level":"info"}
+{"message":"saveCrashRound; 511853; 2.68; 0.6268233795712758; Users: 129","level":"info"}
+{"message":"saveCrashRound; 511854; 1.14; 0.1218095298674445; Users: 93","level":"info"}
+{"message":"saveCrashRound; 511854; 1.14; 0.1218095298674445; Users: 93","level":"info"}
+{"message":"saveDoubleRound; 1267476; red; Users: 198","level":"info"}
+{"message":"saveDoubleRound; 1267476; red; Users: 198","level":"info"}
+{"message":"saveCrashRound; 511855; 1.03; 0.0288793123394436; Users: 89","level":"info"}
+{"message":"saveCrashRound; 511856; 1.67; 0.4014048749584250; Users: 96","level":"info"}
+{"message":"saveCrashRound; 511857; 1.14; 0.1234716037575788; Users: 76","level":"info"}
+{"message":"saveDoubleRound; 1267477; red; Users: 206","level":"info"}
+{"message":"saveCrashRound; 511858; 1.39; 0.2783331655148262; Users: 84","level":"info"}
+{"message":"saveCrashRound; 511859; 1.99; 0.4967233518829391; Users: 76","level":"info"}
+{"message":"saveDoubleRound; 1267478; red; Users: 216","level":"info"}
+{"message":"saveCrashRound; 511860; 1.75; 0.4292311695006749; Users: 82","level":"info"}
+{"message":"saveDoubleRound; 1267479; black; Users: 212","level":"info"}
+{"message":"saveCrashRound; 511861; 1.66; 0.3981586295175735; Users: 72","level":"info"}
+{"message":"saveCrashRound; 511862; 1.62; 0.3812085411933271; Users: 83","level":"info"}
+{"message":"saveCrashRound; 511863; 1; 0.7354242191033963; Users: 64","level":"info"}
+{"message":"saveDoubleRound; 1267480; red; Users: 187","level":"info"}
+{"message":"saveCrashRound; 511864; 4.07; 0.7547396434831293; Users: 86","level":"info"}
+{"message":"saveDoubleRound; 1267481; red; Users: 183","level":"info"}
+{"message":"saveCrashRound; 511865; 1.42; 0.2960723604299296; Users: 79","level":"info"}
+{"message":"saveCrashRound; 511866; 1.67; 0.4019040345218741; Users: 72","level":"info"}
+{"message":"saveDoubleRound; 1267482; red; Users: 219","level":"info"}
+{"message":"saveDoubleRound; 1267483; red; Users: 204","level":"info"}
+{"message":"saveCrashRound; 511867; 18.66; 0.9464601015081769; Users: 109","level":"info"}
+{"message":"saveDoubleRound; 1267484; black; Users: 211","level":"info"}
+{"message":"saveCrashRound; 511868; 7.61; 0.8687044304955529; Users: 98","level":"info"}
+{"message":"saveCrashRound; 511869; 1.21; 0.1717620774106519; Users: 72","level":"info"}
+{"message":"saveDoubleRound; 1267485; red; Users: 209","level":"info"}
+{"message":"saveCrashRound; 511870; 5.23; 0.8090483201223072; Users: 93","level":"info"}
+{"message":"saveCrashRound; 511871; 1.21; 0.1766632120536322; Users: 62","level":"info"}
+{"message":"saveDoubleRound; 1267486; black; Users: 203","level":"info"}
+{"message":"saveCrashRound; 511872; 1.55; 0.3552218518115631; Users: 84","level":"info"}
+{"message":"saveDoubleRound; 1267487; red; Users: 199","level":"info"}
+{"message":"saveCrashRound; 511873; 15.18; 0.9342045350778393; Users: 112","level":"info"}
+{"message":"saveDoubleRound; 1267488; red; Users: 197","level":"info"}
+{"message":"saveCrashRound; 511874; 2.15; 0.5344680746864687; Users: 93","level":"info"}
+{"message":"saveCrashRound; 511875; 1.08; 0.0773163237788985; Users: 73","level":"info"}
+{"message":"saveDoubleRound; 1267489; green; Users: 188","level":"info"}
+{"message":"saveCrashRound; 511876; 1.14; 0.1250133849971493; Users: 72","level":"info"}
+{"message":"saveDoubleRound; 1267490; red; Users: 168","level":"info"}
+{"message":"saveCrashRound; 511877; 4.03; 0.7517749922703427; Users: 97","level":"info"}
+{"message":"saveDoubleRound; 1267491; black; Users: 179","level":"info"}
+{"message":"saveCrashRound; 511878; 18.04; 0.9446327360218001; Users: 104","level":"info"}
+{"message":"saveCrashRound; 511879; 1.03; 0.0328735883889891; Users: 63","level":"info"}
+{"message":"saveDoubleRound; 1267492; red; Users: 181","level":"info"}
+{"message":"saveCrashRound; 511880; 4.31; 0.7682320314385538; Users: 94","level":"info"}
+{"message":"saveDoubleRound; 1267493; red; Users: 171","level":"info"}
+{"message":"saveCrashRound; 511881; 1.82; 0.4503323769779718; Users: 77","level":"info"}
+{"message":"saveDoubleRound; 1267494; red; Users: 197","level":"info"}
+{"message":"saveCrashRound; 511882; 4.88; 0.7954526154313826; Users: 106","level":"info"}
+{"message":"saveCrashRound; 511883; 1.04; 0.0342436761209377; Users: 65","level":"info"}
+{"message":"saveDoubleRound; 1267495; red; Users: 183","level":"info"}
+{"message":"saveCrashRound; 511884; 4.3; 0.7676252072601638; Users: 115","level":"info"}
+{"message":"saveCrashRound; 511885; 2.04; 0.5090228143401964; Users: 100","level":"info"}
+{"message":"saveDoubleRound; 1267496; black; Users: 196","level":"info"}
+{"message":"saveCrashRound; 511886; 1.43; 0.2986212596992546; Users: 88","level":"info"}
+{"message":"saveCrashRound; 511886; 1.43; 0.2986212596992546; Users: 126","level":"info"}
+{"message":"saveCrashRound; 511887; 1.25; 0.1987786221315103; Users: 86","level":"info"}
+{"message":"saveCrashRound; 511887; 1.25; 0.1987786221315103; Users: 86","level":"info"}
+{"message":"saveDoubleRound; 1267497; red; Users: 176","level":"info"}
+{"message":"saveCrashRound; 511888; 1.01; 0.0145442886311897; Users: 93","level":"info"}
+{"message":"saveCrashRound; 511888; 1.01; 0.0145442886311897; Users: 93","level":"info"}
+{"message":"saveDoubleRound; 1267498; red; Users: 173","level":"info"}
+{"message":"saveCrashRound; 511889; 24.56; 0.9593262132162522; Users: 143","level":"info"}
+{"message":"saveCrashRound; 511889; 24.56; 0.9593262132162522; Users: 143","level":"info"}
+{"message":"saveDoubleRound; 1267499; green; Users: 179","level":"info"}
+{"message":"saveCrashRound; 511890; 2.38; 0.5803904017853528; Users: 130","level":"info"}
+{"message":"saveCrashRound; 511890; 2.38; 0.5803904017853528; Users: 130","level":"info"}
+{"message":"saveCrashRound; 511891; 1.32; 0.2413677920683678; Users: 98","level":"info"}
+{"message":"saveCrashRound; 511891; 1.32; 0.2413677920683678; Users: 98","level":"info"}
+{"message":"saveDoubleRound; 1267500; black; Users: 182","level":"info"}
+{"message":"saveCrashRound; 511892; 1.32; 0.2440250481581374; Users: 104","level":"info"}
+{"message":"saveDoubleRound; 1267501; red; Users: 166","level":"info"}
+{"message":"saveCrashRound; 511893; 5.87; 0.8297126022702346; Users: 135","level":"info"}
+{"message":"saveCrashRound; 511893; 5.87; 0.8297126022702346; Users: 224","level":"info"}
+{"message":"saveCrashRound; 511894; 1.98; 0.4952130493463979; Users: 108","level":"info"}
+{"message":"saveDoubleRound; 1267502; black; Users: 163","level":"info"}
+{"message":"saveCrashRound; 511895; 1.13; 0.1185559153367197; Users: 84","level":"info"}
+{"message":"saveCrashRound; 511896; 1.14; 0.1260675583328278; Users: 92","level":"info"}
+{"message":"saveDoubleRound; 1267503; black; Users: 171","level":"info"}
+{"message":"saveCrashRound; 511897; 1.25; 0.1986562780101449; Users: 99","level":"info"}
+{"message":"saveCrashRound; 511898; 2.03; 0.5076639604539759; Users: 112","level":"info"}
+{"message":"saveCrashRound; 511899; 1; 0.9818779325536169; Users: 84","level":"info"}
+{"message":"saveDoubleRound; 1267504; black; Users: 169","level":"info"}
+{"message":"saveCrashRound; 511900; 1; 0.5198757500666835; Users: 90","level":"info"}
+{"message":"saveCrashRound; 511901; 1.35; 0.2568394530696886; Users: 97","level":"info"}
+{"message":"saveDoubleRound; 1267505; red; Users: 218","level":"info"}
+{"message":"saveCrashRound; 511902; 1.24; 0.1941321115461486; Users: 94","level":"info"}
+{"message":"saveXRound; 14986; undefined; 0.209752537126129623297083481416; Users: 0","level":"info"}
+{"message":"saveDoubleRound; 1267506; black; Users: 172","level":"info"}
+{"message":"saveCrashRound; 511903; 12.71; 0.9214176880012774; Users: 105","level":"info"}
+{"message":"saveCrashRound; 511904; 1.21; 0.1750920352468016; Users: 82","level":"info"}
+{"message":"saveDoubleRound; 1267507; black; Users: 189","level":"info"}
+{"message":"saveCrashRound; 511905; 2.48; 0.5972016511012804; Users: 81","level":"info"}
+{"message":"saveDoubleRound; 1267508; black; Users: 205","level":"info"}
+{"message":"saveCrashRound; 511906; 3.15; 0.6832481626615042; Users: 99","level":"info"}
+{"message":"saveCrashRound; 511907; 1.22; 0.1834680245219422; Users: 78","level":"info"}
+{"message":"saveDoubleRound; 1267509; black; Users: 200","level":"info"}
+{"message":"saveXRound; 14991; undefined; 0.931014107058526520405897681600; Users: 0","level":"info"}
+{"message":"saveCrashRound; 511908; 4.27; 0.7657518002124857; Users: 98","level":"info"}
+{"message":"saveCrashRound; 511908; 4.27; 0.7657518002124857; Users: 98","level":"info"}
+{"message":"saveCrashRound; 511909; 1.15; 0.1312604360588036; Users: 78","level":"info"}
+{"message":"saveCrashRound; 511909; 1.15; 0.1312604360588036; Users: 78","level":"info"}
+{"message":"saveDoubleRound; 1267510; black; Users: 174","level":"info"}
+{"message":"-- savedRoundCount; 1","level":"info"}
+{"message":"saveDoubleRound; 1267510; black; Users: 174","level":"info"}
+{"message":"saveXRound; 14992; undefined; 0.433372295096836142677645682689; Users: 0","level":"info"}
+{"message":"saveCrashRound; 511910; 1.1; 0.0897039056498799; Users: 76","level":"info"}
+{"message":"saveCrashRound; 511910; 1.1; 0.0897039056498799; Users: 76","level":"info"}
+{"message":"saveCrashRound; 511911; 2.55; 0.6084478952941598; Users: 87","level":"info"}
+{"message":"saveDoubleRound; 1267511; red; Users: 214","level":"info"}
+{"message":"saveCrashRound; 511912; 1.13; 0.1119166235700055; Users: 73","level":"info"}
+{"message":"saveCrashRound; 511912; 1.13; 0.1119166235700055; Users: 73","level":"info"}
+{"message":"saveCrashRound; 511913; 1.04; 0.0369357187386918; Users: 69","level":"info"}
+{"message":"saveCrashRound; 511913; 1.04; 0.0369357187386918; Users: 69","level":"info"}
+{"message":"saveDoubleRound; 1267512; red; Users: 168","level":"info"}
+{"message":"saveDoubleRound; 1267512; red; Users: 168","level":"info"}
+{"message":"-- savedRoundCount; 1","level":"info"}
+{"message":"saveXRound; 14995; 24; 0.454458152981116340739047421741; Users: 54","level":"info"}
+{"message":"saveCrashRound; 511914; 5.53; 0.8192933816042015; Users: 103","level":"info"}
+{"message":"saveCrashRound; 511914; 5.53; 0.8192933816042015; Users: 103","level":"info"}
+{"message":"saveXRound; 14996; 8; 0.164488900956811627308033811294; Users: 0","level":"info"}
+{"message":"saveDoubleRound; 1267513; red; Users: 173","level":"info"}
+{"message":"saveDoubleRound; 1267513; red; Users: 173","level":"info"}
+{"message":"-- savedRoundCount; 2","level":"info"}
+{"message":"saveCrashRound; 511915; 1.4; 0.2837665924531795; Users: 65","level":"info"}
+{"message":"saveCrashRound; 511916; 1.28; 0.2180491586257818; Users: 63","level":"info"}
+{"message":"saveXRound; 14997; 50; 0.931640393084762835907290762619; Users: 0","level":"info"}

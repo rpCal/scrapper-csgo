@@ -89,10 +89,32 @@ router.get('/all', function(req, res, next) {
 module.exports = router;
 
 
-// Do sprawdzenia:
+// Do sprawdzenia: DZIAŁA!
 // Zagraj gdy jest == 6, to graj
 // Jesli przegrales to zwieksz stawke
 
 // Do sprawdzenia:
 // Jesli serwer duzo przegral to moze zmienic sie dlugość wagonów
 // Czy jest korelacja pomiedzy przegrana/wygrana jest zwiazana z dlugoscia wagonow...
+
+
+
+// var sum = 0;
+// var bet = 10;
+// var count_lose = 0;
+// var count_win = 0;
+// var break_number = 6; 
+// db.getCollection('crash').find({ }, { "_id":0, "id": 1, "coef": 1, "t":1, "rand":1 })
+// .toArray()
+// .forEach(function(raw){
+//     var coef = parseFloat(raw['coef']);
+//     sum = sum - bet;
+//     if(coef > break_number){
+//         count_win++;
+//         sum = sum + (bet * break_number);
+//     }else{
+//         count_lose++;
+//     }
+// });
+// var A = [sum, count_lose, count_win]
+// A
