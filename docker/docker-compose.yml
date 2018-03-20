@@ -19,3 +19,12 @@ services:
     restart: always
     ports:
       - 8080:8080
+
+  csgo_mongo:
+    image: mongo:3.6-jessie
+    restart: always
+    volumes:
+      - /mnt/storage/IFA/csgofast_mongodb:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password

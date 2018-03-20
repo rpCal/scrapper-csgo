@@ -3,15 +3,15 @@ version: '3.1'
 
 services:
 
-  csgo_mongo:
-    image: mongo:3.6-jessie
-    restart: always
-    container_name: csgo_mongo
-    volumes:
-      - ./../csgo_data/mongodb:/data/db
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=password
+  # csgo_mongo:
+  #   image: mongo:3.6-jessie
+  #   restart: always
+  #   container_name: csgo_mongo
+  #   volumes:
+  #     - ./../csgo_data/mongodb:/data/db
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=admin
+  #     - MONGO_INITDB_ROOT_PASSWORD=password
   # adminer:
   #   image: adminer
   #   restart: always
