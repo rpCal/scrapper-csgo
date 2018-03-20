@@ -7,6 +7,14 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Launch strategy data",
+            "runtimeVersion": "8.9.0",
+            "program": "${workspaceFolder}/strategy_data.js"
+        },
+        
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceFolder}/index.js"
         }

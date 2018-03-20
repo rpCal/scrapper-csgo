@@ -38,37 +38,137 @@ const url_game = 'https://csgofast.com/#faq';
     const _browser = await puppeteer.launch();
     // const _browser = await puppeteer.launch({headless: false});
 
-
+/*
+    const  moment = require('moment');
+    // get the client
+    const  mysql = require('mysql2/promise');
+    // create the connection
+    const connection = await mysql.createConnection({host:'172.20.0.2', user: 'admin', database: 'csgo', password : 'password'});
+    // query database
+    let rows, fields, raw_numer, dateString, row_exists;  
+    logger.verbose("DB mysql Connected successfully to server");
+*/
     const runNewScrapperPage = async (browser, db, callback) => {
         const page = await browser.newPage();
         let savedRoundCount = 0;
+        let page_removed = false;
         await page.on('console', msg => {
             if(msg.text().includes("_SOCKET_")){
                 logger.verbose(`LOG: ${msg.text()}`);
             }
             // logger.verbose(`LOG: ${msg.text()}`);
         });
-        await page.exposeFunction('saveDoubleRound', (data) => {
-            logger.info(`saveDoubleRound; ${data['id']}; ${data['c']}; Users: ${data['users'].length}`);
-            db.collection('rounds').update({"id": data['id']}, data, { upsert: true });
-    
+        await page.exposeFunction('saveDoubleRound', (round) => {
+            if(!page_removed){
+                logger.info(`saveDoubleRound; ${round['id']}; ${round['c']}; Users: ${round['users'].length}`);
+                db.collection('rounds').update({"id": round['id']}, round, { upsert: true });    
+                    // try{
+                    //     connection.query(`
+                    //     SELECT EXISTS(SELECT 1
+                    //         FROM rounds AS ur
+                    //         WHERE   ur.round_id = ?
+                    //     LIMIT 1
+                    //     ) AS row_exists;    
+                    //     `, [round.id], function (error, rows, fields) {
+                    //         if (error) throw error;
+                    //         row_exists = rows['0']['row_exists'] == 1;
+                    //         if(!row_exists){
+                    //             connection.query(`
+                    //             INSERT INTO rounds(
+                    //                 round_t, round_c, round_salt, round_hash,  round_id,
+                    //                 round_sum_g, round_sum_r, round_sum_b, round_n, round_random_n, 
+                    //                 round_users_count
+                    //             )
+                    //             VALUES (STR_TO_DATE(?, '%Y-%m-%d %H:%i:%s'),?,?,?,?,?,?,?,?,?,?);    
+                    //             `, [
+                    //                 getDateTime(new Date(round.t)), round.c, round.salt, round.hash, round.id, 
+                    //                 round.sum_g, round.sum_r, round.sum_b, round.n, round.num, 
+                    //                 round.users.length
+                    //             ], function (error, rows, fields) {
+                    //                 if (error) throw error;
+                    //                 logger.error("saveDoubleRound - MYSQL saved ");
+                    //             });
+                    //         }
+                    //     });
+                    // }catch(e){
+                    //     logger.error("saveDoubleRound - mysql Problem with insert ROUND: ",e);
+                    //     logger.error("saveDoubleRound - mysql Problem with insert ROUND: ",round.id);
+                    // }
+
+
+                    // if(round.users.length > 0){
+                    //     for (let u of round.users) {
+
+                    //         let rund_id = round.id;
+                    //         let rund_t = round.t;
+                    //         let c = round.c;
+                    //         let bet = u.bet;
+                    //         let user_id = u.id;
+                    //         let sum = parseInt(u.sum);
+                    //         let r = u.r;
+                    //         let sum_win = 0;
+                    //         let sum_change = -1 * sum;;
+                
+                
+                    //         if(u.bet == "zero"){ bet = "green"; }
+                    //         if(u.r == true){ 
+                    //             sum_win = (sum * (round.c == "green" ? 14 : 2));
+                    //             sum_change = sum_change + sum_win; 
+                    //         }
+                        
+                    //         try{
+                    //             connection.query(`
+                    //             SELECT EXISTS(SELECT 1
+                    //                 FROM user_rounds AS ur
+                    //                 WHERE   ur.user_id = ?
+                    //                     AND ur.rund_id = ?
+                    //                     AND ur.bet = ?
+                    //                     AND ur.sum = ?
+                    //             LIMIT 1
+                    //             ) AS row_exists;    
+                    //             `, [user_id, rund_id, bet, sum], function (error, rows, fields) {
+                    //                 if (error) throw error;
+                    //                 row_exists = rows['0']['row_exists'] == 1;
+                    //                 if(!row_exists){
+                    //                     connection.query(`
+                    //                     INSERT INTO user_rounds(user_id, rund_id, c, bet, sum, r, sum_win, sum_change, rund_t)
+                    //                     VALUES (?,?,?,?,?,?,?,?,STR_TO_DATE(?, '%Y-%m-%d %H:%i:%s'));    
+                    //                     `, [
+                    //                         user_id, rund_id, c, bet, sum, r, sum_win, sum_change, getDateTime(new Date(rund_t))
+                    //                     ],function (error, rows, fields) {
+                    //                         if (error) throw error;
+                    //                     });
+                    //                 }
+                    //             });
+                    //         }catch(e){
+                    //             logger.error("saveDoubleRound - mysql Save user: ",user_id, rund_id, bet, sum, e);
+                    //         }
+                    //     }
+                    // }
+                    
+            }
             savedRoundCount++;
             logger.info(`-- savedRoundCount; ${savedRoundCount}`);
-            if(savedRoundCount > 150){
-                runNewScrapperPage(browser, db, function(){
-                    setTimeout(function(){
-                        page.close();
-                    }, 70000);
-                });
-            }
+            // if(savedRoundCount > 150){
+            //     runNewScrapperPage(browser, db, function(){
+            //         setTimeout(function(){
+            //             page_removed = true;
+            //             page.close();
+            //         }, 70000);
+            //     });
+            // }
         });
         await page.exposeFunction('saveCrashRound', (data) => {
-            logger.info(`saveCrashRound; ${data['id']}; ${data['coef']}; ${data['rand']}; Users: ${data['playerBets'].length}`);
-            db.collection("crash").update({"id": data['id']}, data, { upsert: true });
+            if(!page_removed){
+                logger.info(`saveCrashRound; ${data['id']}; ${data['coef']}; ${data['rand']}; Users: ${data['playerBets'].length}`);
+                db.collection("crash").update({"id": data['id']}, data, { upsert: true });
+            }
         });
         await page.exposeFunction('saveXRound', (data) => {
-            logger.info(`saveXRound; ${data['id']}; ${data['s']}; ${data['rand']}; Users: ${data['topPlayers'].length}`);
-            db.collection("x50").update({"id": data['id']}, data, { upsert: true });
+            if(!page_removed){
+                logger.info(`saveXRound; ${data['id']}; ${data['s']}; ${data['rand']}; Users: ${data['topPlayers'].length}`);
+                db.collection("x50").update({"id": data['id']}, data, { upsert: true });
+            }
         });
     
         await page.evaluateOnNewDocument( () => {
@@ -196,6 +296,27 @@ const url_game = 'https://csgofast.com/#faq';
                 var data = JSON.parse(stringData.slice(2))[1];
                 var keys = Object.keys(data);
     
+                if(keys.includes("crashed") && data["crashed"] == true){ // wynik rundy
+			if(crashNewRound !== null){
+                    crashNewRound['coef'] = data['coef'];
+                    crashNewRound['rand'] = data['rand'];
+                    crashNewRound['salt'] = data['salt'];
+			}
+                }
+    
+                if(keys.includes("playerBets")){ // aktualizacja betów
+                    data["playerBets"].forEach(function(player){
+                        crashPlayerBets.push({
+                            "id": player['id'],
+                            "playerId": player['playerId'],
+                            "playerName": player['playerName'],
+                            "coef": player['coef'],
+                            "coefAutoStop": player['coefAutoStop'],
+                            "amount": player['amount']
+                        })
+                    });
+                }
+
                 if(keys.includes("number")){ //Nowa runda
     
                     // WYSLIJ EVENT Z PODSUMOWANIEM RUNDY
@@ -224,24 +345,6 @@ const url_game = 'https://csgofast.com/#faq';
                     };
                 }
     
-                if(keys.includes("crashed") && data["crashed"] == true){ // wynik rundy
-                    crashNewRound['coef'] = data['coef'];
-                    crashNewRound['rand'] = data['rand'];
-                    crashNewRound['salt'] = data['salt'];
-                }
-    
-                if(keys.includes("playerBets")){ // aktualizacja betów
-                    data["playerBets"].forEach(function(player){
-                        crashPlayerBets.push({
-                            "id": player['id'],
-                            "playerId": player['playerId'],
-                            "playerName": player['playerName'],
-                            "coef": player['coef'],
-                            "coefAutoStop": player['coefAutoStop'],
-                            "amount": player['amount']
-                        })
-                    });
-                }
                 // console.log(`KEYS ${keys.length} ${keys}`);
             };
     
@@ -259,13 +362,15 @@ const url_game = 'https://csgofast.com/#faq';
     
                 var data = JSON.parse(stringData.slice(2))[1];
                 var keys = Object.keys(data);
-    
+   
                 if(keys.includes("number")){ //Nowa runda
     
                     // WYSLIJ EVENT Z PODSUMOWANIEM RUNDY
                     if(xNewRound !== null){
     
-                        xNewRound["topPlayers"] = xPlayerBets;
+                        for(var i = 0; i < xPlayerBets.length; i++){
+                            xNewRound["topPlayers"].push(xPlayerBets[i]);
+                        }
     
                         try{
                             window.saveXRound(xNewRound);
@@ -319,6 +424,7 @@ const url_game = 'https://csgofast.com/#faq';
                 }
     
                 if(keys.includes("topPlayers")){ // aktualizacja betów
+                    // console.log('_SOCKET_  X50 USERS COUNT',  JSON.stringify( data["topPlayers"].length) );
                     data["topPlayers"].forEach(function(player){
                         xPlayerBets.push({
                             "id": player['id'],
@@ -464,6 +570,30 @@ const evaluate_get_history_results = async () => {
 
 
 
+function getDateTime(date) {
+
+    // var date = new Date();
+
+    var hour = date.getHours();
+    hour = (hour < 10 ? "0" : "") + hour;
+
+    var min  = date.getMinutes();
+    min = (min < 10 ? "0" : "") + min;
+
+    var sec  = date.getSeconds();
+    sec = (sec < 10 ? "0" : "") + sec;
+
+    var year = date.getFullYear();
+
+    var month = date.getMonth() + 1;
+    month = (month < 10 ? "0" : "") + month;
+
+    var day  = date.getDate();
+    day = (day < 10 ? "0" : "") + day;
+
+    return year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec;
+
+}
 
 
 
@@ -609,3 +739,39 @@ const evaluate_get_history_results = async () => {
 //   }, time_rand);
 // })(_logger);
 
+
+
+// + 5631102 - "™L✪L™CSGOFAST.COM CS.MONEY"
+// 5681265 - Все заебало...🎧
+// 448435 - "Loot Crate CSGOFAST.COM"
+// 4119568 - "xen xu tian csgofast.com" - gdy 2000?
+// 5559383 - "rVs csgofast.com"
+// 6048492 - jgamm81
+// - 5925086 - "Negan CSGOFAST.COM / CS.MONEY"
+// + 422876 - "☣ Quckly;"
+// 3878965 - "bel1"
+// 3066297 - $carecrow - 
+// 5365813 -creamyLVcsgofast.com
+/*
+FIBO
+1, 1. 
+2, 1. 
+3, 2. 
+4, 3. 
+5, 5. 
+6, 8. 
+7, 13. 
+8, 21. 
+9, 34. 
+10, 55. 
+11, 89.
+12, 144. 
+13, 233. 
+14, 377. 
+15, 610. 
+16, 987. 
+*/
+
+// setInterval(function(){
+// document.querySelectorAll('[data-userid="5631102"]').length
+// }, 500);
