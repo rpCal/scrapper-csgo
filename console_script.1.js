@@ -1,6 +1,6 @@
 // VER. 2 - graj tylko gdy bedzie seria koloru 5
-var bet_poczatkowy = 100,
-  mnoznik_po_przegranej = 1.5,
+var bet_poczatkowy = 500,
+  mnoznik_po_przegranej = 2,
   gier_do_rozegrania = 10000;
 
 var updateColorStats = function (win_color) {
@@ -60,8 +60,10 @@ var playRound = function (bet_value, bet_color) {
   el.selectionStart = cp;
   el.selectionEnd = cp;
 
+  window.open("https://www.youtube.com/watch?v=a0rUu94ACxE", "_blank")
+  
   // przycisk zagraj
-  document.querySelector('.bonus-game-calc-place-bet[data-bet-type="' + bet_color + '"]').click();
+  // document.querySelector('.bonus-game-calc-place-bet[data-bet-type="' + bet_color + '"]').click();
   // console.log('1c. ', document.querySelector('.bonus-game-calc-place-bet[data-bet-type="' + bet_color + '"]'));
 }
 var getGameTime = function (time_start) {
@@ -176,7 +178,7 @@ function run() {
 
     // czy obstawic?
     if (round_count >= 1 && round_count <= gier_do_rozegrania) { // maksymalna ilosc rund
-      if (color_starts.any == 5) { // seria koloru jest rowna 5
+      if (color_starts.any == 4) { // seria koloru jest rowna 5
         czy_obstawione = true;
         obstawiony_color = color_starts.last_color;
         playRound(bet_aktualny, obstawiony_color);
