@@ -61,6 +61,7 @@ const url_game = 'https://csgofast.com/#faq';
         const page = await browser.newPage();
         let savedRoundCount = 0;
         let savedRoundCountCrash = 0;
+        let savedRoundCountX = 0;
         let page_removed = false;
         await page.on('console', msg => {
             if(msg.text().includes("_SOCKET_")){
@@ -69,6 +70,7 @@ const url_game = 'https://csgofast.com/#faq';
             // logger.verbose(`LOG: ${msg.text()}`);
         });
         await page.exposeFunction('saveDoubleRound', (round) => {
+            // return ;
             if(!page_removed){
                 logger.info(`saveDoubleRound; ${round['roundId']}; ${round['roundColor']}; Users: ${round['users'].length}`);
                 db.collection('rounds').update({"roundId": round['roundId']}, round, { upsert: true })
@@ -93,6 +95,7 @@ const url_game = 'https://csgofast.com/#faq';
             logger.info(`-- savedRoundCount double; ${savedRoundCount}`);
         });
         await page.exposeFunction('saveCrashRound', (round) => {
+            // return ;
             if(!page_removed){
                 logger.info(`saveCrashRound; ${round['roundId']}; ${round['roundNumber']}; ${round['randomNumber']}; Users: ${round['users'].length}`);
                 db.collection("crash").update({"roundId": round['roundId']}, round, { upsert: true })
@@ -119,12 +122,28 @@ const url_game = 'https://csgofast.com/#faq';
         });
         await page.exposeFunction('saveXRound', (round) => {
             if(!page_removed){
-                // logger.info(`saveXRound; ${round['id']}; ${round['s']}; ${round['rand']}; Users: ${round['topPlayers'].length}`);
-                // db.collection("x50").update({"id": round['id']}, round, { upsert: true })
-                //     .then(function(){}).catch(function(err){
-                //         logger.info(`saveXRound Mongo; ERROR roundId - ${round['roundId']}; ${err};`);
-                //     })
+                logger.info(`saveXRound; ${round['roundId']}; ${round['roundColor']}; Users: ${round['users'].length}`);
+                db.collection("x50").update({"roundId": round['roundId']}, round, { upsert: true })
+                    .then(function(){}).catch(function(err){
+                        logger.info(`saveXRound Mongo; ERROR roundId - ${round['roundId']}; ${err};`);
+                    })
 
+                insertXRound(connection, round)
+                .then(function(){}).catch(function(err){
+                    logger.info(`saveXRound MYSQL; ERROR roundId - ${round['roundId']}; ${err};`);
+                })
+                if(round.users){
+                    for (let user of round.users) {
+                        insertXRoundUser(connection, user)
+                        .then(function(){}).catch(function(err){
+                            logger.info(`saveXRound MYSQL; ERROR roundId - ${round['roundId']}; ${err};`);
+                        })
+                    }
+                }
+
+                savedRoundCountX++;
+                logger.info(`-- savedRoundCount x50; ${savedRoundCountX}`);
+                    
             }
         });
     
@@ -543,10 +562,14 @@ const url_game = 'https://csgofast.com/#faq';
 
 
 
+
+            // X50
+
+
     
     
             var xNewRound = null;
-            var xTotalSum = null;
+            var xTotalSum = {};
             var xPlayerBets = [];
     
             
@@ -559,42 +582,96 @@ const url_game = 'https://csgofast.com/#faq';
                 var data = JSON.parse(stringData.slice(2))[1];
                 var keys = Object.keys(data);
    
-                if(keys.includes("number")){ //Nowa runda
-    
-                    // WYSLIJ EVENT Z PODSUMOWANIEM RUNDY
+                if(keys.includes("topPlayers")){ // aktualizacja betów
                     if(xNewRound !== null){
-    
-                        for(var i = 0; i < xPlayerBets.length; i++){
-                            xNewRound["topPlayers"].push(xPlayerBets[i]);
-                        }
-    
-                        try{
-                            window.saveXRound(xNewRound);
-                        }catch(err) {
-                            console.log('_SOCKET_ Problem z zapisem saveX50Round', err);
-                        }
-    
-                        xNewRound = null;
-                        xPlayerBets = [];
+                        var t1 = performance.now();
+                        data["topPlayers"].forEach(function(i){
+                            xPlayerBets.push({
+                                "playerId": i['playerId'],
+                                "playerName": i['playerName'],
+                                "playerBetColor": i['betType'],
+                                "playerSum": i['sum'],
+                                "playerBetTime": t1 - xNewRound['roundTimeStart'] 
+                            })
+                        });
                     }
-    
-                    console.log('_SOCKET_  X50',  JSON.stringify( data["number"]) );
-                    xNewRound = {
-                        "id": data["number"],
-                        "hash": data["md5"],
-                        "salt": data["salt"],
-                        "rand": data["rand"],
-                        "s": null,
-                        "t": data["timeOldEnds"],
-                        "topPlayers": [],
-                        "totalSum": {}
-                    };
                 }
-    
+
+                if(keys.includes("totalSum")){ // aktualizacja sumy obstawien
+                    if(xNewRound !== null){
+                        xTotalSum['totalSum'] = data["totalSum"];
+                        // xTotalSum['totalSum']['blue'] = data["totalSum"]['blue'];
+                        // xTotalSum['totalSum']['gold'] = data["totalSum"]['gold'];
+                        // xTotalSum['totalSum']['green'] = data["totalSum"]['green'];
+                        // xTotalSum['totalSum']['red'] = data["totalSum"]['red'];
+                    }
+                }
+
     
                 if(keys.includes("history")){ // wynik rundy
                     if(xNewRound !== null){
-                        xNewRound['s'] = data['history'][0]['s'];
+                        
+                        var mapNumberToColor = {
+                            0: "gold",
+                            1: "green",
+                            2: "blue",
+                            3: "red" ,
+                            4: "blue",
+                            5: "red" ,
+                            6: "blue",
+                            7: "red" ,
+                            8: "blue",
+                            9: "green",
+                           10: "blue",
+                           11: "green",
+                           12: "blue",
+                           13: "red" ,
+                           14: "blue",
+                           15: "red" ,
+                           16: "blue",
+                           17: "red" ,
+                           18: "blue",
+                           19: "green",
+                           20: "blue",
+                           21: "green",
+                           22: "blue",
+                           23: "red",
+                           24: "blue",
+                           25: "red",
+                           26: "blue",
+                           27: "red",
+                           28: "blue",
+                           29: "red",
+                           30: "blue",
+                           31: "red",
+                           32: "blue",
+                           33: "green",
+                           34: "blue",
+                           35: "green",
+                           36: "blue",
+                           37: "red",
+                           38: "blue",
+                           39: "red",
+                           40: "blue",
+                           41: "red",
+                           42: "blue",
+                           43: "green",
+                           44: "blue",
+                           45: "green",
+                           46: "blue",
+                           47: "red",
+                           48: "blue",
+                           49: "red",
+                           50: "blue",
+                           51: "red",
+                           53: "green",
+                       };
+                       xNewRound['roundNumber'] = parseInt(data['history'][0]['s']);
+                       if(mapNumberToColor[xNewRound['roundNumber']]){
+                        xNewRound['roundColor'] = mapNumberToColor[xNewRound['roundNumber']]
+                       }else{
+                        xNewRound['roundColor'] = "blue"
+                       }
                     }
                 }
     
@@ -605,31 +682,146 @@ const url_game = 'https://csgofast.com/#faq';
                     // ["salt","timeOldEnds","rand"]
                     if(xNewRound !== null){
                         xNewRound['salt'] = data['salt'];
-                        xNewRound['t'] = data['timeOldEnds'];
-                        xNewRound['rand'] = data['rand'];
+                        xNewRound['roundTime'] = data['timeOldEnds'];
+                        xNewRound['randomNumber'] = data['rand'];
                     }
                 }
     
-                if(keys.includes("totalSum")){ // aktualizacja sumy obstawien
+
+                if(keys.includes("number")){ //Nowa runda
+    
+                    // WYSLIJ EVENT Z PODSUMOWANIEM RUNDY
                     if(xNewRound !== null){
-                        xTotalSum['totalSum']['blue'] = data["totalSum"]['blue'];
-                        xTotalSum['totalSum']['gold'] = data["totalSum"]['gold'];
-                        xTotalSum['totalSum']['green'] = data["totalSum"]['green'];
-                        xTotalSum['totalSum']['red'] = data["totalSum"]['red'];
-                    }
-                }
+   
+                        xNewRound['roundTimeStop'] = performance.now();
+                        xNewRound['roundTimeDiff'] = xNewRound['roundTimeStop'] - xNewRound['roundTimeStart'];
+                        
+                        for(var i = 0; i < xPlayerBets.length; i++){
+                            
+                            if(xPlayerBets[i]['playerBetColor'] == 'green'){ xNewRound["usersCountGreen"] = xNewRound["usersCountGreen"] + 1; }
+                            if(xPlayerBets[i]['playerBetColor'] == 'red'){ xNewRound["usersCountRed"] = xNewRound["usersCountRed"] + 1; }
+                            if(xPlayerBets[i]['playerBetColor'] == 'blue'){ xNewRound["usersCountBlue"] = xNewRound["usersCountBlue"] + 1; }
+                            if(xPlayerBets[i]['playerBetColor'] == 'gold'){ xNewRound["usersCountGold"] = xNewRound["usersCountGold"] + 1; }
+
+                            var playerSum = xPlayerBets[i]['playerSum'];
+                            var playerWin = xPlayerBets[i]['playerBetColor'] == xNewRound['roundColor'];
+                            var playerSumChange = -1 * playerSum;
+                            var playerSumWin = 0;
+
+                            xNewRound["usersSum"] = xNewRound["usersSum"] + playerSum;
+                            
+                            if(playerWin){
+                                var mnoznik = {
+                                    "green": 5,
+                                    "red": 3,
+                                    "blue": 2,
+                                    "gold": 50
+                                }
+                                playerSumWin = (playerSum * mnoznik[xNewRound['roundColor']]);
+                                playerSumChange = playerSumChange + playerSumWin;
+                                xNewRound["serverSumChange"] = xNewRound["serverSumChange"] - (playerSumWin - playerSum);
+                                xNewRound["usersCountWin"] = xNewRound["usersCountWin"] + 1;
+                                xNewRound['usersSumWin'] = xNewRound['usersSumWin'] + playerSum;
+                                xNewRound['usersSumWinResult'] = xNewRound['usersSumWinResult'] + playerSumWin;
+                            }else{
+                                xNewRound["usersCountLose"] = xNewRound["usersCountLose"] + 1;
+                                xNewRound["serverSumChange"] = xNewRound["serverSumChange"] + playerSum;
+                                xNewRound['usersSumLose'] = xNewRound['usersSumLose'] + playerSum;
+                            }
+
+                            
+
+                            xNewRound["users"].push(Object.assign({}, {
+                                "roundId": xNewRound['roundId'],
+                                "roundBetColor": xNewRound['roundColor'],
+                                "playerId": xPlayerBets[i]['playerId'],
+                                "playerName": xPlayerBets[i]['playerName'],
+                                "playerBetColor": xPlayerBets[i]['playerBetColor'],
+                                "playerSum": xPlayerBets[i]['playerSum'],
+                                "playerWin": playerWin,
+                                "playerSumWin": playerSumWin,
+                                "playerSumChange": playerSumChange,
+                                "playerBetTime": xPlayerBets[i]['playerBetTime']
+                            }));
+                        }
+   
+                        xNewRound["usersCount"] = xPlayerBets.length;
+                        
+                        xNewRound["usersSumGreen"] = xTotalSum['totalSum']['green'];
+                        xNewRound["usersSumRed"] = xTotalSum['totalSum']['red'];
+                        xNewRound["usersSumBlue"] = xTotalSum['totalSum']['blue'];
+                        xNewRound["usersSumGold"] = xTotalSum['totalSum']['gold'];
+
+                        xNewRound['roundTime'] = getDateTime(new Date(xNewRound['roundTime']));
     
-                if(keys.includes("topPlayers")){ // aktualizacja betów
-                    // console.log('_SOCKET_  X50 USERS COUNT',  JSON.stringify( data["topPlayers"].length) );
-                    data["topPlayers"].forEach(function(player){
-                        xPlayerBets.push({
-                            "id": player['id'],
-                            "playerId": player['playerId'],
-                            "playerName": player['playerName'],
-                            "betType": player['betType'],
-                            "sum": player['sum']
-                        })
+                        try{
+                            window.saveXRound(xNewRound);
+                        }catch(err) {
+                            console.log('_SOCKET_ Problem z zapisem saveX50Round', err);
+                        }
+    
+                        xNewRound = null;
+                        xPlayerBets = [];
+                        xTotalSum = {};
+                    }
+    
+                    // ZAPIS NOWA RUNDE 
+                    console.log('_SOCKET_ X50',  JSON.stringify( data["number"]) );
+                    xNewRound = Object.assign({}, {
+                        "roundId": null,
+                        "hash": null,
+                        "salt": null,
+                        "roundTime": null,
+                        "roundTimeStart": null,
+                        "roundTimeStop": null,
+                        "roundTimeDiff": null,
+                        "randomNumber": "",
+                        "roundNumber": null,
+                        "roundColor": "",
+
+                        "usersCount": 0,
+                        "usersCountWin": 0,
+                        "usersCountLose": 0,
+
+                        "usersCountGreen": 0,
+                        "usersCountRed": 0,
+                        "usersCountBlue": 0,
+                        "usersCountGold": 0,
+
+                        "usersSumGreen": 0,
+                        "usersSumRed": 0,
+                        "usersSumBlue": 0,
+                        "usersSumGold": 0,
+
+                        "usersSum": 0,
+                        "usersSumWin": 0,
+                        "usersSumLose": 0,
+                        "usersSumWinResult": 0,
+
+                        "serverSumChange": 0,
+                        "users": []
+                    }, {
+                        "roundId": data["number"],
+                        "hash": data["md5"],
+                        "salt": data["salt"], // na poczatku jest null
+                        "randomNumber": data["rand"],  // na poczatku jest null
+                        "roundTime": data["timeOldEnds"],
+                        "roundTimeStart": performance.now()
                     });
+
+                    
+                    if(keys.includes("topPlayers")){ 
+                        var t1 = performance.now();
+                        data["topPlayers"].forEach(function(i){
+                            totalUsers.push(_makeUser({
+                                "playerId": i['playerId'],
+                                "playerName": i['playerName'],
+                                "playerBetColor": i['betType'],
+                                "playerSum": i['sum'],
+                                "playerBetTime": t1 - xNewRound['roundTimeStart']
+                            }))
+                        });
+                    }
                 }
             };
 
@@ -685,9 +877,9 @@ const url_game = 'https://csgofast.com/#faq';
                     if(e.data.includes("rooms:crash:update")){
                         handleEventRoomsCrashUpdate(e.data);
                     }
-                    // if(e.data.includes("rooms:x50:update")){
-                    //     handleEventRoomsXUpdate(e.data);
-                    // }
+                    if(e.data.includes("rooms:x50:update")){
+                        handleEventRoomsXUpdate(e.data);
+                    }
                     this.listeners.onmessage(e);
                 }
                 Object.defineProperty(WebSocket.prototype, 'readyState', {
@@ -896,6 +1088,119 @@ function insertCrashRoundUser(connection, user) {
         user.playerSumChange,
         user.playerBetTime,
         user.playerBetStopTime
+    ], function (err, rows, fields) {
+        if (err) { deferred.reject(err); } else { deferred.resolve(rows); }
+    });
+    return deferred.promise;
+}
+
+
+
+
+
+
+function insertXRound(connection, round) {
+    var deferred = q.defer(); 
+    var query = connection.query(`
+    INSERT INTO x_round(
+        roundId,
+        hash,
+        salt,
+        roundTime,
+        roundTimeStart,
+        roundTimeStop,
+        roundTimeDiff,
+        randomNumber,
+        roundNumber,
+        roundColor,
+
+        usersCount,
+        usersCountWin,
+        usersCountLose,
+
+        usersCountGreen,
+        usersCountRed,
+        usersCountBlue,
+        usersCountGold,
+
+        usersSumGreen, 
+        usersSumRed,
+        usersSumBlue,
+        usersSumGold, 
+
+        usersSum,
+        usersSumWin,
+        usersSumLose,
+        usersSumWinResult,
+        serverSumChange
+    )
+    VALUES (?,?,?,STR_TO_DATE(?, '%Y-%m-%d %H:%i:%s'),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);    
+    `, [
+        round.roundId,
+        round.hash,
+        round.salt,
+        round.roundTime,
+        round.roundTimeStart,
+        round.roundTimeStop,
+        round.roundTimeDiff,
+        round.randomNumber,
+        round.roundNumber,
+        round.roundColor,
+    
+        round.usersCount,
+        round.usersCountWin,
+        round.usersCountLose,
+
+        round.usersCountGreen,
+        round.usersCountRed,
+        round.usersCountBlue,
+        round.usersCountGold,
+
+        round.usersSumGreen, 
+        round.usersSumRed,
+        round.usersSumBlue,
+        round.usersSumGold, 
+
+        round.usersSum,
+        round.usersSumWin,
+        round.usersSumLose,
+        round.usersSumWinResult,
+        round.serverSumChange
+    ], function (err, rows, fields) {
+        if (err) { deferred.reject(err); } else { deferred.resolve(rows); }
+    });
+    return deferred.promise;
+}
+
+
+
+function insertXRoundUser(connection, user) {
+    var deferred = q.defer(); 
+    var query = connection.query(`
+    INSERT INTO x_round_user(
+        roundId,
+        roundBetColor,
+        playerId,
+        playerName,
+        playerBetColor,
+        playerSum,
+        playerWin,
+        playerSumWin,
+        playerSumChange,
+        playerBetTime
+    )
+    VALUES (?,?,?,?,?,?,?,?,?,?);    
+    `, [
+        user.roundId,
+        user.roundBetColor,
+        user.playerId,
+        user.playerName,
+        user.playerBetColor,
+        user.playerSum,
+        user.playerWin,
+        user.playerSumWin,
+        user.playerSumChange,
+        user.playerBetTime
     ], function (err, rows, fields) {
         if (err) { deferred.reject(err); } else { deferred.resolve(rows); }
     });
@@ -1286,3 +1591,65 @@ FIBO
 // setInterval(function(){
 // document.querySelectorAll('[data-userid="5631102"]').length
 // }, 500);
+
+
+/*
+ - blue
+ - red
+ - green
+ - gold 
+
+{ 0: "gold"},
+{ 1: "green"},
+{ 2: "blue"},
+{ 3: "red" },
+{ 4: "blue"},
+{ 5: "red" },
+{ 6: "blue"},
+{ 7: "red" },
+{ 8: "blue"},
+{ 9: "green"},
+{10: "blue"},
+{11: "green"},
+{12: "blue"},
+{13: "red" },
+{14: "blue"},
+{15: "red" },
+{16: "blue"},
+{17: "red" },
+{18: "blue"},
+{19: "green"},
+{20: "blue"},
+{21: "green"},
+{22: "blue"},
+{23: "red"},
+{24: "blue"},
+{25: "red"},
+{26: "blue"},
+{27: "red"},
+{28: "blue"},
+{29: "red"},
+{30: "blue"},
+{31: "red"},
+{32: "blue"},
+{33: "green"},
+{34: "blue"},
+{35: "green"},
+{36: "blue"},
+{37: "red"},
+{38: "blue"},
+{39: "red"},
+{40: "blue"},
+{41: "red"},
+{42: "blue"},
+{43: "green"},
+{44: "blue"},
+{45: "green"},
+{46: "blue"},
+{47: "red"},
+{48: "blue"},
+{49: "red"},
+{50: "blue"},
+{51: "red"},
+{53: "green"},
+*/
