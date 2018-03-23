@@ -37,7 +37,7 @@ const table_prefix = "pubg_";
     const MongoClient = require('mongodb').MongoClient;
     // const url = 'mongodb://user_write:Test1234@ds121088.mlab.com:21088/csgo';
     // const dbName = 'csgo';
-    const url = 'mongodb://admin:password@172.20.0.2:27017/admin';
+    const url = 'mongodb://admin:password@172.20.0.3:27017/admin';
     const dbName = 'admin';
     const collection_name = 'rounds';
     let client = await MongoClient.connect(url);
@@ -52,7 +52,7 @@ const table_prefix = "pubg_";
     // get the client
     const  mysql = require('mysql2/promise');
     // create the connection
-    const connection = await mysql.createConnection({host:'172.20.0.3', user: 'admin', database: 'csgo', password : 'password'});
+    const connection = await mysql.createConnection({host:'172.20.0.4', user: 'admin', database: 'csgo', password : 'password'});
     // query database
     let rows, fields, raw_numer, dateString, row_exists;  
     logger.verbose("DB [mysql] Connected successfully to server");

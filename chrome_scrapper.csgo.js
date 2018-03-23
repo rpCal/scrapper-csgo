@@ -36,7 +36,7 @@ const url_game = 'https://csgofast.com/#faq';
     const MongoClient = require('mongodb').MongoClient;
     // const url = 'mongodb://user_write:Test1234@ds121088.mlab.com:21088/csgo';
     // const dbName = 'csgo';
-    const url = 'mongodb://admin:password@172.20.0.2:27017/admin';
+    const url = 'mongodb://admin:password@172.20.0.3:27017/admin';
     const dbName = 'admin';
     const collection_name = 'rounds';
     let client = await MongoClient.connect(url);
@@ -51,7 +51,7 @@ const url_game = 'https://csgofast.com/#faq';
     // get the client
     const  mysql = require('mysql2/promise');
     // create the connection
-    const connection = await mysql.createConnection({host:'172.20.0.3', user: 'admin', database: 'csgo', password : 'password'});
+    const connection = await mysql.createConnection({host:'172.20.0.4', user: 'admin', database: 'csgo', password : 'password'});
     // query database
     let rows, fields, raw_numer, dateString, row_exists;  
     logger.verbose("DB [mysql] Connected successfully to server");
@@ -117,10 +117,14 @@ const url_game = 'https://csgofast.com/#faq';
                 logger.info(`-- savedRoundCount crash; ${savedRoundCountCrash}`);
             }
         });
-        await page.exposeFunction('saveXRound', (data) => {
+        await page.exposeFunction('saveXRound', (round) => {
             if(!page_removed){
-                // logger.info(`saveXRound; ${data['id']}; ${data['s']}; ${data['rand']}; Users: ${data['topPlayers'].length}`);
-                // db.collection("x50").update({"id": data['id']}, data, { upsert: true });
+                // logger.info(`saveXRound; ${round['id']}; ${round['s']}; ${round['rand']}; Users: ${round['topPlayers'].length}`);
+                // db.collection("x50").update({"id": round['id']}, round, { upsert: true })
+                //     .then(function(){}).catch(function(err){
+                //         logger.info(`saveXRound Mongo; ERROR roundId - ${round['roundId']}; ${err};`);
+                //     })
+
             }
         });
     
